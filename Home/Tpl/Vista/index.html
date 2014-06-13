@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>签证类目</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzny.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzty.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/page.css" />
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/top.js"></script>
+</head>
+
+<body>
+	<div class="header">
+		<include file="Qzinc:header"/>
+    </div>
+    <div class="M_xq">
+    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a><a href="">澳大利亚旅游签证</a> > <a href="">澳大利亚旅游签证[北京领区]特价促销</a></div>
+    	<div class="lei_left">
+        	<div class="lct">
+        		<dl>
+            	<dd>
+                	<ul>
+                    	<li class="icon_1"></li>
+                        <li class="pt_11">
+                        	<span class="f_w">选择签证</span>
+                            <p>选择需要办理的签证国家及类型</p>
+                        </li>
+                    </ul>
+                </dd>
+                <dd>
+                	<ul>
+                    	<li class="icon_2"></li>
+                        <li class="pt_3">
+                        	<span class="f_w">确认订单</span>
+                            <p>客服人员与您确认签字资料与办理流程</p>
+                        </li>
+                    </ul>
+                </dd>
+                <dd>
+                	<ul>
+                    	<li class="icon_3"></li>
+                        <li class="pt_11">
+                        	<span class="f_w">支付费用</span>
+                            <p>线上线下多种支付费用</p>
+                        </li>
+                    </ul>
+                </dd>
+                <dd>
+                	<ul>
+                    	<li class="icon_4"></li>
+                        <li class="pt_3">
+                        	<span class="f_w">递交材料</span>
+                            <p>收到材料签证订单专员与您确认资料的完整性</p>
+                        </li>
+                    </ul>
+                </dd>
+                <dd>
+                	<ul>
+                    	<li class="icon_5"></li>
+                        <li class="pt_3">
+                        	<span class="f_w">签证办理</span>
+                            <p>支付成功及资料齐全后由专业签证操作人员及时递交签证申请</p>
+                        </li>
+                    </ul>
+                </dd>
+                <dd class="lct_js">
+                	<ul>
+                    	<li class="icon_6"></li>
+                        <li class="pt_3">
+                        	<span class="f_w">签证结果已出</span>
+                            <p>及时通知您的签证进度及结果，并确认签字事宜</p>
+                        </li>
+                    </ul>
+                </dd>
+            </dl>
+            </div>
+            <div class="a_img">
+            	<ul>
+            		<li><a href=""><img src="__PUBLIC__/Home/images/qzimages/a_img.jpg" /></a></li>
+                	<li><a href=""><img src="__PUBLIC__/Home/images/qzimages/a_img.jpg" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="lei_right">
+        	<div class="nTab">
+                <div class="TabTitle_r">
+                    <ul id="myTab">
+						<li class="active"><a href="{:U('Index/Vista/index',array('id'=>$_GET['id']))}">全部</a></li>
+						<volist name="vcate" id="v" offset="0" key="k">
+                        <li class="normal"><a href="{:U('Index/Vista/index',array('vid'=>$v['id'],'id'=>$_GET['id']))}">{$v.catename}</a></li>
+						</volist>
+                    </ul>
+                </div>
+                <div class="TabContent_r">
+                    <div id="myTab_Content0">
+                        <div class="lei_tit">
+                            <ul>
+                                <li>您所在的工作地</li>
+                                <li><input type="text" name="" value="" class="lei_ss" /></li>
+                                <li><input type="button" name="" value="查询" class="lei_cx" /></li>
+                            </ul>
+                        </div>
+						<if condition="$vo neq ''">
+						<volist name="vo" id="v">
+                        <div class="lei_con">
+                            <div class="leic_t">{$v.vname}【{$v.catename}】</div>
+                            <div class="leixx_left">
+                                <ul>
+                                    <li>办理地点：广州</li>
+                                    <li>面试：<if condition="$v['isface'] eq 0">不需要<else/>需要</if></li>
+                                    <li>预计工作日：{$v.workday}天</li>
+                                    <li>入境次数：1</li>
+                                    <li>有效期：{$v.vday}天</li>
+                                    <li>最多停留：{$v.staday}天</li>
+                                </ul>
+                            </div>
+                            <div class="leixx_right">{$v.price}</div>
+                            <div class="clear"></div>
+                            <div class="leial_left">收客范围：{$v.mian}</div>
+                            <div class="leial_right"><a href="{:U('Index/Details/index',array('id'=>$v['id']))}">查看详情</a></div>
+                        </div>
+						</volist>
+					<div class="green-black">{$page}</div>
+					<else/>
+						当地还没有签证信息!
+					</if>
+                    </div>
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="footer_topbg"></div>
+    <div class="footer">
+        <include file="Qzinc:footer"/>
+    </div>
+	<script type="text/javascript">
+                $(function(){
+                        var default_key = '输入你要搜索的内容';
+                        var searchObj = $("#search_key");
+                        searchObj.val(default_key);
+                        searchObj.bind("focus",function(){
+                            if(searchObj.val() == default_key){
+                                searchObj.val('');
+                            }
+                        })
+                        
+                        searchObj.bind("blur",function(){
+                            if(searchObj.val() == ''){
+                                searchObj.val(default_key);
+                            }
+                        })
+                        
+                    })
+	</script>
+</body>
+</html>

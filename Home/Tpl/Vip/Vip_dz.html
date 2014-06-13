@@ -1,0 +1,37 @@
+<include file="Vipinc:header"/>
+        <div class="Mvip_right">
+        	<div class="vipr_tit"><a href="">我的配送地址</a></div>
+            <div class="vipr_con">
+				<volist name="address" id="vo" key="k">
+					<div class="none_dz">
+						<a href="{:U('Index/Vip/delete',array('id'=>$vo['id']))}" onclick="return confirm('真的要删除吗？')" title="删除这个地址"></a>
+						<dl>
+							<dd>联系人：{$vo.name}</dd>
+							<dd>手机号码：{$vo.phone}</dd>
+							<dd>配送地址：{$vo.address}</dd>
+						</dl>
+					</div>
+				</volist>
+				<div class="clear"></div>
+				<a onclick="checknum({$k})" class="jia_dz" title="点击添加一个新的配送地址"></a>
+            </div>
+        </div>
+        <div class="clear"></div>      <!--  清除主体部分M_vipmm的浮动  -->
+    </div>
+    <div class="footer_topbg"></div>
+	<include file="Vipinc:footer"/>
+	<script>
+		function checknum(k){
+			var num=k;
+			var url="{:U('Index/Vip/addaddress')}";
+			if(num==5){
+				alert("当前配送地址个数("+num+")已达上限,请先删除不需要的地址!");
+				exit();
+			}else{
+				window.location=url;
+				exit();
+			}
+		}
+	</script>
+</body>
+</html>

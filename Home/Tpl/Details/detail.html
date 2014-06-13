@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>列表详情页</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzny.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzty.css" />
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/top.js"></script>
+</head>
+<body>
+	<div class="header">
+		<include file="Qzinc:header"/>
+            <script type="text/javascript">
+                $(function(){
+                        var default_key = '输入你要搜索的内容';
+                        var searchObj = $("#search_key");
+                        searchObj.val(default_key);
+                        searchObj.bind("focus",function(){
+                        
+                            if(searchObj.val() == default_key){
+                                searchObj.val('');
+                            }
+                        })
+                        
+                        searchObj.bind("blur",function(){
+                            if(searchObj.val() == ''){
+                                searchObj.val(default_key);
+                            }
+                        })
+                        
+                    })
+			</script>
+    </div>
+    <div class="M_xnews">
+    	<div class="Mcaut_tit"><a href="{:U('Index/Index/index')}">首页</a> > <a href="">关于我们</a></div>
+        <div class="xnews_left">
+        	<div class="xnewsl_tit">
+            	<p class="bt"><a href="">{$detail.title}</a></p>
+                <p class="sj">时间：{$detail.addtime}　来源：<if condition="$detail['comfrom'] eq 0">速格<else/>{$detail.comfrom}</if>　作者：{$detail['rootUser']['rootName']}  浏览次数：{$detail.traffic}</p>
+            </div>
+            <div class="xnewsl_con">
+            	{$detail.content}
+            </div>
+        </div>
+        <div class="xnews_right">
+        	<div class="xnewsr_a1">
+            	<dl>
+                	<dt><a href="">最新消息</a></dt>
+					<volist name="new" id="v">
+                    <dd><a href="{:U('Index/Details/detail',array('id'=>$v['id']))}">{$v.title}</a></dd>
+					</volist>
+                </dl>
+            </div>
+            <div class="xnewsr_a2">
+            	<dl>
+                	<dt><a href="">阅读排行</a></dt>
+					<volist name="hot" id="v">
+                    <dd><a href="{:U('Index/Details/detail',array('id'=>$v['id']))}">{$v.title}<span color="blue">[{$v.traffic}]</span></a></dd>
+					</volist>
+                </dl>
+            </div>
+            <div class="xn_gg"><a href=""><img src="__PUBLIC__/Home/images/qzimages/xn_gg.jpg" /></a></div>
+        </div>
+        <div class="clear"></div>     <!--  清除M_xnews左右2快的浮动  -->
+    </div>
+    <div class="footer_topbg"></div>
+    <div class="footer">
+        <div class="footer_bg">
+        	<div class="link">友情连接：<a href="" style="margin-left:0px;">义乌签证</a>|<a href="">使馆认证</a>|
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>
+            </div>
+            <div class="copyright">
+            	<p>CopyRight @ 2011-2012 义乌市速格报俭代理有限公司 版权所有　地 址：浙江 义乌市城北路258号福田商务公寓313（商检局对面）<br />
+                	电 话：86 0579 85365501 - 86 0579 85591661　　　　　技术支持：武汉尚科在线网络技术有限公司
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

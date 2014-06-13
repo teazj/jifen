@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>{$art.0.title}</title>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/bootstrap/css/bootstrap.min.css'>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/bootstrap/css/bootstrap-responsive.min.css'>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/Css/common.css'>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/Css/details.css'>
+	
+	<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Js/common.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Js/login_reg.js"></script>
+	<script type='text/javascript' src='__PUBLIC__/Js/piaofu.js'></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#show_com").click(function(){
+				$(".com_ll").slideDown("slow");	
+			});
+			$("#close_com").click(function(){
+				$(".com_ll").slideUp("slow");
+			});	
+		});
+		function dopraise(){
+			//alert({$smarty.session.loginuser});
+			//if({$smarty.session.loginuser.uname}==""){
+			//	alert("请先登陆");
+			//}
+			//alert({$smarty.get.aid});
+			$.ajax({
+				url:"__APP__/Article/dopraise",
+				type:"post",
+				data:{ aid:{$smarty.get.aid},uid:{$smarty.session.loginuser.uid}},
+				dataType:'text',
+				success:function(res){
+				var str='<a title="取消收藏" id="favor_trigger" class="soft_collect_on" onclick="notpraise();">已收藏</a><span class="soft_collect_count" id="p_favor_count">+'+res+'</span>';
+					$('#fav').html(str);
+
+				},
+				error:function(){
+					alert('ajax请求失败1');
+				}
+			});
+			$("#favor_trigger").removeClass("soft_collect_off").addClass("soft_collect_on");
+		}
+		function notpraise(){
+			$.ajax({
+				url:"__APP__/Article/notpraise",
+				type:"post",
+				data:{ aid:{$smarty.get.aid},uid:{$smarty.session.loginuser.uid}},
+				success:function(res){
+					//$("#p_favor_count").html("+"+res);
+					var str='<a title="收藏此文章" id="favor_trigger" class="soft_collect_off " onclick="dopraise();">收藏</a><span class="soft_collect_count" id="p_favor_count">+'+res+'</span>';
+					$('#fav').html(str);
+				},
+				error:function(){
+					alert('ajax请求失败！');
+				}
+			})
+		}
+	</script>
+	<style>
+		.inline_reply{ margin-left: 50px;}
+		textarea{ padding:4px 6px;}
+	</style>
+</head>
+<body>
+	{include file="../Public/header.html"}
+<div id='NewsChannel' class='Channel'>
+<h2 class="nav">您正在浏览：
+	<span><a href="__APP__/Article/index">OSCHINAZ文章分享
+		{if $smarty.get.aid neq null} / <a href="__APP__/Article/index/tid/{$art.0.aname.id}">{$art.0.aname.name}</a> / {$art.0.title|truncate:10:"..."}{/if}
+	</span>
+</h2>
+<div class='NewsBody'>
+	<div class='News'>
+		<div class="NewsEntity">
+			<!-- google_ad_section_start -->
+			<h1 class='OSCTitle'>{$art.0.title}</h1>
+
+			<div class='PubDate'>
+	        	<a href="">{$art.0.uname.username}</a>
+	        	发布于： {date('Y年m月d日',$art.0.addtime)} (<a href="#comments">{$art.0.comments}评</a>)				
+	        </div>
+
+			<div class='NewsToolbar'>
+				<div id='toolbar_wrapper'>
+					<div class='toolbar'>
+					<div class="tool_title"><b>分享到&nbsp;</b></div>
+					<div class='share'><a class="share_sina" title="分享到新浪微博" href="">新浪微博</a><a class="share_qq" title="分享到腾讯微博" href="">腾讯微博</a></div>
+						<div class='options'>
+							<div class='favorite' id='fav'>
+							{if $colinfo==0}
+								<a title="还没登陆" id="favor_trigger" class="soft_collect_off" onclick="javascript:alert('请先登陆');exit()">未登陆</a>
+							{elseif $colinfo==1}
+								<a title="收藏此文章" id="favor_trigger" class="soft_collect_off " onclick="javascript:dopraise();">收藏</a>
+							{elseif $colinfo==2}
+								<a title="取消收藏" id="favor_trigger" class="soft_collect_on" onclick='notpraise()'>已收藏</a>
+							{/if}
+							<span class="soft_collect_count" id="p_favor_count">+{$art.0.praise}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="OSChina_News_46329" class='Body NewsContent TextContent'>
+				<div class="author_intro"> 
+					<div class="author_desc"> 
+						{$art.0.content}
+					</div> 
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+	<!--<div id="upprev_box" class="lbox HomeHotNews"  style="position: fixed; bottom:0; right:-400px; width:380px; height:100px;background-color:#FFFFFF;z-index: 1000">
+		<strong><a href='#' id='upprev_close' style='float:right;'>X</a>你也许会喜欢</strong>
+		<ul class='SimpleNewsList'> <li><a href="/news/38738/beetl-1-21" title="Beetl 1.21 发布，增加 else for">Beetl 1.21 发布，增加 else for</a><span class='date'>8个月前</span></li><div class='clear'></div></ul>
+		<div class='clear'></div>
+	</div>-->
+
+	<div class="Comments" id="userComments" >
+    	<h2>
+			<a name="comments" href="#" class="more">回到顶部</a>
+			{if $smarty.session.loginuser==''}
+				<a href="#CommentForm" id="show_com" class="more" style='margin-right:10px;color:#ff3;' onclick="javascript:alert('请先登陆');exit()">发表评论</a>
+			{else}
+				<a href="#CommentForm" id="show_com" class="more" style='margin-right:10px;color:#ff3;'>发表评论</a>
+			{/if}	
+			网友评论，共 {$art.0.comments} 条
+		</h2>
+		<!-- 评论框 -->
+		<div class = "com_ll" style="display:none;">
+			<form class="form-horizontal" method="post" action='__APP__/Article/insertcom'>
+				<input type="hidden" name="addtime" value="{$smarty.now}">
+				<input type='hidden' name='aid' value='{$smarty.get.aid}'>
+				<input type='hidden' name='uid' value='{$smarty.session.loginuser.uid}'>
+				<div class="control-group success">
+					<label class="control-label" for="inputUser">用户名：</label>
+					<div class="controls">
+						<input type="text" id="inputUser" value="{$smarty.session.loginuser.uname}" disabled >
+					</div>
+				</div>
+				<div class="control-group success">
+					<label class="control-label" for="inputTitle">评论文章：</label>
+					<div class="controls">
+						<input type="text" id="inputTitle" value="{$art.0.title}" disabled >
+					</div>
+				</div>
+				<div class="control-group success">
+					<label class="control-label" for="inputMessage">评论内容：</label>
+					<div class="controls">
+						<textarea rows='3' id="inputMessage" name="comment"></textarea>
+					</div>
+				</div>
+				<div class="control-group success">
+					<label class="control-label" for="inputCode">验证码：</label>
+					<div class="controls">
+						<input type="text" id="inputCode" class="input-small" name="code">
+						<img src="__APP__/Public/code" onclick="this.src='__APP__/Public/code/?id='+Math.random();" style="margin-left:30px;"/>
+					</div>
+				</div>
+				<div class="control-group">
+					<div class="controls">
+						<button type="submit" class="btn btn-success" >发布评论</button>
+					</div>
+				</div>
+			</form>
+			<a href="javascript:" id="close_com" >收起评论</a>
+		</div>
+		 <ul>
+		 {foreach $comlist as $k=>$vo}	
+    	    <li  class='row_1'>
+			<table width='100%'>
+			<tr>
+				<td class='portrait'>
+					<a href=""  class="ShowUserOutline"><img src="__PUBLIC__/Uploads/face/{$vo.uname.image}" align="absmiddle" alt="{$vo.uname.username}" title="{$vo.uname.username}" class="SmallPortrait" user="{$vo.uid}"/></a>			
+				</td>
+				<td class='body'>
+					<div class='r_title'>
+						{$k+1}楼：<b>{$vo.uname.username}</b>  发表于 {date("Y-m-d H:i",$vo.addtime)}
+						<span class='opts'>
+							{if $smarty.session.loginuser==""}
+							<a class='' href='javascript:' onclick="javascript:alert('请先登陆');exit()">回复此评论</a>
+							{else}
+							<a class='reply_this' href='javascript:'>回复此评论</a>
+							{/if}
+						</span>
+					</div>
+					<div class='r_content TextContent'>{$vo.comment}</div>
+					<!-- 回复内容 -->
+					<div class='ref' style='width:0;height:0;border:none;display:none;'></div>
+					{foreach $reply as $rvo}
+					{if $rvo.pid eq $vo.id}
+					<div class="ref" >
+						<b>{date("Y-m-d H:i",$rvo.replytime)} {$rvo.username}回复：</b>
+						<h4>{$rvo.content}</h4>
+					</div>
+					{else}<div></div>{/if}
+					{/foreach}
+				<!-- 根据楼层出现回复框 -->	
+
+				<!-- 回复框 -->
+					<div  class='inline_reply' style="display:none">
+						<input type="hidden" name="pid" value="{$vo.id}" class='pid'>
+						<input type="hidden" name="replytime" value="{$smarty.now}" class='replytime'>
+						<input type='hidden' name='uid' value='{$smarty.session.loginuser.uid}' class='uid'>
+						<div class="control-group">
+							<label class="control-label" for="inputMessage">
+								<span style="font-size:12px;color:#666699;">回复一下：</span>
+							</label>
+							<div class="controls">
+								<textarea rows='2' id="inputMessage" name="content" class='inputMessage'></textarea>
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label" for="inputCode">
+								<span style="font-size:12px;color:#666699;">验证码：</span>
+							</label>
+							<div class="controls">
+								<input type="text" id="inputCode" name="code" style="height:20px;width:50px;" class='inputCode'>
+								<img src="__APP__/Public/code" onclick="this.src='__APP__/Public/code/?id='+Math.random();" style="margin-top:-10px;margin-left:10px;"/>
+							</div>
+						</div>
+						<div class="control-group">
+							<div class="controls">
+								<button type="submit" class="btn btn-info doreply" >回复</button>
+								<a href="javascript:" class="btn btn-warning close_reply" style="margin-left:80px;">收起</a>
+							</div>
+						</div>
+					</div>
+				</td>
+			</tr>
+			</table>
+			</li>
+		{/foreach}
+		</ul>
+		{literal}
+		<script>
+			for(var i=0;i<$('.reply_this').length;i++){
+				$('.reply_this').eq(i).attr('ind',i)
+			}
+			$('.reply_this').click(function(){
+				var i=$(this).attr('ind')
+				 //alert(i)
+			   	$('.inline_reply').slideUp();
+				$('.inline_reply').eq(i).slideDown();
+			})
+			for(var i=0;i<$('.doreply').length;i++){
+				$('.doreply').eq(i).attr('ind',i);
+			}	
+			//点击提交ajax请求
+			$('.doreply').click(function(){
+				 i=$(this).attr('ind');
+				$.ajax({ //ajax加载当前page页信息
+					url:"__APP__/Article/insertreply",
+					data:{ code:$('.inputCode').eq(i).val(),pid:$('.pid').eq(i).val(),uid:$('.uid').eq(i).val(),content:$('.inputMessage').eq(i).val()},
+					type:"post",
+					async:false, //设置同步
+					dataType:"html",
+					success:function(res){
+						if(res==1){alert('验证码不正确');exit()}
+						$('.row_1:eq('+i+')').find('.ref:last').after(res);
+						$('.inline_reply').eq(i).slideUp();
+					},
+					error:function(){
+						alert('ajax请求失败');
+					}
+				});
+			})
+			for(var i=0;i<$('.close_reply').length;i++){
+			$('.close_reply').eq(i).attr('ind',i);
+			}
+			$('.close_reply').click(function(){
+				var i=$(this).attr('ind')
+				$('.inline_reply').eq(i).slideUp();
+			})
+		</script>
+		{/literal}
+		<div class="page_ll">
+			{$page}
+		</div>
+	</div>
+</div>
+<div class="newsright">
+	<div class='bpic' id='bpic'><!---漂浮文字---->
+		<img src="__PUBLIC__/Images/Article/bg2.jpg">
+		{foreach $keyword as $vo}
+			<a href="__APP__/Article/update/aid/{$vo.id}" target="">{$vo.keyword}</a>
+		{/foreach}
+	</div>
+</div>
+</div>			
+	{include file="../Public/footer.html"}
+</body>
+</html>	

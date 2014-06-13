@@ -1,0 +1,91 @@
+<include file="Vipinc:header"/>
+        <div class="order_right">
+        	<div class="orderr_tit"><a href="">我的新订单</a></div>
+			<volist name="orderinfo" id="v">
+            <div class="orderr_con">
+            	<div class="orderr_c1">
+                	<div class="or_c1tit">
+                    	<a href="{:U('Index/Details/index',array('id'=>$v['sid']))}">{$v.name}{$v.catename}[{$v.vname}]</a>
+						<a href="{:U('Index/Vip/cancel',array('id'=>$v['id']))}" class="or_inp1">取消订单</a>
+                        <!--<input type="button" name="" value="取消订单" class="or_inp1" />-->
+                    </div>
+                    <div class="or_c1con">
+                    	<ul>
+                        	<li>订单号码：{$v.orderid}</li>
+                            <li>订单类型：签证</li>
+                            <li>订单时间：{$v.ctime}</li>
+                            <li>订单状态：{$v.status}</li>
+                        </ul>
+                        <ul>
+                        	<li>订单总额：{$v['price']*$v['num']}元</li>
+                            <li>总优惠额：0.00元</li>
+                            <li>已付金额：0.00元</li>
+                            <li>还需应付：248.00元</li>
+                        </ul>
+                        <a href="" class="or_inp2">马上支付</a>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="orderr_c2">
+                	<div class="or_c2tit">
+                    	<a href="">基本信息</a>
+                    </div>
+                    <div class="or_c2con">
+                    	<ul>
+                        	<li>产品名称：{$v.vname}</li>
+                            <li>签证类型：{$v.catename}</li>
+                            <li>有 限 期：{$v.vday}</li>
+                            <li>面&nbsp;&nbsp;&nbsp;&nbsp;试：<if condition="$v['isface'] eq 0">不需要<else/>需要</if></li>
+                        </ul>
+                        <ul>
+                        	<li>办证地点：{$v.place}</li>
+                            <li>出境次数：{$v.entimes}次</li>
+                            <li>预计工作日：{$v.workday}天</li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            <!--     <div class="orderr_c3">
+                	<div class="or_c3tit">
+                    	<a href="">订单信息</a>
+                    </div>
+                    <div class="or_c3con">
+                    	<ul>
+                        	<li>姓名：田伟 泰国旅游签证</li>
+                            <li>护照签发地：北京</li>
+                            <li>护照号码：123456</li>
+                            <li>护照有效期：2014-05-05</li>
+                            <li>现居住地： 武汉市武昌区光谷</li>
+                            <li>手机号码： 13720318189</li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div> -->
+                <div class="orderr_c4">
+                	<div class="or_c4tit">
+                    	<a href="">联系人信息</a>
+                    </div>
+                    <div class="or_c4con">
+                    	<ul>
+                        	<li>联系人：{$v.username}</li>
+                            <li>手机号码：{$v.phone}</li>
+                            <li>电话号码：13725688180</li>
+                            <li>E-mail：6467035629@qq.com</li>
+                            <li>传真号码： 123456</li>
+                            <li>联系人地址： {$v.address}</li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+			</volist>
+			<if condition="$orderinfo eq ''">
+				亲，您还没有新的订单哦!
+			</if>
+        </div>
+        <div class="clear"></div>      <!--  清除主体部分M_vipmm的浮动  -->
+    </div>
+    <div class="footer_topbg"></div>
+   <include file="Vipinc:footer"/>
+</body>
+</html>

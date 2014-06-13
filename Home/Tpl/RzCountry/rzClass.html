@@ -1,0 +1,37 @@
+<include file="APP/Tpl/Index/inc/header.html" />
+    <div class="M_caut">
+    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a> > <a href="">   	<if condition="$id eq 4">
+    	常见使馆见证
+    	<else/>单证认证	 
+    	</if></a></div>
+        <table cellpadding="0" cellspacing="0" border="0px none">
+        <form>
+        	<tr>
+        		<td><input type="text" name="" value="" id="Mc_search_key" class="Mc_search" /></td>
+                <td><input type="button" name="" value="查询" class="Mc_cx" /></td>
+            </td>
+        </form>
+        </table>
+        <div class="caut">
+        	<div class="caut_tit">
+            	<a href="javascript:void(0)" class="caut_sx">筛选：</a>
+                <ul>
+                	<li><a href="{:U('Index/RzCountry/rzList','','')}">全部</a></li>
+                   	<foreach name="name" item="vo">
+	                    <li class="a_sx"></li>
+	                    <li><a href="{:U('Index/RzCountry/rzClass',array('id'=>$vo['id']),'')}">{$vo.embassy}</a></li>
+	                 </foreach>
+                </ul>
+            </div>
+            <div class="caut_con">
+            	<ul>
+            	<foreach name="msg" item="vo">
+                    <li><a href="{:U('Index/RzCountry/rzMain',array('id'=>$vo['id']),'')}">{$vo['embassy']}</a></li>
+            	</foreach>
+            	</ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+    <div class="clear"></div><!--  清除主体内容里面的浮动  -->
+    </div>
+<include file="APP/Tpl/Index/inc/footer.html" />

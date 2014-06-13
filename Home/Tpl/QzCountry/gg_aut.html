@@ -1,0 +1,49 @@
+<include file="APP/Tpl/Index/inc/header.html" />
+    <div class="M_caut">
+    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a> > <a href="">各国使馆认证</a></div>
+        <table cellpadding="0" cellspacing="0" border="0px none">
+        <form>
+        	<tr>
+        		<td><input type="text" name="" value="" id="Mc_search_key" class="Mc_search" /></td>
+                <td><input type="button" name="" value="查询" class="Mc_cx" /></td>
+            </td>
+        </form>
+        </table>
+        <div class="caut">
+        	<div class="caut_tit">
+            	<a href="javascript:void(0)" class="caut_sx">筛选：</a>
+                <ul>
+                	<li><a href="">全部</a></li>
+                    <li class="a_sx"></li>
+                   	<foreach name="name" item="vo">
+	                    <li class="a_sx"></li>
+	                    <li><a href="{:U('Index/RzCountry/rzClass',array('id'=>$vo['id']),'')}">{$vo.embassy}</a></li>
+	                 </foreach>
+                </ul>
+            </div>
+            <div class="ggaut_con">
+            	<div class="zimu">
+                	<span class="zimu_tit">快速定位（按国家拼音首字母）：</span>
+                	<a href="#aname">A</a><a href="#bname">B</a><a href="#cname">C</a><a href="#dname">D</a><a href="#ename">E</a><a href="#fname">F</a><a href="#gname">G</a><a href="#hname">H</a><a href="#iname">I</a><a href="#jname">J</a><a href="#kname">K</a><a href="#lname">L</a><a href="#mname">M</a><a href="#nname">N</a><a href="#oname">O</a><a href="#pname">P</a><a href="#qname">Q</a><a href="#rname">R</a><a href="#sname">S</a><a href="#tname">T</a><a href="#uname">U</a><a href="#vname">V</a><a href="#wname">W</a><a href="#xname">X</a><a href="#yname">Y</a><a href="#zname">Z</a>    		
+                <div class="clear"></div>
+                </div>
+                <div class="guojia">
+                <foreach name="abc" item="vo" key="key">
+                	<dl>
+                    	<dt><a name="aname">{$key}</a></dt>
+                        <dd>
+                        	<ul>
+                        	<foreach name="vo" item="li">
+                            	<li><a href="{:U('Index/RzCountry/rzMain',array('id'=>$li['id']),'')}">{$li['embassy']}</a></li>
+                            </foreach>
+                            </ul>
+                        </dd>
+                    </dl>
+                    </foreach>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    	<div class="clear"></div><!--  清除主体内容里面的浮动  -->
+    </div>
+<include file="APP/Tpl/Index/inc/footer.html" />

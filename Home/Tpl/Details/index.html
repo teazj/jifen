@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>购买页面</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzny.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzty.css" />
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/top.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/date.js"></script>
+</head>
+
+<body>
+	<div class="header">
+    	<include file="Qzinc:header"/>
+            <script type="text/javascript">
+                $(function(){
+                        var default_key = '输入你要搜索的内容';
+                        var searchObj = $("#search_key");
+                        searchObj.val(default_key);
+                        searchObj.bind("focus",function(){
+                        
+                            if(searchObj.val() == default_key){
+                                searchObj.val('');
+                            }
+                        })
+                        
+                        searchObj.bind("blur",function(){
+                            if(searchObj.val() == ''){
+                                searchObj.val(default_key);
+                            }
+                        })
+                        
+                    })
+			//出行时间
+			var c = new Calendar("c");
+				document.write(c);
+			</script>
+    <div class="M_xq">
+    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a> > <a href="">{$vo.name}{$vo.catename}</a> > <a href="">{$vo.name}{$vo.catename}{$vo.desc}</a></div>
+        <div class="gm_right">
+        	<div class="Mxq_r1">
+            	<div class="Mxqr1_tit"><a href="" class="Mr1_a1">{$vo.name}{$vo.catename}{$vo.desc}</a><a href="" class="Mr1_a2">【产品编号】：{$vo.protectid}</a></div>
+            	<div class="Mxqr1_con">
+                	<div class="r1_left">
+                    	<div class="guoqi">
+                        	<img src="__PUBLIC__/Admin/Images/Vista/m_{$vo.logo}"/>
+                            <div class="guoqi_yy"></div>
+                        </div>
+                        <div class="xq_xx">
+                        	<ul>
+								<li>速格价格：¥<span class="red_18">{$a[0]}</span></li>
+							<volist name="a" id="vo2" offset="1" key="k">
+                            	<li style="display:none">速格价格：¥<span class="red_18">{$vo2}</span></li>
+							</volist>
+                            </ul>
+								<p>累计销量：{$vo.buys}</p>
+                                <p>用户评价：<img src="__PUBLIC__/Home/images/qzimages/xq_xing.png" /><span class="blue2">（累计30条评价）</span></p>
+                        </div>
+                    </div>
+                    <div class="r1_right">
+                    	<ul>
+                        	<li><span class="f_hw">办理时间：</span>预计至少{$vo.workday}个工作日</li>
+                            <li><span class="rr_f"><span class="f_hw">是否面试：</span><if condition="$vo['isface'] eq 0">不需要<else/>需要</if></span><span class="rr_f"><span class="f_hw">有效时间：</span>{$vo.vday}天</span><span class="rr_f"><span class="f_hw">最多停留：</span>{$vo.staday}</span><span class="rr_f"><span class="f_hw">入境次数：</span>1</li>
+                        	<li><span class="f_hw">受理范围：</span>{$vo.mian}</li>
+                            <li><span class="f_hw">产品名称：</span><volist name="b" id="vo1" key="k"><span class="af"><a onclick="price({$k-1})">{$vo1}</a></span></volist></li>
+                            <form action="{:U('Index/Qzorder/index')}" method="post">
+								<input type="hidden" name="logo" value="{$vo.logo}">
+								<input type="hidden" name="price" id="price" value="">
+								<input type="hidden" name="sid" value="{$Think.get.id}">
+								<input type="hidden" name="vname" id="vname" value="">
+								<input type="hidden" name="place" id="place" value="">
+								<input type="hidden" name="tname" value="{$vo.name}{$vo.catename}{$vo.desc}">
+								<li><span class="f_hw">选择人数：</span>
+									<input type="button" value="-" class="jian" />
+									<input name="num" type="text" value="1" class="shuzi" />
+									<input type="button" value="+" class="jia" />
+								<span class="f_hw">预计出行时间：</span><input name="gtime" value="" class="xq_date" onfocus="c.showMoreDay = false;c.show(this,'2014-05-08');" readonly="readonly" />
+								<span class="f_hw">办理地点：</span>
+									<select class="xq_se1">
+										<volist name="place" id="v">
+											<option value="{$v.pid}">{$v.place}</option>
+										</volist>
+									</select>
+								</li>
+								<li class="ri_inp1bg"><if condition="$Think.session.loginuser"><input type="submit" value="立即办理" class="r1_inp1 banli" /><else/><input type="button" onclick="window.location='__APP__/Com/login';" value="登录后可办理" class="r1_inp1 banli" /></if></li>
+							</form>
+                        </ul>
+                    </div>
+                </div>
+				<script>
+					var num=parseInt($('.shuzi').val());
+					$(".jian").click(function(){
+						if(num<2){
+							num=1;
+						}else{
+							num=num*1-1;
+							$('.shuzi').val(num);
+						}
+					})
+					
+					$('.jia').click(function(){
+							num=num*1+1;
+							$('.shuzi').val(num);
+					})
+					
+					//点击产品名称价格变化
+					function price(k){
+						$('.af').click(function(){
+							$(".af").children('a').not(k).css('background',"url('__PUBLIC__/Home/images/qzimages/xq_xxabg1.jpg')");
+							$(this).children("a").css('background',"url('__PUBLIC__/Home/images/qzimages/xq_xxabg2.jpg')");
+							$(".xq_xx ul li").not(k).hide();
+							$(".xq_xx ul li").eq(k).show();
+							$('#price').val($(".xq_xx ul li").eq(k).children('span').text());
+							$('#vname').val($(".af").eq(k).children('a').text());
+						})
+					}
+					
+					//办理地点选择对应产品和价格
+					$('.xq_se1').change(function(){
+						var url="{:U('Index/Details/info')}";
+						var pid=$(this).children('option:selected').val(); 
+						var id={$Think.get.id};
+						//隐藏的办理地点名称
+						$("#place").val($(this).children('option:selected').text());
+						$.get(url,{"pid":pid,"id":id},function(datas){
+								var data=eval("("+datas+")");
+								var item;
+								var na=data.vname.split('|');
+								var pr=data.price.split('|');
+								//产品名称
+								for(var i=0;i<na.length;i++){
+								$('.r1_right .af').eq(i).html(" <a onclick='price("+i+")'>"+na[i]+"</a>");
+								}
+								//产品价格
+								for(var i=0;i<pr.length;i++){
+								$('.xq_xx ul li span').eq(i).text(pr[i]);
+								}
+							
+							})
+						})
+				</script>
+            </div>
+            <div class="Mxq_r2">
+            	<ul>
+                	<li><span class="r2_a1">选择认证</span></li>
+                    <li class="li_jg"></li>
+                    <li><span class="r2_a2">确定订单</span></li>
+                    <li class="li_jg"></li>
+                    <li><span class="r2_a3">支付费用</span></li>
+                    <li class="li_jg"></li>
+                    <li><span class="r2_a4">递交资料</span></li>
+                    <li class="li_jg"></li>
+                    <li><span class="r2_a5">认证办理</span></li>
+                    <li class="li_jg"></li>
+                    <li><span class="r2_a6">认证结果已出</span></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            
+            <!--  Mxq_r3的滑动门选项卡  -->
+            <script type="text/javascript">
+			function nTabs(thisObj,Num){
+			if(thisObj.className == "active")return;
+			var tabObj = thisObj.parentNode.id;
+			var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+			for(i=0; i <tabList.length; i++)
+			{
+			  if (i == Num)
+			  {
+			   thisObj.className = "active"; 
+				  document.getElementById(tabObj+"_Content"+i).style.display = "block";
+			  }else{
+			   tabList[i].className = "normal"; 
+			   document.getElementById(tabObj+"_Content"+i).style.display = "none";
+			  }
+			} 
+			}
+			</script>
+            
+            <div class="Mxq_r3">
+            	<div class="nTab">
+                    <div class="TabTitle">
+                        <ul id="myTab">
+                            <li class="active" onmouseover="nTabs(this,0);">所需材料</li>
+                            <li class="normal" onmouseover="nTabs(this,1);">特别提示</li>
+                            <li class="normal" onmouseover="nTabs(this,2);">客户评价</li>
+                            <li class="normal" onmouseover="nTabs(this,3);">预定须知</li>
+                        </ul>
+                    </div>
+                    <div class="TabContent">
+                        <div id="myTab_Content0">
+                        	<div class="tab_c1">
+                           		<dl>
+                                	{$vo.need}
+                                </dl>
+                           </div>
+                        </div>
+                        <div id="myTab_Content1" class="none">
+                        	<div class="tab_c2">
+                           		<div class="tabc2_tit">特别提示</div>
+								{$vo.note}
+                           </div>
+                        </div>
+                        <div id="myTab_Content2" class="none">
+                        	<div class="tab_c3">
+                           		<div class="tabc3_tit">客户评价</div>
+                                <dl>
+                                	<dd>
+                                    	<span class="pingjia"><p>suyuecheng</p><p>还不错</p></span>
+                                        <span class="data"><p>2013-09-06</p></span>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dd>
+                                    	<span class="pingjia"><p>suyuecheng</p><p>还不错</p></span>
+                                        <span class="data"><p>2013-09-06</p></span>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dd>
+                                    	<span class="pingjia"><p>suyuecheng</p><p>还不错</p></span>
+                                        <span class="data"><p>2013-09-06</p></span>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dd>
+                                    	<span class="pingjia"><p>suyuecheng</p><p>还不错</p></span>
+                                        <span class="data"><p>2013-09-06</p></span>
+                                        <div class="clear"></div>
+                                    </dd>
+                                </dl>
+                                <div class="clear"></div>
+                           </div>
+                           <div class="tab_c4">
+                               <div class="inquiry_down">
+                                    <ul>
+                                        <li><a href="" class="end">第3页总共10页</a></li>
+                                        <li><a href=""><<</a></li>
+                                        <li><a href="">1</a></li>
+                                        <li><a href="">2</a></li>
+                                        <li><a href="">3</a></li>
+                                        <li><a href="">4</a></li>
+                                        <li><a href="">5</a></li>
+                                        <li><a href="">...</a></li>
+                                        <li><a href="" class="end">尾页</a></li>
+                                    </ul>
+                                </div>
+                           </div>
+                        </div>
+                        <div id="myTab_Content3" class="none">
+                        	<div class="tab_c5">
+                           		<div class="tabc3_tit">预定须知</div>
+                                <div class="tabc5_con">
+									{$vo.note}
+								</div>
+                           </div>
+                        </div>
+                    </div>	
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>     <!--  清除M_download里面的左，右部分浮动  -->
+    </div>
+    <div class="footer_topbg"></div>
+    <div class="footer">
+        <div class="footer_bg">
+        	<div class="link">友情连接：<a href="" style="margin-left:0px;">义乌签证</a>|<a href="">使馆认证</a>|
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>
+            </div>
+            <div class="copyright">
+            	<p>CopyRight @ 2011-2012 义乌市速格报俭代理有限公司 版权所有　地 址：浙江 义乌市城北路258号福田商务公寓313（商检局对面）<br />
+                	电 话：86 0579 85365501 - 86 0579 85591661　　　　　技术支持：武汉尚科在线网络技术有限公司
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

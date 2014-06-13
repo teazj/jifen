@@ -1,0 +1,95 @@
+        <include file="inc:header"/>
+<script>	
+$(function(){
+    
+	 $(".caut_con").hide();
+ $(".nextbtn a").click(function(){
+    $(".qaut_con").hide();  
+    $(".online_12").hide();
+	$(".online_13").hide();
+	$(".online_11").show();
+
+})
+ $(".nextbtn2 a").click(function(){
+    $(".qaut_con").hide();  
+    $(".online_11").hide();
+	$(".online_13").hide();
+	$(".online_12").show();
+
+})
+ $(".nextbtn3 a").click(function(){
+    $(".qaut_con").hide();
+    $(".online_11").hide();
+	$(".online_12").hide();
+	 $(".online_13").show();
+})
+})
+</script>
+		
+    <div class="M_caut">
+    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a> > <a href="">所有办理签证国家</a></div>
+        <table cellpadding="0" cellspacing="0" border="0px none">
+        <form>
+        	<tr>
+        		<td><input type="text" name="" value="" id="Mc_search_key" class="Mc_search" /></td>
+                <td><input type="button" name="" value="查询" class="Mc_cx" /></td>
+            </td>
+        </form>
+        </table>
+        <div class="caut">
+        	<div class="caut_tit">
+            	<a href="" class="caut_sx">筛选：</a>
+                <ul>
+                	<li class="nextbtn0"><a href="{:U('RzCountry/rzList')}" >全部</a></li><!--javascript:void(0)   {:U('Index/RzCountry/rzList')}-->
+                    <li class="a_sx"></li>
+					
+                    <li class="nextbtn"><a href="{:U('RzCountry/rzList',array('pid'=>1))}">常见使馆认证</a></li>
+                    <li class="a_sx"></li>
+					
+                    <li class="nextbtn2"><a href="{:U('RzCountry/rzList',array('pid'=>2))}">单证认证</a></li>
+                    <li class="a_sx"></li>
+					
+                    <li class="nextbtn3"><a href="{:U('RzCountry/gg_aut')}">各国使馆认证</a></li>
+                </ul>
+            </div>
+			
+			
+            <div class="qaut_con"> <!--全部-->
+                <volist name="emb" id="vo">
+                <div class="qaut_con{$i}">
+                    <div class="qaut_t1"><a href="">{$vo.name}</a></div>
+                    <ul>
+                        <foreach name="vo.sublist" item="subvo">                   
+                        <li><a href="">{$subvo.name}</a></li>
+                        </foreach>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+                </volist>
+            </div>
+			
+			
+			
+		
+			
+        </div>
+    <div class="clear"></div><!--  清除主体内容里面的浮动  -->
+    </div>
+    <div class="footer_topbg"></div>
+    <div class="footer">
+        <div class="footer_bg">
+        	<div class="link">友情连接：<a href="" style="margin-left:0px;">义乌签证</a>|<a href="">使馆认证</a>|
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
+            	<a href="">使馆认证</a>|<a href="">使馆认证</a>
+            </div>
+            <div class="copyright">
+            	<p>CopyRight @ 2011-2012 义乌市速格报俭代理有限公司 版权所有　地 址：浙江 义乌市城北路258号福田商务公寓313（商检局对面）<br />
+                	电 话：86 0579 85365501 - 86 0579 85591661　　　　　技术支持：武汉尚科在线网络技术有限公司
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

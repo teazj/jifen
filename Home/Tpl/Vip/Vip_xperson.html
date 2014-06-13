@@ -1,0 +1,53 @@
+<include file="Vipinc:header"/>
+        <div class="Mvip_right">
+        	<div class="vipr_tit"><a href="">个人信息修改</a></div>
+            <div class="xperson">
+				<div class="xperson_t">
+                	<ul>
+                    	<li>用 户 名：<span class="blue2">{$v.uname}</span></li>
+                        <li>联系电话：<span class="blue2">{$v.uphone}</span></li>
+                        <li>邮&nbsp;&nbsp;&nbsp;&nbsp;箱：<span class="blue2">{$v.uemail}</span></li>
+                        <li>会员级别：<span class="blue2"><if condition="$v['lev'] eq 1">青铜会员<elseif condition="$v['lev'] eq 2"/>白银会员<else/>黄金会员</if></span></li>
+                        <li>积分总是：<span class="blue2">{$v.jifen}</span></li>
+                        <li>优 惠 券：<span class="blue2">{$v.yhj}</span></li>
+                    </ul>
+                </div>
+                <div class="xperson_d">
+					<form action="{:U('Index/Vip/userInfoUpdate')}" method="post">
+                	<table cellpadding="0" cellspacing="0" border="0">
+						<input type="hidden" name="uid" value="{$Think.session.index.user_id}">
+						<tr>
+                        	<td>昵&nbsp;&nbsp;&nbsp;&nbsp;称：</td>
+                            <td><input type="text" value="{$v.uname}" class="xperson_inp1" readonly="readonly"/>用户昵称不可修改</td>
+                        </tr>
+                    	<tr>
+                        	<td>真实姓名：</td>
+                            <td><input type="text" name="turename" value="{$v.turename}" class="xperson_inp1" /></td>
+                        </tr>
+                        <tr>
+                        	<td>性&nbsp;&nbsp;&nbsp;&nbsp;别：{$v.sex}</td>
+                            <td><input type="radio" name="sex" value="{$v.sex}" <if condition="$v['sex'] eq 1"> checked </if> />男
+                            <input type="radio" name="sex" value="{$v.sex}" <if condition="$v['sex'] eq 0"> checked </if>/>女</td>
+                        </tr>
+                        <tr>
+                        	<td>联系电话：</td>
+                            <td><input type="text" name="uphone" value="{$v.uphone}" class="xperson_inp1" /></td>
+                        </tr>
+                        <tr>
+                        	<td>Q&nbsp;&nbsp;&nbsp;Q&nbsp;&nbsp;&nbsp;：</td>
+                            <td><input type="text" name="uqq" value="{$v.uqq}" class="xperson_inp1" /></td>
+                        </tr>
+                    </table>
+						<div class="vip_btn">
+							<input type="submit" value="确认修改" class="vip_inp2" />
+						</div>
+					</form>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>      <!--  清除主体部分M_vipmm的浮动  -->
+    </div>
+    <div class="footer_topbg"></div>
+   <include file="Vipinc:footer"/>
+</body>
+</html>

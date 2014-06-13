@@ -1,0 +1,40 @@
+
+<include file="inc:header"/>
+    <div class="M_caut">
+    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a> > <a href="">所有办理签证国家</a></div>
+        <table cellpadding="0" cellspacing="0" border="0px none">
+        <form>
+        	<tr>
+        		<td><input type="text" name="" value="" id="Mc_search_key" class="Mc_search" /></td>
+                <td><input type="button" name="" value="查询" class="Mc_cx" /></td>
+            </td>
+        </form>
+        </table>
+        <div class="caut">
+        	<div class="caut_tit">
+            	<a href="javascript:void(0)" class="caut_sx">筛选：</a>
+                <ul>
+                	<li><a href="{:U('Index/QzCountry/qzList')}">全部</a></li>
+                	<foreach name="name" item="vo">
+	                    <li class="a_sx"></li>
+	                    <li><a href="{:U('Index/QzCountry/qzClass',array('id'=>$vo['id']),'')}">{$vo.name}</a></li>
+	                 </foreach>
+                </ul>
+            </div>
+            <div class="qaut_con">
+            <foreach name="name" item="vo">
+                <div class="qaut_con1">
+                    <div class="qaut_t1"><a href="javascript:void()">{$vo.name}</a></div>
+                    <ul>
+                    <foreach name="vo.sublist" item="vo1">
+                        <li><a href="{:U('Index/Vista/index',array('id'=>$vo1['id']),'')}">{$vo1.name}</a></li>
+                     </foreach>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+           </foreach>
+            </div>
+        </div>
+    <div class="clear"></div><!--  清除主体内容里面的浮动  -->
+    </div>
+<include file="APP/Tpl/Index/inc/footer.html" />

@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>OSCHINAZ文章分享</title>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/bootstrap/css/bootstrap.min.css'>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/bootstrap/css/bootstrap-responsive.min.css'>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/Css/common.css'>
+	<link type="text/css" rel="stylesheet" href='__PUBLIC__/Css/article.css'>
+	
+	<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="__PUBLIC__/Js/common.js"></script>
+	<script src="__PUBLIC__/Js/login_reg.js"></script>
+	<script src="__PUBLIC__/Js/article.js"></script>
+	<style>
+		.hot_catalogs{ width: 600px; margin-left: 50px; font:12px "微软雅黑";}
+	</style>
+</head>
+<body>
+{include file="../Public/header.html"}
+<div class='article_body'>
+	<h2 class="nav_ll">您正在浏览：
+		<span><a href="__APP__/Article/index">OSCHINAZ文章分享</a>
+			{if $smarty.get.tid neq null} / {$tlist.0.name}{/if}
+		</span></h2>
+	<div class="article_nav">
+		<ul class="nav nav-tabs" id="nav_ll">
+			<li class="active"><a href="#tab1" data-toggle="tab">热门分类</a></li>
+			<li><a href="#tab2" data-toggle="tab">热评文章</a></li>
+			<li><a href="#tab3" data-toggle="tab">本周热门</a></li>
+			<li><a href="#tab4" data-toggle="tab">本月热门</a></li>
+		</ul>	
+		<div class="tab-content">
+			<!-- 热门分类 -->
+			<div class="tab-pane active" id="tab1">
+				<div class='CodeCatalogs'>
+					<ol class="sw">
+						<li class="tab_ll on_ll" id="lang_catalogs_li"><a href="">代码语言</a></li>
+						<li class="tab_ll" id="code_catalogs_li"><a href="" >代码分类</a></li>
+					</ol>
+					<ul class="lang_catalogs"  >
+					{foreach $type as $type_vo}	
+						<li><a href="__APP__/Article/index/tid/{$type_vo.id}" {if $smarty.get.tid eq $type_vo.id}style='color:red'{/if}>{$type_vo.name}</a></li>
+					{/foreach}
+						<div class='clear'></div>
+					</ul>
+					<ul class="code_catalogs"  style="display:none;" >
+						<li><a href="" >即将上线</a></li>
+						<div class='clear'></div>
+					</ul>
+					<div class='clear'></div>
+				</div>
+			</div>
+			<!-- 热评文章 -->
+			<div class="tab-pane" id="tab2">
+				<table class="hot_catalogs table table-bordered table-striped">
+					<tbody>
+					{foreach $hotart as $k=>$vo}
+					<tr>
+					{if $k eq 0}
+						<td style="color:#ff0000;">热评榜首</td>
+						<td><a  style="color:#ff0000;" href="__APP__/Article/update/aid/{$vo.id}">{$vo.title}</a></td>
+						<td><a  style="color:#ff0000;" href="__APP__/Article/update/aid/{$vo.id}#CommentForm">{$vo.comments}评</a></td>
+					{else}
+						<td style="color:#666699;">No.{$k+1}</td>		
+						<td><a href="__APP__/Article/update/aid/{$vo.id}">{$vo.title}</a></td>
+						<td><a href="__APP__/Article/update/aid/{$vo.id}#CommentForm">{$vo.comments}评</a></td>
+					{/if}	
+					</tr>
+					{/foreach}
+					</tbody>
+				</table>
+			</div>
+			<!-- 本周热门 -->
+			<div class="tab-pane" id="tab3">
+				<div class="tab-pane" id="tab2">
+				<table class="hot_catalogs table table-bordered table-striped">
+					<tbody>
+					{foreach $welist as $k=>$vo}
+					<tr>
+					{if $k eq 0}
+						<td style="color:#ff0000;">热评榜首</td>
+						<td><a  style="color:#ff0000;" href="__APP__/Article/update/aid/{$vo.id}">{$vo.title}</a></td>
+						<td><a  style="color:#ff0000;" href="__APP__/Article/update/aid/{$vo.id}#CommentForm">{$vo.views}<span>浏览过</span></a></td>
+					{else}
+						<td style="color:#666699;">No.{$k+1}</td>		
+						<td><a href="__APP__/Article/update/aid/{$vo.id}">{$vo.title}</a></td>
+						<td><a href="__APP__/Article/update/aid/{$vo.id}#CommentForm">{$vo.views}<span>浏览过</span></a></td>
+					{/if}	
+					</tr>
+					{/foreach}
+					</tbody>
+				</table>
+			</div>
+			</div>
+			<!-- 本月热门 -->
+			<div class="tab-pane" id="tab4">
+				<div class="tab-pane" id="tab2">
+				<table class="hot_catalogs table table-bordered table-striped">
+					<tbody>
+					{foreach $molist as $k=>$vo}
+					<tr>
+					{if $k eq 0}
+						<td style="color:#ff0000;">热评榜首</td>
+						<td><a  style="color:#ff0000;" href="__APP__/Article/update/aid/{$vo.id}">{$vo.title}</a></td>
+						<td><a  style="color:#ff0000;" href="__APP__/Article/update/aid/{$vo.id}#CommentForm">{$vo.views}<span>浏览过</span></a></td>
+					{else}
+						<td style="color:#666699;">No.{$k+1}</td>		
+						<td><a href="__APP__/Article/update/aid/{$vo.id}">{$vo.title}</a></td>
+						<td><a href="__APP__/Article/update/aid/{$vo.id}#CommentForm">{$vo.views}<span>浏览过</span></a></td>
+					{/if}	
+					</tr>
+					{/foreach}
+					</tbody>
+				</table>
+			</div>
+			</div>
+		
+		</div>
+	</div>
+	<div class='code_list'>	
+		<h4 class="title">
+			<span class="tip">排序</span>
+			<span class="tip">&nbsp;</span><a href="__URL__/index/order/1/tid/{$smarty.get.tid}"  class="sort" {if $smarty.get.order eq 1}style='color:red' {/if}>点赞</a><span class="tip">&nbsp;/&nbsp;</span>
+			<span class="tip">&nbsp;</span><a href="__URL__/index/order/2/tid/{$smarty.get.tid}"  class="sort" {if $smarty.get.order eq 2}style='color:red' {/if}>浏览</a><span class="tip">&nbsp;/&nbsp;</span>
+			<span class="tip">&nbsp;</span><a href="__URL__/index/order/3/tid/{$smarty.get.tid}"  class="sort" {if $smarty.get.order eq 3}style='color:red' {/if}>评论</a><span class="tip">&nbsp;</span>
+			<span class="tip">按</span><span class="tip">&nbsp;</span>
+			文章列表<span>({$arcount})</span>
+			<span></span>
+		</h4>
+	
+		<ul>
+		{foreach $art as $art_vo}	
+			<li>
+				<div class='head'>
+					<div class='user'><a href="" class="ShowUserOutline" target=""><img src="__PUBLIC__/Uploads/face/{$art_vo.uname.image}" align="absmiddle" alt="" title="" class="SmallPortrait" user="{$art_vo.uname.username}"/></a></div>
+				</div>
+				<h3 class="code_title">
+					<a href="__APP__/Article/update/aid/{$art_vo.id}" target="" title="{$art_vo.title}">{$art_vo.title}</a>
+					<i><a href="" class="r">[{$art_vo.aname.name}]</a></i>
+					<span class='date'>
+						{$time = ($smarty.now-$art_vo.addtime)/3600}
+						{if $time lte 1}{ceil($time*60)}分钟前{elseif $time lte 24}{ceil($time)}小时前{else}{ceil($time/24)}天前{/if}
+						&nbsp;By&nbsp;  {$art_vo.uname.username}
+					</span>
+				</h3>
+				<p class="u">
+			    	<span>涉及关键词：
+			    	<span><a href="__APP__/Article/update/aid/{$art_vo.id}" target="">{$art_vo.keyword}</a></span>
+					<span class='stat'>{$art_vo.comments}回/{$art_vo.views}阅/{$art_vo.praise}赞</span>&nbsp;
+				</p>
+			</li>
+		{/foreach}
+		</ul>
+		<div class="page_ll">
+			{$page}
+		</div>
+	</div>
+	<div class="right_list">
+	<div>		
+	<h4 class="title">TOP40活跃贡献者</h4>
+		<div class="hot_top">
+			<div class="hot_content">
+			<ul>
+			{foreach $ulist as $vo}
+			<li>
+				<div class="hot_user">
+					<div style="float:left;background:#FFFFFF;">
+						<a href="__APP__/Public/searchu/uid/{$vo.id}" title="{$vo.username}" target="">
+						<img src="__PUBLIC__/Uploads/face/{$vo.image}" align="absmiddle" alt="{$vo.username}" title="{$vo.username}" class="SmallPortrait" user="12"/></a>
+					</div>
+					<p><span>{$vo.username|truncate:10:"..."}</span></p>
+					<p><i class="g">发布[{$vo.acount}]篇文章</i></p>
+				</div>
+			</li>
+			{/foreach}
+			</ul>
+			</div>
+		<div class="clear"></div>
+		</div>
+	</div>
+<script type="text/javascript">
+	(function($,window){
+    	$.fn.hotCode = function(){
+    		var Thiz = this;
+    		var ul = $("ul",this);
+			var li = $("li",this);
+    		var imgs = $("img",this);
+			var hots = imgs.closest(".hot_user");
+    		var ul_w = ul.width();
+    		var ul_h = ul.height();
+    		var i = 0;
+    		var j = 0;
+    		var w = li.outerWidth();
+    		var h = li.outerHeight();
+			var w_i = li.innerWidth();
+			var h_i = li.innerHeight();
+    		var wn = Math.floor(ul_w/w);
+    		var hn = Math.floor(imgs.length/wn);
+			
+    		li.each(function(){
+    			var thiz = $(this);
+    			var top = j*h;
+    			var left = i*w;
+				thiz.css({
+					"position":"static",
+					"width":w_i,
+					"height":h_i
+				});
+    			if(i>=wn/2){
+					$("img",thiz).closest("div").css({
+						"float":"right"
+					});
+					$(".hot_user",this).css({
+						"right":0,
+						"top":0
+					});
+					
+				}else{
+					$(".hot_user",this).css({
+						"left":0,
+						"top":0
+					});
+				}
+				
+    			i++;
+    			if(i>=wn){
+    				i=0;
+    				j++;
+    			}
+    
+    		});
+			
+    		var _in = function(){
+    			var thiz = $(this);
+    			var hot_user = thiz.closest(".hot_user");
+				var z_index = hot_user.css("z-index");
+				hot_user.data("o_z_index",z_index);
+				hot_user.parent().css({
+					"position":"relative"
+				});
+				hot_user.data("o_w",hot_user.width())
+    			hot_user.css({
+					"background":"#F3F3F3",
+					"position":"absolute",
+					"border":"1px solid #40AA53",
+					"width":3*w,
+					"height":h
+				});
+				$("p",hot_user).css({
+					"display":"block"
+				});
+				
+				var li = thiz.closest("li");
+				li.siblings("li").addClass("shadle");
+    		};
+    		var _out = function(){
+        		var thiz = $(this);
+    			var hot_user = thiz.closest(".hot_user");
+				var z_index = hot_user.data("o_z_index");
+				hot_user.parent().css({
+					"position":"static"
+				});
+				var w = hot_user.data("o_w")
+    			hot_user.css({
+					"width":w,
+					"position":"static",
+					"height":h,
+					"border":"1px solid #FFFFFF",
+					"background":"none"
+				});
+				$("p",hot_user).css({
+					"display":"none"
+				});
+				var li = thiz.closest("li");
+				li.siblings("li").removeClass("shadle");
+    		};
+    		imgs.hover(_in,_out);
+    	}
+		var isIE6 = false;
+		if($.browser.msie){
+			if($.browser.version==6.0&&!$.support.style){
+				isIE6 = true;
+			}			
+		}
+		if(!isIE6)
+			$(".hot_top").hotCode();
+    }(jQuery,window));
+</script>
+		<h4 class="title">热门代码语言TOP5</h4>
+		<div style="margin-bottom:15px; margin-left:15px;">
+			<div class="hot_lang">
+				{foreach $alist as $k=>$v}
+					<div class="sort{$k}">
+						<a href="__URL__/index/tid/{$v.typeid}" class="sort{$k}"><span>{$v.name}</span></a>
+					</div>
+				{/foreach}
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</div>
+{include file="../Public/footer.html"}
+</body>
+</html>	
