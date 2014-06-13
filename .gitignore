@@ -218,3 +218,8 @@ Admin/
 Public/
 ThinkPHP/
 jifen.bak/
+*.jpg
+*.zip
+*.png
+*.gif
+*.rar
