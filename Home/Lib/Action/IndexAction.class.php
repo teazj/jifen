@@ -36,5 +36,11 @@ class IndexAction extends Action {
 		$this->display();
 		
     }
+	
+	//热门对兑换页面
+	public function lists(){
+		
+		$this->display();
+	}
 
 }
