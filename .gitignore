@@ -224,6 +224,6 @@ jifen.bak/
 *.png
 *.gif
 *.rar
-config.inc.php
-index.php
-admin.php
+/config.inc.php
+/index.php
+/admin.php
