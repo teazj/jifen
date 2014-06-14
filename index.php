@@ -1,6 +1,6 @@
 <?php
 //开启debug
-define('APP_DEBUG',false);
+define('APP_DEBUG',true);
 //定义项目名称
 define('APP_NAME','Home');
 //定义项目路径
