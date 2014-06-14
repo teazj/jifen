@@ -9,8 +9,6 @@ class QzindexAction extends Action {
 		$condition['pid']=3;
         $plist=$ppt->where($condition)->order('ctime desc')->limit(4)->select();
         $this->assign('plist',$plist);
-		
-        echo "hello,world";
 
 		//地区签证
 		$cate=M('Category');

@@ -52,8 +52,8 @@
                             </ul> -->
                         </li>
                         <li><a href="__APP__/QzCountry/qzList">单证与使馆签证</a></li>
-                        <li><a href="__APP__/Rzindex/index">速格认证</a></li>
-                        <li><a href="<?php echo U('Index/Index/index');?>">积分商城</a></li>
+                        <li><a href="http://rz.com">速格认证</a></li>
+                        <li><a href="http://jifen.com">积分商城</a></li>
                     </ul>
                 </div>
                 <div class="vip">

@@ -215,6 +215,7 @@ pip-log.txt
 .mr.developer.cfg
 
 Admin/
+Home/Runtime/
 Public/
 ThinkPHP/
 jifen.bak/
