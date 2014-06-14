@@ -216,7 +216,7 @@ pip-log.txt
 
 Admin/
 Home/Runtime/
-Public/
+/Public/
 ThinkPHP/
 jifen.bak/
 *.jpg

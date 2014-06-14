@@ -1,0 +1,24 @@
+<!--logo开始-->   
+   <div class="w header">
+        <div id="logo"><a href="__APP__/Index/index" title="速格积分商城"></a></div>
+        <div id="search">
+		 
+            <div class="s-form">
+				<form name="search" method="post" action="__APP__/List/search">
+				<input id="keyid" name="keyword" class="ptext" {if $keyword} value="{$keyword}" {else} value="" {/if} onblur="if (this.value==''){ this.value='商品搜索';}" onfocus="if (this.value=='商品搜索'){ this.value='';}$('#longtexiao').slideDown(2000);" autocomplete="off" id="keyword"  type="text">
+				<input name="tid" type="hidden" value="{$tid}"/>
+				<input name="input" class="pbtn" value="搜索" onfocus="this.blur()" type="submit">                       
+				</form>
+			</div>
+          </div>
+		 
+        <div id="shopcart">
+		<if condition="$Think.session.loginuser">
+			<a href="__APP__/Cart/index">
+			<i></i>购物车<span class="s-num"><if condition="$Think['session']['cartnum']"> {$Think.session.cartnum} <else/> 0 </if></span>件</a>
+		<else/>
+			<a href="__APP__/User/login" rel="nofollow"><i></i>登录后使用购物车</a>
+		</if>
+		</div>
+   </div>
+   <!--logo结束-->
