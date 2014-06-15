@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+html, body, div, span, ol, ul, li, form, ul, li, a, img, table, tr, th, td, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, input{ margin:0; padding:0; border:0 none; text-decoration:none;}
+body{ font-family:"宋体", "微软雅黑", "新宋体"; font-size:12px; color:#737373; background:#FFF; text-align:center;}
+li{ list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:100%;font-weight:normal;}
+a{ text-decoration:none; color:#868484; font-family:微软雅黑;}
+.clear{ clear:both;}
+*{ margin:0; padding:0;}
+input[type=button]{ cursor:pointer;}
+input[type=button]:hover{ color:#F00;}
+
+
+
+/*-----------------------会员中心header头部-----------------------*/
+/*-----header_top部分-----*/
+.header_topbg{ width:auto; height:31px; border-top:1px solid #9c9b9b; border-bottom:1px solid #9c9b9b; background:url(../images/header_topbg.jpg) left center repeat-x;}
+.top_yy{ width:auto; height:5px; background:url(../images/topbg_yy.jpg) left center repeat-x;}
+.head{ margin:0 auto; width:1072px; height:31px; line-height:31px; }
+.date{ float:left; color:#797878;}
+.tel{ float:left; margin-left:200px; color:#d40001;}
+.tel_bg{ padding-left:25px; background:url(../images/tel_bg.png) left center no-repeat;}
+.top_nav{ float:right;}
+.top_nav a{ display:block; float:left; margin:0 8px; font-size:12px; color:#969798;}
+.top_nav a:hover{ color:#F00;}
+.fenxiang{ padding-left:26px; background:url(../images/topnav_abg_01.png) left center no-repeat;}
+.weixin{ padding-left:29px; background:url(../images/topnav_abg_02.png) left center no-repeat;}
+.shoucang{ padding-left:26px; background:url(../images/topnav_abg_03.png) left center no-repeat;}
+/*-----header_top部分-----*/
+
+/*-----long_search-----*/
+.logo_search{ margin:0 auto; width:1072px; height:63px; padding-top:24px;}
+.logo{ float:left; width:372px; height:40px;}
+.search{ float:right; width:429px; height:33px; margin-right:10px; border:1px solid #015cb1;}
+.textk{ width:317px; height:15px; font-size:14px; padding:8px 0 8px 10px; border-top:1px solid #a29f9f; border-left:1px solid #a29f9f; position:relative; top:-1px; left:0px;}
+.ss{ width:101px; height:34px; font-size:14px; background:#015cb1; color:#FFF;}
+/*-----long_search-----*/
+
+/*-----导航条nav-----*/
+.nav_vipbg{ width:auto; height:43px; margin-bottom:5px; background:#0099cc;}
+.nav_vip{ margin:0 auto; width:1072px;}
+.nav{ float:left;}
+.nav li{ float:left; width:147px; height:43px; line-height:43px;}
+.nav li a{ display:block; color:#ffffff; font-size:14px;}
+.nav li a:hover{ background:#006699;}
+/*-----导航条nav-----*/
+
+/*-----登陆退出vip-----*/
+.nav_vip .vip{ float:right; height:43px; color:#FFF;}
+.vip li{ float:left; height:43px; line-height:43px;}
+.vip li .out{ color:#FFF; margin-right:10px; background:none;}
+.grzx{ width:79px; height:28px; color:#a29f9f; background:#FFF;}
+/*-----登陆退出vip-----*/
+/*-----------------------会员中心header头部-----------------------*/
+
+
+
+
+
+
+
+/*-----------------------------会员中心footer底部---------------------------*/
+/*-------------------会员中心footer页面底部的top阴影-----------------*/
+.footer_topbg{ width:auto; height:13px; margin-top:20px; margin-bottom:17px; background:url(../images/Vip_footer_topbg.jpg) left center repeat-x;}
+
+.footer{ width:auto; height:174px; background:#dad7d7; border-top:1px solid #b1afaf;}
+
+/*----------------------第一个a的左边距要改------------------------------*/
+.link{ margin:0 auto; width:1072px; margin-top:40px;}
+.link a{ color:#595858; font-family:宋体; margin:0 8px; line-height:30px;} 
+.link a:hover{ color:#F00;}
+.copyright p{ line-height:22px; margin-top:10px; color:#595858;}
+/*-----------------------------会员中心footer底部---------------------------*/
+

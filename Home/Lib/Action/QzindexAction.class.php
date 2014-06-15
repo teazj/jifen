@@ -12,12 +12,7 @@ class QzindexAction extends Action {
 
 		//地区签证
 		$cate=M('Category');
-		$word=array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
-		$a=array();
 		$list=$cate->where("pid>0")->order('piny')->select();
-		foreach($list as $v){
-			$a[]=$v['piny'];
-		}
 		$this->assign('cate',$list);
 		
 		//热点签证
@@ -37,6 +32,10 @@ class QzindexAction extends Action {
 	//	echo $message->getLastSql();
 		$this->display();
 		
+    }
+
+    public function country2cate(){
+    	print_r($_GET);
     }
 
 }

@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+html, body, div, span, ol, ul, li, form, ul, li, a, img, table, tr, th, td, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, input{ margin:0; padding:0; border:0 none; text-decoration:none;}
+body{ font-family:"宋体", "微软雅黑", "新宋体"; font-size:12px; color:#737373; background:#FFF; text-align:center;}
+li{ list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:100%;font-weight:normal;}
+a{ text-decoration:none; color:#868484; font-family:微软雅黑;}
+.clear{ clear:both;}
+*{ margin:0; padding:0;}
+input[type=button]{ cursor:pointer;}
+input[type=button]:hover{ color:#F00;}
+
+
+/*---------------签证header头部---------------*/
+/*-----header_top部分-----*/
+.header_topbg{ width:auto; height:31px; border-top:1px solid #9c9b9b; border-bottom:1px solid #9c9b9b; background:url(../images/qzimages/header_topbg.jpg) left center repeat-x;}
+.top_yy{ width:auto; height:5px; background:url(../images/qzimages/topbg_yy.jpg) left center repeat-x;}
+.head{ margin:0 auto; width:1032px; height:31px; line-height:31px; }
+.date{ float:left; color:#797878;}
+.tel{ float:left; margin-left:200px; color:#d40001;}
+.tel_bg{ padding-left:25px; background:url(../images/qzimages/tel_bg.png) left center no-repeat;}
+.top_nav{ float:right;}
+.top_nav a{ display:block; float:left; margin:0 8px; font-size:12px; color:#969798;}
+.top_nav a:hover{ color:#F00;}
+.fenxiang{ padding-left:26px; background:url(../images/qzimages/topnav_abg_01.png) left center no-repeat;}
+.weixin{ padding-left:29px; background:url(../images/qzimages/topnav_abg_02.png) left center no-repeat;}
+.shoucang{ padding-left:26px; background:url(../images/qzimages/topnav_abg_03.png) left center no-repeat;}
+
+/*-----long_search-----*/
+.logo_search{ margin:0 auto; width:1032px; height:63px; padding-top:24px;}
+.logo{ float:left; width:372px; height:40px;}
+.search{ float:right; width:429px; height:33px; margin-right:10px; border:1px solid #015cb1;}
+.textk{ width:317px; height:15px; font-size:14px; padding:8px 0 8px 10px; border-top:1px solid #a29f9f; border-left:1px solid #a29f9f; position:relative; top:-1px; left:0px;}
+.ss{ width:101px; height:34px; font-size:14px; background:#015cb1; color:#FFF;}
+
+
+/*-----导航条nav-----
+.nav_vipbg{ width:auto; height:43px; margin-bottom:5px; background:#0099cc;}
+.nav_vip{ margin:0 auto; width:1032px;}
+.nav{ float:left;}
+.nav li{ float:left; width:147px; height:43px; line-height:43px;}
+.nav li a{ display:block; color:#ffffff; font-size:14px;}
+.nav li a:hover{ background:#006699;}
+.vip{ float:right;}
+.login, .register{ width:104px; height:34px; font-size:14px; line-height:34px; margin-top:5px; margin-right:10px; color:#000;}   */
+/*---------------签证header头部---------------*/
+
+
+.nav_vipbg{ width:auto; height:43px; background:#0099cc; margin-bottom:5px;}
+.nav_vip{ margin:0 auto; width:1032px;}
+.nav{ float:left;}
+.nav li{ float:left; width:125px; height:43px; line-height:43px; text-align:center;}
+.nav li a{ display:block; height:43px; font-family:微软雅黑；; font-size:14px; color:#FFF; z-index:9999; position:relative;}
+.nav li a.subhover{ background:#006699; color:#F00;}
+.subnav{ display:none; width:125px; height:78px;/*IE6 only*/}
+.subnav li{ width:125px; height:26px;}
+.nav li .subnav li a {color:#FFF; text-decoration:none; background:url(../images/qzimages/nav_hover1.jpg) repeat-x; line-height:26px; display:block;}
+.nav li .subnav li a:hover{ color:#F00;}
+.vip{ float:right;}
+.login, .register{ width:104px; height:34px; font-size:14px; line-height:34px; margin-top:5px; margin-right:10px; color:#000;}
+
+
+
+
+
+
+
+/*---------------签证footer底部---------------*/
+.footer_topbg{ width:auto; height:13px; margin-top:130px; margin-bottom:17px; background:url(../images/qzimages/footer_topbg.jpg) left center repeat-x;}
+
+.footer{ margin-top:33px;}
+.down_navbg{ width:auto; height:181px; background:url(../images/qzimages/down_navbg.jpg) left top repeat-x;}
+.down_nav{ margin:0 auto; width:1032px; padding-top:30px;}
+.down_nav dl{ float:left; width:220px; text-align:left; margin-right:38px;}
+.down_nav dt a{ font-size:14px; width:80px; height:50px; line-height:50px; display:block; color:#006ed8; padding-left:40px;}
+.down_nav dt a:hover{ color:#F00;}
+.down_nav dd{ height:28px; line-height:28px;}
+.down_nav .chanpin{ background:url(../images/qzimages/down_navabg_01.png) left center no-repeat;}
+.down_nav .fuwu{ background:url(../images/qzimages/down_navabg_02.png) left center no-repeat;}
+.down_nav .jiage{ background:url(../images/qzimages/down_navabg_03.png) left center no-repeat;}
+.down_nav .fanwei{ background:url(../images/qzimages/down_navabg_04.png) left center no-repeat;}
+.footer_sanjiao{ margin:0 auto; width:24px; height:15px; background:url(../images/qzimages/footer_sanjiao.png) no-repeat; position:relative; left:0; top:2px;}
+.footer_bg{ width:auto; height:174px; background:#dad7d7; border-top:1px solid #b1afaf;}
+.link{ margin:0 auto; width:1032px; margin-top:40px;}
+.link a{ color:#595858; font-family:宋体; margin:0 8px; line-height:30px;} 
+.link a:hover{ color:#F00;}
+.copyright p{ line-height:22px; margin-top:10px; color:#595858;}
+/*---------------签证footer底部---------------*/
+
+
+

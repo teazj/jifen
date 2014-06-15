@@ -1,0 +1,133 @@
+﻿
+/*-----banner-----*/
+.vise_ban{ margin:0 auto; width:1032px; height:353px; margin-bottom:10px;}
+.vise{ float:left;}
+.vise_t{ width:276px; height:243px; border:1px solid #bbbbbb;}
+.sTab{ width:276px; height:243px; overflow:hidden;}
+.none { display:none;}
+.T_title{ width:276px; line-height:32px; font-size:14px; height:32px; border-bottom:2px solid #e3e1e1; background:#fff;}
+.T_title li{ float:left; cursor:pointer; width:86px; height:32px; line-height:32px; text-align:center; margin-left:35px;}
+.T_title .zc a{ display:block; width:86px; height:34px; line-height:32px; background:url(../images/qzimages/rr.png) center bottom no-repeat; color:#015cb1;}
+.T_title .jg a{ color:#000;}
+#my_tab_con0 dt{ margin:0 auto; width:228px; height:36px; line-height:36px; padding-top:9px; text-align:left; color:#000;}
+.country{ width:220px; height:15px; line-height:15px; border:1px solid #c0bfbf; padding:7px 0 7px 6px; background:url(../images/qzimages/country_bg.jpg) right center no-repeat;} 
+.inp_cx{ width:123px; height:31px; line-height:31px; font-size:14px; margin-top:10px; margin-bottom:6px; background:#066baf; color:#FFF;}
+.country_a{ margin:0 auto; width:260px; height:60px; line-height:18px; border-top:1px dashed #7c7c7c; padding-top:5px; text-align:left;}
+.country_a a{ margin:0 9px;}
+.country_a a:hover{ color:#0070ba;}
+#my_tab_con0 .more, #my_tab_con1 .more{ text-align:right; color:#066baf; padding-right:15px;}
+.more a:hover{ color:#F00;}
+#my_tab_con1 table{ margin-top:4px; margin-left:20px;}
+.dd_text, .phone_text{ width:184px; height:20px; line-height:20px; padding:3px 0 3px 2px; margin:5px 0; border:1px solid #dadada;}
+.dd_num, .phone_num{ width:45px; color:#050505;}
+.cx{ width:103px; height:32px; line-height:32px; color:#FFF; margin:5px 0; background:#025cb2;}
+.forget{ line-height:42px; color:#006496; margin-left:10px;}
+.forget:hover{ color:#F00;}
+
+
+.vise_tyy{ width:278px; height:10px; background:url(../images/qzimages/vise_yy.jpg) no-repeat; margin-bottom:4px;}
+.vise_d{ width:276px; height:92px; border:1px solid #cdcccc;}
+.vise_b{ float:left; width:78px; height:72px; line-height:72px; font-size:20px; color:#fea130; margin:10px 0 0 4px; background:url(../images/qzimages/vise_bbg.jpg) no-repeat;}
+.vise_con{ float:left; color:#066baf; line-height:px; margin-top:22px;}
+.vise_con h3{ font-size:16px; font-family:微软雅黑; line-height:32px;}
+.vise_con .yellow{ color:#fe9a10;}
+.banner{ float:right; width:749px; height:353px;}
+/*---------------签证header头部---------------*/
+
+.focus_r{width:739px;height:350px;float:right;background:white;position:relative;overflow:hidden;}
+.flash_ul li{width:739px;height:350px;float:left;}
+.focus_r img{width:739px;height:350px;}
+.flash_mark{width:739px;position:absolute;bottom:0;height:40px;background:#333;filter:alpha(opacity:30);opacity:0.3;z-index:2;line-height:40px;font-size:14px;color:white;overflow:hidden;}
+.flash_mark a{color:white;padding:0;margin:0;}
+.flash_ul {overflow:hidden;height:350px;position:absolute;z-index:0;width:739px;}
+.flash_mark span{padding-left:10px}
+
+.flash_but{position:absolute;z-index:3;bottom:15px;right:15px;}
+.flash_but li{float:left;width:40px;height:10px;background:white;margin-left:15px}
+
+
+
+/*---------------签证main主体部分---------------*/
+.main_bg{ width:auto; background:url(../images/qzimages/liuc_topbg.png) left top repeat-x; padding-top:6px;}
+.main{ margin:0 auto; width:1032px;}
+.main a:hover{ color:#0072bb;}
+.liucheng{ width:1032px; height:70px;}
+.liucheng li{ float:left; text-align:left; margin-left:20px;}
+.liucheng ul{ margin-top:16px;}
+.liucheng a{ color:#666666;}
+.liucheng .li_1{ margin-left:10px; background:url(../images/qzimages/liuc_abg_01.png) left center no-repeat; padding-left:55px;}
+.li_2{ background:url(../images/qzimages/liuc_abg_02.png) left center no-repeat; padding-left:48px;}
+.li_3{ background:url(../images/qzimages/liuc_abg_03.png) left center no-repeat; padding-left:46px;}
+.li_4{ background:url(../images/qzimages/liuc_abg_04.png) left center no-repeat; padding-left:40px;}
+.li_5{ background:url(../images/qzimages/liuc_abg_05.png) left center no-repeat; padding-left:50px;}
+.li_6{ background:url(../images/qzimages/liuc_abg_06.png) left center no-repeat; padding-left:55px;}
+.liucheng .ma{ font-size:16px; line-height:22px;}
+.liucheng .fx{ width:59px; height:6px; margin-left:5px; margin-top:10px; background:url(../images/qzimages/liuc_abg_07.jpg) no-repeat;}
+.liuc_yy{ width:1032px; height:26px; background:url(../images/qzimages/liuc_topbg.png) left top repeat-x; padding-top:6px;}
+
+.mone_left{ float:left; width:278px;}
+.qzl{ width:278px; height:164px; padding-top:15px; border:1px solid #dfdcdc; background:url(../images/qzimages/qzl_bg.jpg) top center no-repeat;}
+.qzl li{ margin-left:75px; margin-top:10px; width:152px; height:42px; line-height:42px; text-align:left; font-family:微软雅黑; color:#000; font-size:16px;}
+.cq{ display:block; height:42px; background:url(../images/qzimages/qzl_abg_01.jpg) left center no-repeat; padding-left:50px;}
+.pg{ display:block; height:42px; background:url(../images/qzimages/qzl_abg_02.jpg) left center no-repeat; padding-left:50px;}
+.qzl .cs{ width:146px; height:35px; font-family:微软雅黑; letter-spacing:1px; font-size:16px; color:#FFF; border-bottom:2px solid #015d97; background:#0072bb;}
+.qzl .cs:hover{ color:#000;}
+
+
+
+.qzl_z{  width:278px; height:179px;  border:1px solid #dfdcdc; background:url(../images/qzimages/qzl_bg.jpg) top center no-repeat; line-height:20px;}
+.qzl_2{ width:190px; height:180px; text-align:left; margin-left:70px; line-height:22px;}
+.qzl_2 h1{ text-align:center; font-size:16px; color:#0173ba; margin-bottom:10px;}
+.qzl_2 h2{ text-align:center; font-size:14px; color:#0173ba; font-family:微软雅黑;}
+.qzl_2 a{ float:left; display:block; width:66px; height:27px; line-height:29px; background:#0072bb; border-bottom:2px solid #005d98; color:#FFFFFF; text-align:center; margin-right:7px; margin-top:10px;}
+.qzl_orange{ color:#ff982f;}
+.qzl_2 .qzl_end{ background:url(../images/qzimages/qzl_end.png) left center no-repeat; height:25px; padding-left:36px; margin-left:20px; margin-top:20px; font-weight:bold; color:#000;}
+.qzl_rad1{ width:80px;}
+.qzl_rad2{ margin-left:12px;}
+.qzl_6{ width:40px; height:60px;}
+.qzl_8{ width:60px; height:30px;}
+.qzl_2 .qzl_8a{ margin-top:20px;}
+.qzl_2 .qzl_enda{ margin-left:50px; margin-top:50px;}
+
+
+
+
+
+.question{ width:278px; height:206px; margin-top:16px; border:1px solid #d6d2d3;} 
+.question dl, .policy dl{ text-align:left;}
+.question dt, .policy dt{ height:32px; line-height:32px; border-bottom:2px solid #0072bb; background:#f3f3f3;}
+.question dt a, .policy dt a{ display:block; width:80px; font-size:14px; text-align:center; color:#0074ba; background:url(../images/qzimages/main_abg.png) center bottom no-repeat;}
+.question dt a:hover, .policy dt a:hover{ color:#F00;}
+/** a的背景图片  **/
+.question dd, .policy dd{ margin:0 auto; width:248px; height:29px; line-height:29px; border-bottom:1px dashed #989999; padding-left:8px;}
+.question .more, .policy .more{ text-align:right; border-bottom:none; padding-right:10px;}
+.more a{ color:#0072bb;}
+.more a:hover{ color:#F00;}
+
+.mone_right{ float:right; width:742px; height:403px; color:#a8a7a7;}
+.moner_tit{ width:730px; height:25px; line-height:25px; border-bottom:1px solid #c3c4c4; padding-left:12px; text-align:left;}
+.moner_tit h3{ display:inline-block;  *display:inline; *zoom:1;}
+.moner_tit a{ color:#000; font-size:14px; margin-right:20px;}
+.moner_con ul{ margin-top:38px; height:32px;}
+.moner_con li{margin:0 0 30px 30px; width:145px; height:32px; float:left; text-align:left;}
+.moner_con li .red{ color:#fd0309;}
+
+.main_two{ margin-top:13px;}
+.policy{ float:left; width:278px; height:206px; border:1px solid #d6d2d3;}
+/**  和question一样  **/
+
+.mtwo_right{ float:right; width:731px; height:206px; border:1px solid #d2d2d2;}
+.nTab{ width:731px; height:206px; overflow:hidden}
+.none { display:none;}
+.TabTitle li{ float:left; width:350px; text-align:left; margin-left:12px; font-size:14px;}
+.TabTitle{ width:731px; line-height:38px; height:38px; border-bottom:2px solid #0099cc; background:#f3f3f3;}
+.TabTitle .active a{ display:block; width:65px; height:38px; line-height:38px; background:url(../images/qzimages/tab_abg1.png) center bottom no-repeat; color:#0099cc;}
+.TabTitle .normal a{ color:#000;}
+.TabContent { text-align:left; padding:8px 0 0 30px;}
+.TabContent dl{ float:left; width:width:731px;}/*border-right:1px solid #e2e2e2;*/
+.TabContent .dl_t{ margin-left:80px; width:275px; border-right:none;}
+.TabContent dd{ float:left; width:350px; height:28px; line-height:28px;}
+/*---------------签证main主体部分---------------*/
+
+
+

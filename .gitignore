@@ -216,7 +216,12 @@ pip-log.txt
 
 Admin/
 Home/Runtime/
-/Public/
+/Public/Admin/
+/Public/Dwz/
+/Public/jcrop_zh/
+/Public/SWFUpload/
+/Public/ueditor/
+/Public/Uploadify/
 ThinkPHP/
 jifen.bak/
 *.jpg

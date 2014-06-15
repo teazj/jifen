@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+
+html, body, div, span, ol, ul, li, form, ul, li, a, img, table, tr, th, td, dl, dt, dd, h1, h2, h3, h4, h5, h6, p, input{ margin:0; padding:0; border:0 none; text-decoration:none;}
+body{ font-family:"宋体", "微软雅黑", "新宋体"; font-size:12px; color:#737373; background:#FFF; text-align:center;}
+li{ list-style:none;}
+h1, h2, h3, h4, h5, h6{ font-size:100%;font-weight:normal;}
+a{ text-decoration:none; color:#868484; font-family:微软雅黑;}
+.clear{ clear:both;}
+*{ margin:0; padding:0;}
+input[type=button]{ cursor:pointer;}
+input[type=radio]:hover{ cursor:pointer;}
+
+
+
+/*---------------认证首页 header 头部---------------*/
+.header_topbg{ width:auto; height:31px; border-top:1px solid #9c9b9b; border-bottom:1px solid #9c9b9b; background:url(../images/rzimages/header_topbg.jpg) left center repeat-x;}
+.top_yy{ width:auto; height:5px; background:url(../images/rzimages/topbg_yy.jpg) left center repeat-x;}
+.head{ margin:0 auto; width:1032px; height:31px; line-height:31px; }
+.date{ float:left; color:#797878; padding-left:8px;}
+.tel{ float:right; margin-right:30px; color:#d40001;}
+.tel_bg{ padding-left:25px; background:url(../images/rzimages/tel_bg.png) left center no-repeat;}
+.top_nav{ float:right;}
+.top_nav a{ margin:0 8px; font-size:12px; color:#969798;}
+.top_nav a:hover{ color:#F00;}
+
+.logo_search{ margin:0 auto; width:1032px; height:63px; padding-top:24px;}
+.logo{ float:left; width:372px; height:40px;}
+.search{ float:left; width:362px; height:33px; margin-left:70px; border:1px solid #015cb1;}
+.textk{ width:267px; height:15px; font-size:14px; padding:8px 0 8px 10px; border-top:1px solid #a29f9f; border-left:1px solid #a29f9f; position:relative; top:-1px; left:0px;}
+.ss{ width:85px; height:34px; font-size:14px; background:#015cb1; color:#FFF;}
+.min_nav{ float:right;}
+.min_nav a{ display:block; float:left; height:33px; line-height:33px; margin:0 5px;}
+.shouji{ padding-left:20px; background:url(../images/rzimages/min_abg_01.png) left center no-repeat;}
+.weixin{ padding-left:27px; background:url(../images/rzimages/min_abg_02.png) left center no-repeat;}
+.weibo{ padding-left:30px; background:url(../images/rzimages/min_abg_03.png) left center no-repeat;}
+
+/*--.navbg{ width:auto; height:43px; background:#0099cc; margin-bottom:3px;}
+.nav{ margin:0 auto; width:1032px; position:relative; z-index:1;}
+.nav ul{ margin-left:36px;}
+.nav li{ position:relative; left:-35px; float:left; width:120px; height:43px; line-height:43px;}
+.nav li a{ display:block; width:120px; height:43px; font-size:14px; color:#FFF;}
+.nav li a:hover{ background:#006699;}----*/
+
+.navbg{ width:auto; height:43px; background:#0099cc; margin-bottom:3px;}
+.nav{ margin:0 auto; width:1032px; height:43px;}
+.topnav{ margin:0 auto; width:960px;}
+.nav li{ float:left; width:106px; height:43px; line-height:43px; text-align:center;}
+.nav li a{ display:block; height:43px; font-family:微软雅黑；; font-size:14px; color:#FFF; z-index:9999; position:relative;}
+.nav li a.subhover{ background:url(../images/rzimages/a_hover.jpg); color:#F00;}
+.subnav{ display:none; width:106px; height:78px;/*IE6 only*/}
+.subnav li{ width:106px; height:26px;}
+.nav li .subnav li a {color:#FFF; text-decoration:none; background:url(../images/rzimages/nav_hover1.jpg) repeat-x; line-height:26px; display:block;}
+.nav li .subnav li a:hover{ color:#F00;}
+/*---------------认证首页 header 头部---------------*/
+
+/*---------------认证首页 footer 底部---------------*/
+
+.footer_topbg{ width:auto; height:13px; margin-top:20px; margin-bottom:17px; background:url(../images/rzimages/footer_topbg.jpg) left center repeat-x;}
+
+.footer{ margin-top:33px;}
+.down_navbg{ width:auto; height:280px; background:url(../images/rzimages/down_navbg.jpg) left top repeat-x;}
+.down_nav{ margin:0 auto; width:1032px; padding-top:80px;}
+.down_nav dl{ float:left; width:220px; text-align:left; margin-right:38px;}
+.down_nav dt a{ font-size:14px; width:80px; height:50px; line-height:50px; display:block; color:#006ed8; padding-left:40px;}
+.down_nav dt a:hover{ color:#F00;}
+.down_nav dd{ height:28px; line-height:28px;}
+.down_nav .chanpin{ background:url(../images/rzimages/down_navabg_01.png) left center no-repeat;}
+.down_nav .fuwu{ background:url(../images/rzimages/down_navabg_02.png) left center no-repeat;}
+.down_nav .jiage{ background:url(../images/rzimages/down_navabg_03.png) left center no-repeat;}
+.down_nav .fanwei{ background:url(../images/rzimages/down_navabg_04.png) left center no-repeat;}
+.footer_sanjiao{ margin:0 auto; width:24px; height:15px; background:url(../images/rzimages/footer_sanjiao.png) no-repeat; position:relative; left:0; top:2px;}
+.footer_bg{ width:auto; height:174px; background:#dad7d7; border-top:1px solid #b1afaf;}
+.link{ margin:0 auto; width:1032px; margin-top:40px;}
+.link a{ color:#595858; font-family:宋体; margin:0 8px; line-height:30px;} 
+.link a:hover{ color:#F00;}
+.copyright p{ line-height:22px; margin-top:10px; color:#595858;}
+/*---------------认证首页 footer 底部---------------*/
+
+
+
+

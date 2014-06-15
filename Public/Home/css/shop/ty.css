@@ -1,0 +1,78 @@
+@charset "utf-8";
+body{ margin:0 auto; padding:0; font-family:Verdana, "宋体",; font-size:12px; text-align:center; color:#757575; background:#FFF;}
+table tr th td ul li img a{ margin:0; padding:0;}
+table{ cellpadding:0; cellspacing:0; border:0px none;}
+li{ list-style:none;}
+a{ text-decoration:none; color:#000;}
+img{ border:0px none;}
+*{ margin:0; padding:0}
+input{ padding:0; margin:0; border:0px none;}
+input[type=button]{ cursor:pointer;}
+.clear{ clear:both;}
+
+
+/*-----------------------  头部  -------------------------*/
+.topnavbg{ width:auto; height:35px; background:url(../images/header_onebg.jpg) repeat-x; border-bottom:1px solid #c5c3c3;}
+.topnav{ margin:0 auto; width:1095px; height:35px;}
+.topnav a{ margin:0 17px; color:#5e5d5d}
+.top_btn{ margin:0 15px; background:none;}
+.topnav a:hover{ color:#900;}
+.leftsidebar{ float:left; line-height:35px;}
+.rightsidebar{ float:right; line-height:35px;}
+
+.header-two{ margin:0 auto; width:1095px; height:65px; padding-top:26px;}
+.logo{ float:left; width:330px; height:45px;}
+.search{ float:right; margin-right:17px;}
+.search .search_one{ width:380px; height:31px; border:2px solid #026bbe; font-size:14px; padding:5px 0 5px 14px; line-height:31px;}
+.search .ss{ width:117px; height:45px; line-height:45px; background:url(../images/ss_bg.jpg) no-repeat; color:#FFF; font-size:14px; text-align:left; padding-left:20px; position:relative; top:0; left:-5px; border:0 none;}
+
+.navbg{ width:auto; height:50px; background:#026bbe; margin-bottom:2px;}
+.nav{ margin:0 auto; width:1095px; height:50px;}
+.nav ul{ width:1095px; height:50px; padding:0;}
+.nav ul li{ float:left; width:130px; height:50px; text-align:center; line-height:50px;}
+.Mnav{ margin-left:60px; margin-right:100px; width:245px; height:50px;}
+.nav .shuxian{ width:2px; height:27px; margin-top:14px; background:url(../../images/shop/shuxian.jpg) no-repeat;}
+.nav a{ display:block; font-size:14px; color:#ffffff; font-family:微软雅黑;}
+.nav ul li a:hover{ background:url(../../images/shop/ahoverbg.jpg) no-repeat;}
+
+
+
+
+
+
+/*-----------------------  底部  -------------------------*/
+.footer{ width:auto; height:71px; background:#e8e7e5;}
+.footer a:hover{ color:#930;}
+.linkbg{ width:auto; height:190px; border-top:1px solid #e7e7e7; border-bottom:1px solid #e7e7e7; background:#f8f8f8; margin-bottom:2px;}
+.footer-con{ margin:0 auto; width:1050px; padding-top:20px; padding-left:45}
+.min-nav{ float:left;}
+.min-nav a, .link a, .partner a{ color:#666666;}
+.min-nav dl{ float:left; text-align:left; margin-right:10px;}
+.min-nav dt a{ padding-left:60px;}
+.min-nav dd a{ margin-left:60px; padding-left:10px; background:url(../images/sanjiao.jpg) left center no-repeat; line-height:20px;}
+.xinshou a, .peisong a, .shouhou a, .help a{ font-size:14px; line-height:30px;}
+.xinshou{ height:40px; background:url(../images/min_navbg_01.jpg) left center no-repeat;}
+.peisong{ height:40px; background:url(../images/min_navbg_02.jpg) left center no-repeat;}
+.shouhou{ height:40px; background:url(../images/min_navbg_03.jpg) left center no-repeat;}
+.help{ height:40px; background:url(../images/min_navbg_04.jpg) left center no-repeat;}
+
+.partner{ float:left; width:188px; height:130px; margin-left:38px; border-left:1px solid #ccc; text-align:left;}
+.partner a{ line-height:30px;}
+.partner dt a{ font-size:14px; margin-left:14px;}
+.partner dd a{ margin-left:14px;}
+.partner .nh a{ padding-left:20px; background:url(../images/partner_abg_01.jpg) left center no-repeat;}
+.partner .pn a{ margin-left:38px; padding-left:20px; background:url(../images/partner_abg_02.jpg) left center no-repeat;}
+.partner .yyt a{ padding-left:20px; background:url(../images/partner_abg_03.jpg) left center no-repeat;}
+.partner .jfx a{ margin-left:26px; padding-left:20px; background:url(../images/partner_abg_04.jpg) left center no-repeat;}
+.partner .gh a{ padding-left:20px; background:url(../images/partner_abg_05.jpg) left center no-repeat;}
+.partner .al a{ margin-left:40px; padding-left:20px; background:url(../images/partner_abg_06.jpg) left center no-repeat;}
+
+.link{ float:right; width:100px; height:130px; border-left:1px solid #ccc; margin-right:40px;}
+.link a{ line-height:32px;}
+.link dt{ text-align:left;}
+.link dt a{ font-size:14px; margin-left:8px;}
+.link .lx a{ padding-left:20px; background:url(../images/link_abg_03.jpg) left center no-repeat;}
+.link .jd a{ padding-left:20px; background:url(../images/link_abg_06.jpg) left center no-repeat;}
+.link .kg a{ padding-left:20px; background:url(../images/link_abg_08.jpg) left center no-repeat;}
+.copyright{ height:68px; line-height:20px; padding-top:20px; overflow:hidden; background:#e8e7e5; color:#100f0d;}
+/*-----------------------  底部  -------------------------*/

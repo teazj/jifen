@@ -1,0 +1,599 @@
+@charset "utf-8";
+
+/*  body{ font-family:微软雅黑;}  */
+.f_16{ font-size:16px; font-family:微软雅黑;}
+table{ cellpadding:0; cellspacing:0; border:0px none;}
+/*----------  返回顶部和意见反馈  -------------*/
+.top_yj{ float:right; position:absolute; right:-80px; bottom:2px;}
+.fh_top{ display:block; width:60px; height:17px; background:url(../../images/shop/fh_top.jpg) top left no-repeat; padding-top:63px; color:#000;}
+.yjfk{ display:block; width:37px; height:87px; background:#63b3f8; color:#FFFFFF; margin-top:28px; padding-top:20px;}
+/*----------  返回顶部和意见反馈  -------------*/
+
+
+
+/*------------------------  loin登录页面  ------------------------*/
+.M_loin{ margin:0 auto; width:1095px; padding-top:75px; padding-bottom:50px;}
+
+/*---------  登录框  ----------*/
+.loin{ float:left; width:350px; height:310px; border:1px solid #cfcfcf;}
+.loin dl{ margin-left:22px; width:286px; text-align:left;}
+.loin dt{ height:52px; line-height:52px; border-bottom:1px solid #cfcfcf;}
+.user_mm{ height:42px; line-height:42px; color:#5d5d5d;}
+.forget{ margin-left:42px;}
+.user, .mm{ width:274px; height:30px; line-height:30px; padding:3px 0 3px 10px; border:1px solid #cfcfcf;}
+.dz{ height:32px; margin-top:14px; line-height:32px;}
+.btn_loin{ float:left; width:94px; height:32px; background:#de0607; color:#FFF; font-weight:bold;}
+.zhuce{ float:right;}
+.loin a{ color:#f72023;}
+/*---------  登录框  ----------*/
+
+.loin_ban{ float:right;}
+.M_loin_dx{ width:auto; height:24px; border-top:3px solid #eaeaea;}
+/*------------------------  loin页面  ------------------------*/
+
+
+/*----------------------  Vip_dz地址配送页面页面  ----------------------*/
+.none_dz{ float:left; width:236px; height:106px; background:url(../../images/shop/Vip_dz.png) no-repeat; margin-left:14px; margin-top:30px; position:relative;}
+.none_dz dl{ padding:7px 0 7px 20px;height:92px;overflow:hidden;}
+.none_dz dl dd{ line-height:24px; text-align:left; width:200px;overflow:hidden;}
+.none_dz a{ display:block; width:14px; height:14px; background:url(../../images/shop/tc_close.png) no-repeat; position:absolute; right:7px; top:8px;}
+.jia_dz{ display:block; width:236px; height:106px; background:url(../../images/shop/Vip_jiadz.png) no-repeat; margin-left:14px; margin-top:20px;}
+.jia_dz:hover{ cursor:pointer;}
+/*----------------------  Vip_dz地址配送页面页面  ----------------------*/
+
+
+
+
+/*----------------------  Vip_jdz增加地址配送页面页面  ----------------------*/
+.vip_jdz table{ text-align:right; margin-top:12px; margin-left:50px; color:#000000;}
+.jdz_left{ text-align:left;}
+.jdz_text1{ width:380px; height:39px; line-height:30px; padding-left:10px; border:1px solid #e3e3e3; margin:18px 0px;}
+.jdz_textarea{ width:390px; height:70px; border:1px solid #e3e3e3; margin:18px 0px;}
+.jdz_text2{ width:180px; height:39px; line-height:30px; border:1px solid #e5e5e5; padding-left:10px; margin:18px 0px;}
+.jdz_btn{ width:94px; height:74px; padding-bottom:36px; margin-right:40px; margin-top:35px; background:url(../../images/shop/jdz_btnbg.png) no-repeat; color:#FFFFFF; font-family:微软雅黑; font-size:14px;}
+/*----------------------  Vip_jdz增加地址配送页面页面  ----------------------*/
+
+
+
+
+/*----------------------  help帮助中心页面  ----------------------*/
+.mhelp{ margin:20px auto 45px; width:1080px;}
+.mhelp_tit{ text-align:left; margin-bottom:8px; margin-left:8px; height:26px; line-height:26px; color:#026bbe;}
+.mhelp_tit a{ color:#026bbe;}
+.mhelp_left{ float:left; width:232px; border:1px solid #cbcaca; font-family:微软雅黑;}
+.mhelp_lt{ width:232px; height:40px; line-height:40px; background:#026bbe; color:#FFFFFF; font-size:16px;}
+.mhelp_left dt{ width:232px; height:39px; line-height:39px; background:url(../../images/shop/mhelp_ltbg.jpg) no-repeat; color:#026bbe; font-size:16px;}
+.mhelp_left dd{ height:38px; line-height:38px; border-top:1px solid #d7d5d6;}
+.mhelp_left dd a{ color:#8a8b8c;}
+.mhelp_right{ float:right; width:830px; border:1px solid #c8c7c7;}
+.mhelp_rt{ padding-left:18px; width:812px; height:40px; line-height:40px; background:url(../../images/shop/mhelp_rtbg.jpg) left center repeat-x; color:#014f8c; text-align:left; font-family:微软雅黑; font-size:14px; border-top:4px solid #014f8c;}
+.mhelp_right p{ text-align:left; line-height:36px; width:764px; margin-left:21px;}
+.mhelp_blue{ color:#014f8c; margin-top:31px;}
+/*----------------------  help帮助中心页面  ----------------------*/
+
+
+/*--------   注册框验证码没写    --------*/
+
+.M_retrunreg{ margin:0 auto; width:1095px; padding:100px;}
+.M_retrunreg P{line-height:30px; color:#000; font-size:18px;}
+.M_retrunreg a{text-decoration:underline;}
+.M_retrunreg a:hover{pointer:cursor;}
+
+/*------------------------  register注册页面  ------------------------*/
+.M_register{ margin:0 auto; width:1095px; padding-top:50px; padding-bottom:50px;}
+
+.register_1{ width:1095px;}
+.register_1 p{ line-height:100px;}
+
+/*---------  注册框  ----------*/
+.register{ float:left; width:387px; height:425px; border:1px solid #dfdcdc; color:#000;}
+.register table{ margin:0 auto; width:375px; cellpadding:0; cellspacing:0; border:0px none;}
+.register .text_right{ width:90px; text-align:right; letter-spacing:2px; padding-left:15px;}
+.register .tl{ text-align:left;}
+.register .wbk{ width:210px; height:20px; line-height:20px; padding:5px 0 4px 7px; border:1px solid #d1d1d1; margin-top:5px; margin-bottom:5px;}
+.register .yzm{ width:93px; height:20px; line-height:20px; padding:5px 0 4px 7px; border:1px solid #d1d1d1; margin-top:5px; margin-bottom:5px;}
+.register .sf{ width:80px; height:100px; line-height:100px; text-align:right; padding-left:15px; padding-right:10px;}
+.register .sub{ width:137px; height:38px; line-height:38px; background:#de0607; color:#FFF; font-size:16px; font-family:微软雅黑; letter-spacing:2px;}
+.showbox_1{width:828px;height:511px;display:none;position:absolute;right:0;top:0;z-index:100;border-top:10px #000000 solid;border-bottom:10px #000000 solid;border-right:12px #000000 solid;border-left:12px #000000 solid;background:#fff;}
+#zhezhao{background-color:#666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
+.mainlist_1{ text-align:center; padding-left:40px; border:1px solid #d2d2d2;}
+.mainlist_1 p{ text-align:left; width:700px; padding-right:70px; height:450px; margin-top:30px; overflow:scroll; line-height:26px; color:#256df3;}
+.close_1{ float:right; display:block; width:14px; height:14px; background:url(../../images/shop/tc_close.png) no-repeat; margin-right:26px; margin-top:28px;}
+
+
+.red{ color:#ff0005;}
+.blue{ color:#026bbe;}
+.register_tit{ margin:0 auto; width:375px; height:38px; line-height:38px; border-bottom:1px solid #cfcfcf;}
+.register_tit h2{ float:left; margin-left:25px;}
+.tixing{ float:right; color:#de0607; margin-right:18px;}
+/*---------  注册框  ----------*/
+/*------------------------  register注册页面  ------------------------*/
+
+
+
+
+
+/*--------   找回密码验证码没写    --------*/
+/*------------------------  password密码找回页面  ------------------------*/
+.M_password{ margin:0 auto; width:1095px; padding-bottom:100px;}
+
+/*---------  找回密码表单  ----------*/
+.M_password h1{ margin-left:15px; text-align:left; color:#000;}
+.M_password table{ margin:0 auto; width:500px; cellpadding:0; cellspacing:0; border:0px none;}
+.text_r{ width:90px; text-align:right; letter-spacing:2px; padding-left:15px;}
+.text_l{ text-align:left;}
+.text_l a{ margin-left:14px; color:#3b8bf8;}
+.M_password .text{ width:230px; height:20px; line-height:20px; padding:6px 0 5px 8px; border:1px solid #d1d0d0; margin-top:8px; margin-bottom:8px;}
+.M_password .tel_yzm{ width:102px; height:20px; line-height:20px; padding:6px 0 5px 8px; border:1px solid #d1d0d0; margin-top:8px; margin-bottom:8px;}
+.p_tj{ margin-top:36px; width:182px; height:50px; line-height:50px; background:#3b8bf8; color:#FFF; font-size:16px; font-family:微软雅黑; letter-spacing:2px;}
+/*---------  找回密码表单  ----------*/
+/*------------------------  password密码找回页面  ------------------------*/
+
+
+
+
+
+/*--------   inquiry_down的end写在li里面没改出来    --------*/
+/*------------------------  inquiry积分查询页面  ------------------------*/
+.M_inquriy{ margin:0 auto; width:1081px;}
+
+.inquiry_one{ margin:0 auto; width:1079px; height:89px; padding-top:11px; border:1px solid #eeeaea;}
+.inquiry_sp{ float:left; margin-left:11px;}
+.sp_img{ float:left; width:78px; height:77px; overflow:hidden;}
+.sp_jf{ float:left; margin-left:15px; line-height:41px; text-align:left; color:#000;}
+.inquiry_sp li{ float:left; line-height:24px;}
+.inquiry_jf{ float:right;}
+.inquiry_jf li{ line-height:38px; font-size:14px; font-family:微软雅黑; letter-spacing:1px;}
+.orange{ color:#e69302;}
+.inquiry_inp{ float:right;}
+.inp_dh{ width:109px; height:39px; margin:17px 138px 0 70px; background:#026bbe; letter-spacing:2px; color:#FFF; font-size:16px; font-family:微软雅黑;}
+
+.inquiry_two{ margin:0 auto; width:1079px; margin-top:15px; color:#000;}
+.inquiry_twotit{ width:1060px; height:41px; line-height:41px; padding-left:19px; margin-bottom:1px; background:#026bbe; color:#FFF; text-align:left;}
+.inquiry_two table{ width:1079px;}
+.inquiry_two .inq_tit{ height:41px; line-height:41px; background:#eeebeb;}
+.inquiry_two tr{ height:32px; line-height:32px;}
+
+.inquiry_down{ margin:0 auto; width:490px; height:32px; padding-top:7px; padding-left:10px; margin-top:62px;}
+.inquiry_down ul{ height:31px; margin:0 auto;}
+.inquiry_down li{ float:left; height:31px; line-height:30px; margin:0 5px;}
+.inquiry_down .end{  display:block; width:92px; height:31px; background:url(../../images/shop/ww_1.jpg) no-repeat;}
+.inquiry_down a{ display:block; width:30px; height:31px; background:#FFF; color:#000; background:url(../../images/shop/ww_2.jpg) no-repeat;}
+.inquiry_down li a:hover{ color:#FFF; background:url(../../images/shop/inq_down_abg1.jpg) no-repeat;}
+.inquiry_down .end:hover{ color:#FFF; background:url(../../images/shop/inq_down_abg2.jpg) no-repeat;}
+/*------------------------  inquiry积分查询页面  ------------------------*/
+
+
+
+
+
+
+/*---------------------------  get积分获取页面  ---------------------------*/
+.M_get{ margin:0 auto; width:1081px; padding-bottom:100px;}
+
+.ban_news{ margin-top:10px;}
+#Mget_ban{ float:left; width:852px; height:273px; overflow:hidden;}
+#Mget_img{ width:852px; height:273px; visibility:hidden; overflow:hidden;}
+
+.Mget_news{ float:right; width:223px; height:271px; border:1px solid #adaaaa;}
+.Mget_news dt{ width:223px; height:51px; line-height:51px; background:url(../../images/shop/Mget_news_dtbg.jpg) no-repeat;}
+.Mget_news dt a{ font-size:18px; color:#FFFFFF;}
+.Mget_news dd{ height:48px; line-height:48px; color:#656363; text-align:left; padding-left:20px;}
+.Mget_news dd a{ color:#656364;}
+
+.get_jf{ margin:0 auto; width:1079px;}
+.getjf_tit{ width:1079px; height:48px; line-height:48px; margin-bottom:10px; border-bottom:1px solid #0264bf; text-align:left;}
+.getjf_tit a{ font-size:14px; color:#0365be; padding-left:9px;}
+
+.getjf_con{ margin-left:156px;}
+.haoma{ font-size:14px; color:#252525;}
+.ddh{ width:378px; height:36px; margin:31px 0; font-size:16px; line-height:36px; padding:7px 0 5px 12px; border:1px solid #cccacb;}
+.sxjf{ width:200px; height:36px; margin:31px 0; font-size:16px; line-height:36px; padding:7px 0 5px 12px; border:1px solid #cccacb;}
+.inp_jf{ text-align:center;}
+.abc{ width:134px; height:45px; font-size:14px; height:45px; background:#e81f18; color:#FFFFFF; margin-bottom:31px;}
+.get_inp2{ width:146px; height:45px; font-size:14px; height:45px; background:#e81f18; color:#FFFFFF; margin-left:15px;}
+
+.showbox{width:468px;height:260px;display:none;position:absolute;right:0;top:0;z-index:100;border:16px #000000 solid;background:#fff;}
+.showbox .mainlist{}
+#zhezhao{background-color:#666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
+.mainlist{ text-align:center; padding-top:30px;}
+.mainlist p{ line-height:30px; color:#848282; font-size:14px;}
+.suge{ width:468px; height:54px; background:#fd0202;}
+.suge img{ float:left; margin-top:28px; margin-left:11px;}
+.close{ float:right; display:block; width:14px; height:14px; background:url(../../images/shop/tc_close.png) no-repeat; margin-right:26px; margin-top:28px;}
+.tc_inp1{ margin-top:50px; width:274px; height:54px; line-height:50px; color:#FFFFFF; font-size:16px; background:url(../../images/shop/tc_inp1.png) no-repeat;}
+
+/*---------------------------  get积分获取页面  ---------------------------*/
+
+
+
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------
+
+      以下部分是会员中心页面css，3个网站的会员中心是同一个，所有的会员中心页面的头部‘底部和左侧的菜单栏都是一样的
+
+-----------------------------------------------------------------------------------------------------*/
+
+
+
+/*--------------  会员中心中个人消息提醒  --------------*/
+.ziji{ float:left; display:block; width:13px; height:10px; background:url(../../images/shop/geren.jpg) no-repeat; margin-left:15px; margin-top:11px;}
+/*--------------  会员中心中个人消息提醒  --------------*/
+
+
+/*---------------------------  Vip_mm密码修改页面  ---------------------------*/
+.M_vipmm{ margin:30px auto 0; width:1072px; position:relative;}
+
+/*------------  Mvip_left密码修改页面左侧菜单部分  ------------*/
+.Mvip_left{ float:left; width:280px; height:881px; color:#000; border:1px solid #d3d1d1;}
+.Mvip_left a{ color:#000;}
+.Mvip_left dt{ width:280px; height:52px; line-height:52px; background:#0099cc; text-align:left;}
+.Mvip_left dt a{ font-size:18px; font-family:微软雅黑; color:#FFF; background:url(../../images/shop/Mvip_dt_abg.png) left center no-repeat; padding-left:43px; margin-left:29px;}
+.Mvip_1 dd{ line-height:34px; padding-left:28px; text-align:left;}
+.Mvip_1 dd .blue1{ color:#0099cc; float:left;}
+.Mvip_1 dd .huiyuan{ background:url(../../images/shop/inquiry_vipimg.png) left center no-repeat; padding-left:77px; color:#0099cc;}
+.Mvip_2 dd, .Mvip_3 dd, .Mvip_4 dd, .Mvip_5 dd{ margin:0 auto; width:267px; border-bottom:1px dashed #9f9e9e; line-height:40px; text-align:left;}
+.Mvip_2 dd a, .Mvip_3 dd a, .Mvip_4 dd a, .Mvip_5 dd a{ margin-left:70px;}
+#nobor_tom{ border-bottom:0px none;}
+/*------------  Mvip_left密码修改页面左侧菜单部分  ------------*/
+
+/*------------  Mvip_right密码修改页面右边表单部分  ------------*/
+.Mvip_right{ float:right; width:774px; height:881px; border:1px solid #cbc9c9;}
+.vipr_tit{ height:51px; line-height:51px; background:#eae9e9; text-align:left;}
+.vipr_tit a{ font-size:16px; color:#0099cc; background:url(../../images/shop/vipr_titabg.png) left center no-repeat; padding-left:38px; margin-left:10px;}
+.vip_inp1{ width:210px; height:30px; line-height:30px; margin:7px 0; padding:5px 0 4px 8px; border:1px solid #848181;}
+.vipr_con table{ margin-top:23px; margin-left:75px; text-align:right;}
+.vip_btn{  width:94px; height:70px; margin-top:33px; margin-left:204px; background:url(../../images/shop/vip_btnyy.png) center bottom no-repeat;}
+.vip_inp2{ width:94px; height:38px; line-height:38px; background:url(../../images/shop/vip_btn.png) no-repeat; color:#FFF; font-size:14px; font-family:微软雅黑;}
+/*------------  Mvip_right密码修改页面右边表单部分  ------------*/
+/*---------------------------  Vip_mm密码修改页面  ---------------------------*/
+
+
+
+
+/*---------------------------  Vip_xperson个人信息修改页面  ---------------------------*/
+.xperson{ color:#000;}
+.xperson_t{ height:185px; padding-top:7px; padding-left:48px; border-bottom:1px dashed #9f9e9e; text-align:left;}
+.xperson_t li{ height:28px; line-height:28px;}
+.blue2{ color:#026bbe;}
+
+.xperson_d{ padding-top:47px; padding-left:48px; text-align:left;}
+.xperson_inp1{ width:200px; height:27px; border:1px solid #cac9c9; padding-left:6px; margin:8px 0;}
+.xperson_inp2{ width:480px; height:27px; border:1px solid #cac9c9; padding-left:8px; margin:8px 0;}
+.xperson_op{ width:79px; height:20px; line-height:20px; border:1px solid #abadb3; margin:8px 0;}
+.xperson_text{ width:488px; height:79px; maxlength:480px; margin:8px 0;}
+/*---------------------------  Vip_xperson个人信息修改页面  ---------------------------*/
+
+
+
+
+
+/*---------------------------  Vip_person个人信息页面  ---------------------------*/
+/*-------------------------------------------------------------
+		左侧和右侧顶部person_t与个人信息修改页面xperson一样
+-------------------------------------------------------------*/
+.person_m{ width:auto; height:300px; padding-top:10px; padding-left:48px; border-bottom:1px dashed #9f9e9e;}
+.person_m ul{ text-align:left;}
+.person_m li{ height:24px; line-height:24px;}
+.person_btn{ text-align:left; height:70px; margin-top:32px; background:url(../../images/shop/vip_btnyy.png) left bottom no-repeat;}
+.person_d{ padding-left:48px; padding-top:18px; text-align:left;}
+.person_d li{ height:28px; line-height:28px;}
+/*---------------------------  Vip_person个人信息页面  ---------------------------*/
+
+
+
+
+
+/*---------------------------  Vip_exchange个人信息页面  ---------------------------*/
+.exchange_t ul{ float:left; text-align:left; margin-top:14px; margin-left:20px;}
+.exchange_t li{ font-size:14px; font-family:微软雅黑; height:28px; line-height:28px; color:#0099cc;}
+.showdiv_2{ float:right; width:210px; height:50px; line-height:50px; margin-top:23px; margin-right:83px; background:#0099cc; color:#FFF; font-size:18px; letter-spacing:2px; font-family:微软雅黑;}
+.ex_mtit{ height:22px; line-height:22px; margin-top:27px; margin-bottom:2px; border-bottom:1px solid #d5d5d5; text-align:left;}
+.ex_mtit a{ font-size:14px; font-family:微软雅黑; font-weight:bold; color:#000000; padding-left:5px;}
+.ex_mcon{ color:#a3a1a2;}
+.ex_mcon tr{ height:36px;}
+.ex_tabtit{ width:774px; height:44px; background:#eae8e9; color:#010101;}
+.ex_minp{ color:#a3a1a2; background:#FFFFFF;}
+
+/*----------------  弹出层css  ------------------*/
+
+.showbox_2{width:707px;height:350px;display:none;position:absolute;right:0;top:0;z-index:100;border-top:13px #000000 solid;border-bottom:13px #000000 solid;border-right:19px #000000 solid;border-left:19px #000000 solid;background:#fff;}
+#zhezhao{background-color:#666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
+.mainlist_2{ text-align:center;}
+.mainlist_2 li{ margin-top:20px;}
+.mainlist_2 .cf_b{ font-size:14px; color:#0387d1; line-height:44px;}
+.c_ddh{ width:378px; height:36px; margin-top:30px; font-size:16px; line-height:36px; padding:7px 0 5px 12px; border:1px solid #cccacb;}
+.showdiv_3{ width:156px; height:44px; color:#FFFFFF; font-size:14px; background:#e81f18;}
+.c_inp2{ width:156px; height:44px; color:#FFFFFF; font-size:14px; background:#0287d4;}
+.c_jf{ text-align:center; width:707px; height:54px; line-height:54px; background:#fe0103; color:#FFFFFF; font-size:18px; font-family:微软雅黑;}
+.close_2{ float:right; display:block; width:14px; height:14px; background:url(../../images/shop/tc_close.png) no-repeat; margin-right:26px; margin-top:20px;}
+/*----------------  弹出层css  ------------------*/
+.showbox_3{width:707px;height:350px;display:none;position:absolute;right:0;top:0;z-index:100;border-top:13px #000000 solid;border-bottom:13px #000000 solid;border-right:19px #000000 solid;border-left:19px #000000 solid;background:#fff;}
+#zhezhao{background-color:#666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
+.mainlist_3{ text-align:center;}
+.mainlist_3 p{ color:#FF0000; margin-top:80px; margin-bottom:50px;}
+.mainlist_3 a{ margin:50px auto 0px; display:block; width:240px; height:52px; line-height:52px; background:#0287d4; color:#FFFFFF;}
+
+
+
+
+/*------------  底部和inquiry积分查询页面一样  ------------*/
+
+/*---------------------------  Vip_exchange个人信息页面  ---------------------------*/
+
+
+
+
+
+/*---------------------------  Vip_order订单状态查询页面  ---------------------------*/
+/*-----------  距离底部的高度和其它页面不一样，有64px  ----------*/
+.order_right{ float:right; width:776px;}
+.orderr_tit{ height:36px; line-height:36px; text-align:left;}
+.orderr_tit a{font-size:16px; color:#0099cc; background:url(../../images/shop/vipr_titabg.png) left center no-repeat; padding-left:38px; margin-left:10px;}
+.orderr_con{ float:right; width:762px; height:846px; border:1px solid #cdcdcd; margin-bottom:45px; padding-left:12px;}
+
+.orderr_c1, orderr_c2, .order_c3, .order_c4{ width:751px;}
+.or_c1tit, .or_c2tit, .or_c3tit, .or_c4tit{ margin-top:14px; margin-bottom:9px; width:751px; height:37px; line-height:30px; border-bottom:1px solid #cccccc;}
+.or_c1tit a, .or_c2tit a, .or_c3tit a, .or_c4tit a{ float:left; color:#000000; font-size:14px;}
+.or_c1tit .or_inp1{ float:right; display:block; width:88px; height:33px; line-height:33px; color:#FFFFFF; background:#fd8701;}
+.or_c1con .or_inp2{ float:right; display:block; width:88px; height:33px; line-height:33px; color:#FFFFFF; background:#fd8701;}
+.or_c1con ul, .or_c2con ul{ float:left; text-align:left; width:270px;}
+.orderr_con li{ height:28px; line-height:28px; color:#838182;}
+.or_inp2{ margin-top:65px;}
+
+.or_c2con li{ height:22px; line-height:22px;}
+.or_c3con li, .or_c4con li{ text-align:left;}
+/*---------------------------  Vip_order订单状态查询页面  ---------------------------*/
+
+
+
+
+
+
+
+/*---------------------------  Vip_myorder我的订单页面  ---------------------------*/
+/*.nTab{ width:774px; height:846px; overflow:hidden}
+.none { display:none;}
+.TabTitle li{ float:left; width:px; text-align:left; margin-left:12px; font-size:14px;}
+.TabTitle{ width:731px; line-height:38px; height:38px; border-bottom:2px solid #0099cc; background:#f3f3f3;}
+.TabTitle .active a{ display:block; width:65px; height:38px; line-height:38px; background:url(../../images/shop/tab_abg1.png) center bottom no-repeat; color:#0099cc;}
+.TabTitle .normal a{ color:#000;}
+.TabContent { text-align:left; padding:8px 0 0 30px;}*/
+
+/*----------  Vip_myorder我的订单页面滑动门a的颜色问题  -----------*/
+.myorderr_con{ float:right; width:774px;  border:1px solid #cdcdcd; margin-bottom:45px; padding-bottom:23px;}
+#tabbox{ width:774px; overflow:hidden; margin:0 auto;}
+.tab_conbox{width:774px;}
+.tab_con{ display:none;}
+.tabs{height:40px;width:774px;;}
+.tabs li{height:40px;line-height:40px;float:left;background: #fff;overflow: hidden;position: relative;}
+.tabs li a {display: block;padding: 0 20px;outline:none; color:#000;}
+/* .tabs li a:hover {background:#0099cc; color:#fff;} */
+.tabs .now{background:#0099cc; color:#fff;}
+.tabs .thistab,.tabs .thistab a:hover{background:#0099cc; color:fff;}
+.tab_con { margin-top:6px; color:#000;}
+
+.or_tabtit{ width:774px; height:38px; line-height:38px; margin-bottom:50px; background:#e3e2e2;}
+.myor_inp{ line-height:30px; line-height:30px; background:#FFF;}
+/*---------------------------  Vip_myorder我的订单页面  ---------------------------*/
+
+
+
+
+
+/*---------------------------  no_x没有楼层的详细页面  ---------------------------*/
+/*-------------------ban_left菜单和ban_right大图----------------*/
+.banner{ margin:0 auto; width:1095px; height:420px;}
+.ban_left{ float:left; width:244px; hiehgt:auto; border:1px solid #cbcbcb;}
+#sidebar{ width:243px; background:#ffffff; height:409px; border:1px solid #b4b4b4; padding-top:5px;}
+#sidebar h3{padding-left:30px;}
+.sidelist{ position:relative; z-index:1; height:auto; width:243px;}
+.sidelist span h3 .snav{ font-size:14px; color:#cf0211; padding-left:22px; background:url(../../images/shop/type_once_a.png) left center no-repeat;}
+.sidelist span h3{ text-align:left; position:relative; z-index:2; height:51px; line-height:25px; font-size:14px; font-weight:normal;}
+.type_so{ margin-left:97px;}
+.sidelist span h3 .ss a{ margin-right:15px; float:left; font-size:12px; height:12px; color:#000;}
+.sidelist span h3 a{ font-size:14px; text-decoration:none; display:block; width:auto; height:auto; color:#cf0211;}
+.sidelist span h3 a:hover{ color:red;}
+.i-list{ display:none; position:absolute; z-index:1; left:248px; top:-1px; width:473px; padding-bottom:8px; background:#ffffff; border:1px solid #2a7bd6;}
+.i-list .mnav{ float:left;}
+.i-list .mnav .no_btm{ border-bottom:0 none;}
+.i-list ul{ margin-top:30px; text-align:left; margin-top:12px; border-bottom:1px solid #b1aeae;}
+.i-list ul li{ list-style:none; line-height:24px; heignt:24px;}
+.i-list ul .big{ font-size:14px; margin-left:35px; color:#2672d2;}
+.i-list ul li a{ color:#000; text-decoration:none; font-size:12px;}
+.i-list ul li a:hover{ color:red;}
+.hover{ border:1px solid #2a7bd6; position:relative; top:-1px; border-right:0; width:218px; background:#FFF;}
+.ban_right{ float:right; width:849px; height:419px;}
+/*-------------------ban_left菜单和ban_right大图----------------*/
+
+.M_nox{ margin:20px auto 90px; width:1095px; position:relative;}
+.Mnox_left{ float:left; width:234px; border:1px solid #dfdfdf; padding-top:1px;}
+.Mnox_ltit{ width:234px; height:44pxp; line-height:44px; background:#3b84d6; text-align:left;}
+.Mnox_ltit a{ color:#FFF; margin-left:50px;}
+.Mnox_lcon{ padding-bottom:18px;}
+.Mnox_lcon dl{ margin:42px auto 0; width:219px; padding-bottom:20px; border-bottom:1px dashed #a9a8a8;}
+.Mnox_lcon dd{ height:24px; line-height:24px; color:#000;}
+
+.Mnox_right{ float:right;}
+.Mnoxr_t{ width:850px; height:146px; border:1px solid #dbdbdb;}
+.Mnoxr_tpp{ height:84px; border-bottom:1px solid #dbdbdb;}
+.Mnoxr_tpp li{ float:left; line-height:22px;}
+.Mnoxr_tpp li a, .Mnoxr_tjf li a{ color:#3b84d6;}
+.Mnoxr_tt1, .Mnoxr_tt2{ float:left; width:90px; height:84px; line-height:52px; padding-left:20px; text-align:left; color:#000;}
+.Mnoxr_tt2{ height:61px;}
+.Mnoxr_tjf li{ float:left; margin-top:17px;}
+
+.Mnoxr_d{ width:850px; margin-top:6px; border:1px solid #e0e0e0; padding-bottom:20px;}
+.Mnoxr_dtit{ height:44px; border-bottom:1px solid #c8c8c8; background:url(../../images/shop/Mnoxr_dtitbg.jpg) left center repeat-x;}
+.Mnoxr_tt3{ float:left; width:45px; height:44px; line-height:44px; padding-left:20px; text-align:left; color:#000;}
+.Mnoxr_dtit li{ float:left; margin-top:13px; color:#000;}
+.noxd_inp1{ width:64px; height:20px; line-height:20px; background:#3b84d6; margin-right:9px;}
+.noxd_inp2{ width:51px; height:20px; line-height:20px; background:#b2b2b2; margin-right:9px;}
+.noxd_inp3{ width:69px; height:20px; line-height:20px; background:#b2b2b2; margin-right:33px;}
+.noxd_inp4, .noxd_inp5{ width:82px; height:22px; line-height:22px; border:1px solid #dddddd;}
+.noxd_inp6{ width:59px; height:22px; line-height:22px; margin-top:2px; margin-left:11px; margin-right:54px; color:#FFF; background:url(../../images/shop/noxd_inp6.png) no-repeat;}
+.noxd_inp7, .noxd_inp8{ width:54px; height:21px; line-height:21px; border:1px solid #dfdfdf; margin-left:8px;}
+
+.Mnoxr_dcon dl{ float:left; width:198px; height:273px; border:1px solid #ecebeb; margin-top:10px; margin-left:10px;}
+.Mnoxr_dcon dt{ height:136px; padding-top:24px;}
+.Mnoxr_dcon h3 a{ line-height:28px;}
+.Mnoxr_dcon dd{ color:#3b84d6; height:34px; line-height:16px;}
+.aa a{ float:left; color:#FFF; text-align:center; margin-left:9px; line-height:34px;display:block; width:84px; height:37px; background:url(../../images/shop/main_picabg.jpg) no-repeat; margin-top:5px;}
+/*---------------------------  no_x没有楼层的详细页面  ---------------------------*/
+
+
+
+
+
+
+
+/*--------------------------------------------------------------------------------------
+		以下是商品详情Sx_页面,左边的和M_nox没楼层的详细页面一样，部分css和参照M_nox
+							左侧底部2个栏目没写  
+--------------------------------------------------------------------------------------*/
+
+/*----------------------  Sx_trab商品详情‘成功记录页面  ----------------------*/
+/*-------------------  sx_shop目前没写  -------------------*/
+.shop_tit{ margin:0 auto; width:1080px; font-size:16px; line-height:40px; text-align:left;}
+.sx_shop{ margin:0 auto; width:1080px; height:455px; padding-bottom:10px;}
+.shop_left{ float:left; width:392px; height:292px;}
+.show_right{ float:right; width:677px; text-align:left; padding-top:20px;}
+.show_right dt{ width:587px; padding-right:90px; padding-bottom:10px; border-bottom:1px solid #b6b5b5; line-height:22px; color:#5f5e5e; font-size:16px;}
+.show_right dd{ line-height:42px; color:#000;}
+.sx_red1, .sx_red2, .sx_red3{color:#fa0202; font-size:16px; letter-spacing:2px; font-family:微软雅黑; padding-left:20px;}
+.sx_red1{ background:url(../../images/shop/sx_redbg1.png) left center no-repeat;}
+.sx_red2{ background:url(../../images/shop/sx_redbg2.png) left center no-repeat;}
+.sx_pl{ padding-left:20px;}
+.sx_inp1, .sx_inp2{ width:125px; height:36px; line-height:35px; margin-left:28px; margin-top:50px; color:#fff; font-size:16px; font-family:微软雅黑;}
+.sx_inp1{ background:url(../../images/shop/sx_inp1.png) no-repeat;}
+.sx_inp2{ background:url(../../images/shop/sx_inp2.png) no-repeat;}
+
+
+.Msx_right{ float:right; width:829px; border:1px solid #dedede; padding-bottom:70px;}
+.Msxr_tit{ width:825px; height:44px; padding-left:4px; background:#3b84d6;}
+.Msxr_tit li{ width:100px; float:left; height:44px; line-height:44px;}
+.Msxr_tit li a{ display:block; height:43px; margin-top:1px; font-size:14px; font-family:微软雅黑; color:#FFF;}
+.Msxr_tit li a:hover{ background:#FFF; color:#3b84d6;}
+.Msxr_con{ padding-left:1px; padding-top:1px;}
+.Msxr_con table{ background:#FFF; padding-bottom:52px;}      /*  为什么背景颜色是蓝色  */
+.Msxr_con table td{ height:40px; color:#706f6f; border-bottom:1px solid #f6f5f5;}		/*  图td的长度短一些  */
+.Msxr_tabtit{ width:828px; height:44px; line-height:44px; background:#f4f5f5; color:#000;}
+/*----------------------  Sx_trab商品详情‘成功记录页面  ----------------------*/
+
+
+
+
+
+
+
+
+/*----------------------  Sx_trab商品详情‘成功记录页面  ----------------------*/
+.Msx_app li{ height:40px; line-height:40px;}
+.Msxapp_pj{ float:left; margin-left:15px;}
+.Msxapp_zz{ float:right; margin-right:33px;}
+.Msxapp_rq{ float:right; margin-right:50px;}
+.Maxd_app{ margin:100px auto 0px; width:766px;}
+.my_pj{ width:764px; height:114px;}
+.app_inp9{ float:right; width:120px; height:43px; margin-top:20px; line-height:43px; font-size:14px; color:#FFF; background:#62b3f8;}
+/*----------------------  Sx_trab商品详情‘成功记录页面  ----------------------*/
+
+
+
+
+
+/*----------------------  Sx_sh商品详情‘售后服务页面  ----------------------*/
+.Msx_sh{ margin:0 auto; width:765px; text-align:left; color:#595858; padding-bottom:160px;}
+.Msx_sh p{ line-height:30px;}
+.Msx_sh p a{ color:#595858;}
+/*----------------------  Sx_sh商品详情‘售后服务页面  ----------------------*/
+
+
+
+
+
+/*----------------------  Sx_sh商品详情‘售后服务页面  ----------------------*/
+.Msx_detailed
+.sh_detailed{ margin:0 auto; width:790px; border-bottom:1px solid #e5d8c5; padding-left:12px; padding-bottom:38px; color:#000000;}
+.sh_detailed ul{ float:left; text-align:left; width:263px;}
+.sh_detailed ul li{ line-height:32px;}
+/*----------------------  Sx_sh商品详情‘售后服务页面  ----------------------*/
+
+
+
+/*----------------------  myche我的购物车页面  ----------------------*/
+.M_che{ margin:10px auto 84px; width:1080px; border-top:1px solid #0151b0; padding-top:1px; color:#000000;}
+.Mche_top{ height:50px; line-height:50px; background:#e2e0e1;}
+.Mche_c{ height:127px;}
+.big_red{ font-size:18px; color:#ff0302;}
+.Mche_inp{ width:147px; height:56px; line-height:56px; font-size:14px; color:#FFFFFF; background:#ff0302;}
+.Mche_img{ width:50px; height:50px; padding:3px; border:1px solid #dbdbdb;}
+.Mche_inp1{ background:none;}
+.che_tl{ text-align:left;}
+.jia, .jian{ width:13px; height:13px; line-height:13px; border:1px solid #c9c9c9; text-align:center;}
+.shuzi{ width:34px; height:20px; border:1px solid #c9c9c9; text-align:center; margin:0 3px;}
+/*----------------------  myche我的购物车页面  ----------------------*/
+
+
+
+/*----------------------  jiesuan结算页面  ----------------------*/
+.jiesuan{ margin:0 auto; width:1080px; border-top:1px solid #dad9d9; padding-bottom:130px;}
+.js_bz{ margin:35px auto 5px; width:784px; height:34px; background:url(../../images/shop/js_bz.png) no-repeat;}
+.js_one{ padding-left:33px; padding-bottom:26px;}
+.js_one p, .js_two p{ text-align:left; margin-left:17px; font-size:16px; color:#000; line-height:55px; font-weight:bold;}
+.js_one dl{ float:left; margin-left:10px; width:237px; height:106px; background:url(../../images/shop/dz_abg1.png) no-repeat; text-align:left;}
+.js_one dl:hover{ background:url(../../images/shop/dz_abg2.png) no-repeat;}
+.js_one dt{ margin:11px auto 6px; width:198px; padding-left:10px; line-height:28px; border-bottom:1px solid #dfdfdf;}
+.js_one dd{ margin:0 auto; width:198px; padding-left:10px; line-height:24px;}
+.js_two{ padding-bottom:50px;}
+.js_two p{ margin-left:50px;}
+.fw_red{ float:right; width:250px; font-size:18px; color:#ff0302; font-family:微软雅黑;}
+.js_inp{ float:right; margin-top:20px; width:198px; height:60px; line-height:55px; background:url(../../images/shop/js_inpbg.png) no-repeat; font-family:微软雅黑; color:#FFFFFF; font-size:16px;}
+/*----------------------  jiesuan结算页面  ----------------------*/
+
+
+
+
+/*----------------------  xg_mm修改密码页面  ----------------------*/
+.xg_mm{ margin:40px auto 84px; width:1080px; color:#000000;}
+.xg_mm table{ margin:0 auto; width:320px;}
+.xg_con{ border:1px solid #c7c6c6; border-top:none; padding-bottom:90px; padding-top:60px;}
+.xg_tit{ width:1078px; height:41px; border:1px solid #85bfec; background:url(../../images/shop/../../images/shop/xg_titbg.jpg) left center repeat-x; text-align:left;}
+.xg_tit p{ line-height:41px; color:#000; background:url(../../images/shop/../../images/shop/xg_pbg_03.png) left center no-repeat; padding-left:24px;}
+.xg_text{ width:230px; height:31px; line-height:21px; border:1px solid #d1d0d0; padding-left:8px; margin:10px auto;}
+.xg_btn{ width:182px; height:50px; background:#3b8bf8; color:#FFF; font-size:16px; margin-top:100px;}
+/*----------------------  xg_mm修改密码页面  ----------------------*/
+
+
+
+
+/*----------------------  pay支付页面  ----------------------*/
+.pay{ margin:0 auto; width:1078px; margin-top:20px; padding-bottom:123px; border:1px solid #c9c8c8;}
+.pay_tit{ height:80px; line-height:80px; background:#e8f4ff; font-size:16px; font-family:微软雅黑; color:#4287be;}
+.paytit_left{ float:left; margin-left:100px;}
+.paytit_right{ float:right; margin-right:140px;}
+.pay_con li{ float:left; text-align:left;}
+.pay_con li p{ line-height:22px;}
+
+
+
+
+/*----------------------  help帮助中心页面  ----------------------*/
+.mhelp{ margin:20px auto 45px; width:1080px;}
+.mhelp_tit{ text-align:left; margin-bottom:8px; margin-left:8px; height:26px; line-height:26px; color:#026bbe;}
+.mhelp_tit a{ color:#026bbe;}
+.mhelp_left{ float:left; width:232px; border:1px solid #cbcaca; font-family:微软雅黑;}
+.mhelp_lt{ width:232px; height:40px; line-height:40px; background:#026bbe; color:#FFFFFF; font-size:16px;}
+.mhelp_left dt{ width:232px; height:39px; line-height:39px; background:url(../images/mhelp_ltbg.jpg) no-repeat; color:#026bbe; font-size:16px;}
+.mhelp_left dd{ height:38px; line-height:38px; border-top:1px solid #d7d5d6;}
+.mhelp_left dd a{ color:#8a8b8c;}
+.mhelp_right{ float:right; width:830px; border:1px solid #c8c7c7;}
+.mhelp_rt{ padding-left:18px; width:812px; height:40px; line-height:40px; background:url(../images/mhelp_rtbg.jpg) left center repeat-x; color:#014f8c; text-align:left; font-family:微软雅黑; font-size:14px; border-top:4px solid #014f8c;}
+.mhelp_right p{ text-align:left; line-height:36px; width:764px; margin-left:21px;}
+.mhelp_blue{ color:#014f8c; margin-top:31px;}
+/*----------------------  help帮助中心页面  ----------------------*/
+
+
+
