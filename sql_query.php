@@ -10,3 +10,5 @@ ALTER TABLE `ff_users` CHANGE `uid` `id` INT( 10 ) UNSIGNED NOT NULL COMMENT '�
 ALTER TABLE `ff_users` ADD PRIMARY KEY(`id`);
 
 ALTER TABLE `ff_users` ADD `email` VARCHAR( 30 ) NOT NULL COMMENT '注册邮箱' AFTER `balance` ;
+
+2，ALTER TABLE `ff_vistainfo` CHANGE `pid` `pid` INT(11) NOT NULL COMMENT '外键，对应表place';

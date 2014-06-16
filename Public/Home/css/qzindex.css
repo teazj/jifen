@@ -117,7 +117,7 @@
 /**  和question一样  **/
 
 .mtwo_right{ float:right; width:731px; height:206px; border:1px solid #d2d2d2;}
-.nTab{ width:731px; height:206px; overflow:hidden}
+.nTab{ width:731px; 、/*height:206px;*/ overflow:hidden}
 .none { display:none;}
 .TabTitle li{ float:left; width:350px; text-align:left; margin-left:12px; font-size:14px;}
 .TabTitle{ width:731px; line-height:38px; height:38px; border-bottom:2px solid #0099cc; background:#f3f3f3;}
