@@ -42,5 +42,12 @@ class IndexAction extends Action {
 		
 		$this->display();
 	}
+	
+	//商品详细页面
+	public function info(){
+		
+		
+		$this->display();
+	}
 
 }

@@ -12,6 +12,26 @@
 <script type="text/javascript" src="__PUBLIC__/Home/js/ss.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Home/js/tcc.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.kinMaxShow-1.1.min.js"></script>
+<!--  搜索js (外联没效果) --> 
+<script type="text/javascript">
+$(function(){
+	var default_key = '请输入相关关键字';
+	var searchObj = $("#search_key");
+	searchObj.val(default_key);
+	searchObj.bind("focus",function(){
+		if(searchObj.val() == default_key){
+			searchObj.val('');
+		}
+	});
+	
+	searchObj.bind("blur",function(){
+		if(searchObj.val() == ''){
+			searchObj.val(default_key);
+		}
+	});
+});
+</script>
+
 </head>
 <body>
 	<div class="container">
@@ -19,12 +39,12 @@
     	<div class="topnavbg">
         	<div class="topnav">
             	<div class="leftsidebar">
-                	<a href="">欢迎访问本店</a> | <a href="">返回首页</a> | <a href="">收藏本站</a>
+                	<a href="">欢迎访问本店</a> | <a href="{:U('Index/index')}">返回首页</a> | <a href="">收藏本站</a>
                	</div>
                 <div class="rightsidebar">
                 	<a href="">
-                	<if condition="$Think.session.uname eq null"><a href="{:U('Index/Com/login','','')}">登陆
-					</a> | <a href="{:U('Index/ShopReg/register','','')}">注册</a>
+                	<if condition="$Think.session.uname eq null"><a href="{:U('Com/login','','')}">登录
+					</a> | <a href="{:U('Com/register','','')}">注册</a>
                 	<else/>您好：{$Think.session.uname}<a href="{:U('Index/ShopReg/logOut',array('act'=>'out'),'')}">[退出]</a>
                 	</if>
                 	| <a href="{:U('Index/Vip/index')}">我的账户</a> | <a href="">我的积分</a>

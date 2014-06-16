@@ -10,60 +10,58 @@ class LoginAction extends Action{
 			echo 'ok';
 		}
 	}
-
+	
+	//验证码;
+	Public function verify() {
+		import ( 'ORG.Util.Image' );
+		Image::buildImageVerify ();
+	}
+	
+	
 	//用户注册方法
 	public function register(){
-		if(md5($_POST['code'])!=$_SESSION['code']){
+		if($_POST['code']!=$_SESSION['code']){
 			$this->error('验证码不正确');
 			exit();
 		}
-		$m=M('User');
-		$_POST['addtime']=time();
-		$_POST['regip']=$_SERVER['REMOTE_ADDR'];
+		$m=M('Users');
+		//$_POST['addtime']=time();
+		$_POST['logip']=get_client_ip();
 		$_POST['password']=md5($_POST['password']);
 		$_POST['username']=$_POST['username'];
-		$m->create();
-		$res=$m->add();
+		$res=$m->add($_POST);
 		if($res&&$res!=''){
-			$_SESSION['loginuser']['uid']=$res;
-			$_SESSION['loginuser']['uname']=$_POST['username'];//
-			//把注册成功的用户id和用户名写入session登陆用户中
-			//print_r($_SESSION);
-			$this->success('注册成功');
+			//查询数据库将该用户的信息存入session中
+			session("FEUSER",$m->where('id='.$res)->find());
+			$this->success('注册成功',U('Vip/index'));
 		}else{
-			$this->error('注册失败请稍后再试',"__APP__/Publc/dosign");
+			$this->error('注册失败请稍后再试',U('Com/login'));
 		}
 	}
 
 	public function login(){
-		if(md5($_POST['code'])!=$_SESSION['code']){
-			$this->error('验证码不正确');
-			exit();
-		}
 		$username=$_POST['username'];
 		$password=md5($_POST['password']);
-		$res=M('User')->where("username='{$username}' and password='{$password}'")->getField('id');
+		$res=M('Users')->where("username='{$username}' and password='{$password}'")->getField('id');
 		if($res&&$res!=''){
 			//登陆成功把用户信息写入session
-			$_SESSION['loginuser']['uname']=$username;
-			$_SESSION['loginuser']['uid']=$res;
+			session("FEUSER",M('Users')->where('id='.$res['id'])->find());
 			if($_POST['remberpass']==1){//记住密码  一定要加个'/'网站根 不然取不到
-				setcookie('logusername',$username,time()+10000,'/');
-				setcookie('loguserpass',$_POST['password'],time()+10000,'/');
+				cookie('username',$username,3600);
+				cookie('password',$_POST['password'],3600);
 			}else{//取消记住密码
-				setcookie('logusername',$username,time()-1,'/');
-				setcookie('loguserpass',$_POST['password'],time()-1,'/');
+				cookie('username',null);
+				cookie('password',null);
 			}
-
-			$this->success('登陆成功');
+			$this->success('登陆成功',U('Vip/index'));
 		}else{
-			$this->error('登陆失败，请检查用户名和密码',"__APP__/Public/index");
+			$this->error('登陆失败，请检查用户名和密码',U('Com/login'));
 		}
 	}
 
 	public function logout(){
-		unset($_SESSION['loginuser']);
-		$this->success('退出成功');
+		session("FEUSER",null);
+		$this->success('退出成功',U('Index/index'));
 	}
 
 }
