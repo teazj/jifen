@@ -6,9 +6,9 @@ class CommonAction extends Action {
 	 * 页面权限判断;
 	 */
 	Public function _initialize() {
-		// if(!session('sign') || session('sign')==''){
-			// $this->redirect('Index/Login/login','',0,' ');
-		// }
+		if(!session('FEUSER') || session('FEUSER')==''){
+			$this->redirect('Login/login');
+		}
 	}
 	
 	public function index() {
