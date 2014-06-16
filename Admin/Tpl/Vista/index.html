@@ -1,0 +1,87 @@
+{include file="Public/pagerForm.html"}
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>签证类型：</td>
+				<td>
+				<select class="combox" name="vid">
+					<option value="">-选择-</option>
+					{foreach $vcate as $v}
+						<option value="{$v.id}">{$v.catename}</option>
+					{/foreach}
+				</select>
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add/id/{ldelim}item_id{rdelim}" target="dialog" width="550" height="300" rel="user_msg" title="添加签证"><span>添加签证</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{ldelim}item_id{rdelim}"  width="550" height="300" target="dialog"><span>修改</span></a></li>
+			<li><a class="delete" href="__URL__/delete/id/{ldelim}item_id{rdelim}/navTabId/listnews" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+			<!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+		</ul>
+	</div>
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>使馆名称</th>
+				<th>签证类型</th>
+				<th>图片</th>
+				<th>入境次数</th>
+				<th>是否面试</th>
+				<th>最低价</th>
+				<th>工作日</th>
+				<th>有效期</th>
+				<th>停留期</th>
+				<th>范围</th>
+				<th>材料</th>
+				<th>须知</th>
+			</tr>
+		</thead>
+		<tbody>
+			{foreach $list as $vo}
+			<tr target="item_id" rel="{$vo.id}">
+				<td>{$vo.id}</td>
+    			<td>{$vo.html}{$vo.name}</td>
+    			<td>{$vo.catename}</td>
+				<td><img src="__PUBLIC__/Admin/Images/Vista/s_{$vo.logo}"></td>
+				<td>{$vo.entimes}</td>
+				<td>{if $vo.isface==0}不需要{else}需要{/if}</td>
+				<td>{$vo.loprice}</td>
+				<td>{$vo.workday}</td>
+				<td>{$vo.vday}</td>
+				<td>{$vo.staday}</td>
+				<td>{$vo.mian}</td>
+				<td>{$vo.need}</td>
+				<td>{$vo.note}</td>
+			</tr>
+			{/foreach}
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({ldelim}numPerPage:this.value{rdelim})">
+				<option value="10" {if $numPerPage==10}selected{/if}>10</option>
+				<option value="15" {if $numPerPage==15}selected{/if}>15</option>
+				<option value="20" {if $numPerPage==20}selected{/if}>20</option>
+				<option value="25" {if $numPerPage==25}selected{/if}>25</option>
+				<option value="30" {if $numPerPage==30}selected{/if}>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+	</div>
+</div>

@@ -1,0 +1,66 @@
+{include file="Public/pagerForm.html"}
+<div class="pageHeader">
+	
+</div>
+<div class="pageContent">
+	
+	<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>ID号：</dt>
+				<dd>{$goods.id}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>商品名称：</dt>
+				<dd>{$goods.name}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>商品类别：</dt>
+				<dd>{$goods.tid|ff_goods_typelist:$typelist}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>所需积分：</dt>
+				<dd>{$goods.price}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>状态：</dt>
+				<dd>{$goods.status|ff_goods_status}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>兑换次量：</dt>
+				<dd>{$goods.bnum}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>库存量：</dt>
+				<dd>{$vo.snum}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>公司名称：</dt>
+				<dd>{$vo.company}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>添加时间：</dt>
+				<dd>{$vo.ctime|date_format:"%Y-%m-%d %H:%M:%S"}</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>描述：</dt>
+				<dd>{$vo.content}</dd>
+			</dl>
+			<div style="clear:both;margin:5px"></div>
+			<dl>
+				<dt>详情：</dt>
+				<div>
+					{$vo.details}
+				</div>			
+			</dl>
+		</div>
+	
+</div>

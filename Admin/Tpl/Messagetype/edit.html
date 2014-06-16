@@ -1,0 +1,41 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listntype/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return iframeCallback(this,navTabAjaxDone);" ><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$newslist.id}"/>
+		<div class="pageFormContent" layoutH="60">
+			
+			
+
+			<dl>
+				<dt>资讯类别：</dt>
+				<dd>
+				<select id="" class="combox" name="type">
+					<option value="0"  >请选择</option>
+					{foreach $news_type_all as $v}
+						<option value="{$v.id}" {if $v.id==$news_type.id}selected{/if}>{$v.tname}</option>
+					{/foreach}
+				</select>
+				</dd>
+			</dl>
+			<div style="clear:both"></div>
+			
+			<dl>
+				<dt>修改资讯类别：</dt>
+				<dd><input class="textInput"  name="title" value="{$news_type.tname}" /></dd>
+			</dl>
+			<div style="clear:both"></div>
+			
+
+			
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

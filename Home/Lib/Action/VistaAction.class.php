@@ -39,7 +39,11 @@ class VistaAction extends CommonAction{
 					$this->index();
 				}
 			}else{
-				echo "ss";
+				//更多点击则跳转至a 没有all页
+				$category = M('category');
+				$more_country = $category->where('`pid` = 3')->order('piny')->limit('1')->select();
+				$_GET['id']=$more_country[0]['id'];
+				$this->index();
 			}
 		}
 	}

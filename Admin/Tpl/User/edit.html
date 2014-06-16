@@ -1,0 +1,55 @@
+
+<div class="pageContent">
+
+		<!-- 下面的do_edit后面的navTabId/user....的意思是执行完结果后弹出提示信息并刷新页面 -->
+
+		<form method="post" action="__APP__/User/do_edit/navTabId/listuser/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<div class="pageFormContent" layoutH="60">
+			<input type='hidden' name='id' value="{$list['id']}">
+			<dl>
+				<dt>姓名：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="nickname" value="{$list['nickname']}"/></dd>
+			</dl>
+			
+			<dl>
+				<dt>性别：</dt>
+				<dd><input type="radio" name="sex" value="m" {if $list['sex']=='m'}checked{/if}/>男
+					<input type="radio" name="sex" value="w" {if $list['sex']=='w'}checked{/if}/>女</dd>
+			</dl>
+			<dl>
+				<dt>年龄：</dt>
+				<!--<dd><input type="text" class="required digits" min="1" max="100" size="10" style="width:100%" name="age" value="{$list['age']}"/></dd>-->
+				<dd><input type="text" class="" min="1" max="100" size="10" style="width:100%" name="age" value="{$list['age']}"/></dd>
+			</dl>
+			<dl>
+				<dt>QQ：</dt>
+				<dd><input type="text" class=""  style="width:100%" name="qq" value="{$list['qq']}"/></dd>
+			</dl>
+			<dl>
+				<dt>邮箱：</dt>
+				<dd><input type="text" class=""  style="width:100%" name="email" value="{$list['email']}"/></dd>
+			</dl>
+			<dl>
+				<dt>电话：</dt>
+				<dd><input type="text" class=""  style="width:100%" name="phone" value="{$list['phone']}"/></dd>
+			</dl>
+			<dl>
+				<dt>地址：</dt>
+				<dd><input type="text" class=""  style="width:100%" name="address" value="{$list['address']}"/></dd>
+			</dl>
+			<!--<dl>
+				<dt>头像：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="picname" value="{$list['picname']}"/></dd>
+			</dl>-->
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

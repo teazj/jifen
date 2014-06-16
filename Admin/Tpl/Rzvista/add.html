@@ -1,0 +1,158 @@
+<script>
+	$(function(){
+		$("#maintype").change(function(){
+			$.ajax({
+				//请求地址
+				url:"__APP__/Rzcategory/showtype",	   
+				//发送方式
+				type:"get",		   
+				//参数信息
+				data:{ id:$(this).val()}, 
+				//是否异步
+				async:true,	 
+				//ajax响应数据格式：html/json/xml/text
+				dataType:'json',   
+				//成功的回调函数
+				success:function(data){ 
+					//alert(data);
+					var str="";
+					var string="";
+					for(var i=0;i<data.length;i++){
+						str+="<option style='display:block' value='"+data[i].id+"'>"+data[i].name+"</option>";
+						string+="<li><a class='1' "+"href='#'"+"value='"+data[i].id+"'>"+data[i].name+"</a></li>";
+					}
+					//插入到html中的下拉框，不会显示
+					$("#subtype").html(""); 
+					$("#subtype").html(str); 
+					//插入到dwz中的下拉框，会显示
+					$("#op_combox_subtype").html("");
+					$("#op_combox_subtype").html(string);
+					$("#op_combox_subtype a").click(function(){
+						//dwz中选中后的显示
+						$("#combox_subtype >a").html($(this).html());
+						//添加隐藏域，传送tid的值
+						$("#myform").append("<input name='tid' type='hidden' value='"+$(this).attr("value")+"'/>");
+					})
+				},
+				//失败的回调函数
+				error:function(){ 
+					alert('ajax请求失败！');
+				},
+			});
+		});
+	})
+</script>
+<div class="pageContent">
+	<form target="myframe" id="myform" method="post" action="__URL__/insert/navTabId/listnews/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return iframeCallback(this,dialogAjaxDone);" enctype="multipart/form-data"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="ctime" value="{$smarty.now}">
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>描述：</dt>
+				<dd>
+					<input class="required"  name="desc" />
+				</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>认证类型选择</dt>
+				<dd>
+					<select class="combox" name="vid">
+					{foreach $vcate as $vo}
+						<option value="{$vo.id}">{$vo.catename}</option>
+					{/foreach}
+					</select>
+				</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>认证使馆类型</dt>
+				<dd>
+					<select class="combox" id="maintype" name="pid">
+						<option value="0">请选择</option>
+    				{foreach $cate as $vo}
+						<option value="{$vo.id}">{$vo.html}{$vo.name}</option>
+    				{/foreach}
+					</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>认证使馆：</dt>
+				<dd>
+				<select id="subtype" class="combox" name="pid">
+				</select>
+				</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>图片:</dt>
+				<dd><input type="file" name="logo"></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>入境次数:</dt>
+				<dd><input type="text" name="entimes"/></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>是否需要面试:</dt><dd><input type="radio" name="isface" value="0" checked />不需要
+				<input type="radio" name="isface" value="1"/>需要 </dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>最低价:</dt>
+				<dd><input type="text" name="loprice"/></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>工作日:</dt>
+				<dd><input type="text" name="workday"/></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>有效期:</dt>
+				<dd><input type="text" name="vday"/> </dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>停留期:</dt>
+				<dd><input type="text" name="staday"/> </dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>范围:</dt>
+				<dd><textarea name="mian"></textarea></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>材料:</dt>
+				<dd><textarea name="need"></textarea></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>须知:</dt>
+				<dd><textarea name="note"></textarea></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>办理地点|名称|价格</dt>
+					<dd>
+						注:多个名称或价格请以"|"隔开!
+					</dd>
+					<dd>
+					{foreach  $place as $key=>$vo}
+						<input type="hidden" name="id[]" value="{$key}"/><input type="text"  value="{$vo}" readonly="readonly"/><input type="text" name="vname[]" placeholder="名称" value=""/><input type="text" name="price[]" placeholder="价格" value=""/>
+					{/foreach}
+					</dd>
+			</dl>
+		</div>
+		
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">创建</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>

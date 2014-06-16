@@ -1,0 +1,46 @@
+<div class="pageContent">
+  <form action="__URL__/editPage/navTabId/pagelist" method="post" id="myform" class="pageForm required-validate" 
+		onsubmit="return iframeCallback(this, navTabAjaxDone);">
+        <input type="hidden" name="id" value="{$list['id']}"/>
+    <div class="pageFormContent" layoutH="60">
+      <dl>
+        <dt>单页名称：</dt>
+        <dd>
+          <input type="text" name="pageName" value="{$list['pageName']}"/>
+        </dd>
+      </dl>
+      <div style="clear:both"></div>
+       <dl>
+        <dt>单页标题：</dt>
+        <dd>
+          <input type="text" name="pageTitle" value="{$list['pageTitle']}"/>
+        </dd>
+      </dl>
+      <div style="clear:both"></div>
+      <dl>
+        <dt>单页内容：</dt>
+        <dd>
+          <textarea class="editor" name="uEditor" rows="20" cols="80" upImgUrl="__APP__/Upfile/aupload" upImgExt="jpg,jpeg,gif,png" tools="mfull" id="container">{$list['pageMain']}</textarea>
+        </dd>
+      </dl>
+    </div>
+    <div class="formBar">
+      <ul>
+        <li>
+          <div class="buttonActive">
+            <div class="buttonContent">
+              <input type="submit" name="sub" value="提交" />
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="button">
+            <div class="buttonContent">
+              <button type="button" class="close">取消</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </form>
+</div>
