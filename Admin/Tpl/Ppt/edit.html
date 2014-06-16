@@ -1,0 +1,51 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/Ppt/callbackType/closeCurrent" enctype="multipart/form-data" class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$vo.id}"/>
+		
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>显示位置：</dt>
+				<dd>
+					<select name="pid">
+					{foreach $types as $v}
+						<option value="{$v.id}" {if $v.id eq $vo.pid}selected{/if}>{$v.typename}</option>
+					{/foreach}
+					</select>
+				</dd>
+			</dl>
+			<dl>
+				<dt>状态：</dt>
+				<dd style="width:250px;">
+					<input type="radio" name="isshow" value="0" {if $vo.isshow=="0"} checked {/if} />尚未显示
+					<input type="radio" name="isshow" value="1" {if $vo.isshow=="1"} checked {/if} />已显示
+				</dd>
+			</dl>
+			<dl>
+				<dt>图片标题：</dt>
+				<dd><input type="text" class="required"  style="width:100%" name="title" value="{$vo.title}"/></dd>
+			</dl>
+			<dl>
+				<dt>新的图片：</dt>
+				<dd><input type="file" name="pic"/></dd>
+			</dl>
+			<dl>
+				<dt>链接地址:</dt>
+				<dd><input type="text"  style="width:100%" class="url" name="url" value="{$vo.url}"/></dd>
+			</dl>
+			<dl>
+				<dt>当前图片：</dt>
+				<dd><img src="__PUBLIC__/Admin/Images/Ppt/s_{$vo.pic}"/></dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

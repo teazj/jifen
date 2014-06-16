@@ -1,0 +1,79 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listnews/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return iframeCallback(this,navTabAjaxDone);" enctype="multipart/form-data" ><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$vo.id}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>认证使馆：</dt>
+				<dd>
+				<select id="" class="combox" name="pid">
+					{foreach $category as $v}
+						<option value="{$v.id}" {if $v.id==$vo.pid}selected{/if}>{$v.name}</option>
+					{/foreach}
+				</select>
+				</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>认证类型选择</dt>
+				<dd>
+					<select class="combox" name="vid">
+					{foreach $vcate as $v}
+						<option value="{$v.id}" {if $v.id==$vo.vid}selected{/if}>{$v.catename}</option>
+					{/foreach}
+					</select>
+				</dd>
+			</dl>
+			
+			<dl>
+				<dt>图片:</dt>
+				<dd><img src="__/PUBLIC__/Admin/Images/Vista/s_{$vo.logo}"/></dd>
+			</dl>
+			<dl>
+				<dt>入境次数:</dt>
+				<dd><input type="text" value="{$vo.entimes}" name="entimes"/></dd>
+			</dl>
+			<dl>
+				<dt>是否需要面试:</dt><dd><input type="radio" name="isface" value="0" {if $vo.isface==0}checked{/if} />不需要
+				<input type="radio" name="isface" value="1" {if $vo.isface==1}checked{/if}/>需要 </dd>
+			</dl>
+			<dl>
+				<dt>最低价:</dt>
+				<dd><input type="text" value="{$vo.loprice}" name="loprice"/></dd>
+			</dl>
+			<dl>
+				<dt>工作日:</dt>
+				<dd><input type="text" value="{$vo.workday}"  name="workday"/></dd>
+			</dl>
+			<dl>
+				<dt>有效期:</dt>
+				<dd><input type="text" value="{$vo.vday}" name="vday"/></dd>
+			</dl>
+			<dl>
+				<dt>停留期:</dt>
+				<dd><input type="text" value="{$vo.staday}" name="staday"/></dd>
+			</dl>
+			<dl>
+				<dt>范围:</dt>
+				<dd><textarea name="mian">{$vo.mian}</textarea></dd>
+			</dl>
+			<dl>
+				<dt>材料:</dt>
+				<dd><textarea name="need">{$vo.need}</textarea></dd>
+			</dl>
+			<dl>
+				<dt>须知:</dt>
+				<dd><textarea name="note">{$vo.note}</textarea></dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

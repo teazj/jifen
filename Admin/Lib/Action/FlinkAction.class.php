@@ -1,0 +1,1 @@
+<?php//自定义一个Action，继承commonAction类class FlinkAction extends CommonAction{	//封装搜素条件	public function _filter(&$map){		//搜索条件有值则做封装		if(!empty($_REQUEST['keywords'])){			$where['url']  = array('like', "%{$_REQUEST['keywords']}%");			$where['name']  = array('like',"%{$_REQUEST['keywords']}%");			$where['_logic'] = 'or';			$map['_complex'] = $where;		}	}}
