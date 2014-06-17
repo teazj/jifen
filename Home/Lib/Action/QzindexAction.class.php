@@ -1,4 +1,5 @@
 <?php
+Load('extend');
 // 本类由系统自动生成，仅供测试用途
 class QzindexAction extends Action {
 
@@ -28,9 +29,19 @@ class QzindexAction extends Action {
 		$common_country = $cate->where("`pid` = 1")->order('piny')->select();
 		$this->assign('common_country',$common_country);
 		
-		//热点签证
+		//热点签证 所属国家应该是热点签证国家类别里面
+		$hot_vista_ids = $cate->where('`pid` = 1')->select();
+		$hot_vista_ids_array = array();
+		foreach($hot_vista_ids as $k=>$v){
+			$hot_vista_ids_array[$k] = $v['id'];
+		}
+		$hot_vista_ids_str = implode(',', $hot_vista_ids_array);
 		$vista=D('Vista');
-		$this->assign('vlist',$vista->relation(true)->select());
+		$hot_vista = $vista->where('`pid` in ('.$hot_vista_ids_str.')')->relation(true)->select();
+		foreach ($hot_vista as $key => $value) {
+			$hot_vista[$key]['title'] = $value['name'].$value['catename'];
+		}
+		$this->assign('vlist',$hot_vista);
 		
         //最新资讯显示
         $message=D('Message');

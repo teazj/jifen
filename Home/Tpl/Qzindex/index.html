@@ -200,7 +200,7 @@
 							<volist name="vlist" id="v">
 							<li>
 							<span style="float:left; margin-right:10px;"><a href="{:U('Index/Details/index',array('id'=>$v['id']))}"><img src="__PUBLIC__/Admin/Images/Vista/s_{$v.logo}" width=32 height=32 /></a></span>
-                            	<span style=" float:left;"><p><a href="{:U('Index/Details/index',array('id'=>$v['id']))}">{$v.name}{$v.catename}</a></p><p>￥ <span class="red">{$v.loprice}</span> 起</p></span>
+                            	<span style=" float:left;"><p><a title="{$v.title}" href="{:U('Index/Details/index',array('id'=>$v['id']))}">{$v.title|msubstr=0,6}</a></p><p>￥ <span class="red">{$v.loprice}</span> 起</p></span>
 							</li>
                             </volist>
                         </ul>
