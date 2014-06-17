@@ -1,20 +1,6 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>签证类目</title>
+<include file="Public:qzheader" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzny.css" />
-<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzty.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/page.css" />
-<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Home/js/top.js"></script>
-</head>
-
-<body>
-	<div class="header">
-		<include file="Qzinc:header"/>
-    </div>
     <div class="M_xq">
     	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a><a href="">澳大利亚旅游签证</a> > <a href="">澳大利亚旅游签证[北京领区]特价促销</a></div>
     	<div class="lei_left">
@@ -98,7 +84,7 @@
                         <div class="lei_tit">
                             <ul>
                                 <li>您所在的工作地</li>
-                                <li><input type="text" name="" value="" class="lei_ss" /></li>
+                                <li><input id="search_key" type="text" name="" value="{$place_select}" class="lei_ss" /></li>
                                 <li><input type="button" name="" value="查询" class="lei_cx" /></li>
                             </ul>
                         </div>
@@ -108,15 +94,15 @@
                             <div class="leic_t">{$v.vname}【{$v.catename}】</div>
                             <div class="leixx_left">
                                 <ul>
-                                    <li>办理地点：广州</li>
+                                    <li>办理地点：{$v.place_info.$place_id.place_name}</li>
                                     <li>面试：<if condition="$v['isface'] eq 0">不需要<else/>需要</if></li>
                                     <li>预计工作日：{$v.workday}天</li>
-                                    <li>入境次数：1</li>
+                                    <li>入境次数：{$v.entimes}</li>
                                     <li>有效期：{$v.vday}天</li>
                                     <li>最多停留：{$v.staday}天</li>
                                 </ul>
                             </div>
-                            <div class="leixx_right">{$v.price}</div>
+                            <div class="leixx_right">￥{$v.loprice}</div>
                             <div class="clear"></div>
                             <div class="leial_left">收客范围：{$v.mian}</div>
                             <div class="leial_right"><a href="{:U('Index/Details/index',array('id'=>$v['id']))}">查看详情</a></div>
@@ -135,9 +121,9 @@
         <div class="clear"></div>
     </div>
     <div class="footer_topbg"></div>
-    <div class="footer">
-        <include file="Qzinc:footer"/>
-    </div>
+
+    <include file="Public:qzfooter" />
+
 	<script type="text/javascript">
                 $(function(){
                         var default_key = '输入你要搜索的内容';
