@@ -1,6 +1,6 @@
 <?php
 //签证首页的国家详情页
-class VistaAction extends CommonAction{
+class VistaAction extends Action{
 	//分页的每页记录数。
 	public $page_size = 10;
 	public function index(){
@@ -53,10 +53,18 @@ class VistaAction extends CommonAction{
 		$place_id = isset($_GET['place_id'])?$_GET['place_id']:current($place_a);
 		$place_select = isset($_GET['place_id'])?$place[$_GET['place_id']]:current($place);
 
+		//place_list地区选择列表
+		$place_list = array();
+		foreach($place as $k=>$v){
+			$place_list[$k]['id'] = $k;
+			$place_list[$k]['name'] = $v;
+		}
+
 		$this->assign('place_select',$place_select);
 		$this->assign('place_id',$place_id);
 		$this->assign('vo',$vo);
 		$this->assign('place',$place);
+		$this->assign('place_list',$place_list);
 		$this->assign('page',$show);
 		$this->display();
 

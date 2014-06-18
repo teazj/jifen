@@ -14,6 +14,15 @@ class DetailsAction extends Action{
 			$a=explode('|',$value);
 			$b=explode('|',$key);
 		}
+
+		//是否登录的判断
+		if(!session('FEUSER') || session('FEUSER')==''){
+			$iflogin = 0;
+		}else{
+			$iflogin = 1;
+		}
+		$this->assign('iflogin',$iflogin);
+		$this->assign('gotime',date('Y-m-d',strtotime('+7days')));
 		$this->assign('place',$pid);
 		$this->assign('a',$a);
 		$this->assign('b',$b);

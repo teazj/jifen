@@ -118,6 +118,9 @@ function hotClick(o) {
     Visa_countryInput.addClass("vd_ctny0");
     Visa_countryInput.val(arrCC[0]);
     Visa_countryInput.attr('cat_id',arrCC[1]);
+    //针对地区页的js
+    $("#set_place_id").val(arrCC[1]);
+    //
     divCitys.css("display", "none");
     DivShim.css("display", "none");
 }

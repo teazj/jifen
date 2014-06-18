@@ -1,6 +1,15 @@
 <include file="Public:qzheader" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzindex.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzframe_2012415.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzty.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzlayer.css" />
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/flash.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/top.js"></script>
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/qzny.css" />
 <link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/page.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/layer.css" />
     <div class="M_xq">
     	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a><a href="">澳大利亚旅游签证</a> > <a href="">澳大利亚旅游签证[北京领区]特价促销</a></div>
     	<div class="lei_left">
@@ -69,10 +78,34 @@
                 </ul>
             </div>
         </div>
+            <!--  Mxq_r3的滑动门选项卡  -->
+            <script type="text/javascript">
+            function nTabs(thisObj,Num){
+            if(thisObj.className == "active")return;
+            var tabObj = thisObj.parentNode.id;
+            var tabList = document.getElementById(tabObj).getElementsByTagName("li");
+            for(i=0; i <tabList.length; i++)
+            {
+              if (i == Num)
+              {
+               thisObj.className = "active"; 
+                  document.getElementById(tabObj+"_Content"+i).style.display = "block";
+              }else{
+               tabList[i].className = "normal"; 
+               document.getElementById(tabObj+"_Content"+i).style.display = "none";
+              }
+            } 
+            }
+            </script>
         <div class="lei_right">
         	<div class="nTab">
                 <div class="TabTitle_r">
                     <ul id="myTab">
+
+<!--                    <li class="active" onmouseover="nTabs(this,0);">旅游签证</li>
+                        <li class="normal" onmouseover="nTabs(this,1);">商务签证</li>
+                        <li class="normal" onmouseover="nTabs(this,2);">探亲访友签证</li> -->
+
 						<li class="active"><a href="{:U('Index/Vista/index',array('id'=>$_GET['id']))}">全部</a></li>
 						<volist name="vcate" id="v" offset="0" key="k">
                         <li class="normal"><a href="{:U('Index/Vista/index',array('vid'=>$v['id'],'id'=>$_GET['id']))}">{$v.catename}</a></li>
@@ -83,9 +116,47 @@
                     <div id="myTab_Content0">
                         <div class="lei_tit">
                             <ul>
-                                <li>您所在的工作地</li>
+<!--                            <li>您所在的工作地</li>
                                 <li><input id="search_key" type="text" name="" value="{$place_select}" class="lei_ss" /></li>
-                                <li><input type="button" name="" value="查询" class="lei_cx" /></li>
+                                <li><input type="button" name="" value="查询" class="lei_cx" /></li> -->
+
+                                <li class="lei_li1">您所在的工作地</li>
+                                <li class="lei_li2">
+                                    <div class="visa_gj" style="margin-top:18px;">
+                                    <div class="visa_gj_nr">
+                                        <input name="Visa_countryInput" id="Visa_countryInput" value="{$place_select}" type="text" title="请选择地区名" placeholder="请选择地区名" class="oddput_txt Gicon_x13  gico_a1_17 ac_input" autocomplete="off" style="width:160px;">
+                                    </div>
+                                    <!--弹出层-->
+                                    <div class="BC_layer" id="layer01" style="display: none; ">
+                                        <div class="layer_frame">
+                                            <div class="theme_02">
+                                                <div class="city_hd">
+                                                    <span class="city_title"></span><a class="city_close" href="javascript:;"></a>
+                                                </div>
+                                                <div class="layer_content">
+                                                    <div class="city_content">
+
+                                                        <div class="city_main">
+                                                            
+                                                            <ul class="city_box layer_on" id="divCity_Tab1" style="">
+                                                                <volist name="place_list" id="pl">        
+                                                                <li style="line-height:10px;"><a id="{$pl.name}|{$pl.id}" onclick="javascript:hotClick(this);">{$pl.name}</a></li>
+                                                                </volist>  
+                                                                            
+                                                            </ul>
+                                                                
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/弹出层-->
+                                </div>
+                                <form action="" method="get">
+                                <input id="set_place_id" type="hidden" name="place_id" value="{$place_id}" class="lei_ss" /></li>
+                                <li class="lei_li1"><input type="submit" name="" value="查询" class="lei_cx" /></li>
+                                </form>
                             </ul>
                         </div>
 						<if condition="$vo neq ''">
