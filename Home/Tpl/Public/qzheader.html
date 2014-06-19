@@ -50,11 +50,11 @@
                     </ul>
                 </div>
                 <div class="vip">
-					<if condition="$Think.session.uname eq null">
-                    	<a href="__APP__/Com/login" class="login" />会员登录</a>
-                    	<a href="__APP__/ShopReg/register" class="register" />会员注册</a>
-					<else/>
-						您好:<a href="__APP__/Vip/index" class="login" />{$Think.session.loginuser}</a>
+                    <if condition="$iflogin eq 0">
+                    	<a href="{:U('Com/login','','')}" class="login" />会员登录</a>
+                    	<a href="{:U('Com/register','','')}" class="register" />会员注册</a>
+					<else />
+						您好:<a href="{:U('Index/Vip/index')}" class="login" />{$user_info.username}</a>
 					</if>
                 </div>
 		</div>

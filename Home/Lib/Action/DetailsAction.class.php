@@ -20,7 +20,10 @@ class DetailsAction extends Action{
 			$iflogin = 0;
 		}else{
 			$iflogin = 1;
+			$this->assign('user_info',session('FEUSER'));
 		}
+
+		$this->assign('place_id',$_GET['place_id']);
 		$this->assign('iflogin',$iflogin);
 		$this->assign('gotime',date('Y-m-d',strtotime('+7days')));
 		$this->assign('place',$pid);

@@ -176,7 +176,7 @@
                             <div class="leixx_right">￥{$v.loprice}</div>
                             <div class="clear"></div>
                             <div class="leial_left">收客范围：{$v.mian}</div>
-                            <div class="leial_right"><a href="{:U('Index/Details/index',array('id'=>$v['id']))}">查看详情</a></div>
+                            <div class="leial_right"><a href="{:U('Index/Details/index',array('place_id'=>$place_id,'id'=>$v['id']))}">查看详情</a></div>
                         </div>
 						</volist>
 					<div class="green-black">{$page}</div>

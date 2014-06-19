@@ -4,6 +4,15 @@ class VistaAction extends Action{
 	//分页的每页记录数。
 	public $page_size = 10;
 	public function index(){
+		//判断登录
+		if(!session('FEUSER') || session('FEUSER')==''){
+			$iflogin = 0;
+		}else{
+			$iflogin = 1;
+			$this->assign('user_info',session('FEUSER'));
+		}
+		$this->assign('iflogin',$iflogin);
+
 		if(!empty($_GET['id'])){
 		$vista=D('Vista');
 		$condition['pid']=$_GET['id'];
