@@ -15,9 +15,9 @@
     	<div class="txor_banner"><a href="{:U('Index/Qzindex/index')}"><img src="__PUBLIC__/Home/images/qzimages/logo.jpg" /></a></div>
         <div class="oright_nav">
         	<ul>
-            	<li><a href="" class="rnav1" style="background:url(__PUBLIC__/Home/images/qzimages/rnav1_hover.jpg) no-repeat;">1.订单信息填写</a></li>
-                <li><a href="" class="rnav2" style="background:url(__PUBLIC__/Home/images/qzimages/rnav2_hover.jpg) no-repeat;">2.订单信息确认</a></li>
-                <li><a href="" class="rnav3">3.成功提交订单</a></li>
+            	<li><a href="javascript:;" class="rnav1" style="background:url(__PUBLIC__/Home/images/qzimages/rnav1_hover.jpg) no-repeat;">1.订单信息填写</a></li>
+                <li><a href="javascript:;" class="rnav2" style="background:url(__PUBLIC__/Home/images/qzimages/rnav2_hover.jpg) no-repeat;">2.订单信息确认</a></li>
+                <li><a href="javascript:;" class="rnav3">3.成功提交订单</a></li>
             </ul>
         </div>
     </div>
@@ -36,7 +36,7 @@
                     <dd>公司地址：{$vo.shen}{$vo.shi}{$vo.xian}{$vo.xq}</dd>
                 </dl>
             </div>
-            <div class="Mqror_con2" style="display:none;">
+            <div id="rewrite" class="Mqror_con2" style="display:none;">
                 <table cellpadding="0" cellspacing="0" border="0px none" width="100%">
                 <form action="{:U('Index/Qzorder/tijiao')}" method="post">
 					<input type="hidden" name="price" value="{$vo.price}">
@@ -46,7 +46,7 @@
 					<input type="hidden" name="ctime" value="{$Think.now}">
 					<input type="hidden" name="place" value="{$vo.place}">
 					<input type="hidden" name="sid" value="{$vo.sid}">
-					<input type="hidden" name="user_id" value="{$Think.session.index.user_id}">
+					<input type="hidden" name="user_id" value="{$user_info.id}">
                 	<tr>
                     	<td class="tableft"><span class="red">*</span>联系人姓名：</td>
                         <td colspan="2"><input type="text" name="username" value="{$vo.username}" class="Mtxor_inp1" /></td>
@@ -67,10 +67,10 @@
                     	<td class="tableft"><span class="red">*</span>护照返还方式：</td>
                         <td colspan="2">
                         	<select class="Mtxor_se1" name="use">
-                            	<option value="1" <if condition="$vo['use'] eq 1"> checked</if>>快递</option>
-                                <option value="2" <if condition="$vo['use'] eq 2"> checked</if>>平邮</option>
-                                <option value="3" <if condition="$vo['use'] eq 3"> checked</if>>EMS</option>
-                                <option value="4" <if condition="$vo['use'] eq 4"> checked</if>>顺丰</option>
+                            	<option value="1" <if condition="$vo.use eq 1">selected</if>>快递</option>
+                                <option value="2" <if condition="$vo.use eq 2">selected</if>>平邮</option>
+                                <option value="3" <if condition="$vo.use eq 3">selected</if>>EMS</option>
+                                <option value="4" <if condition="$vo.use eq 4">selected</if>>顺丰</option>
                             </select>
                         </td>
                     </tr>
@@ -87,13 +87,7 @@
                     </tr>
                 </table>
             </div>
-			<!-- 出行人信息暂时注释 -->
-            <!-- <div class="Mqror_con3">
-            	<dl>
-                	<dt>出行人信息：<span id="infoedit" style="cursor:pointer">[修改]</span></dt>
-                    <dd>姓名：大苏打 手机号码：13720385150</dd>
-                </dl>
-            </div> -->
+
             <div class="Mqror_con4" style="display:none">
 				<table>
 					<tr>
@@ -133,22 +127,10 @@
     </div>
 	<div class="footer_topbg"></div>
     <div class="footer">
-        <div class="footer_bg">
-        	<div class="link">友情连接：<a href="">义乌签证</a>|<a href="">使馆认证</a>|
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>
-            </div>
-            <div class="copyright">
-            	<p>CopyRight @ 2011-2012 义乌市速格报俭代理有限公司 版权所有　地 址：浙江 义乌市城北路258号福田商务公寓313（商检局对面）<br />
-                	电 话：86 0579 85365501 - 86 0579 85591661　　　　　技术支持：武汉尚科在线网络技术有限公司
-                </p>
-            </div>
-        </div>
+            <include file="Qzinc:footer"/>
     </div>
 	<script type="text/javascript">
-		addressInit('cmbProvince', 'cmbCity', 'cmbArea', '湖北', '武汉市', '洪山区');
+		addressInit('cmbProvince', 'cmbCity', 'cmbArea', '{$vo.shen}', '{$vo.shi}', '{$vo.xian}');
 		var url="{:U('Index/Qzorder/infochange')}";
 		//订单信息修改
 		$('#info').click(function(){
@@ -156,6 +138,27 @@
 		})
 		//确认订单修改
 		$('#bnt1').click(function(){
+            //简单判断输入信息
+            var username = $("#rewrite input[name=username]").val();
+            if(username == ''){
+                alert("姓名不能为空");
+                $("#rewrite input[name=username]").focus();
+                return false;
+            }
+            var phone = $("#rewrite input[name=phone]").val();
+            var check_phone = /^[1]\d{10}$/;
+            if(!check_phone.test(phone)){
+                alert("手机格式不正确（11位以1开头号码）");
+                $("#rewrite input[name=phone]").focus();
+                return false;
+            }
+            var xq = $("#rewrite textarea[name=xq]").val();
+            if(xq == ''){
+                alert("请填写街道地址");
+                $("#rewrite textarea[name=xq]").focus();
+                return false;
+            }
+
 			$('.Mqror_con2').hide('slow');
 			username=$('input[name="username"]').val();
 			phone=$('input[name="phone"]').val();
@@ -171,22 +174,6 @@
 				$('#xq').append(item);
 			})
 		})
-		//出行人信息修改
-		//$('#infoedit').click(function(){
-			//$('.Mqror_con4').show('slow');
-		//})
-		//确认出行人信息修改
-		//$('#bnt2').click(function(){
-			//$('.Mqror_con4').hide('slow');
-		//})
-		//添加出行人信息
-		//$('.Mtxor_inp4').click(function(){
-			//$('#ren').append('<tr><td>姓名：</td><td><input type="text" name="user[]" value="" class="Mtxor_inp3" /></td><td>手机号：</td><td><input type="text" name="" value="" class="Mtxor_inp3" /></td><td><a onclick="deletes(this);"><img src="__PUBLIC__/images/qzimages/qk.png" class="et"/></a></td></tr> ');
-		//})
-		
-		//function deletes(k) {
-			//$(k).parent().parent().hide('slow');
-		//}
 	</script>
 </body>
 </html>

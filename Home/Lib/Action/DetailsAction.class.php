@@ -1,6 +1,14 @@
 <?php
 class DetailsAction extends Action{
 	public function index(){
+		//是否登录的判断
+		if(!session('FEUSER') || session('FEUSER')==''){
+			$iflogin = 0;
+		}else{
+			$iflogin = 1;
+			$this->assign('user_info',session('FEUSER'));
+		}
+		
 		$model=D('Vista');
 		$condition['id']= $_GET['id'];
 		$con['sid']= $_GET['id'];
@@ -13,14 +21,6 @@ class DetailsAction extends Action{
 		foreach($pids as $key=>$value){
 			$a=explode('|',$value);
 			$b=explode('|',$key);
-		}
-
-		//是否登录的判断
-		if(!session('FEUSER') || session('FEUSER')==''){
-			$iflogin = 0;
-		}else{
-			$iflogin = 1;
-			$this->assign('user_info',session('FEUSER'));
 		}
 
 		$this->assign('place_id',$_GET['place_id']);
