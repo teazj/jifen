@@ -158,7 +158,7 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .inquiry_down ul{ height:31px; margin:0 auto;}
 .inquiry_down li{ float:left; height:31px; line-height:30px; margin:0 5px;}
 .inquiry_down .end{  display:block; width:92px; height:31px; background:url(../../images/shop/ww_1.jpg) no-repeat;}
-.inquiry_down a{ display:block; width:30px; height:31px; background:#FFF; color:#000; background:url(../../images/shop/ww_2.jpg) no-repeat;}
+.inquiry_down a{ display:inline; width:30px; height:31px; background:#FFF; color:#000; background:url(../../images/shop/ww_2.jpg) no-repeat;}
 .inquiry_down li a:hover{ color:#FFF; background:url(../../images/shop/inq_down_abg1.jpg) no-repeat;}
 .inquiry_down .end:hover{ color:#FFF; background:url(../../images/shop/inq_down_abg2.jpg) no-repeat;}
 /*------------------------  inquiry积分查询页面  ------------------------*/
@@ -424,7 +424,7 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .Mnoxr_tpp li a, .Mnoxr_tjf li a{ color:#3b84d6;}
 .Mnoxr_tt1, .Mnoxr_tt2{ float:left; width:90px; height:84px; line-height:52px; padding-left:20px; text-align:left; color:#000;}
 .Mnoxr_tt2{ height:61px;}
-.Mnoxr_tjf li{ float:left; margin-top:17px;}
+.Mnoxr_tjf li{ float:left; margin-top:17px;width:80px;}
 
 .Mnoxr_d{ width:850px; margin-top:6px; border:1px solid #e0e0e0; padding-bottom:20px;}
 .Mnoxr_dtit{ height:44px; border-bottom:1px solid #c8c8c8; background:url(../../images/shop/Mnoxr_dtitbg.jpg) left center repeat-x;}
@@ -596,4 +596,169 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 /*----------------------  help帮助中心页面  ----------------------*/
 
 
+/*--------------------------------------------------------------------------------------
+		以下是商品详情Sx_页面,左边的和M_nox没楼层的详细页面一样，部分css和参照M_nox
+							左侧底部2个栏目没写  
+--------------------------------------------------------------------------------------*/
 
+/*----------------------  Sx_trab商品详情‘成功记录页面  ----------------------*/
+#preview{ float:none; margin:0 auto; text-align:center; width:390px;}
+.jqzoom{ width:350px; height:350px; position:relative;}
+
+.zoomdiv{ left:859px; height:400px; width:400px;}
+.list-h li{ float:left;}
+#spec-n5{width:350px; height:56px; padding-top:6px; overflow:hidden;}
+#spec-left{ background:url(images/left.gif) no-repeat; width:10px; height:45px; float:left; cursor:pointer; margin-top:5px;}
+#spec-right{background:url(images/right.gif) no-repeat; width:10px; height:45px; float:left;cursor:pointer; margin-top:5px;}
+#spec-list{ width:325px; float:left; overflow:hidden; margin-left:2px; display:inline;}
+#spec-list ul li{ float:left; margin-right:0px; display:inline; width:65px;}
+#spec-list ul li img{ padding:2px ; border:1px solid #ccc; width:50px; height:50px;}
+
+/*jqzoom Download by http://www.codefans.net*/
+.jqzoom{position:relative;padding:0;}
+.zoomdiv{z-index:100;position:absolute;top:1px;left:0px;width:400px;height:400px;background:url(i/loading.gif) #fff no-repeat center center;border:1px solid #e4e4e4;display:none;text-align:center;overflow: hidden;}
+.bigimg{width:800px;height:800px;}
+.jqZoomPup{z-index:10;visibility:hidden;position:absolute;top:0px;left:0px;width:50px;height:50px;border:1px solid #aaa;background:#FEDE4F 50% top no-repeat;opacity:0.5;-moz-opacity:0.5;-khtml-opacity:0.5;filter:alpha(Opacity=50);cursor:move;}
+#spec-list{ position:relative; width:322px; margin-right:6px;}
+#spec-list div{ margin-top:0;margin-left:-30px; *margin-left:0;}
+
+
+
+
+.shop_tit{ margin:0 auto; width:1080px; font-size:16px; line-height:40px; text-align:left;}
+.sx_shop{ margin:0 auto; width:1080px; height:455px; padding-bottom:10px;}
+.shop_left{ float:left; width:392px; height:292px;}
+.show_right{ float:right; width:677px; text-align:left; padding-top:20px;}
+.show_right dt{ width:587px; padding-right:90px; padding-bottom:10px; border-bottom:1px solid #b6b5b5; line-height:22px; color:#5f5e5e; font-size:16px;}
+.show_right dd{ line-height:42px; color:#000;}
+.sx_red1, .sx_red2, .sx_red3{color:#fa0202; font-size:16px; letter-spacing:2px; font-family:微软雅黑; padding-left:20px;}
+.sx_red1{ background:url(../images/sx_redbg1.png) left center no-repeat;}
+.sx_red2{ background:url(../images/sx_redbg2.png) left center no-repeat;}
+.sx_pl{ padding-left:20px;}
+/*.sx_inp1, .sx_inp2{ width:125px; height:36px; line-height:35px; margin-left:28px; margin-top:50px; color:#fff; font-size:16px; font-family:微软雅黑;}
+.sx_inp1{ background:url(../images/sx_inp1.png) no-repeat;}
+.sx_inp2{ background:url(../images/sx_inp2.png) no-repeat;}*/
+
+
+.Msx_right{ float:right; width:829px; border:1px solid #dedede; padding-bottom:70px;}
+.Msxr_tit{ width:825px; height:44px; padding-left:4px; background:#3b84d6;}
+.Msxr_tit li{ width:100px; float:left; height:44px; line-height:44px;}
+.Msxr_tit li a{ display:block; height:43px; margin-top:1px; font-size:14px; font-family:微软雅黑; color:#FFF;}
+.Msxr_tit li a:hover{ background:#FFF; color:#3b84d6;}
+.Msxr_con{ padding-left:1px; padding-top:1px;}
+.Msxr_con table{ background:#FFF; padding-bottom:52px;}      /*  为什么背景颜色是蓝色  */
+.Msxr_con table td{ height:40px; color:#706f6f; border-bottom:1px solid #f6f5f5;}		/*  图td的长度短一些  */
+.Msxr_tabtit{ width:828px; height:44px; line-height:44px; background:#f4f5f5; color:#000;}
+/*----------------------  Sx_trab商品详情‘成功记录页面  ----------------------*/
+
+
+
+
+
+
+
+
+/*----------------------  Sx_trab商品详情‘成功记录页面  ----------------------*/
+.Msx_app li{ height:40px; line-height:40px;}
+.Msxapp_pj{ float:left; margin-left:15px;}
+.Msxapp_zz{ float:right; margin-right:33px;}
+.Msxapp_rq{ float:right; margin-right:50px;}
+.Maxd_app{ margin:100px auto 0px; width:766px;}
+.my_pj{ width:764px; height:114px;}
+.app_inp9{ float:right; width:120px; height:43px; margin-top:20px; line-height:43px; font-size:14px; color:#FFF; background:#62b3f8;}
+/*----------------------  Sx_trab商品详情‘成功记录页面  ----------------------*/
+
+
+
+
+
+/*----------------------  Sx_sh商品详情‘售后服务页面  ----------------------*/
+.Msx_sh{ margin:0 auto; width:765px; text-align:left; color:#595858; padding-bottom:160px;}
+.Msx_sh p{ line-height:30px;}
+.Msx_sh p a{ color:#595858;}
+/*----------------------  Sx_sh商品详情‘售后服务页面  ----------------------*/
+
+
+
+
+
+/*----------------------  Sx_sh商品详情‘售后服务页面  ----------------------*/
+.Msx_detailed
+.sh_detailed{ margin:0 auto; width:790px; border-bottom:1px solid #e5d8c5; padding-left:12px; padding-bottom:38px; color:#000000;}
+.sh_detailed ul{ float:left; text-align:left; width:263px;}
+.sh_detailed ul li{ line-height:32px;}
+/*----------------------  Sx_sh商品详情‘售后服务页面  ----------------------*/
+
+
+
+/*----------------------  myche我的购物车页面  ----------------------*/
+.M_che{ margin:10px auto 84px; width:1080px; border-top:1px solid #0151b0; padding-top:1px; color:#000000;}
+.Mche_top{ height:50px; line-height:50px; background:#e2e0e1;}
+.Mche_c{ height:127px;}
+.big_red{ font-size:18px; color:#ff0302;}
+.Mche_inp{ width:147px; height:56px; line-height:56px; font-size:14px; color:#FFFFFF; background:#ff0302;}
+.Mche_img{ width:50px; height:50px; padding:3px; border:1px solid #dbdbdb;}
+.Mche_inp1{ background:none;}
+.che_tl{ text-align:left;}
+.jia, .jian{ width:13px; height:13px; line-height:13px; border:1px solid #c9c9c9; text-align:center;}
+.shuzi{ width:34px; height:20px; border:1px solid #c9c9c9; text-align:center; margin:0 3px;}
+/*----------------------  myche我的购物车页面  ----------------------*/
+
+
+
+/*----------------------  jiesuan结算页面  ----------------------*/
+.jiesuan{ margin:0 auto; width:1080px; border-top:1px solid #dad9d9; padding-bottom:130px;}
+.js_bz{ margin:35px auto 5px; width:784px; height:34px; background:url(../images/js_bz.png) no-repeat;}
+.js_one{ padding-left:33px; padding-bottom:26px;}
+.js_one p, .js_two p{ text-align:left; margin-left:17px; font-size:16px; color:#000; line-height:55px; font-weight:bold;}
+.js_one dl{ float:left; margin-left:10px; width:237px; height:106px; background:url(../images/dz_abg1.png) no-repeat; text-align:left;}
+.js_one dl:hover{ background:url(../images/dz_abg2.png) no-repeat;}
+.js_one dt{ margin:11px auto 6px; width:198px; padding-left:10px; line-height:28px; border-bottom:1px solid #dfdfdf;}
+.js_one dd{ margin:0 auto; width:198px; padding-left:10px; line-height:24px;}
+.js_two{ padding-bottom:50px;}
+.js_two p{ margin-left:50px;}
+.fw_red{ float:right; width:250px; font-size:18px; color:#ff0302; font-family:微软雅黑;}
+.js_inp{ float:right; margin-top:20px; width:198px; height:60px; line-height:55px; background:url(../images/js_inpbg.png) no-repeat; font-family:微软雅黑; color:#FFFFFF; font-size:16px;}
+/*----------------------  jiesuan结算页面  ----------------------*/
+
+
+
+
+/*----------------------  xg_mm修改密码页面  ----------------------*/
+.xg_mm{ margin:40px auto 84px; width:1080px; color:#000000;}
+.xg_mm table{ margin:0 auto; width:320px;}
+.xg_con{ border:1px solid #c7c6c6; border-top:none; padding-bottom:90px; padding-top:60px;}
+.xg_tit{ width:1078px; height:41px; border:1px solid #85bfec; background:url(../images/images/xg_titbg.jpg) left center repeat-x; text-align:left;}
+.xg_tit p{ line-height:41px; color:#000; background:url(../images/images/xg_pbg_03.png) left center no-repeat; padding-left:24px;}
+.xg_text{ width:230px; height:31px; line-height:21px; border:1px solid #d1d0d0; padding-left:8px; margin:10px auto;}
+.xg_btn{ width:182px; height:50px; background:#3b8bf8; color:#FFF; font-size:16px; margin-top:100px;}
+/*----------------------  xg_mm修改密码页面  ----------------------*/
+
+
+
+
+/*----------------------  pay支付页面  ----------------------*/
+.pay{ margin:0 auto; width:1078px; margin-top:20px; padding-bottom:123px; border:1px solid #c9c8c8;}
+.pay_tit{ height:80px; line-height:80px; background:#e8f4ff; font-size:16px; font-family:微软雅黑; color:#4287be;}
+.paytit_left{ float:left; margin-left:100px;}
+.paytit_right{ float:right; margin-right:140px;}
+.pay_con li{ float:left; text-align:left;}
+.pay_con li p{ line-height:22px;}
+/*----------------------  pay支付页面  ----------------------*/
+
+
+
+/*----------------------  help帮助中心页面  ----------------------*/
+.mhelp{ margin:20px auto 45px; width:1080px;}
+.mhelp_tit{ text-align:left; margin-bottom:8px; margin-left:8px; height:26px; line-height:26px; color:#026bbe;}
+.mhelp_tit a{ color:#026bbe;}
+.mhelp_left{ float:left; width:232px; border:1px solid #cbcaca; font-family:微软雅黑;}
+.mhelp_lt{ width:232px; height:40px; line-height:40px; background:#026bbe; color:#FFFFFF; font-size:16px;}
+.mhelp_left dt{ width:232px; height:39px; line-height:39px; background:url(../images/mhelp_ltbg.jpg) no-repeat; color:#026bbe; font-size:16px;}
+.mhelp_left dd{ height:38px; line-height:38px; border-top:1px solid #d7d5d6;}
+.mhelp_left dd a{ color:#8a8b8c;}
+.mhelp_right{ float:right; width:830px; border:1px solid #c8c7c7;}
+.mhelp_rt{ padding-left:18px; width:812px; height:40px; line-height:40px; background:url(../images/mhelp_rtbg.jpg) left center repeat-x; color:#014f8c; text-align:left; font-family:微软雅黑; font-size:14px; border-top:4px solid #014f8c;}
+.mhelp_right p{ text-align:left; line-height:36px; width:764px; margin-left:21px;}
+.mhelp_blue{ color:#014f8c; margin-top:31px;}
+/*----------------------  help帮助中心页面  ----------------------*/

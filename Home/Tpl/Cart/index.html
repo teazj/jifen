@@ -1,119 +1,66 @@
-<include file="shopinc:header" />
-	<link type="text/css" href="__ROOT__/Public/css/info.css" rel="stylesheet" />
-	<div id="s_bdw">
-		<div id="s_bd">			
-			<div class="stepflow"><img src="__ROOT__/Public/images/step01.gif" width="980" height="32" alt="" /></div>	
-			<if condition="$isshow eq 1">		
-				<div class="addinfo">
-					<strong>{$p_name}</strong>
-					<a href="__ROOT__/index.php">返回继续购物</a>
-				</div>			
-			</if>
-			<div class="cartlist">
-				<table width="100%">
-					<tr>
-						<th>购物车中的商品</th><th>商城价</th><th>返现</th><th>购买数量</th><th>发货时间</th><th>操作</th>
-					</tr>
-					<volist name="C_list" id="C_list">
-					<tr bgcolor="#fffaf1">
-						<td>
-							<a href="#"><img class="smallpic" src="__ROOT__/Public/uploadfile/{$C_list.item_img}" width="80" height="80" /></a>
-							<a href="#">{$C_list.item_name}</a>
-						</td>
-						<td><strong class="red">￥{$C_list.price}</strong></td>
-						<td>￥0.00</td>
-						<td>
-							<div class="addinput">
-								<input type="text" name="qty_item_{$C_list.item_id}" value="{$C_list.quantity}" id="qty_item_{$C_list.item_id}" class="stext"/>
-                        		<a class="add" onClick="setAmount.add('#qty_item_{$C_list.item_id}','{$C_list.item_id}')" href="javascript:void(0)"></a>
-								<a class="reduce" onClick="setAmount.reduce('#qty_item_{$C_list.item_id}','{$C_list.item_id}')" href="javascript:void(0)"></a>
-							</div>
-						</td>
-						<td>有货，可当日出货</td>
-						<td><!--<a href="#" class="blue">移入收藏夹</a><br />--><a href="__URL__/delgoods/item_id/{$C_list.item_id}" class="blue" target="yincang">删除</a></td>
-					</tr>
-					</volist>
-					<tr>
-						<td valign="top"><a href="__URL__/empty_cart" target="yincang"><img src="__ROOT__/Public/images/deleteicon.gif" /> 清空购物车</a></td>
-						<td align="right" colspan="5">
-							<p>共<span class="cartCount">{$cartCount}</span>件商品</p>
-							<p style="margin-top:10px;font-size:14px;">总计金额(不含运费)： <strong style="font-size:18px;color:#d80000;">￥<span id="OrderCount">{$OrderCount}</span></strong> </p>
-						</td>
-					</tr>
-					<tr>
-						<td style="border:none;padding-top:20px;" colspan="6"><input type="button" value="" id="" class="btnimg f-r" onclick="location.href='__URL__/cartinformation'"/><a class="f-r goonbtn" href="__APP__/Index/index"><img src="__ROOT__/Public/images/gooncat.gif" width="86" height="24" alt="" /></a></td>
-					</tr>
-				</table>
-			</div><!--cartlist end-->
-			
-			<script type="text/javascript">
-			/* reduce_add */
-			var setAmount = {
-				min:1,
-				max:999,
-				reg:function(x) {
-					return new RegExp("^[1-9]\\d*$").test(x);
-				},
-				amount:function(obj,id, mode) {
-					var x = $(obj).val();
-					if (this.reg(x)) {
-						if (mode) {
-							$.get("__URL__/add_goods/item_id/"+id,function(data){
-								if(data!='f'){	
-								x++;
-								$('#OrderCount').text(data);
-								$num=parseInt($('.cartCount').eq(0).text())+1;
-								$('.cartCount').text($num);
-								}
-									if (x <= 999) {
-										$(obj).val(x);
-									} else {
-										alert("商品数量最多为" + 999);
-										$(obj).val(999);
-										$(obj).focus();
-									}
-								});
-						} else {
-							$.get("__URL__/add_goods/item_id/"+id+"/q/1",function(data){
-								if(data!='f'){
-									x--;
-								$('#OrderCount').text(data);
-								$num=parseInt($('.cartCount').eq(0).text())-1;
-								$('.cartCount').text($num);}
-									if (x >= 1) {
-										$(obj).val(x);
-									} else {
-										alert("商品数量最少为" + 1);
-										$(obj).val(1);
-										$(obj).focus();
-									}
-								});
-						}
-					} else {
-						alert("请输入正确的数量！");
-						$(obj).val(1);
-						$(obj).focus();
-					}
-				},
-				reduce:function(obj,id) {
-					var x = this.amount(obj,id, false);
-					
-				},
-				add:function(obj,id) {
-					var x = this.amount(obj,id, true);
-					
-				},
-				modify:function(obj) {
-					var x = $(obj).val();
-					if (x < this.min || x > this.max || !this.reg(x)) {
-						alert("请输入正确的数量！");
-						$(obj).val(1);
-						$(obj).focus();
-					}
-				}
-			}
-			</script>
-		</div><!--s_bd end-->
-	</div><!--s_bdw end-->	
-    	<iframe name="yincang" id="yincang" width="0" height="0" frameborder="0" src="test.php"></iframe>
-<include file="shopinc:footer" />
+<include file="Public:header" />
+<div class="clear"></div>
+</div>
+<div class="M_che">
+	<table cellpadding="0" cellspacing="0" width="100%" border="0">
+		<form action="{:U('Cart/cartinformation')}" method="post">
+			<tr class="Mche_top">
+				<td>商品图片</td>
+				<td class="che_tl">商品名称</td>
+				<td>单价</td>
+				<td>数量</td>
+				<td>操作</td>
+			</tr>
+			<volist id="c_list" name="C_list" key="k">
+			<tr class="Mche_c">
+				<input type="hidden" value="{$c_list['item_id']}" name="item_id[]" />
+				<td><a href="{:U('Index/info','id='.$c_list[item_id])}"><img src="__ROOT__/{$c_list.item_img}" class="Mche_img" /></a></td>
+				<td class="che_tl"><a href="{:U('Index/info','id='.$c_list[item_id])}">{$c_list.item_name}</a></td>
+				<td>{$c_list.price}</td>
+				<td>
+					{$c_list.quantity}
+				</td>
+				<td>
+					<a class="Mche_inp1" href="{:U('Cart/delgoods','item_id='.$c_list['item_id'])}">删除</a>
+				</td>
+			</tr>
+			 </volist>
+			<tr class="Mche_top">
+				<td><a href="{:U('Index/index')}">继续购物</a></td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td width="190"><span class="big_red">{$OrderCount}积分</span></td>
+				<td width="148">
+					<input class="Mche_inp" type="submit" value="结算" name="">
+				</td>
+			</tr>
+		</form>
+	</table>
+</div>
+<script type="text/javascript">
+	//加减
+	var num=parseInt($('.shuzi').val());
+	$('.shuzi').blur(function(){
+		if(parseInt($(this).val())<=0 || $(this).val()==''){
+			$(this).val('1');
+		}
+	});
+	
+	$(".jian").click(function(){
+		if(num<2){
+			num=1;
+		}else{
+			num=num*1-1;
+			$('.shuzi').val(num);
+		}
+	});
+	
+	$('.jia').click(function(){
+			num=num*1+1;
+			$('.shuzi').val(num);
+	});
+	
+	//用来改变
+	
+</script>
+<include file="Public:footer" />

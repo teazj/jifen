@@ -82,7 +82,7 @@ input[type=button]{ cursor:pointer;}
 .shop-navtit{ float:left; width:37px; height:37px; color:#FFF; background:#ce0606; text-align:center; line-height:37px;}
 .shop-nav{ float:left; line-height:37px;}
 .shop-nav .shop-nav-fx{ width:2px; height:26px; background:url(../../images/shop/shop_nav_fx.jpg) no-repeat;}
-.shop-nav a{ margin:0 20px;}
+.shop-nav a{ margin:0 10px;}
 .shop-right{ float:right; margin-top:12px; margin-right:20px;}
 .shop-right .shop-mz{ width:72px; height:26px; color:#FFF; text-align:center; line-height:24px; background:url(../../images/shop/shop-mzbg.png) no-repeat; border:none;}
 .shop-right .yj{ width:116px; height:26px; border:1px solid #9e0b04;}
