@@ -1,0 +1,28 @@
+<include file="Public/pagerForm.html" />
+<div class="pageHeader"> 您的位置： 单页管理 </div>
+<div class="pageContent">
+  <div class="panelBar">
+    <ul class="toolBar">
+      <li><a class="add" href="__URL__/addPage/navTabId/pagelist" target="dialog" rel="pagelist" title="增加页面"><span>增加页面</span></a></li>
+      <li><a class="add" href="__URL__/editPage/id/{item_id}/navTabId/pagelist" target="dialog" rel="pagelist" title="增加页面" width="800" height="500"><span>编辑页面</span></a></li>
+      <li><a class="delete" href="__URL__/delPage/id/{item_id}/navTabId/pagelist" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+      <li class="line">line</li>
+      <li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+      <!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+    </ul>
+  </div>
+<table class="table" width="100%" layoutH="112">
+<thead>
+	<tr style="background:#36a6cf">
+		<th>ID</th><th>单页名称</th><th>单页标题</th>
+	</tr>
+</thead>
+    <tbody>
+		<foreach name="list" item="vo">
+	<tr target="item_id" rel="{$vo.id}">
+			<td>{$vo['id']}</td><td>{$vo['pageName']}</td><td>{$vo['pageTitle']}</td>
+	</tr>
+		</foreach>
+       </tbody>
+</table>
+</div>

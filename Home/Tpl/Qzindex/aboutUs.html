@@ -1,33 +1,27 @@
-<include file="inc:header" />
+<include file="Public:qzheader" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/ny.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/ty.css" />
+<script src="__PUBLIC__/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/base.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/sun11.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/topss.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/new.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/topvise.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/toptab.js"></script>
+
     <div class="M_download">
-    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">关于我们</a></div>
+    	<div class="Mcaut_tit"><a href="{:U('Index/Qzindex/index')}">首页</a> > <a href="javascript:;">关于我们</a></div>
         <div class="Md_left">
         	<div class="about_ltit">
             	<ul>
-                	<li><a href="{:U('Index/AlonePage/aboutUs')}">公司简介</a></li>
-                    <li><a href="{:U('Index/AlonePage/sgdt')}">速格动态</a></li>
+                	<li><a href="javascript:;">公司简介</a></li>
+                    <li><a href="{:U('Index/About/sgdt')}">速格动态</a></li>
                 </ul>
             </div>
             <div class="about">
             	<img src="__PUBLIC__/Home/images/rzimages/about_img.jpg" />
-            	<p>　　义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与
-                义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与
-                义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与
-                义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与义乌市速格报检代理有限公司，是一家专业从事外贸单证服务与义乌市速格报检代理有限公司，是一家专业从事外贸单证。
-                </p>
-                <p>义乌速格发展历程：</p>
-                <p>便开展各类型单证签证，在2004年3月，便开展各类型单证签证证签证单证签证证签证单证签证。</p>
-                <p>在2004年3月，便开展各类型单证签证，在2004年3月，便开展各类型单证签证，在2004年3月，便开展各类型单证签证，在2004年3月，便开展各类型单证签证，
-                在2004年3月。</p>
-                <p>便开展各类型单证签证，在2004年3月，便开展各类型单证签证，在2004年3月，便开展各类型单证签证，在2004年3月，便开展各类型单证签证证签证
-                在2004年3月。</p>
-                <div class="sg">
-                	<p>义乌市速格报检代理有限公司目前开展的业务；</p>
-                    <p>1、代办各国驻上海使馆认证‘代办外交部及使馆认证；</p>
-                    <p>2、代办出口各国的出产地证认证；</p>
-                    <p>3、代办因私护照、及其相关业务；</p>
-                    <p>4、代办SGS认证；</p>
-                </div>
+                {$cxzz['pageMain']| html_entity_decode}
             </div>
            
         </div>
@@ -162,21 +156,4 @@
         </div>
         <div class="clear"></div>     <!--  清除M_download里面的左，右部分浮动  -->
     </div>
-    <div class="footer_topbg"></div>
-    <div class="footer">
-        <div class="footer_bg">
-        	<div class="link">友情连接：<a href="" style="margin-left:0px;">义乌签证</a>|<a href="">使馆认证</a>|
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>
-            </div>
-            <div class="copyright">
-            	<p>CopyRight @ 2011-2012 义乌市速格报俭代理有限公司 版权所有　地 址：浙江 义乌市城北路258号福田商务公寓313（商检局对面）<br />
-                	电 话：86 0579 85365501 - 86 0579 85591661　　　　　技术支持：武汉尚科在线网络技术有限公司
-                </p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+<include file="Public:qzfooter" />

@@ -1,0 +1,33 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/update/navTabId/listgoods/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return validateCallback(this,dialogAjaxDone);"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type="hidden" name="id" value="{$vo.id}"/>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>商品名：</dt>
+				<dd>{$vo.name}</dd>
+			</dl>
+			<dl>
+				<dt>位置：</dt>
+				<dd>
+				<select class="combox" name="location">
+					<option value="0" {if $vo.location==0}selected{/if}>{0|ff_goods_location}</option>
+					<option value="1" {if $vo.location==1}selected{/if}>{1|ff_goods_location}</option>
+					<option value="2" {if $vo.location==2}selected{/if}>{2|ff_goods_location}</option>
+					<option value="3" {if $vo.location==3}selected{/if}>{3|ff_goods_location}</option>
+					
+				</select>
+				</dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">修改</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

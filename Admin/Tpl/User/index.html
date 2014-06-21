@@ -1,0 +1,85 @@
+{include file="Admin/Tpl/Public/pagerForm.html"}
+<div class="pageHeader">
+	<form rel="pagerForm" onsubmit="return navTabSearch(this);" method="post">
+	<input type="hidden" name="numPerPage" value="{$numPerPage}" /><!--每页显示多少条-->
+	<div class="searchBar">
+		<table class="searchContent">
+			<tr>
+				<td>
+					<b>搜索</b> &nbsp; 关键字：<input type="text" name="keyword" value="{$smarty.post.keyword}" /> [登录名,真实姓名,电话]
+				</td>
+				<td>
+					<div class="buttonActive"><div class="buttonContent"><button type="submit">检索</button></div></div>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</form>
+</div>
+<div class="pageContent">
+	<div class="panelBar">
+		<ul class="toolBar">
+			<li><a class="add" href="__URL__/add" target="dialog" width="550" height="420" rel="user_msg" title="添加新用户"><span>添加</span></a></li>
+			<li><a class="delete" href="__URL__/del/id/{ldelim}item_id{rdelim}/navTabId/listuser" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+			<li><a class="edit" href="__URL__/edit/id/{ldelim}item_id{rdelim}"  width="500" height="350" target="dialog"><span>修改</span></a></li>
+			<li class="line">line</li>
+			<li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+			<!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+		</ul>
+	</div>
+	<!-- 注册一个调节器函数 -->
+
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<th width="40"><b>ID</b></th>
+				<th width="150"><b>账号</b></th>
+				<th width="150"><b>姓名</b></th>
+				<th width="150"><b>性别</b></th>
+				<th width="150"><b>年龄</b></th>
+				<th width="150"><b>QQ</b></th>
+				<th width="150"><b>邮箱</b></th>
+				<th width="150"><b>电话</b></th>
+				<th width="150"><b>地址</b></th>
+				<th width="150"><b>积分</b></th>
+				<th width="150"><b>余额</b></th>
+			</tr>
+		</thead>
+		<tbody>
+			{for $i=0 to count($list)-1}
+				{if $list[$i]['sex']=='w'}
+				{$list[$i]['sex']='女'}
+				{elseif $list[$i]['sex']=='m'}
+				{$list[$i]['sex']='男'}
+				{/if}
+				<tr target="item_id" rel="{$list[$i]['id']}">
+					<td>{$list[$i]['id']}</td>
+					<td>{$list[$i]['username']}</td>
+					<td>{$list[$i]['nickname']}</td>
+					<td>{$list[$i]['sex']}</td>
+					<td>{$list[$i]['age']}</td>
+					<td>{$list[$i]['qq']}</td>
+					<td>{$list[$i]['email']}</td>
+					<td>{$list[$i]['phone']}</td>
+					<td>{$list[$i]['address']}</td>
+					<td>{$result[$i]['point']}</td>
+					<td>{$result[$i]['balance']}</td>
+				</tr>
+			{/for}
+		</tbody>
+	</table>
+	<div class="panelBar">
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({ldelim}numPerPage:this.value{rdelim})">
+				<option value="10" {if $numPerPage==10}selected{/if}>10</option>
+				<option value="15" {if $numPerPage==15}selected{/if}>15</option>
+				<option value="20" {if $numPerPage==20}selected{/if}>20</option>
+				<option value="25" {if $numPerPage==25}selected{/if}>25</option>
+				<option value="30" {if $numPerPage==30}selected{/if}>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
+	</div>
+</div>

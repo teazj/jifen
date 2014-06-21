@@ -1,0 +1,45 @@
+<include file="Public/pagerForm.html" />
+<div class="pageHeader"> 您的位置： 积分导入记录 
+<table class="searchContent">
+	<form action="{:U('Admin/Inte/baseImportcls',array('act'=>'insert'),'')}" method="post" enctype="multipart/form-data">
+		<tr>
+			<td>订单导入:</td><td><input type="file" name="upXls"/></td>
+			<td colspan="2"><input type="submit" name="sub" value="上传"/></td>
+		</tr>
+	</form>
+</table>
+<table class="searchContent">
+	<form action="{:U('Admin/Inte/followImportcls','','')}" method="post" enctype="multipart/form-data">
+		<tr>
+			<td>积分导入:</td><td><input type="file" name="upfile"/></td>
+			<td colspan="2"><input type="submit" name="sub" value="上传"/></td>
+		</tr>
+	</form>
+</table>
+</div>
+<div class="pageContent">
+  <div class="panelBar">
+    <ul class="toolBar">
+      <li><a class="add" href="__APP__/Inte/qz_orders" target="navTab" rel="listinte" title="积分领取记录"><span>积分领取记录</span></a></li>
+      <li><a class="delete" href="__URL__/del/id/{item_id}/navTabId/inteimport" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+      <li class="line">line</li>
+      <li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+      <!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+    </ul>
+  </div>
+<table class="table" width="100%" layoutH="112">
+		<thead><tr>
+			<th>ID</th><th>公司</th><th>订单号</th><th>文件名</th><th>办证状态</th><th>送件时间</th><th>预计时间</th><th>积分</th><th>领取人数</th>
+		</tr></thead>
+        <tbody>
+		<foreach name="list" item="vo">
+		<tr target="item_id" rel="{$vo.id}">
+			<td>{$vo['id']}</td><td>{$vo['company']}</td><td>{$vo['qz_number']}</td><td>{$vo['qz_fileName']}</td><td>{$vo['qz_status']}</td><td>{$vo['send_time']}</td><td>{$vo['go_time']}</td><td>{$vo['inte']}</td><td>{$vo['u_num']}</td>
+		</tr>
+		</foreach>
+        </tbody>
+</table>
+  <div class="panelBar">
+    <div class="pages"> {$page}</div>
+  </div>
+</div>

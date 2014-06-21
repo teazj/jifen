@@ -1,0 +1,39 @@
+
+<div class="pageContent">
+	<form method="post" action="__URL__/insert/navTabId/Ppt/callbackType/closeCurrent" enctype="multipart/form-data" class="pageForm required-validate" onsubmit="return iframeCallback(this,dialogAjaxDone);">
+		<?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<input type='hidden' name='ctime' value="{$smarty.now}" />	
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>显示位置：</dt>
+				<dd>
+					<select name="pid">
+						{foreach $types as $v}
+						<option value="{$v.id}">{$v.typename}</option>
+						{/foreach}
+					</select>
+				</dd>
+			</dl>
+			<dl style='height:70px'>
+				<dt>图片标语：</dt>
+				<dd><textarea cols='50' rows='3' name="title"></textarea></dd>
+			</dl>
+			<dl>
+				<dt>图片路径：</dt>
+				<dd><input type="text" style="width:100%" class="url" name="url" value='http://'/></dd>
+			</dl>
+			<dl>
+				<dt>图片：</dt>
+				<dd><input type="file" name="pic"/></dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

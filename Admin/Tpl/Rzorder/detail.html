@@ -1,0 +1,26 @@
+<div class="pageContent">
+	
+	<table class="table" width="100%" layoutH="112">
+		<thead>
+			<tr>
+				<th width="80">id号</th>
+				<th width="200">商品名</th>
+				<th width="80">商品图片</th>
+				<th width="150">单价</th>
+				<th width="150">数量</th>
+			</tr>
+		</thead>
+		<tbody>
+			{for $i=0 to $count-1}
+				<tr target="item_id" rel="{$vo.id}">
+					<td style='height:100px'>{$list[$i].gid}</td>
+					<td style='height:100px'>{$list[$i].name}</td>
+					<td style='height:100px'><img src="__PUBLIC__/Admin/Images/Upload/Goods/400_400_{$result[$i]}" style='width:100px;height:100px'></td>
+					<td style='height:100px'>{$list[$i].price}</td>
+					<td style='height:100px'>{$list[$i].num}</td>
+					<!--<td><a href='__APP__/User/edit/id/{$vo.id}' target="dialog"><font color='blue'>修改</font></a>&nbsp;&nbsp;<a href='__APP__/User/edit/id/{$vo.id}'><font color='blue'>删除</font></a></td>-->
+				</tr>
+			{/for}
+		</tbody>
+	</table>
+</div>

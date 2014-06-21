@@ -1,0 +1,58 @@
+<include file="Public/pagerForm.html" />
+<div class="pageHeader"> 您的位置： 积分记录 </div>
+<div class="pageContent">
+  <div class="panelBar">
+    <ul class="toolBar">
+      <li><a class="add" href="__APP__/Inte/qz_orders" target="navTab" rel="inteimport" title="导入积分记录"><span>导入积分记录</span></a></li>
+      <li><a class="delete" href="__URL__/del/id/{item_id}/navTabId/listinte" target="ajaxTodo" title="确定要删除吗?"><span>删除</span></a></li>
+      <li class="line">line</li>
+      <li><a class="icon"  href="javascript:navTabPageBreak()"><span>刷新</span></a></li>
+      <!--<li><a class="icon" href="demo/common/dwz-team.xls" target="dwzExport" targetType="navTab" title="实要导出这些记录吗?"><span>导出EXCEL</span></a></li>-->
+    </ul>
+  </div>
+  <table class="table" width="100%" layoutH="112">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>领取时间</th>
+        <th>兑换发票号</th>
+        <th>兑换积分数目</th>
+        <th>兑换钱数</th>
+        <th>兑换积分数目</th>
+        <th>兑换礼品名</th>
+        <th>兑换积分数目</th>
+      </tr>
+    </thead>
+    <tbody>
+    <volist name="list" id="vo">
+    <tr target="item_id" rel="{$vo.id}" name='status' src="{$vo.id}">
+      <td name='id'>{$vo.id}</td>
+      <td name='inteTime'>{$vo.inteTime|date='Y-m-d H:i:s',###}</td>
+      <td name='orderNumber'><php>if(!empty($vo['orderNumber'])){
+          echo $vo['orderNumber'];
+          }</php></td>
+      <td name='billInte'><php>if(!empty($vo['billInte'])){
+          echo $vo['billInte'] . '积分';
+          }</php></td>
+      <td name='money'><php>if(!empty($vo['money'])){
+          echo $vo['money'] . '元';
+          }</php></td>
+      <td name='qInte'><php>if(!empty($vo['qInte'])){
+          echo $vo['qInte'] . '积分';
+          }</php></td>
+        </td>
+      <td name='giftName'><php>if(!empty($vo['giftName'])){
+          echo $vo['giftName'];
+          }</php></td>
+        </td>
+      <td name='gInte'><php>if(!empty($vo['gInte'])){
+          echo $vo['gInte'] . '积分';
+          }</php></td>
+    </tr>
+    </volist>
+    </tbody>
+  </table>
+  <div class="panelBar">
+    <div class="pages"> {$page}</div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+
+<div class="pageContent">
+	<form target="myframe" id="myform" method="post" action="__URL__/insert/navTabId/listnews/callbackType/closeCurrent"  class="pageForm required-validate" 
+		onsubmit="return iframeCallback(this,dialogAjaxDone);" enctype="multipart/form-data"><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>新闻类别：</dt>
+				<dd>
+				<select id="" class="combox" name="type">
+					{foreach $typelist as $v}
+						<option value="{$v.id}" >{$v.tname}</option>
+					{/foreach}
+				</select>
+				</dd>
+			</dl>
+			<div style="clear:both"></div>
+			
+			<dl>
+				<dt>新闻标题：</dt>
+				<dd><input class="required"  name="title" /></dd>
+			</dl>
+			<div style="clear:both"></div>
+			
+			<dl>
+				<dt>新闻作者：</dt>
+				<dd><input class="textInput"  name="author" /></dd>
+			</dl>
+			<div style="clear:both"></div>
+			
+			<dl style="height:75px;">
+				<dt>新闻内容：</dt>
+				<dd><textarea class="textInput"  rows="4" cols="40" name="content"></textarea></dd>
+			</dl>
+			<div style="clear:both;margin:5px"></div>
+			<div style="clear:both"></div>
+			
+			<dl>
+				<dt>上传图片：</dt>
+				<dd><input class="textInput" type="file" name="pic"></dd>
+			</dl>
+			
+			
+		</div>
+		
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

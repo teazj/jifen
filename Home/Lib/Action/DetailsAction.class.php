@@ -1,6 +1,14 @@
 <?php
 class DetailsAction extends Action{
 	public function index(){
+		//是否登录的判断
+		if(!session('FEUSER') || session('FEUSER')==''){
+			$iflogin = 0;
+		}else{
+			$iflogin = 1;
+			$this->assign('user_info',session('FEUSER'));
+		}
+		
 		$model=D('Vista');
 		$condition['id']= $_GET['id'];
 		$con['sid']= $_GET['id'];
@@ -14,6 +22,10 @@ class DetailsAction extends Action{
 			$a=explode('|',$value);
 			$b=explode('|',$key);
 		}
+
+		$this->assign('place_id',$_GET['place_id']);
+		$this->assign('iflogin',$iflogin);
+		$this->assign('gotime',date('Y-m-d',strtotime('+7days')));
 		$this->assign('place',$pid);
 		$this->assign('a',$a);
 		$this->assign('b',$b);

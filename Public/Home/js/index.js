@@ -66,17 +66,12 @@ var Visa_countryInput = $("#Visa_countryInput");
 
 $("#btnSearch").click(function() {
     var href = "";
-    if (Visa_countryInput.val() == "") {
+    if (Visa_countryInput.val() == "" || Visa_countryInput.val() == "请输入国家名或地区名") {
         alert("请选择搜索国家!");
-        return;
+        return false;
     }
-    var strcountry = Visa_countryInput.val();
-	alert(strcountry);
-    var arr = new Array();
-    arr = strcountry.split(' ');
-    countryEn = arr[0];
-
-    location.href = "index.php/Qzindex/country2cate/"+countryEn;
+    var strcountry = Visa_countryInput.attr('cat_id');
+    location.href = "/index.php/Vista/index/id/"+strcountry+".html";
 });
 
 Visa_countryInput.keydown(function(event) {
@@ -121,8 +116,11 @@ function hotClick(o) {
 
     Visa_countryInput.removeClass("vd_ctny");
     Visa_countryInput.addClass("vd_ctny0");
-    Visa_countryInput.val(arrCC[3] + " " + arrCC[4]);
-    hidCCName.val(arrCC[2] + "|" + o.innerHTML + "|" + arrCC[4]);
+    Visa_countryInput.val(arrCC[0]);
+    Visa_countryInput.attr('cat_id',arrCC[1]);
+    //针对地区页的js
+    $("#set_place_id").val(arrCC[1]);
+    //
     divCitys.css("display", "none");
     DivShim.css("display", "none");
 }

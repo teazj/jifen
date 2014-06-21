@@ -1,0 +1,117 @@
+<script>
+	$(function(){
+		$("#maintype").change(function(){
+			$.ajax({
+				//请求地址
+				url:"__APP__/Goods_type/showtype",	   
+				//发送方式
+				type:"get",		   
+				//参数信息
+				data:{ id:$(this).val()}, 
+				//是否异步
+				async:true,	 
+				//ajax响应数据格式：html/json/xml/text
+				dataType:'json',   
+				//成功的回调函数
+				success:function(data){ 
+					//alert(data);
+					var str="";
+					var string="";
+					for(var i=0;i<data.length;i++){
+						str+="<option style='display:block' value='"+data[i].id+"'>"+data[i].name+"</option>";
+						string+="<li><a class='1' "+"href='#'"+"value='"+data[i].id+"'>"+data[i].name+"</a></li>";
+					}
+					//插入到html中的下拉框，不会显示
+					$("#subtype").html(""); 
+					$("#subtype").html(str); 
+					//插入到dwz中的下拉框，会显示
+					$("#op_combox_subtype").html("");
+					$("#op_combox_subtype").html(string);
+					$("#op_combox_subtype a").click(function(){
+						//dwz中选中后的显示
+						$("#combox_subtype >a").html($(this).html());
+						//添加隐藏域，传送tid的值
+						$("#myform").append("<input name='tid' type='hidden' value='"+$(this).attr("value")+"'/>");
+					})
+				},
+				//失败的回调函数
+				error:function(){ 
+					alert('ajax请求失败！');
+				},
+			});
+		});
+	})
+</script>
+<div class="pageContent">
+	<form id="myform" method="post" action="__APP__/Goods_detail/insert/navTabId/listgoods/callbackType/closeCurrent"  class="pageForm required-validate" enctype="multipart/form-data" ><?php  //窗体组件采用这个 iframeCallback(this, navTabAjaxDone); ?>
+		<div class="pageFormContent" layoutH="60">
+			<dl>
+				<dt>商品名称：</dt>
+				<dd><input type="text"  style="width:100%" name="name" value=""/></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>商品主类别：</dt>
+				<dd>
+				<select id="maintype" class="combox" name="mid">
+					<option value="0">请选择</option>
+					{foreach $maintype as $v}
+						<option value="{$v.id}" >{$v.name}</option>
+					{/foreach}
+				</select>
+				</dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>商品子类别：</dt>
+				<dd>
+				<select id="subtype" class="combox" name="tid">
+					<option value="0"  >请选择</option>
+				</select>
+				</dd>
+			</dl>
+			<div style="clear:both"></div>
+            <dl>
+				<dt>缩略图：</dt>
+				<dd><input id="thumb" type="file"  style="width:100%" name="thumb" value=""/></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>所需积分：</dt>
+				<dd><input id="subtype2" type="text"  style="width:100%" name="price" value=""/></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>库存量：</dt>
+				<dd><input type="text"  style="width:100%" name="snum" value=""/></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>公司名称：</dt>
+				<dd><input type="text"  style="width:100%" name="company" value=""/></dd>
+			</dl>
+			<div style="clear:both"></div>
+			<dl>
+				<dt>描述：</dt>
+				<dd><input type="text"  style="width:100%" name="content" value=""/></dd>
+			</dl>
+			<div style="clear:both;margin:5px"></div>
+			<dl>
+				<dt>详情：</dt>
+				<dd>
+				<div class="unit">
+					<textarea class="editor" name="details" rows="25" cols="80" upImgUrl="__APP__/Upfile/aupload" upImgExt="jpg,jpeg,gif,png" tools="mfull"></textarea>
+				</div>			
+				</dd>
+			</dl>
+		</div>
+		
+		<div class="formBar">
+			<ul>
+				<li><div class="buttonActive"><div class="buttonContent"><button type="submit">保存</button></div></div></li>
+				<li><div class="button"><div class="buttonContent"><button type="button" class="close">取消</button></div></div></li>
+			</ul>
+		</div>
+	</form>
+</div>
+

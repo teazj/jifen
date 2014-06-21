@@ -1,0 +1,46 @@
+<include file="Public/pagerForm.html" />
+<div class="pageContent">
+	<form action="{:U('Admin/Webinfo/init_update','','')}" method="post" id="myform"  class="pageForm required-validate" onsubmit="return validateCallback(this,dialogAjaxDone);">
+		<table class="table" width="100%" layoutH="112">
+        <thead>
+			<tr>
+				<th>商城基本信息设置</th>
+			</tr>
+         </thead>
+         <tbody>
+			<tr>
+				<td>标题:</td><td><input type="text" name="title" value="{$sys['title']}"/></td>
+			</tr>
+			<tr>
+				<td>网站描述:</td><td><input type="text" name="desc" value="{$sys['desc']}" /></td>
+			</tr>
+			<tr>
+				<td>关键字:</td><td><input type="text" name="keyword" value="{$sys['keyword']}"/></td>
+			</tr>
+			<tr>
+				<td>暂时关闭网站:</td><td>是:<input type="radio" name="sign" value="1" 
+					<if condition="($sys['sign']) eq 1">
+						checked="checked"
+					</if>
+				/>否:<input type="radio" name="sign" value="0"    
+					<if condition="($sys['sign']) eq 0">
+						checked="checked"
+					</if>				
+				/></td>
+			</tr>
+			<tr>
+				<td>关闭原因:</td><td><textarea name="close" rows="5" cols="30">{$sys['close']}</textarea></td>
+			</tr>
+			<tr>
+				<td>规则:</td><td>1元兑换<input type="text" name="rule" value="{$sys['rule']}"/>积分(*举例如1元=10积分,输入框内必须填写整数)</td>
+			</tr>
+			<tr>
+				<td>用户等级规则:</td><td><input type="input" name="u_lev" value="{$sys['lev_rule']}"/>(*说明:这里是定义用户的等级根据积分来判断.格式：30,60,70.就等于大于等于30积分的是青铜用户,大于等于60的是白银用户,大于等于70的是黄金用户)</td>
+			</tr>
+			<tr>
+				<td></td><td><input type="submit" name="sub" value="修改"/></td>
+			</tr>
+         </tbody>
+		</table>
+	</form>
+</div>
