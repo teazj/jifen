@@ -9,13 +9,13 @@
 <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Home/js/function.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Home/js/new.js"></script>
-<script type="text/javascript" src="__PUBLIC__/Home/js/ss.js"></script>
+<!-- <script type="text/javascript" src="__PUBLIC__/Home/js/ss.js"></script> -->
 <script type="text/javascript" src="__PUBLIC__/Home/js/tcc.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.kinMaxShow-1.1.min.js"></script>
 <!--  搜索js (外联没效果) --> 
 <script type="text/javascript">
 $(function(){
-	var default_key = '请输入相关关键字';
+	var default_key="{$Think.get.keyword}";
 	var searchObj = $("#search_key");
 	searchObj.val(default_key);
 	searchObj.bind("focus",function(){
@@ -30,6 +30,7 @@ $(function(){
 		}
 	});
 });
+
 </script>
 
 </head>
@@ -39,27 +40,27 @@ $(function(){
     	<div class="topnavbg">
         	<div class="topnav">
             	<div class="leftsidebar">
-                	<a href="">欢迎访问本店</a> | <a href="{:U('Index/index')}">返回首页</a> | <a href="">收藏本站</a>
+                	欢迎访问本店 | <a href="{:U('Index/index')}">返回首页</a> | <a href="">收藏本站</a>
                	</div>
                 <div class="rightsidebar">
                 	<a href="">
-                	<if condition="$Think.session.uname eq null"><a href="{:U('Com/login','','')}">登录
+                	<if condition="$Think.session.FEUSER eq null"><a href="{:U('Com/login','','')}">登录
 					</a> | <a href="{:U('Com/register','','')}">注册</a>
-                	<else/>您好：{$Think.session.uname}<a href="{:U('Index/ShopReg/logOut',array('act'=>'out'),'')}">[退出]</a>
+                	<else/>您好：{$Think.session.FEUSER.username}<a href="{:U('Login/logout')}">[退出]</a>
                 	</if>
-                	| <a href="{:U('Index/Vip/index')}">我的账户</a> | <a href="">我的积分</a>
+                	| <a href="{:U('Vip/index')}">我的账户</a> | <a href="{:U(Vip/exchange)}">我的积分</a>
                 </div>
                 <div class="clear"></div>
             </div>
         </div>
         <div class="header-two">
-        	<div class="logo"><a href="{:U('Index/Index/index','','')}"><img src="__PUBLIC__/Home/images/shop/logo.jpg" /></a></div>
+        	<div class="logo"><a href="{:U('Index/index')}"><img src="__PUBLIC__/Home/images/shop/logo.jpg" /></a></div>
 
             <div class="search">
             	<table>
-                	<form>
-                    	<td><input type="text" name="" id="search_key" value="" class="search_one" /></td>
-                        <td><a href=""><input type="button" name="" value="搜索" class="ss" /></a></td>
+                	<form action="{:U('Index/lists')}" method="get" onsubmit="return check(this);">
+                    	<td><input type="text" name="keyword" placeholder="请输入相关关键字" id="search_key" value="{$Think.get.keyword}" class="search_one" /></td>
+                        <td><input type="submit" name="" value="搜索" class="ss" /></td>
                     </form>
                 </table>
             </div>

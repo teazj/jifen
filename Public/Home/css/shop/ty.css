@@ -24,7 +24,7 @@ input[type=button]{ cursor:pointer;}
 .logo{ float:left; width:330px; height:45px;}
 .search{ float:right; margin-right:17px;}
 .search .search_one{ width:380px; height:31px; border:2px solid #026bbe; font-size:14px; padding:5px 0 5px 14px; line-height:31px;}
-.search .ss{ width:117px; height:45px; line-height:45px; background:url(../images/ss_bg.jpg) no-repeat; color:#FFF; font-size:14px; text-align:left; padding-left:20px; position:relative; top:0; left:-5px; border:0 none;}
+.search .ss{ width:117px; height:45px; line-height:45px; background:url(../../images/shop/ss_bg.jpg) no-repeat; color:#FFF; font-size:14px; text-align:left; padding-left:20px; position:relative; top:0; left:-5px; border:0 none;}
 
 .navbg{ width:auto; height:50px; background:#026bbe; margin-bottom:2px;}
 .nav{ margin:0 auto; width:1095px; height:50px;}

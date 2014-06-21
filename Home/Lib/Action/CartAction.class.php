@@ -1,5 +1,15 @@
 <?php
-class CartAction extends GlobalAction {
+class CartAction extends Action {
+	public function _initialize() {
+		import("ORG.Util.Cart");	
+		$userinfo=session('FEUSER');			
+		$this->userID =$userinfo['id'];
+		$this->cart = new Cart();
+		$this->assign('cartCount', $_SESSION['cart']['total_num']);	
+		$this->assign('cartbox',$_SESSION['cart']['goods_list']);	
+	}
+	
+	
     public function index(){
 		$item_id = isset($_GET['item_id'])?$_GET['item_id']:0;
 		if($this->userID == false)
@@ -10,12 +20,12 @@ class CartAction extends GlobalAction {
 		}
 		if($item_id != 0)
 		{
-			$Cdty = M("commodity");
+			$Cdty = M("Goods");
 			$map=array();
 			$map['id']=$item_id;
 			$listarr=$Cdty->where($map)->find();
 			$this->assign('p_name',$listarr["title"]);	
-			$this->cart->add_goods($item_id);
+			echo $this->cart->add_goods($item_id);	//添加到购物车里面
 			$this->assign('isshow',"1");
 		}
 		else
@@ -26,8 +36,8 @@ class CartAction extends GlobalAction {
 		$this->assign('OrderCount',$_SESSION['cart']['total_price']);
 		$this->assign('cartCount', $_SESSION['cart']['total_num']);		
 		$this->assign('C_list',$_SESSION['cart']['goods_list']);
-		//dump($_SESSION['cart']['goods_list']);
-		$this->display('myche');
+		dump($_SESSION['cart']);
+		$this->display('index');
     }
 	
 	//添加购物车

@@ -1,159 +1,51 @@
-<include file="./Public/Tpl/header.html" />
-	<link type="text/css" href="__ROOT__/Public/css/info.css" rel="stylesheet" />
-	<div id="s_bdw">
-		<div id="s_bd">
-			<div class="stepflow"><img src="__ROOT__/Public/images/cartinforstep.gif" width="980" height="32" alt="" /></div>
-			<div class="infotable">
-			<form action="__ROOT__/Index.php/Cart/SaveOrder" method="post">
-				<table width="100%">
-					<tr>
-						<td class="tit">收货地址</td>
-						<td class="summary">
-                        <a href="#" onclick="$('#addifr').show();">添加其它地址</a>
-							<table class="address" width="100%">
-								<volist name="A_list" id="A_list">
-								<tr>
-									
-									<td width="80px" align="center"><input name="dizhi" type="radio" value="{$A_list.id}"  <if condition="$A_list['ismr'] eq 1"> checked="checked" </if> /></td>
-									<td>{$A_list.shengfen}-{$A_list.shi}-{$A_list.qu},{$A_list.address},{$A_list.lianxiren},{$A_list.phone}</td>
-								</tr>
-								</volist>
-                                <tr>
-                                <td colspan="2">
-                                <iframe src="__URL__/address" width="800" height="200" frameborder="0" style="display:none;" id="addifr" name="addifr"></iframe></td>
-                                </tr>
-                             </table>
-						</td>
-					</tr>
-				</table>
-			</div><!--infotable end-->
-			<div class="infotable">
-				<table width="100%">
-					<tr>
-						<td class="tit">配送方式</td>
-						<td class="summary">
-							<table class="address" width="100%">
-								<volist id="d_list" name="d_list">
-								<tr bgcolor="fff7eb">
-									<td valign="top" width="10px"></td>
-									<td valign="top" width="40px"><input type="radio" name="kd" checked="checked" value="{$d_list.id}" /></td>
-									<td valign="top" width="120px"><label for="yxkd">{$d_list.title}</label></td>
-									<td valign="top" width="80px" class="red"><if condition="$d_list['price'] eq 0">免费<else/>￥{$d_list.price}</if></td>
-									<td valign="top">{$d_list.bz}</td>
-								</tr>
-								</volist>
-								<tr><td height="20px"></td></tr>
-								<tr>
-									<td valign="top" width="10px"></td>
-									<td colspan="4"><input type="checkbox" name="daishou" value="" id="daishou" /> 收货时若网快递无法联系上我，我同意由朋友、同事或家人代收</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-			</div><!--infotable end-->
-			<div class="infotable">
-				<table width="100%">
-					<tr>
-						<td class="tit">支付方式</td>
-						<td class="summary">
-							<table class="address" width="100%">
-								<tr>
-									<td valign="top" width="10px"></td>
-									<td valign="top" width="40px"><input name="zhifu" type="radio" id="zhifu" value="1" checked="checked" /></td>
-									<td valign="top" width="110px"><label for="df"><img src="__ROOT__/Public/images/bank/bank14.gif" width="96" height="32" alt="" /></label></td>
-									<td valign="top">最安全快捷的支付平台</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-			</div><!--infotable end-->
-			
-			<div class="infotable">
-				<table width="100%">
-					<tr>
-						<td class="tit">发票信息</td>
-						<td class="summary">
-							<table class="address" width="100%">	
-								<tr><td colspan="2"><label>
-									  <input name="isinvoice" type="checkbox" id="isinvoice" value="1" />
-									</label>是否开发票</td></tr>							
-								<tr bgcolor="#fff7eb">
-									<td width="10px"></td>
-									<td colspan="4">
-										<p>发票类型：<input name="fapiao" type="radio" value="1" checked="checked"/> 
-										商业零售发票 <input type="radio" name="fapiao" value="2"/> 增值税专用发票</p>
-										<p>发票抬头：<input name="taitou" type="radio" value="1" checked="checked"/> 
-										个人 <input type="radio" name="taitou" value="2"/> 单位</p>
-										<p>个人姓名/单位名称：<input type="text" name="title" value="" id="title" style="width:340px;" class="stext" /></p>									</td>
-								</tr>
-								<tr><td height="10px"></td></tr>
-								<tr>
-									<td height="10px"></td>
-									<td colspan="5">发票内容： <input name="mx" type="radio" id="" value="" checked="checked" /> 商品明细</td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-				</table>
-			</div><!--infotable end-->
-			
-			<div class="catinfotable">
-				<table width="100%">
-					<tr>
-						<td class="tit">购物清单</td>
-						<td class="summary">
-							<table class="catlist" width="100%">
-								<tr bgcolor="#f3f3f3">
-									<th>购物车中的商品</th><th>会员价</th><th>返现</th><th>送积分</th><th>购买数量</th><th>发货时间</th>
-								</tr>
-								<volist id="C_list" name="C_list">
-								<tr>
-									<td><a href="__ROOT__/index.php/Detail/index/item_id/{$C_list.item_id}">{$C_list.item_name}</a><br />商品编号：{$C_list.item_sn}</td>
-									<td class="red">￥{$C_list.price}.00</td><td>￥0.00</td><td>{$C_list.score}</td><td>{$C_list.quantity}</td><td>有货，可当日出货</td>
-								</tr>
-								</volist>
-							</table>
-						</td>
-					</tr>
-				</table>		
-			</div><!--catinfotable end-->
-			
-			<div class="catinfotable">
-				<table width="100%">
-					<tr>
-						<td class="tit">订单结算</td>
-						<td class="summary">
-							<div class="f-l" style="width:640px;">
-								<table class="ddbox" width="100%">
-									<tr>
-										<td valign="top" align="right" width="110px">备注：</td><td><textarea name="beizhu" class="ltext" id="beizhu"></textarea></td>
-									</tr>
-								</table>
-							</div>
-							<div class="f-r" style="width:170px;padding:0 15px;background:#f3f3f3;">
-								<table class="totable" width="100%">
-									<tr>
-										<td>商品总价：</td><td align="right">￥{$OrderCount}.00</td>
-									</tr>
-									<tr>
-										<td colspan="2">注：未包含运费</td>
-									</tr>
-									<tr>
-										<td>合&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;计：</td><td align="right"><strong style="font-size:18px;color:#dc0000;">￥{$OrderCount}</strong></td>
-									</tr>
-									<tr>
-										<td align="right" colspan="2"><input type="submit" name="Input" id="Input" value="" class="btnimg" /></td>
-									</tr>
-									<tr><td height="10px"></td></tr>
-								</table>
-							</div>
-						</td>
-					</tr>
-				</table>		
-			</div><!--catinfotable end-->
-			
-		</div><!--s_bd end-->
-	</div><!--s_bdw end-->	
-<include file="./Public/Tpl/footer.html" />
+<include file="Public:header" />
+        <div class="clear"></div>
+    </div>
+    <div class="jiesuan">
+    	<div class="js_bz"></div>
+        <div class="js_one">
+        	<p>选择收货地址</p>
+            <dl>
+            	<dt>湖北武汉 (速格 收)</dt>
+                <dd>洪山光谷SBI特1栋1306</dd>
+                <dd>电话： 18986275150</dd>
+            </dl>
+            <dl>
+            	<dt>湖北武汉 (速格 收)</dt>
+                <dd>洪山光谷SBI特1栋1306</dd>
+                <dd>电话： 18986275150</dd>
+            </dl>
+            <dl>
+            	<dt>湖北武汉 (速格 收)</dt>
+                <dd>洪山光谷SBI特1栋1306</dd>
+                <dd>电话： 18986275150</dd>
+            </dl>
+            <dl>
+            	<dt>湖北武汉 (速格 收)</dt>
+                <dd>洪山光谷SBI特1栋1306</dd>
+                <dd>电话： 18986275150</dd>
+            </dl>
+            <div class="clear"></div>
+        </div>
+        <div class="js_two">
+        	<p>确定订单信息</p>
+            <table cellpadding="0" cellspacing="0" width="100%" border="0">
+            <form>
+                <tr class="Mche_top">
+                    <td><input type="checkbox" name="" value="" /></td><td>全选</td><td class="che_tl">商品</td><td>单价</td><td>数量</td><td>配送方式</td><td>操作</td>
+                </tr>
+                <tr class="Mche_c">
+                    <td><input type="checkbox" name="" value="" /></td><td><img src="images/myche_img.jpg" class="Mche_img" /></td><td class="che_tl">武汉尚科在线</td><td>1256</td><td><input type="button" name="" value="-" class="jian" /><input type="type" name="" value="" class="shuzi" /><input type="button" name="" value="+" class="jia" /></td><td>快递</td><td><input type="button" name="" value="删除" class="Mche_inp1" /></td>
+                </tr>
+                <tr class="Mche_top">
+                    <td colspan="7"><span class="fw_red">实付积分：125.00积分</span></td>
+                </tr>
+            </form>
+            </table>
+            <form>
+            	<input type="button" name="" value="提交订单" class="js_inp" />
+            </form>
+        </div>
+    <div class="clear"></div>
+    </div>
+    <include file="Public:footer" />
