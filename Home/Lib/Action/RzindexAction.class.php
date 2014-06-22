@@ -2,6 +2,14 @@
 // 本类由系统自动生成，仅供测试用途
 class RzindexAction extends Action {
     public function index(){
+    	//判断登录
+		if(!session('FEUSER') || session('FEUSER')==''){
+			$iflogin = 0;
+		}else{
+			$iflogin = 1;
+			$this->assign('user_info',session('FEUSER'));
+		}
+		$this->assign('iflogin',$iflogin);
         //幻灯片的显示
         $ppt=M('Ppt');
 		$condition['isshow']=1;
