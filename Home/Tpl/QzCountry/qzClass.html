@@ -1,4 +1,15 @@
-<include file="APP/Tpl/Index/inc/header.html" />
+<include file="Public:qzheader" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/ny.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/ty.css" />
+<script src="__PUBLIC__/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/base.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/sun11.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/topss.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/new.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/topvise.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/toptab.js"></script>
+
     <div class="M_caut">
     	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">签证</a> > <a href="">   	<if condition="$id eq 4">
     	常见使馆见证
@@ -26,7 +37,7 @@
             <div class="caut_con">
             	<ul>
             	<foreach name="msg" item="vo">
-                    <li><a href="{:U('Index/Vista/index',array('id'=>$vo['id']),'')}">{$vo['name']}</a></li>
+                    <li><a href="{:U('Index/Vista/index',array('id'=>$vo['id']))}">{$vo['name']}</a></li>
             	</foreach>
             	</ul>
                 <div class="clear"></div>
@@ -34,4 +45,4 @@
         </div>
     <div class="clear"></div><!--  清除主体内容里面的浮动  -->
     </div>
-<include file="APP/Tpl/Index/inc/footer.html" />
+<include file="Public:qzfooter" />
