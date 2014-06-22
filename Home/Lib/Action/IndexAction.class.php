@@ -173,7 +173,12 @@ class IndexAction extends Action {
 		
 		//id
 		if($this->_get('id')){
-			$mpa['tid']=array('eq',$this->_get('id'));
+			$map['tid']=array('eq',$this->_get('id'));
+		}
+		
+		//t 商品类型
+		if($this->_get('t')){
+			$map['location']=array('eq',$this->_get('t'));
 		}
 		
 		$goods = M('Goods'); //实例化一个model

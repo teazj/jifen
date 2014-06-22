@@ -4,31 +4,32 @@
         	<div class="vipr_tit"><a href="">新增配送地址</a></div>
             <div class="vip_jdz">
 			<form action="{:U('Index/Vip/doaddress')}" method="post">
-			<input type="hidden" name="uid" value="{$Think.session.index.user_id}">
+				<input type="hidden" name="userid" value="{$Think.session.FEUSER.id}" />
             	<table cellpadding="0" cellspacing="0" border="0px none">
 					<tr class="jdz_left">
-						<td>收货人姓名：</td><td><input type="text" name="name" value="" class="jdz_text1" /></td>
+						<td>收货人姓名：</td><td><input type="text" name="lianxiren" value="" class="jdz_text1" /></td>
 					</tr>
 					<tr class="jdz_left">
 						<td>所在地区：</td>
-						<td>省：<select name="shen" class="Mtxor_se2" id="cmbProvince"></select>
-								市：<select name="shi" class="Mtxor_se2" id="cmbCity"></select>
-								区：<select name="xian" class="Mtxor_se2" id="cmbArea"></select>
+						<td>省：<select name="sheng" class="Mtxor_se2" id="shengfen"></select>
+								市：<select name="shi" class="Mtxor_se2" id="shi"></select>
+								区：<select name="qu" class="Mtxor_se2" id="qu"></select>
 						</td>
 					</tr>
 					<tr class="jdz_left">
-						<td>街道地址：</td><td><input name="xq" value="" class="jdz_text1"/></td>
+						<td>详细地址地址：</td><td><input name="address" value="" class="jdz_text1"/></td>
 					</tr>
-					<tr class="jdz_left">
+					<!-- <tr class="jdz_left">
 						<td>邮政编码：</td><td><input type="text" name="zipCode" value="" class="jdz_text2" /></td>
-					</tr>
+					</tr> -->
 					<tr class="jdz_left">
 						<td>手机号码：</td><td><input type="text" name="phone" value="" class="jdz_text2" /></td>
 					</tr>
-					<tr>
+					<tr><td>是否设为默认地址：</td><td><input name="ismr" type="checkbox" value="1"  /> 默认</td></tr>
+					<!-- <tr>
 						<td>备&nbsp;&nbsp;&nbsp;&nbsp;注：</td>
 						<td><textarea name="msg" class="xperson_text"></textarea></td>
-                    </tr>
+                    </tr> -->
 					<tr class="jdz_left" style="text-align:center;">
 						<td colspan="2"><input type="submit" name="" value="保存" class="jdz_btn" /><input type="reset" name="" value="取消" class="jdz_btn" /></td>
 					</tr>
@@ -40,8 +41,9 @@
     </div>
     <div class="footer_topbg"></div>
 	<include file="Vipinc:footer"/>
+	<script type="text/javascript" src="__PUBLIC__/Home/js/w.js"></script>
 	<script type="text/javascript">
-		addressInit('cmbProvince', 'cmbCity', 'cmbArea', '湖北', '武汉市', '洪山区');
+	new PCAS("sheng","shi","qu");
 	</script>
 </body>
 </html>

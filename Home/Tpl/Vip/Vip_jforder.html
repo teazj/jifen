@@ -4,19 +4,19 @@
             <div class="myorderr_con">
             	<div id="tabbox">
                     <ul class="tabs" id="tabs2">
-                       <li class="now"><a href="{:U('Index/Vip/myorder')}">所有订单</a></li>
-                       <li><a href="{:U('Index/Vip/daiorder')}">待付款的订单</a></li>
-                       <li><a href="{:U('Index/Vip/readyorder')}">处理中的订单</a></li>
-                       <li><a href="{:U('Index/Vip/okorder')}">已成功的订单</a></li>
-                       <li><a href="{:U('Index/Vip/cancelorder')}">已取消的订单</a></li>
+                       <li class="now"><a href="{:U('Index/Vip/jforder')}">所有订单</a></li>
+                       <li><a href="{:U('Index/Vip/jforder','status=0')}">待付款的订单</a></li>
+                       <li><a href="{:U('Index/Vip/jforder','status=1')}">已取消的订单</a></li>
+                       <li><a href="{:U('Index/Vip/jforder','status=2')}">已付款的订单</a></li>
+                       <li><a href="{:U('Index/Vip/jforder','status=3')}">已成功的订单</a></li>
                     </ul>
                         	<table cellpadding="0" cellspacing="0" border="0px none" width="100%">
                                 <tr class="or_tabtit">
-                                    <td>订单号</td><td>订单分类</td><td>预定时间</td><td>应付金额</td><td>状态</td><td>操作</td>
+                                    <td>订单号</td><!-- <td>订单分类</td> --><td>预定时间</td><td>应付金额</td><td>状态</td><td>操作</td>
                                 </tr>
 								<volist name="orderinfo" id="vo">
                                 <tr>
-                                    <td>{$vo.orderid}</td><td>{$vo.name}{$vo.catename}</td><td>{$vo.ctime}</td><td><span class="red">￥{$vo['price']*$vo['num']}</span></td><td><if condition="$vo['status'] eq 0">待付款<elseif condition="$vo['status'] eq 1"/>已取消<else/>已付款</if></td><td><a href="{:U('Index/Vip/details',array('id'=>$vo['id']))}" class="myor_inp">查看</a></td>
+                                    <td>{$vo.oid}</td><!-- <td>{$vo.name}{$vo.catename}</td> --><td>{$vo.addtime}</td><td><span class="red">￥{$vo.total}</span></td><td><if condition="$vo['status'] eq 0">待付款<elseif condition="$vo['status'] eq 1"/>已取消<else/>已付款</if></td><td><a href="{:U('Index/Vip/jfdetails',array('id'=>$vo['id']))}" class="myor_inp">查看</a></td>
                                 </tr>
 								</volist>
                             </table>

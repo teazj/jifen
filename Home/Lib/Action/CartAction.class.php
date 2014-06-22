@@ -25,7 +25,7 @@ class CartAction extends Action {
 			$map['id']=$item_id;
 			$listarr=$Cdty->where($map)->find();
 			$this->assign('p_name',$listarr["title"]);	
-			echo $this->cart->add_goods($item_id);	//添加到购物车里面
+			$this->cart->add_goods($item_id);	//添加到购物车里面
 			$this->assign('isshow',"1");
 		}
 		else
@@ -36,7 +36,7 @@ class CartAction extends Action {
 		$this->assign('OrderCount',$_SESSION['cart']['total_price']);
 		$this->assign('cartCount', $_SESSION['cart']['total_num']);		
 		$this->assign('C_list',$_SESSION['cart']['goods_list']);
-		dump($_SESSION['cart']);
+		//dump($_SESSION['cart']);
 		$this->display('index');
     }
 	
@@ -59,19 +59,26 @@ class CartAction extends Action {
 	public function cartinformation()
 	{
 		//绑定购物地址
-		$Address = M("address");
+		$Address = M("Address");
 		$map = array();
-		$map['userid']= $_SESSION["userID"];
+		$map['userid']= $_SESSION["FEUSER"]["id"];
 		$listarr=$Address->where($map)->select();
 		$this->assign('A_list',$listarr);
 		
-		$Delivery = M('delivery');
-		$map = array();
-		$map['show'] = 1;
-		$listarr=$Delivery->where($map)->select();
-		$this->assign('d_list',$listarr);
+		//获取默认地址的id
+		$map['ismr']=1;
+		$mrid=$Address->where($map)->getField('id');
+		$this->assign("mrid",$mrid);
+		//dump($map);
+		// $Delivery = M('delivery');
+		// $map = array();
+		// $map['show'] = 1;
+		// $listarr=$Delivery->where($map)->select();
+		// $this->assign('d_list',$listarr);
 		
 		$this->assign('OrderCount',$_SESSION['cart']['total_price']);
+		$rule=$this->getJifen();
+		$this->assign("totaljifen",intval($rule*$_SESSION['cart']['total_price']));
 		//$this->assign('OrderCount',$_SESSION['cart']['total_price']);
 		//echo $_SESSION['cart']['goods_list'][4]['item_name'];
 		//$this->assign('cartCount', $_SESSION['cart']['total_num']);	
@@ -83,16 +90,35 @@ class CartAction extends Action {
 	{
 		if(!empty($_GET["oid"]))
 		{
-			$Order = M('order');
+			$Order = M('Orders');
 			$map = array();
-			$map["orId"] = $_GET["oid"];
+			$map["id"] = $_GET["oid"];
 			$listarr=$Order->where($map)->find();
-			$this->assign('orid',$listarr['orId']);
-			$this->assign('orprice',$listarr['orPrice'].$listarr['orPostage']);
-			$oid = $listarr['orId'];
-			$orname = $listarr['orName']."订单";
-			$orprice = $listarr['orPrice'].$listarr['orPostage'] ;
-			$this->assign('url','__ROOT__/alipay/alipayapi.php?oid='.$oid.'&orname='.$orname.'&orprice='.$orprice.'');
+			//兑换商品应该需要的积分
+			$rule=$this->getJifen();	//获得积分和钱的比例
+			$this->assign("rule",$rule);
+			
+			$total_jifen=intval($rule*$listarr['total']);
+			
+			$this->assign("total_jifen",$total_jifen);
+			//查询该用户的积分
+			$point=M("Users")->where("id=".$_SESSION['FEUSER']['id'])->getField("point");
+			//echo $point;
+			if($point<0){	//要支付金钱
+				$money=abs(intval($point/$rule));
+				$this->assign("money",$money);	//还要付多少钱
+				$this->assign('mypoint',0);
+			}else{		//积分足以支付
+				$mypoint=intval($point);	//剩余积分
+				$this->assign('mypoint',$mypoint);
+			}
+			
+			// $this->assign('orid',$listarr['orId']);
+			// $this->assign('orprice',$listarr['orPrice'].$listarr['orPostage']);
+			// $oid = $listarr['orId'];
+			// $orname = $listarr['orName']."订单";
+			// $orprice = $listarr['orPrice'].$listarr['orPostage'] ;
+			// $this->assign('url','__ROOT__/alipay/alipayapi.php?oid='.$oid.'&orname='.$orname.'&orprice='.$orprice.'');
 		}
 		$this->display();
 	}
@@ -134,89 +160,65 @@ class CartAction extends Action {
 	
 	public function SaveOrder()
 	{
-		$dizhi= $_POST["dizhi"];
-		$kuaidi = $_POST["kd"] ;
-		$daishou = empty($_POST["daishou"])?0:1;
-		$zhifu = $_POST["zhifu"];
-		$beizhu = $_POST["beizhu"];
-		
+		$dizhi= $_POST["address"];
+		//订单号
 		$orderID =date("YmdHis") . mt_rand(0,9999);
-		$userID	=	intval(session("userID"));
-		$userName	=session("userName");
+		$userinfo=session("FEUSER");
+		$userID	=	intval($userinfo['id']);
+		$userName	=$userinfo['username'];
 		//订单地址
 		$Address = M('address');
 		$map = array();
 		$map['id']= $dizhi;
 		$map['userid'] = $userID;
 		$listarr=$Address->where($map)->find();
+		//dump($listarr);
+		//echo $Address->getLastSql();die();
 		$dz = $listarr['shengfen'].$listarr['shi'].$listarr['qu'].$listarr['address'];  //收件地址
-		
 		$orName = $listarr['lianxiren']; //收件人姓名
 		$orPhone = $listarr['phone'];  //收件人电话
-		
-		//计算运费
-		$Delivery = M('sk_delivery');
-		$map = array();
-		$map['id']= $kuaidi;
-		$listarr=$Delivery->where($map)->find();
-		//$orPrice = $_SESSION['cart']['total_price'] . $listarr['price'];//订单总价格（包含运费）
 		$orCreateDateTime =time();//订单生成时间
-		$orPostage = $listarr['price'];//邮费
 		
-		$orDelivery = 0;
-		
-		
-		$proids="";
-		$cartlist = $_SESSION['cart']['goods_list'];
-		$OrderDetail = M('order_detail');
-		foreach($cartlist as $k=>$v){
-			$proids .= $v['item_id'] .",";
-			$data['pid'] = $orderID;
-			$data['title'] = $v['item_name'];			
-			$data['quantity'] = $v['quantity'];
-			$data['price'] = $v['price'];	
-			$data['fanxian'] = 0;	
-			$data['score'] = $v['score'];	
-			$date['item_id'] = $v['item_id'];		
-			$OrderDetail->add($data); 	
-		}
-		
-		$Order = M('order');
-		$data['id'] = $orderID;
-		$data['user_id'] = $userID;			
-		$data['name'] ="af";//$orName;
-		$data['area'] = $dz;
-		$data['phone'] = 352535;//$orPhone;
-		$data['total_price'] = $_SESSION['cart']['total_price'];
-		$data['time'] = $orCreateDateTime;
-		//$data['orPostage'] = $orPostage;
-		$data['proids'] = $proids;
-		//$data['bz'] = $beizhu;
+		$Order = M('Orders');
+		$data['oid'] = $orderID;	//订单号
+		$data['uid'] = $userID;			
+		$data['nickname'] =$orName;//$orName;
+		$data['address'] = $dz;
+		$data['phone'] = $orPhone;//$orPhone;
+		$data['total'] = $_SESSION['cart']['total_price'];
+		$data['addtime'] = $orCreateDateTime;
+
 		$return = $Order->add($data); 
-		dump($data);
-		echo $Order->getLastSql();
-		dump($return);
-		
-		//发票写入
-		if(!empty($_POST["isinvoice"]))
-		{
-			$fapiao = $_POST["fapiao"];
-			$taitou = $_POST["taitou"];
-			$title = $_POST["title"];
-			$Invoice = M("invoice");
-			$data['orId'] = $orderID;
-			$data['userId'] = $userID;			
-			$data['stype'] =$fapiao;
-			$data['taitou'] = $taitou;
-			$data['title'] = $title;
-			$return = $Invoice->add($data); 
-		}
-		if($return  > 1)
-		{
-			$this->assign("jumpUrl","__ROOT__/index.php/Cart/ordersuccess/oid/".$orderID."")	;
+		//dump($data);
+		//echo $Order->getLastSql();
+		//dump($return);die();
+		if($return  > 1){
+			//将购物车的数据往orders_detail表中差
+			$cartlist = $_SESSION['cart']['goods_list'];
+			$OrderDetail = M('Orders_detail');
+			foreach($cartlist as $k=>$v){
+				$data['oid']=$return;
+				$data['gid']=$v['item_id'];
+				$data['name'] = $v['item_name'];			
+				$data['num'] = $v['quantity'];
+				$data['price'] = $v['price'];	
+				$orderid=$OrderDetail->add($data); 	
+				//每个session购物车里面插入数据库之后要进行销毁
+				//M("Goods")->where('id='.$v['item_id'])->delete();
+			}
+			//修改该用户的积分
+			$rule=$this->getJifen();
+			$total_jifen=intval($_SESSION['cart']['total_price']*$rule);
+			M("Users")->where("id=".$_SESSION['FEUSER']['id'])->setDec('point',$total_jifen);
+			//echo M("Users")->getLastSql();die;	
+			
+			//清空购物车
+			$this->cart->empty_cart();
+			
+			$this->assign("jumpUrl","__ROOT__/index.php/Cart/ordersuccess/oid/".$return."")	;
 			$this->success("订单提交成功！");
 		}else{
-			echo "ssd";
+			$this->error("订单提交失败！");
 		}
 	}
 	
@@ -364,4 +366,12 @@ class CartAction extends Action {
 		$this->display();	
 		
 	}
+
+	//获取积分的配置值1元==积分
+	 function getJifen(){
+		$InitSys= M('inte.InitSystem',' ');
+		$data = $InitSys->find ();
+		$jifen=$data['rule'];
+		return $jifen;
+	 }
 }

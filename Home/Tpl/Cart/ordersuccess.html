@@ -1,0 +1,29 @@
+<include file="Public:header" />
+    </div>
+    <div class="pay">
+    	<div class="pay_tit">
+        	<div class="paytit_left">兑换该商品所需积分：<span class="red">{$total_jifen}</span> 积分</div>
+            <div class="paytit_right">账户剩余积分：<span class="red">{$mypoint}</span> 积分</div>
+        </div>
+        <div class="pay_con">
+        <empty name="money">
+        	<h1>兑换成功!</h1>
+        	<else />
+        <form>
+            <p class="pay_p1">充值比例：<span class="red">1元={$rule}积分</span></p>
+            <p class="pay_p1">还需要支付:￥{$money}元</p>
+            <input type="hidden" name="money" value="{$money}" />
+            <ul>
+            	<li><input type="radio" checked="checked" name="payment" value="1" class="pay_zf" /></li>
+                <li class="pay_zfb">
+                	<p class="pay_orange">支付宝支付</p>
+                    <p>通过支付宝网上支付功能，轻松的在线支付</p>
+                </li>
+            </ul>
+            <div class="clear"></div>
+            <h6><a href="">立即支付</a></h6>
+        </form>
+        </empty>
+        </div>
+    </div>
+    <include file="Public:footer" />

@@ -7,7 +7,7 @@
 					<input type="hidden" id="checks" value=""/>
                 	<tr>
                     	<td>原始密码：</td>
-                        <td><input type="password" name="ypwd" onblur="checkpwd();" value="" class="vip_inp1" /></td>
+                        <td><input type="password" name="password" onblur="checkpwd();" value="" class="vip_inp1" /></td>
 						<td id="ypwd">请输入原密码!</td>
                     </tr>
                     <tr>
@@ -34,16 +34,16 @@
 	<script type="text/javascript">
 		function checkpwd(){
 			var url="{:U('Index/Vip/checkpwd')}";
-			var id={$Think.session.index.user_id};
-			var ypwd=$('input[name="ypwd"]').val();
-			$.post(url,{"id":id,"upwd":ypwd},function(data){
+			var id='{$Think.session.FEUSER.id}';
+			var password=$('input[name="password"]').val();
+			$.post(url,{"id":id,"password":password},function(data){
 				if(data=="error"){
 					$('#ypwd').text('原密码输入不正确!');
 				}else{
 					$('#ypwd').text('原密码输入正确!');
 					$('#checks').val('ok');
 				}
-			})
+			});
 		}
 		
 		function pwd(){

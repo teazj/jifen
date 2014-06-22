@@ -74,21 +74,21 @@
 			
 			
 			
-			$(function(){
-        			var default_key = '输入你要搜索的产品';
-        			var searchObj = $("#sea_key");
-        			searchObj.val(default_key);
-        			searchObj.bind("focus",function(){
-        			
-        				if(searchObj.val() == default_key){
-        					searchObj.val('');
-        				}
-        			})
-        			
-        			searchObj.bind("blur",function(){
-        				if(searchObj.val() == ''){
-        					searchObj.val(default_key);
-        				}
-        			})
-        			
-        		})
+			// $(function(){
+        			// var default_key = '输入你要搜索的产品';
+        			// var searchObj = $("#sea_key");
+        			// searchObj.val(default_key);
+        			// searchObj.bind("focus",function(){
+//         			
+        				// if(searchObj.val() == default_key){
+        					// searchObj.val('');
+        				// }
+        			// })
+//         			
+        			// searchObj.bind("blur",function(){
+        				// if(searchObj.val() == ''){
+        					// searchObj.val(default_key);
+        				// }
+        			// })
+//         			
+        		// })
