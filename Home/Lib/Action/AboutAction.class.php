@@ -3,7 +3,7 @@ class AboutAction extends Action{
 	//联系我们
 	public function contactUs(){
 		$this->getPage('联系我们');
-		$this->display();
+		$this->display('RzColumn:contactUs');
 	}
 	
 	//诚信资质
