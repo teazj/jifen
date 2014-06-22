@@ -545,6 +545,7 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .js_one p, .js_two p{ text-align:left; margin-left:17px; font-size:16px; color:#000; line-height:55px; font-weight:bold;}
 .js_one dl{ float:left; margin-left:10px; width:237px; height:106px; background:url(../../images/shop/dz_abg1.png) no-repeat; text-align:left;}
 .js_one dl:hover{ background:url(../../images/shop/dz_abg2.png) no-repeat;}
+.js_one dl.dlhover{background:url(../../images/shop/dz_abg2.png) no-repeat;}
 .js_one dt{ margin:11px auto 6px; width:198px; padding-left:10px; line-height:28px; border-bottom:1px solid #dfdfdf;}
 .js_one dd{ margin:0 auto; width:198px; padding-left:10px; line-height:24px;}
 .js_two{ padding-bottom:50px;}
@@ -708,17 +709,17 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 
 /*----------------------  jiesuan结算页面  ----------------------*/
 .jiesuan{ margin:0 auto; width:1080px; border-top:1px solid #dad9d9; padding-bottom:130px;}
-.js_bz{ margin:35px auto 5px; width:784px; height:34px; background:url(../images/js_bz.png) no-repeat;}
+.js_bz{ margin:35px auto 5px; width:784px; height:34px; background:url(../../images/shop/js_bz.png) no-repeat;}
 .js_one{ padding-left:33px; padding-bottom:26px;}
 .js_one p, .js_two p{ text-align:left; margin-left:17px; font-size:16px; color:#000; line-height:55px; font-weight:bold;}
-.js_one dl{ float:left; margin-left:10px; width:237px; height:106px; background:url(../images/dz_abg1.png) no-repeat; text-align:left;}
-.js_one dl:hover{ background:url(../images/dz_abg2.png) no-repeat;}
+.js_one dl{ float:left; margin-left:10px; width:237px; height:106px; background:url(../../images/shop/dz_abg1.png) no-repeat; text-align:left;}
+.js_one dl:hover{ background:url(../../images/shop/dz_abg2.png) no-repeat;}
 .js_one dt{ margin:11px auto 6px; width:198px; padding-left:10px; line-height:28px; border-bottom:1px solid #dfdfdf;}
 .js_one dd{ margin:0 auto; width:198px; padding-left:10px; line-height:24px;}
 .js_two{ padding-bottom:50px;}
 .js_two p{ margin-left:50px;}
 .fw_red{ float:right; width:250px; font-size:18px; color:#ff0302; font-family:微软雅黑;}
-.js_inp{ float:right; margin-top:20px; width:198px; height:60px; line-height:55px; background:url(../images/js_inpbg.png) no-repeat; font-family:微软雅黑; color:#FFFFFF; font-size:16px;}
+.js_inp{ float:right; margin-top:20px; width:198px; height:60px; line-height:55px; background:url(../../images/shop/js_inpbg.png) no-repeat; font-family:微软雅黑; color:#FFFFFF; font-size:16px;}
 /*----------------------  jiesuan结算页面  ----------------------*/
 
 
@@ -762,3 +763,20 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .mhelp_right p{ text-align:left; line-height:36px; width:764px; margin-left:21px;}
 .mhelp_blue{ color:#014f8c; margin-top:31px;}
 /*----------------------  help帮助中心页面  ----------------------*/
+
+
+/*----------------------  pay支付页面  ----------------------*/
+.pay{ margin:20px auto 40px; width:1078px; min-height:540px; border:1px solid #c9c8c8;}
+.pay_tit{ height:80px; line-height:80px; background:#e8f4ff; font-size:16px; font-family:微软雅黑; color:#4287be;}
+.paytit_left{ float:left; margin-left:100px;}
+.paytit_right{ float:right; margin-right:140px;}
+.pay_con{ padding-top:47px; margin-left:108px;}
+.pay_con .pay_p1{ line-height:24px; text-align:left;}
+.pay_con ul{ margin-top:40px;}
+.pay_con li{ float:left; text-align:left;}
+.pay_con li p{ line-height:22px;}
+.pay_zfb{ background:url(../../images/shop/pay_zf.png) left center no-repeat; padding-left:68px; margin-left:20px;}
+.pay_zf{ margin-top:15px; cursor:pointer;}
+.pay_orange{ color:#f6821f;}
+.pay_con h6 a{ margin:135px auto 0px; display:block; width:182px; height:50px; line-height:50px; text-align:center; background:#3b8bf8; color:#FFF; font-size:16px; letter-spacing:2px;}
+/*----------------------  pay支付页面  ----------------------*/

@@ -1,52 +1,40 @@
 <include file="Vipinc:header"/>
         <div class="Mvip_right">
-        	<div class="vipr_tit"><a href="">个人信息</a></div>
+        	<div class="vipr_tit"><a href="{:U('Vip/index')}">个人信息</a></div>
             <div class="xperson">
             	<div class="xperson_t">
                 	<ul>
-                    	<li>用 户 名：<span class="blue2">{$v.uname}</span></li>
-                        <li>联系电话：<span class="blue2">{$v.uphone}</span></li>
-                        <li>邮&nbsp;&nbsp;&nbsp;&nbsp;箱：<span class="blue2">{$v.uemail}</span></li>
+                    	<li>用 户 名：<span class="blue2">{$v.username}</span></li>
+                        <li>联系电话：<span class="blue2">{$userinfo.phone}</span></li>
+                        <li>邮&nbsp;&nbsp;&nbsp;&nbsp;箱：<span class="blue2">{$v.email}</span></li>
                         <li>会员级别：<span class="blue2"><if condition="$v['lev'] eq 1">青铜会员<elseif condition="$v['lev'] eq 2"/>白银会员<else/>黄金会员</if></span></li>
-                        <li>积分总是：<span class="blue2">{$v.jifen}</span></li>
-                        <li>优 惠 券：<span class="blue2">{$v.yhj}</span></li>
+                        <li>积分总是：<span class="blue2">{$v.point}</span></li>
+                        <!-- <li>优 惠 券：<span class="blue2">{$v.yhj}</span></li> -->
                     </ul>
                 </div>
                 <div class="person_m">
                 	<ul>
-                    	<li>真实姓名：{$v.truename}</li>
-                        <li>性&nbsp;&nbsp;&nbsp;&nbsp;别：<if condition="$v['sex'] eq 1">男<else/>女</if></li>
-                        <li>昵&nbsp;&nbsp;&nbsp;&nbsp;称：{$v.uname}</li>
-                        <li>联系电话：{$v.uphone}</li>
-                        <li>所属省份：{$v.address}</li>
-                        <li>详细地址：{$v.address}</li>
-                        <li>邮政编码：{$v.zipCode}</li>
+                    	<li>真实姓名：{$userinfo.nickname}</li>
+                        <li>性&nbsp;&nbsp;&nbsp;&nbsp;别：<if condition="$userinfo['sex'] eq 1">男<else/>女</if></li>
+                        <li>昵&nbsp;&nbsp;&nbsp;&nbsp;称：{$v.username}</li>
+                        <li>联系电话：{$userinfo.phone}</li>
+                        <!-- <li>所属省份：{$userinfo.address}</li> -->
+                        <li>详细地址：{$userinfo.address}</li>
+                        <!-- <li>邮政编码：{$userinfo.zipCode}</li> -->
                     </ul>
                 </div>
-                <div class="person_d">
+                <!-- <div class="person_d">
                 	<ul>
                     	<li>注册时间： {$v.regTime|date='Y/m/d H:i:s',###}</li>
                         <li>最后登录： {$v.preTime|date='Y/m/d H:i:s',###}</li>
                         <li>登录次数： 1</li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="clear"></div>      <!--  清除主体部分M_vipmm的浮动  -->
     </div>
     <div class="footer_topbg"></div>
-    <div class="footer">
-        <div class="link">友情连接：<a href="" style="margin-left:0px;">义乌签证</a>|<a href="">使馆认证</a>|
-            <a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            <a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            <a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            <a href="">使馆认证</a>|<a href="">使馆认证</a>
-        </div>
-        <div class="copyright">
-            <p>CopyRight @ 2011-2012 义乌市速格报俭代理有限公司 版权所有　地 址：浙江 义乌市城北路258号福田商务公寓313（商检局对面）<br />
-                电 话：86 0579 85365501 - 86 0579 85591661　　　　　技术支持：武汉尚科在线网络技术有限公司
-            </p>
-        </div>
-    </div>
+    <include file="Vipinc:footer"/>
 </body>
 </html>

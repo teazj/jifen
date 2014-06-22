@@ -2,7 +2,7 @@
         <div class="Mvip_right">
         	<div class="vipr_tit"><a href="">个人信息修改</a></div>
             <div class="xperson">
-				<div class="xperson_t">
+				<!-- <div class="xperson_t">
                 	<ul>
                     	<li>用 户 名：<span class="blue2">{$v.uname}</span></li>
                         <li>联系电话：<span class="blue2">{$v.uphone}</span></li>
@@ -11,31 +11,31 @@
                         <li>积分总是：<span class="blue2">{$v.jifen}</span></li>
                         <li>优 惠 券：<span class="blue2">{$v.yhj}</span></li>
                     </ul>
-                </div>
+                </div> -->
                 <div class="xperson_d">
 					<form action="{:U('Index/Vip/userInfoUpdate')}" method="post">
                 	<table cellpadding="0" cellspacing="0" border="0">
-						<input type="hidden" name="uid" value="{$Think.session.index.user_id}">
+						<input type="hidden" name="id" value="{$v.id}">
 						<tr>
                         	<td>昵&nbsp;&nbsp;&nbsp;&nbsp;称：</td>
-                            <td><input type="text" value="{$v.uname}" class="xperson_inp1" readonly="readonly"/>用户昵称不可修改</td>
+                            <td><input type="text"  value="{$Think.session.FEUSER.username}" class="xperson_inp1" readonly="readonly" disabled="disabled" />用户昵称不可修改</td>
                         </tr>
-                    	<tr>
+                    	 <tr>
                         	<td>真实姓名：</td>
-                            <td><input type="text" name="turename" value="{$v.turename}" class="xperson_inp1" /></td>
+                            <td><input type="text" name="nickname" value="{$v.nickname}" class="xperson_inp1" /></td>
                         </tr>
                         <tr>
-                        	<td>性&nbsp;&nbsp;&nbsp;&nbsp;别：{$v.sex}</td>
-                            <td><input type="radio" name="sex" value="{$v.sex}" <if condition="$v['sex'] eq 1"> checked </if> />男
-                            <input type="radio" name="sex" value="{$v.sex}" <if condition="$v['sex'] eq 0"> checked </if>/>女</td>
+                        	<td>性&nbsp;&nbsp;&nbsp;&nbsp;别：</td>
+                            <td><input type="radio" name="sex" value="m" <if condition="$v['sex'] eq m"> checked </if> />男
+                            <input type="radio" name="sex" value="w" <if condition="$v['sex'] eq w"> checked </if>/>女</td>
                         </tr>
                         <tr>
                         	<td>联系电话：</td>
-                            <td><input type="text" name="uphone" value="{$v.uphone}" class="xperson_inp1" /></td>
+                            <td><input type="text" name="phone" value="{$v.phone}" class="xperson_inp1" /></td>
                         </tr>
                         <tr>
                         	<td>Q&nbsp;&nbsp;&nbsp;Q&nbsp;&nbsp;&nbsp;：</td>
-                            <td><input type="text" name="uqq" value="{$v.uqq}" class="xperson_inp1" /></td>
+                            <td><input type="text" name="qq" value="{$v.qq}" class="xperson_inp1" /></td>
                         </tr>
                     </table>
 						<div class="vip_btn">

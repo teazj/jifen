@@ -33,6 +33,12 @@ class LoginAction extends Action{
 		if($res&&$res!=''){
 			//查询数据库将该用户的信息存入session中
 			session("FEUSER",$m->where('id='.$res)->find());
+			
+			//往users_info表中插入一条记录
+			$data['user_id']=$res;
+			$data['email']=$_POST['email'];
+			M("Users_info")->save($data);
+			
 			$this->success('注册成功',U('Vip/index'));
 		}else{
 			$this->error('注册失败请稍后再试',U('Com/login'));

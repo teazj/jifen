@@ -5,47 +5,54 @@
     	<div class="js_bz"></div>
         <div class="js_one">
         	<p>选择收货地址</p>
-            <dl>
-            	<dt>湖北武汉 (速格 收)</dt>
-                <dd>洪山光谷SBI特1栋1306</dd>
-                <dd>电话： 18986275150</dd>
+        	<volist name="A_list" id="vo">
+        	<dl rel="{$vo.id}"  <if condition="$vo[ismr] eq 1">class="dlhover"</if>  >
+            	<dt>{$vo['shengfen']}{$vo['shi']}{$vo[qu]} ({$vo.lianxiren} 收)</dt>
+                <dd>{$vo[address]}</dd>
+                <dd>电话： {$vo[phone]}</dd>
             </dl>
-            <dl>
-            	<dt>湖北武汉 (速格 收)</dt>
-                <dd>洪山光谷SBI特1栋1306</dd>
-                <dd>电话： 18986275150</dd>
-            </dl>
-            <dl>
-            	<dt>湖北武汉 (速格 收)</dt>
-                <dd>洪山光谷SBI特1栋1306</dd>
-                <dd>电话： 18986275150</dd>
-            </dl>
-            <dl>
-            	<dt>湖北武汉 (速格 收)</dt>
-                <dd>洪山光谷SBI特1栋1306</dd>
-                <dd>电话： 18986275150</dd>
-            </dl>
+        	</volist>
             <div class="clear"></div>
         </div>
         <div class="js_two">
         	<p>确定订单信息</p>
             <table cellpadding="0" cellspacing="0" width="100%" border="0">
-            <form>
+            <form action="{:U('Cart/SaveOrder')}" method="post">
+            	<input type="hidden" name="address" id="mrid" value="{$mrid}" />
                 <tr class="Mche_top">
-                    <td><input type="checkbox" name="" value="" /></td><td>全选</td><td class="che_tl">商品</td><td>单价</td><td>数量</td><td>配送方式</td><td>操作</td>
-                </tr>
-                <tr class="Mche_c">
-                    <td><input type="checkbox" name="" value="" /></td><td><img src="images/myche_img.jpg" class="Mche_img" /></td><td class="che_tl">武汉尚科在线</td><td>1256</td><td><input type="button" name="" value="-" class="jian" /><input type="type" name="" value="" class="shuzi" /><input type="button" name="" value="+" class="jia" /></td><td>快递</td><td><input type="button" name="" value="删除" class="Mche_inp1" /></td>
-                </tr>
-                <tr class="Mche_top">
-                    <td colspan="7"><span class="fw_red">实付积分：125.00积分</span></td>
-                </tr>
-            </form>
+					<td>商品图片</td>
+					<td class="che_tl">商品名称</td>
+					<td>单价</td>
+					<td>数量</td>
+				</tr>
+				<volist id="c_list" name="C_list" key="k">
+			<tr class="Mche_c">
+				<input type="hidden" value="{$c_list['item_id']}" name="item_id[]" />
+				<td><a href="{:U('Index/info','id='.$c_list[item_id])}"><img src="__ROOT__/{$c_list.item_img}" class="Mche_img" /></a></td>
+				<td class="che_tl"><a href="{:U('Index/info','id='.$c_list[item_id])}">{$c_list.item_name}</a></td>
+				<td>{$c_list.price}</td>
+				<td>
+					{$c_list.quantity}
+				</td>
+			</tr>
+			 </volist>
+				<tr class="Mche_top">
+					<td colspan="7"><span class="fw_red">实付积分：{$totaljifen}积分</span></td>
+				</tr>
             </table>
-            <form>
-            	<input type="button" name="" value="提交订单" class="js_inp" />
+            	<input type="submit" name="" value="提交订单" class="js_inp" />
             </form>
         </div>
     <div class="clear"></div>
     </div>
+    
+    <script type="text/javascript">
+    	//处理地址
+    	$(".js_one dl").click(function(){
+    		$("#mrid").val($(this).attr("rel"));
+    		$(this).addClass("dlhover").siblings().removeClass("dlhover");
+    	});
+    	
+    </script>
+    
     <include file="Public:footer" />

@@ -20,7 +20,7 @@
         </div>
         <div class="top_yy"></div>
         <div class="logo_search">
-        	<div class="logo"><a href=""><img src="__PUBLIC__/Home/images/shop/vip_logo.jpg" /></a></div>
+        	<div class="logo"><a href="{:U('Index/index')}"><img src="__PUBLIC__/Home/images/shop/vip_logo.jpg" /></a></div>
             
             <!--  显示的收索内容和ss.js不一样  -->
             <!--<script type="text/javascript">
@@ -46,9 +46,9 @@
             
             <div class="search">
             	<table cellpadding="0" cellspacing="0">
-                	<form>
-                    	<td><input type="text" id="search_key" name="" value="" class="textk" /></td>
-                        <td><input type="button" name="" value="搜索" class="ss" /></td>
+                	<form action="{:U('Index/lists')}" method="get" onsubmit="return check(this);">
+                    	<td><input type="text" name="keyword" placeholder="请输入相关关键字" id="search_key" value="{$Think.get.keyword}" class="textk" /></td>
+                        <td><input type="submit" name="" value="搜索" class="ss" /></td>
                     </form>
                 </table>
             </div>
@@ -58,7 +58,7 @@
             	<div class="nav">
                     <ul>
                         <li><a href="{:U('Index/RzIndex/index')}">站内首页</a></li>
-                        <li><a href="{:U('Index/AlonePage/aboutUs')}">关于我们</a></li>
+                        <li><a href="{:U('Index/About/aboutUs')}">关于我们</a></li>
                         <li><a href="{:U('Index/RzColumn/zsbd','','')}">知识宝鼎</a></li>
                         <li><a href="{:U('Index/RzCountry/rzList')}">单证与使馆认证</a></li>
                         <li><a href="{:U('Index/Index/index')}">积分商城</a></li>
@@ -67,7 +67,7 @@
                 <div class="vip">
                 	<ul>
                     <form>
-                    	<li>Hi {$Think.session.uname}<a href="{:U('Index/ShopReg/logOut',array('act'=>'out'),'')}" class="out">[退出]</a></li>
+                    	<li>Hi {$Think.session.FEUSER.username}<a href="{:U('Index/Login/logout')}" class="out">[退出]</a></li>
                     </form>
                     </ul>
                 </div>
@@ -79,21 +79,21 @@
     	<div class="Mvip_left">
         	<div class="Mvip_1">
             	<dl>
-                	<dt><a href="">我的速格</a></dt>
-                    <dd><a href="" class="blue1">{$Think.session.index.uname}</a><a href="" class="ziji"></a><div class="clear"></div></dd>
+                	<dt><a href="{:U('Vip/index')}">我的速格</a></dt>
+                    <dd><a href="{:U('Vip/index')}" class="blue1">{$Think.session.FEUSER.username}</a><a href="jvascript:;" class="ziji"></a><div class="clear"></div></dd>
                     <dd>欢迎您回来</dd>
                     <dd>速格会员 <a href="" class="huiyuan">尊享会员服务</a></dd>
-                    <dd>上次登录时间：</dd>
-                    <dd>{$Think.session.index.preTime|date='Y/m/d H:i:s',###}</dd>
+                    <!-- <dd>创建时间：</dd>{$Think.session.FEUSER.ctime}
+                    <dd>{$Think.session.FEUSER.ctime|date='Y/m/d H:i:s',###}</dd> -->
                 </dl>
             </div>
             <div class="Mvip_2">
             	<dl>
-                	<dt><a href="">我的订单</a></dt>
-                    <dd><a href="{:U('Index/Vip/order')}">新订单</a></dd>
-                    <dd><a href="{:U('Index/Vip/myorder')}">签证订单</a></dd>
-                    <dd><a href="">认证订单</a></dd>
-                    <dd id="nobor_tom"><a href="">兑换订单</a></dd>
+                	<dt><a href="javscript:;">我的订单</a></dt>
+                    <!-- <dd><a href="{:U('Index/Vip/order')}">新订单</a></dd> -->
+                    <dd><a href="{:U('Index/Vip/qzorder')}">签证订单</a></dd>
+                    <dd><a href="{:U('Index/Vip/rzorder')}">认证订单</a></dd>
+                    <dd id="nobor_tom"><a href="{:U('Index/Vip/jforder')}">兑换订单</a></dd>
                 </dl>
             </div>
             <div class="Mvip_3">
