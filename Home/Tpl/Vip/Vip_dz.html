@@ -6,9 +6,9 @@
 					<div class="none_dz">
 						<a href="{:U('Index/Vip/delete',array('id'=>$vo['id']))}" onclick="return confirm('真的要删除吗？')" title="删除这个地址"></a>
 						<dl>
-							<dd>联系人：{$vo.name}</dd>
+							<dd>联系人：{$vo.lianxiren}</dd>
 							<dd>手机号码：{$vo.phone}</dd>
-							<dd>配送地址：{$vo.address}</dd>
+							<dd>配送地址：{$vo.shengfen}{$vo.shi}{$vo.qu}{$vo.address}</dd>
 						</dl>
 					</div>
 				</volist>
