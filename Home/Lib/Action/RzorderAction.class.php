@@ -1,9 +1,16 @@
 <?php
 	class RzorderAction extends Action{
+		//登录的判断
+		public function _initialize() {
+			if(!session('FEUSER') || session('FEUSER')==''){
+				$this->redirect('Login/login');
+			}
+		}
 		//订单
 		function index(){
 			$_POST['total']=$_POST['price']*$_POST['num'];
 			$this->assign('v',$_POST);
+			$this->assign('user_info',session('FEUSER'));
 			$this->display('order');
 			
 		}
@@ -11,21 +18,37 @@
 		public function reorder(){
 			$_POST['total']=$_POST['price']*$_POST['num'];
 			$this->assign('vo',$_POST);
+			$this->assign('user_info',session('FEUSER'));
 			$this->display('qr_order');
 		}
 		//生成订单
 		public function tijiao(){
 			$vo=$_POST['num']*$_POST['price'];
-			$_POST['orderid']=date('YmdHis').mt_rand(0,1000000);
-			$_POST['address']=$_POST['shen'].$_POST['shi'].$_POST['xian'].$_POST['xq'];
-			$m=M('Rzorder');
-			$m->create();
-			$m->add();
+
+			$de=array();
+			$user_info = session('FEUSER');
+			$de['user_id'] = $user_info['id'];
+			$de['username'] = $_POST['username'];
+			$de['phone'] = $_POST['phone'];
+			$de['email'] = $_POST['email'];
+			$de['qq'] = $_POST['qq'];
+			$de['use'] = $_POST['use'];
+			$de['address'] = $_POST['shen'].$_POST['shi'].$_POST['xian'].$_POST['xq'];
+			$de['vname'] = $_POST['vname'];
+			$de['price'] = $_POST['price'];
+			$de['num'] = $_POST['num'];
+			// $de['userinfo'] = '';
+			$de['sid'] = $_POST['sid'];
+			$de['ctime'] = $_POST['gtime'];
+			$de['place'] = $_POST['place'];
+			$de['orderid'] = date('YmdHis').mt_rand(1000000,9999999);
+			//应该有一个订单已提交的判断
+			M('Rzorder')->add($de);
 			//商品售出数量增加
 			$condition['id']=$_POST['sid'];
 			M('Rzvista')->where($condition)->setInc('buys',$_POST['num']);
 			$this->assign('cash',$vo);
-			$this->assign('orderid',$_POST['orderid']);
+			$this->assign('orderid',$de['orderid']);
 			$this->display('tj_order');
 		}
 		//联系人信息修改

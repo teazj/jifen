@@ -29,6 +29,8 @@
 					$("#op_combox_subtype").html(string);
 					$("#op_combox_subtype a").click(function(){
 						//dwz中选中后的显示
+						//将change事件后的select val设置为选中值，fuck找了这么久的bug
+						$("#subtype").val($(this).attr("value"));
 						$("#combox_subtype >a").html($(this).html());
 						//添加隐藏域，传送tid的值
 						$("#myform").append("<input name='tid' type='hidden' value='"+$(this).attr("value")+"'/>");

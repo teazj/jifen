@@ -8,20 +8,15 @@ class RzindexAction extends Action {
 		$condition['pid']=2;
         $plist=$ppt->where($condition)->order('ctime desc')->limit(4)->select();
         $this->assign('plist',$plist);
-		
-		//地区签证
-		$cate=M('Rzcategory');
-		$word=array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
-		$a=array();
-		$list=$cate->where("pid>0")->order('piny')->select();
-		foreach($list as $v){
-			$a[]=$v['piny'];
-		}
-		$this->assign('cate',$list);
+
+        //获取分类树
+        $tree = $this->getCategoryData();
+		$this->assign('tree',$tree);
 		
 		//热点签证
 		$vista=D('Rzvista');
-		$this->assign('vlist',$vista->relation(true)->select());
+		$vlist = $vista->relation(true)->select();
+		$this->assign('vlist',$vlist);
 		
         //最新资讯 热点问题 政策动态
         $message=D('News');
@@ -36,12 +31,34 @@ class RzindexAction extends Action {
 		//友情链接
 		$flink=M('Flink')->where('isshow=1')->select();
 		$this->assign('flink',$flink);
-		
-		
-		
+
 		$this->display();
     }
 
-   
+	/**
+     * 获取分类数据
+     * @param $pid 父级id
+     * @param $tb_name 数据表名
+     */
+    public function getCategoryData($pid = 0, $tb_name = 'rzcategory') {
+        $tb_name = strtolower($tb_name);
+        $tree = array(); //定义空数组
+        $where = " pid = " . $pid; //定义查询条件
+
+        if ($rs = M($tb_name)->where($where)->select()) {//查询表满足条件得到的数据如果有结果就进来
+            foreach ($rs as $v) {
+                $item = array(//定义数组
+                    'id' => $v['id'],
+                    'name' => $v['name'],
+                    'url'=>U('Index/lists', 'id=' . $v['id'])
+                );
+                if (M($tb_name)->where(" pid = " . $v['id'])->count()) {//查询数据表满足条件的结果的数量
+                    $item['sub'] = $this->getCategoryData($v['id'], $tb_name); //在$item数组中添加sub元素
+                }
+                $tree[$v['id']] = $item; //接收$item
+            }
+        }
+        return $tree;
+    }
 
 }

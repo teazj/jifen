@@ -1,0 +1,54 @@
+        <div class="header_topbg">
+            <div class="head">
+                <div class="date">欢迎访问速格　{$Think.now}</div>
+                <div class="top_nav">
+                <if condition="$iflogin eq 0">
+                    <a href="">登录</a>|<a href="ShopReg/register">注册</a>
+                <else />
+                        <a href="javascript:;">您好:</a><a href="{:U('Index/Vip/index')}" />{$user_info.username}</a>
+                    </if>|<a href="">积分兑换</a>|<a href="">一键分享</a></div>
+                <div class="tel">全国免费咨询热线：<span class="tel_bg">400-888-8585</span></div>
+            </div>
+        </div>
+        <div class="top_yy"></div>
+        <div class="logo_search">
+            <div class="logo"><a href=""><img src="__PUBLIC__/Home/images/rzimages/vip_logo.jpg" /></a></div>
+            <div class="search">
+                <table cellpadding="0" cellspacing="0">
+                    <form>
+                        <td><input type="text" id="search_key" name="" value="" class="textk" /></td>
+                        <td><input type="button" name="" value="搜索" class="ss" /></td>
+                    </form>
+                </table>
+            </div>
+            <div class="min_nav"><a href="" class="shouji">手机版</a><a href="" class="weixin">+微信</a><a href="" class="weibo">+微博</a></div>
+        </div>
+        <div class="navbg">
+            <div class="nav">
+                <ul class="topnav">
+                    <li><a href="{:U('Index/Rzindex/index')}">站内首页</a></li>
+                        <li><a href="{:U('Index/Rzindex/aboutUs')}">关于我们</a>
+                        <ul class="subnav">
+                            <li><a href="{:U('Index/Rzindex/aboutUs')}">公司简介</a></li>
+                            <li><a href="{:U('Index/Rzindex/wmdys')}">我们的优势</a></li>
+                            <li><a href="{:U('Index/Rzindex/sgdt')}">速格动态</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{:U('Index/RzCountry/rzList')}">单证与使馆认证</a></li>
+<!--                     <li><a href="">认证服务</a></li> -->
+                    <li><a href="{:U('Index/RzColumn/cxzz','','')}">诚信资质</a></li>
+                    <li><a href="{:U('Index/DownData/download')}">资料下载</a>
+                        
+                    </li>
+                    <li><a href="{:U('Index/RzColumn/zsbd','','')}">知识宝鼎</a>
+                        <ul class="subnav">
+                            <li><a href="{:U('Index/RzColumn/rzzx','','')}">认证资讯</a></li>
+                            <li><a href="{:U('Index/RzColumn/lyzn','','')}">旅游指南</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{:U('RzColumn/contactUs')}">联系我们</a></li>
+                    <li><a href="{:U('Index/Qzindex/index')}">速格签证</a></li>
+                    <li><a href="{:U('Index/Index/index')}">积分商城</a></li>
+                </ul>
+            </div>
+        </div>

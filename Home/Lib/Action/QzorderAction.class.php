@@ -48,7 +48,7 @@
 			$condition['id']=$_POST['sid'];
 			M('Vista')->where($condition)->setInc('buys',$_POST['num']);
 			$this->assign('cash',$vo);
-			$this->assign('orderid',$_POST['orderid']);
+			$this->assign('orderid',$de['orderid']);
 			$this->display('tj_order');
 		}
 		//联系人信息修改

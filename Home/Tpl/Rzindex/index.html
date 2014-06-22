@@ -15,103 +15,36 @@
 
 <body>
 	<div class="header">
-    	<div class="header_topbg">
-        	<div class="head">
-            	<div class="date">欢迎访问速格　{$Think.now}</div>
-                <div class="top_nav"><a href="">1111登录</a>|<a href="ShopReg/register">注册</a>|<a href="">积分兑换</a>|<a href="">一键分享</a></div>
-            	<div class="tel">全国免费咨询热线：<span class="tel_bg">400-888-8585</span></div>
-            </div>
-        </div>
-        <div class="top_yy"></div>
-        <div class="logo_search">
-        	<div class="logo"><a href=""><img src="__PUBLIC__/Home/images/rzimages/vip_logo.jpg" /></a></div>
-            <div class="search">
-            	<table cellpadding="0" cellspacing="0">
-                	<form>
-                    	<td><input type="text" id="search_key" name="" value="" class="textk" /></td>
-                        <td><input type="button" name="" value="搜索" class="ss" /></td>
-                    </form>
-                </table>
-            </div>
-            <div class="min_nav"><a href="" class="shouji">手机版</a><a href="" class="weixin">+微信</a><a href="" class="weibo">+微博</a></div>
-        </div>
-        <div class="navbg">
-        	<div class="nav">
-            	<ul class="topnav">
-                	<li><a href="{:U('Index/Rzindex/index')}">站内首页</a></li>
-                        <li><a href="{:U('Index/Rzindex/aboutUs')}">关于我们</a>
-                    	<ul class="subnav">
-                            <li><a href="{:U('Index/Rzindex/aboutUs','','')}">公司简介</a></li>
-                            <li><a href="{:U('Index/Rzindex/wmdys','','')}">我们的优势</a></li>
-                            <li><a href="{:U('Index/Rzindex/sgdt','','')}">速格动态</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{:U('Index/RzCountry/rzList')}">单证与使馆认证</a></li>
-<!--                     <li><a href="">认证服务</a></li> -->
-                    <li><a href="{:U('Index/RzColumn/cxzz','','')}">诚信资质</a></li>
-                    <li><a href="{:U('Index/DownData/download')}">资料下载</a>
-                    	
-                    </li>
-                    <li><a href="{:U('Index/RzColumn/zsbd','','')}">知识宝鼎</a>
-                    	<ul class="subnav">
-                        	<li><a href="{:U('Index/RzColumn/rzzx','','')}">认证资讯</a></li>
-                            <li><a href="{:U('Index/RzColumn/lyzn','','')}">旅游指南</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="{:U('RzColumn/contactUs')}">联系我们</a></li>
-                    <li><a href="{:U('Index/Qzindex/index')}">速格签证</a></li>
-                    <li><a href="{:U('Index/Index/index')}">积分商城</a></li>
-                </ul>
-            </div>
-        </div>
+    <include file="Public:rzheader" />
         <div class="nav_ban">
         	<div class="nb_left">
 				<div id="sidebar">
-                <!--one start-->
+                <!--tree start-->
+                    <volist name="tree" id="t">
                     <div class="sidelist">
-                        <span><h3><a href="{:U('RzCountry/rzList',array('pid'=>1))}" class="znav">常见使馆认证</a><span class="ss"><a href="">国家分类</a><a href="">证件类别</a></span></h3></span>
+                        <span><h3><a href="{:U('RzCountry/rzList',array('pid'=>1))}" class="znav">{$t.name}</a>
+                            <span class="ss">
+                                <volist name="t.sub" id="ts">
+                                <a href="">{$ts.name}</a>
+                                </volist>
+                            </span></h3></span>
                         <div class="i-list">
                             <div class="mnav">
+                                <volist name="t.sub" id="ts">
                                 <ul style=" margin-top:4px;">
-                                    <li><a href="##" class="big">国家分类</a> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li>		
+                                    <li><a href="##" class="big">{$ts.name}</a>
+                                    <volist name="ts.sub" id="tss">
+                                     | <a href="##">{$tss.name}</a>
+                                    </volist>
+                                    </li>		
                                 </ul>
-                                <ul>
-                                    <li><a href="##" class="big">证件类别</a> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li>		
-                                </ul>
+                                </volist>
                             </div>
-                            <div class="pic"><a href=""><img src="__PUBLIC__/images/rzimages/leftnav_img.jpg" /></a></div>
+                            <div class="pic"><a href=""><img src="__PUBLIC__/Home/images/rzimages/leftnav_img.jpg" /></a></div>
                         </div>
                     </div>
-                <!--second start-->
-                    <div class="sidelist">
-                        <span><h3><a href="{:U('RzCountry/rzList',array('pid'=>2))}" class="znav">单证认证</a><span class="ss"><a href="">普通产地认证</a><a href="">产地认证</a></span></h3></span>
-                        <div class="i-list">
-                            <div class="mnav">
-                                <ul style=" margin-top:4px;">
-                                    <li><a href="##" class="big">普通产地认证</a> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li>		
-                                </ul>
-                                <ul>
-                                    <li><a href="##" class="big">产地认证</a> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li>		
-                                </ul>
-                            </div>
-                            <div class="pic"><a href=""><img src="__PUBLIC__/images/rzimages/leftnav_img.jpg" /></a></div>
-                        </div>
-                    </div>
-                <!--third start-->
-                    <div class="sidelist">
-                        <span><h3 style="height:101px;"><a href="{:U('RzCountry/gg_aut')}" class="znav">各国使馆认证</a><span class="ss"><a href="">非洲热点</a><a href="">亚洲热点</a><a href="">欧洲热点</a><br /><a href="">美洲热点</a><a href="">澳洲热点</a></span></h3></span>
-                        <div class="i-list">
-                            <div class="mnav">
-                                <ul style=" margin-top:4px;">
-                                    <li><a href="##" class="big">亚洲热点</a> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li>		
-                                </ul>
-                                <ul>
-                                    <li><a href="##" class="big">欧洲热点</a> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li><li> | <a href="##">阿根廷使馆认证</a> | <a href="##">土耳其使馆认证</a></li>		
-                                </ul>
-                            </div>
-                            <div class="pic"><a href=""><img src="__PUBLIC__/images/rzimages/leftnav_img.jpg" /></a></div>
-                        </div>
-                    </div>
+                    </volist>
+                <!--tree end-->
                 </div>
                 <div class="vise">
                 	<div class="sTab">
@@ -323,43 +256,4 @@
             </div>
             <div class="clear"></div> 
         </div>
-    </div>
-    <div class="clear"></div>
-    <div class="footer">
-    	<div class="down_navbg">
-        	<div class="down_nav">
-                <dl>
-                    <dt><a href="" class="chanpin">产品更全面</a></dt>
-                    <dd>土耳其出口商务登记表认证 co产地证<br />使馆公证认证书-外交部认证 公证书-<br />使馆认证 健康证使馆认证</dd>
-                </dl>
-                <dl>
-                    <dt><a href="" class="fuwu">服务更全面</a></dt>
-                    <dd>土耳其出口商务登记表认证 co产地证<br />使馆公证认证书-外交部认证 公证书-<br />使馆认证 健康证使馆认证</dd>
-                </dl>
-                <dl>
-                    <dt><a href="" class="jiage">价格更全面</a></dt>
-                    <dd>土耳其出口商务登记表认证 co产地证<br />使馆公证认证书-外交部认证 公证书-<br />使馆认证 健康证使馆认证</dd>
-                </dl>
-                <dl>
-                    <dt><a href="" class="fanwei">范围更全面</a></dt>
-                    <dd>土耳其出口商务登记表认证 co产地证<br />使馆公证认证书-外交部认证 公证书-<br />使馆认证 健康证使馆认证</dd>
-                </dl>
-            </div>
-        </div>
-        <div class="footer_sanjiao"></div>
-        <div class="footer_bg">
-        	<div class="link">友情连接：<a href="" style="margin-left:0px;">义乌认证</a>|<a href="">使馆认证</a>|
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            	<a href="">使馆认证</a>|<a href="">使馆认证</a>
-            </div>
-            <div class="copyright">
-            	<p>CopyRight @ 2011-2012 义乌市速格报俭代理有限公司 版权所有　地 址：浙江 义乌市城北路258号福田商务公寓313（商检局对面）<br />
-                	电 话：86 0579 85365501 - 86 0579 85591661　　　　　技术支持：武汉尚科在线网络技术有限公司
-                </p>
-            </div>
-        </div>
-    </div>
-</body>
-</html>
+<include file="Public:rzfooter" />

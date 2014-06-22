@@ -1,6 +1,15 @@
 <?php
 class RzdetailsAction extends Action{
 	public function index(){
+		//判断登录
+		if(!session('FEUSER') || session('FEUSER')==''){
+			$iflogin = 0;
+		}else{
+			$iflogin = 1;
+			$this->assign('user_info',session('FEUSER'));
+		}
+		$this->assign('iflogin',$iflogin);
+
 		$model=D('Rzvista');
 		$condition['id']= $_GET['id'];
 		$con['sid']= $_GET['id'];
@@ -14,6 +23,8 @@ class RzdetailsAction extends Action{
 			$a=explode('|',$value);
 			$b=explode('|',$key);
 		}
+		
+		$this->assign('gotime',date('Y-m-d',strtotime('+7days')));
 		$this->assign('place',$pid);
 		$this->assign('a',$a);
 		$this->assign('b',$b);
