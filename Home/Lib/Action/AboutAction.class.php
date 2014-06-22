@@ -9,7 +9,7 @@ class AboutAction extends Action{
 	//诚信资质
 	public function cxzz(){
 		$this->getPage('诚信资质');
-		$this->display();		
+		$this->display('RzColumn:cxzz');		
 	}
 	
 	//关于我们;
