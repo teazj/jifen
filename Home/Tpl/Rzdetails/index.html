@@ -85,7 +85,7 @@
 								<span class="f_hw">办理地点：</span>
 									<select class="xq_se1">
 										<volist name="place" id="v">
-											<option value="{$v.pid}">{$v.place}</option>
+											<option <if condition="$v.pid eq $place_id">selected</if> value="{$v.pid}">{$v.place}</option>
 										</volist>
 									</select>
 								</li>
@@ -266,4 +266,9 @@
         </div>
         <div class="clear"></div>     <!--  清除M_download里面的左，右部分浮动  -->
     </div>
+
 <include file="Public:rzfooter" />
+<script type="text/javascript">
+    //加载完毕根据参数place_id給一个change事件
+    $('.xq_se1').change();
+</script>

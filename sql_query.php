@@ -77,3 +77,5 @@ ALTER TABLE `ff_goods` CHANGE `price` `price` DOUBLE( 6, 2 ) UNSIGNED NOT NULL D
 ALTER TABLE `ff_users_info` CHANGE `phone` `phone` VARCHAR( 30 ) NULL COMMENT '电话';
 
 ALTER TABLE `ff_users_info` CHANGE `nickname` `nickname` VARCHAR( 16 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '真实名字';
+
+alter table ff_rzvista add column `desc` varchar(50) NOT NULL COMMENT '描述' after vid;

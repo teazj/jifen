@@ -24,6 +24,7 @@ class RzdetailsAction extends Action{
 			$b=explode('|',$key);
 		}
 		
+		$this->assign('place_id',$_GET['place_id']);
 		$this->assign('gotime',date('Y-m-d',strtotime('+7days')));
 		$this->assign('place',$pid);
 		$this->assign('a',$a);
