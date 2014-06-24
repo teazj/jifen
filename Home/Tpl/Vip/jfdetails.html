@@ -5,17 +5,17 @@
             	<div class="orderr_c1">
                 	<div class="or_c1tit">
                     	<a href="{:U('Index/Details/index',array('id'=>$v['sid']))}">{$v.name}{$v.catename}[{$v.vname}]</a>
-						<if condition="$v['status'] eq 0"><a href="{:U('Index/Vip/cancel',array('id'=>$v['id']))}" class="or_inp1">取消订单</a></if>
+						<if condition="$v['status'] eq 0"><a href="{:U('Index/Vip/jfcancel',array('id'=>$v['id']))}" class="or_inp1">取消订单</a></if>
                     </div>
                     <div class="or_c1con">
                     	<ul>
-                        	<li>订单号码：{$v.orderid}</li>
-                            <li>订单类型：签证</li>
-                            <li>订单时间：{$v.ctime}</li>
+                        	<li>订单号码：{$v.oid}</li>
+                            <li>订单类型：积分兑换</li>
+                            <li>订单时间：{$v.addtime}</li>
                             <li>订单状态：<if condition="$v['status'] eq 0">待付款<elseif condition="$v['status'] eq 1"/>已取消<else/>已付款待处理</if></li>
                         </ul>
                         <ul>
-                        	<li>订单总额：{$v['price']*$v['num']}元</li>
+                        	<li>订单总额：{$v.total}元</li>
                             <!-- <li>总优惠额：0.00元</li>
                             <li>已付金额：0.00元</li>
                             <li>还需应付：248.00元</li> -->
@@ -30,15 +30,10 @@
                     </div>
                     <div class="or_c2con">
                     	<ul>
-                        	<li>产品名称：{$v.vname}</li>
-                            <li>签证类型：{$v.catename}</li>
-                            <li>有 限 期：{$v.vday}</li>
-                            <li>面&nbsp;&nbsp;&nbsp;&nbsp;试：<if condition="$v['isface'] eq 0">不需要<else/>需要</if></li>
-                        </ul>
-                        <ul>
-                        	<li>办证地点：{$v.place}</li>
-                            <li>出境次数：{$v.entimes}次</li>
-                            <li>预计工作日：{$v.workday}天</li>
+                        	<li>联系人：{$v.nickname}</li>
+                            <li>联系电话：{$v.phone}</li>
+                            <li>邮箱：{$v.email}</li>
+                            <li>地址：{$v.address}</li>
                         </ul>
                         <div class="clear"></div>
                     </div>

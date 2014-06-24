@@ -1,6 +1,13 @@
 <?php
 // 本类由系统自动生成，仅供测试用途
 class IndexAction extends Action {
+	function _initialize(){
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
+		
+	}
+	
 
     public function index(){
         //商品分类

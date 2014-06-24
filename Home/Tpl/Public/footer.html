@@ -40,9 +40,12 @@
                 <div class="link">
                 	<dl>
                     	<dt><h4><a href="">友情链接</a></h4></dt>
-                        <dd class="lx"><a href="">翼游旅行</a></dd>
+                    	<volist name="listflink" id="vo">
+                    		 <dd class="lx"><a href="{$vo[url]}">{$vo[name]}</a></dd>
+                    	</volist>
+                        <!-- <dd class="lx"><a href="">翼游旅行</a></dd>
                         <dd class="jd"><a href="">尊茂酒店</a></dd>
-                        <dd class="kg"><a href="">号百控股</a></dd>
+                        <dd class="kg"><a href="">号百控股</a></dd> -->
                     </dl>
                 </div>
                 <div class="clear"></div>

@@ -5,7 +5,7 @@
             	<div class="orderr_c1">
                 	<div class="or_c1tit">
                     	<a href="{:U('Index/Details/index',array('id'=>$v['sid']))}">{$v.name}{$v.catename}[{$v.vname}]</a>
-						<if condition="$v['status'] eq 0"><a href="{:U('Index/Vip/cancel',array('id'=>$v['id']))}" class="or_inp1">取消订单</a></if>
+						<if condition="$v['status'] eq 0"><a href="{:U('Index/Vip/qzcancel',array('id'=>$v['id']))}" class="or_inp1">取消订单</a></if>
                     </div>
                     <div class="or_c1con">
                     	<ul>
