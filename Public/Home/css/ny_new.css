@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+
+/*----------------------  pay支付页面  ----------------------*/
+.pay{ margin:20px auto 40px; width:1078px; min-height:540px; border:1px solid #c9c8c8;}
+.pay_tit{ height:80px; line-height:80px; background:#e8f4ff; font-size:16px; font-family:微软雅黑; color:#4287be;}
+.paytit_left{ float:left; margin-left:100px;}
+.paytit_right{ float:right; margin-right:140px;}
+.pay_con{ padding-top:47px; margin-left:108px;}
+.pay_con .pay_p1{ line-height:24px; text-align:left;}
+.pay_con ul{ margin-top:40px;}
+.pay_con li{ float:left; text-align:left;}
+.pay_con li p{ line-height:22px;}
+.pay_zfb{ background:url(../images/pay_zf.png) left center no-repeat; padding-left:68px; margin-left:20px;}
+.pay_zf{ margin-top:15px; cursor:pointer;}
+.pay_orange{ color:#f6821f;}
+.pay_con h6 a{ margin:135px auto 0px; display:block; width:182px; height:50px; line-height:50px; text-align:center; background:#3b8bf8; color:#FFF; font-size:16px; letter-spacing:2px;}
+/*----------------------  pay支付页面  ----------------------*/
+
+
+
+
+
+
+

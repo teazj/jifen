@@ -80,7 +80,8 @@ class RzvistaAction extends Action{
 		}else{
 			$vista=D('Rzvista');
 			//判断关键字是否为空
-			if(!empty($_REQUEST['keywords'])){
+			if($_GET['keywords'] != ''){
+				$where['desc']  = array('like',"%{$_REQUEST['keywords']}%");
 				$where['mian']  = array('like', "%{$_REQUEST['keywords']}%");
 				$where['need']  = array('like', "%{$_REQUEST['keywords']}%");
 				$where['vname']  = array('like',"%{$_REQUEST['keywords']}%");
@@ -89,15 +90,14 @@ class RzvistaAction extends Action{
 				if($vo){
 					$v=$vista->where($where)->getField("pid");
 					$_GET['id']=$v;
-					$this->index();
+					$this->index();exit();
 				}
-			}else{
-				//更多点击则跳转至a 没有all页
-				$category = M('Rzcategory');
-				$more_country = $category->where('`pid` = 3')->order('piny')->limit('1')->select();
-				$_GET['id']=$more_country[0]['id'];
-				$this->index();
 			}
+			//更多点击则跳转至a 没有all页
+			$category = M('Rzcategory');
+			$more_country = $category->where('`pid` = 3')->order('piny')->limit('1')->select();
+			$_GET['id']=$more_country[0]['id'];
+			$this->index();
 		}
 	}
 }

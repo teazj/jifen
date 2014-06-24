@@ -120,16 +120,17 @@
                             </div>
                             <div id="my_tab_con1" class="none">
                             	<table cellpadding="0" cellspacing="0" border="none">
-                                <form>
+                                <form action="{:U('Qzindex/schedule')}" method="post">
                                 	<tr>
-                                    	<td class="dd_num">订单号</td><td><input type="text" name="" value="" id="dd_key" class="dd_text" /></td>
+                                    	<td class="dd_num">订单号</td><td><input type="text" name="order_id" value="" placeholder="请输入订单号" id="dd_keyy" class="dd_text" /></td>
                                     </tr>
                                     <tr>
-                                    	<td class="phone_num">手机号</td><td><input type="text" name="" value="" class="phone_text" /></td>
+                                    	<td class="phone_num">手机号</td><td><input type="text" name="tel" id="tel" value="" placeholder="请输入手机号" class="phone_text" /></td>
                                     </tr>
                                     <tr>
-                                    	<td class="dd_num">&nbsp;</td><td><input type="button" name="" value="立即查询" class="cx" /><a href="" class="forget">忘记订单号？</a></td>
+                                    	<td class="dd_num">&nbsp;</td><td><input type="submit" name="" id="schedule" value="立即查询" class="cx" /><a href="javascript:alert('如果已登录，请去个人中心查看或联系客服')" class="forget">忘记订单号？</a></td>
                                     </tr>
+                                    <input type="hidden" name="type" value="qz" />
                                 </form>
                                 </table>
                                 <dl>
@@ -189,15 +190,15 @@
             <div class="liuc_yy"></div>
             <div class="main_one">
                 <div class="mone_left">
-                	<iframe width=280 height=181 frameborder=0 scrolling="no" src="http://jifen.gouaixin.com/test/qzl_1.html">
+                	<iframe width=280 height=181 frameborder=0 scrolling="no" src="/test/qzl_1.html">
 					</iframe>
                     <div class="question">
                     	<dl>
-                        	<dt><a href="">{$mlist1[0]['tname']}</a></dt>
+                        	<dt><a href="{:U('QzColumn/index',array('tid'=>$mlist1[0]['tid']),'')}">{$mlist1[0]['tname']}</a></dt>
 							<volist name="mlist1" id="v">
-                            <dd><a href="{:U('Index/Details/detail',array('id'=>$v['id']))}">> {$v.title}</a></dd>
+                            <dd><a href="{:U('QzColumn/index',array('tid'=>$v['tid'],'id'=>$v['zid']))}">> {$v.title}</a></dd>
                             </volist>
-                            <dd div class="more"><a href="">>>更多</a></dd>
+                            <dd div class="more"><a href="{:U('QzColumn/index',array('tid'=>$mlist1[0]['tid']),'')}">>>更多</a></dd>
                         </dl>
                     </div>
                 </div>
@@ -240,35 +241,35 @@
             <div class="main_two">
             	<div class="policy">
                 	<dl>
-                    	<dt><a href="">{$mlist4[0]['tname']}</a></dt>
-							<volist name="mlist4" id="v">
-                            <dd><a href="{:U('Index/Details/detail',array('id'=>$v['id']))}">> {$v.title}</a></dd>
+                        <dt><a href="{:U('QzColumn/index',array('tid'=>$mlist1[0]['tid']),'')}">{$mlist4[0]['tname']}</a></dt>
+                            <volist name="mlist4" id="v">
+                            <dd><a href="{:U('QzColumn/index',array('tid'=>$v['tid'],'id'=>$v['zid']))}">> {$v.title}</a></dd>
                             </volist>
-                        <dd div class="more"><a href="">>>更多</a></dd>
+                            <dd div class="more"><a href="{:U('QzColumn/index',array('tid'=>$mlist4[0]['tid']),'')}">>>更多</a></dd>
                 	</dl>
                 </div>
                 <div class="mtwo_right">
                 	<div class="nTab">
                         <div class="TabTitle">
                             <ul id="myTab">
-                                <li class="active" onmouseover="nTabs(this,0);"><a href="">{$mlist3[0]['tname']}</a></li>
-                                <li class="normal" onmouseover="nTabs(this,1);"><a href="">{$mlist2[0]['tname']}</a></li> 			      
+                                <li class="active" onmouseover="nTabs(this,0);"><a href="{:U('QzColumn/index',array('tid'=>$mlist3[0]['tid']),'')}">{$mlist3[0]['tname']}</a></li>
+                                <li class="normal" onmouseover="nTabs(this,1);"><a href="{:U('QzColumn/index',array('tid'=>$mlist2[0]['tid']),'')}">{$mlist2[0]['tname']}</a></li> 			      
                             </ul>
                         </div>
                         <div class="TabContent">
                             <div id="myTab_Content0">
                                 <dl>
-									<volist name="mlist3" id="v">
-									<dd><a href="{:U('Index/Details/detail',array('id'=>$v['id']))}">> {$v.title}</a></dd>
-									</volist>
+                                    <volist name="mlist3" id="v">
+                                    <dd><a href="{:U('QzColumn/index',array('tid'=>$v['tid'],'id'=>$v['zid']))}">> {$v.title}</a></dd>
+                                    </volist>
                                </dl>
                                	
                             </div>
                             <div id="myTab_Content1" class="none">
                             	<dl>
-									<volist name="mlist2" id="v">
-									<dd><a href="{:U('Index/Details/detail',array('id'=>$v['id']))}">> {$v.title}</a></dd>
-									</volist>
+                                    <volist name="mlist2" id="v">
+                                    <dd><a href="{:U('QzColumn/index',array('tid'=>$v['tid'],'id'=>$v['zid']))}">> {$v.title}</a></dd>
+                                    </volist>
                                </dl>
                             </div>
                         </div>	
@@ -279,3 +280,13 @@
     </div>
     <div class="clear"></div>
 <include file="Public:qzfooter" />
+<script type="text/javascript">
+$("#schedule").click(function(){
+    var order_id = $("#dd_keyy").val();
+    var tel = $("#tel").val();
+    if(order_id == '' || tel == ''){
+        alert('订单号和手机号不能为空');
+        return false;
+    }
+});
+</script>
