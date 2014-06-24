@@ -67,4 +67,19 @@ class QzindexAction extends Action {
 		
     }
 
+    //根据订单号和手机号查询订单状态
+    public function schedule(){
+    	if(isset($_POST['type']) && $_POST['type'] == 'qz'){
+    		$m = M('Qzorder');
+    	}else if(isset($_POST['type']) && $_POST['type'] == 'rz'){
+    		$m = M('Rzorder');
+    	}
+    	$schedule = $m->where(array('phone'=>$_POST['tel'],'orderid'=>$_POST['order_id']))->find();
+    	if(!$schedule){
+    		$schedule = array('status'=>'匹配查询有误，请检查后重新查询','orderid'=>'订单不存在或手机号输入有误');
+    	}
+    	$this->assign('schedule',$schedule);
+    	$this->display();
+    }
+
 }
