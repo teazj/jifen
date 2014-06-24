@@ -78,4 +78,8 @@ ALTER TABLE `ff_users_info` CHANGE `phone` `phone` VARCHAR( 30 ) NULL COMMENT '�
 
 ALTER TABLE `ff_users_info` CHANGE `nickname` `nickname` VARCHAR( 16 ) CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '真实名字';
 
-alter table ff_rzvista add column `desc` varchar(50) NOT NULL COMMENT '描述' after vid;
+11，alter table ff_rzvista add column `desc` varchar(50) NOT NULL COMMENT '描述' after vid;
+
+12，ALTER TABLE `ff_rzorder` CHANGE `phone` `phone` BIGINT(20) UNSIGNED NOT NULL;
+
+13，ALTER TABLE `ff_qzorder` CHANGE `phone` `phone` BIGINT(20) UNSIGNED NOT NULL;
