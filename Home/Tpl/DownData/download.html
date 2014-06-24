@@ -1,33 +1,36 @@
-<include file="inc:header"/>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>速格</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/ny.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/ty.css" />
+<script src="__PUBLIC__/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/base.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/sun11.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/topss.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/new.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/topvise.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/toptab.js"></script>
+</head>
+ <body>
+    <div class="header">
+        <include file="Public:rzheader"/>
     <div class="M_download">
-    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="javascript:void()">资料下载</a></div>
+    	<div class="Mcaut_tit"><a href="{:U('Index/Rzindex/index')}">首页</a> > <a href="javascript:void()">资料下载</a></div>
         <div class="Md_left">
-        	<div class="Md_ltit"><a href="{:U('Index/DownData/download','','')}">资料下载</a></div>
+        	<div class="Md_ltit"><a href="javascript:;">资料下载</a></div>
             <div class="Md_lcon">
             <foreach name="files" item="vo">
             	<ul>
                 	<li>{$vo['fileTitle']}</li>
-                    <li><a href="__PUBLIC__/rzzl/{$vo['upfile']}">[点击下载]</a></li>
+                    <li><a target="_blank" href="{:U('DownData/down',array('id'=>$vo['id'],'file'=>$vo['upfile']),'')}">[点击下载]</a></li>
                 </ul>
             </foreach>
                 <div class="clear"></div>
             </div>
 			{$page}
-           <!--  <div class="inquiry_down">
-            
-           <!--  <!--
-                <ul>
-                    <li><a href="" class="end">第3页总共10页</a></li>
-                    <li><a href=""><<</a></li>
-                    <li><a href="">1</a></li>
-                    <li><a href="">2</a></li>
-                    <li><a href="">3</a></li>
-                    <li><a href="">4</a></li>
-                    <li><a href="">5</a></li>
-                    <li><a href="">...</a></li>
-                    <li><a href="" class="end">尾页</a></li>
-                </ul>
-            </div>-->
         </div>
         <div class="Md_right">
         	<div class="vise">
@@ -79,39 +82,39 @@
             	<div class="Mdr1_tit"><a href="">热门欧洲认证</a></div>
                 <div class="Mdr1_con">
                 	<dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                 </div>
@@ -120,39 +123,39 @@
             	<div class="Mdr1_tit"><a href="">热门亚洲认证</a></div>
                 <div class="Mdr1_con">
                 	<dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                     <dl>
-                    	<dt><a href=""><img src="__PUBLIC__/images/rzimages/usa.jpg" /></a></dt>
+                    	<dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
                         <dd>美国</dd>
                     </dl>
                 </div>
@@ -160,4 +163,4 @@
         </div>
         <div class="clear"></div>     <!--  清除M_download里面的左，右部分浮动  -->
     </div>
-<include file="APP/Tpl/Index/inc/footer.html" />
+<include file="Public:rzfooter" />

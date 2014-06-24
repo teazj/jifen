@@ -22,7 +22,7 @@
                 <!--tree start-->
                     <volist name="tree" id="t">
                     <div class="sidelist">
-                        <span><h3><a href="{:U('RzCountry/rzList',array('pid'=>$t['id']))}" class="znav">{$t.name}</a>
+                        <span><h3><a href="{:U('RzCountry/rzClass',array('id'=>$t['id']),'')}" class="znav">{$t.name}</a>
                             <span class="ss">
                                 <volist name="t.sub" id="ts">
                                 <a href="{:U('Rzvista/index',array('id'=>$ts['id']))}">{$ts.name}</a>

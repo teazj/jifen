@@ -1,34 +1,52 @@
-<include file="APP/Tpl/Index/inc/header.html" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>速格</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/ny.css" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Home/css/ty.css" />
+<script src="__PUBLIC__/js/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/dh.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/base.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/sun11.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/topss.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/new.js"></script>
+<script  type="text/javascript" src="__PUBLIC__/Home/js/topvise.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Home/js/toptab.js"></script>
+</head>
+ <body>
+    <div class="header">
+        <include file="Public:rzheader"/>
     <div class="M_xnews">
-    	<div class="Mcaut_tit"><a href="">首页</a> > <a href="">知识宝鼎</a></div>
+        <div class="Mcaut_tit"><a href="{:U('Index/Rzindex/index')}">首页</a> > <a href="{:U('Index/RzColumn/index',array('tid'=>$_GET['tid']),'')}">{$detail.tname}</a></div>
         <div class="xnews_left">
-        	<div class="xnewsl_tit">
-            	<p class="bt">{$row['title']}</p>
-                <p class="sj">时间：{$row['sub_time']|date="Y-m-d H:i:s",###}　来源：{$row['from']}　作者：{$row['author']}</p>
+            <div class="xnewsl_tit">
+                <p class="bt">{$detail['title']}</p>
+                <p class="sj">时间：{$detail['ctime']|date="Y-m-d H:i:s",###}　来源：{$detail['from']|default=数格在线}　作者：{$detail['author']}</p>
             </div>
             <div class="xnewsl_con">
-				{$row['content']}
+                {$detail['content']}
             </div>
         </div>
         <div class="xnews_right">
-        	<div class="xnewsr_a1">
-            	<dl>
-                	<dt><a href="">最新消息</a></dt>
-                	<foreach name="new" item="vo">
-                    	<dd><a href="{:U('Index/RzColumn/news',array('id'=>$vo['id']),'')}">{$vo['title']}</a></dd>
-                	</foreach>
+            <div class="xnewsr_a1">
+                <dl>
+                    <dt><a href="javascript:;">最新消息</a></dt>
+                    <foreach name="new" item="vo">
+                        <dd><a href="{:U('Index/RzColumn/news',array('id'=>$vo['id']),'')}">{$vo['title']}</a></dd>
+                    </foreach>
                 </dl>
             </div>
             <div class="xnewsr_a2">
-            	<dl>
-                	<dt><a href="">阅读排行</a></dt>
-                	<foreach name="clicks" item="vo">
-                    	<dd><a href="{:U('Index/RzColumn/news',array('id'=>$vo['id']),'')}">{$vo['title']}</a></dd>
-					</foreach>
+                <dl>
+                    <dt><a href="javascript:;">阅读排行</a></dt>
+                    <foreach name="clicks" item="vo">
+                        <dd><a href="{:U('Index/RzColumn/news',array('id'=>$vo['id']),'')}">{$vo['title']}</a></dd>
+                    </foreach>
                 </dl>
             </div>
-            <div class="xn_gg"><a href=""><img src="__PUBLIC__/images/xn_gg.jpg" /></a></div>
+            <div class="xn_gg"><a href="javscript:;"><img src="__PUBLIC__/Home/images/qzimages/xn_gg.jpg" /></a></div>
         </div>
         <div class="clear"></div>     <!--  清除M_xnews左右2快的浮动  -->
     </div>
-<include file="APP/Tpl/Index/inc/footer.html" />
+<include file="Public:rzfooter" />
