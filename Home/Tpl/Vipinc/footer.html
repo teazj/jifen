@@ -1,9 +1,8 @@
 <div class="footer">
-        <div class="link">友情连接：<a href="" style="margin-left:0px;">义乌签证</a>|<a href="">使馆认证</a>|
-            <a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            <a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            <a href="">使馆认证</a>|<a href="">使馆认证</a>|<a href="">使馆认证</a>| 
-            <a href="">使馆认证</a>|<a href="">使馆认证</a>
+        <div class="link">友情连接：
+        	<volist name="listflink" id="vo">
+        		<a href="{$vo.url}">{$vo.name}</a>|
+        	</volist>
         </div>
         <div class="copyright">
             <p>CopyRight @ 2011-2012 义乌市速格报俭代理有限公司 版权所有　地 址：浙江 义乌市城北路258号福田商务公寓313（商检局对面）<br />

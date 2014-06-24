@@ -48,7 +48,7 @@ class LoginAction extends Action{
 	public function login(){
 		$username=$_POST['username'];
 		$password=md5($_POST['password']);
-		$res=M('Users')->where("username='{$username}' and password='{$password}'")->getField('id');
+		$res=M('Users')->where("username='{$username}' and password='{$password}'")->find();
 		if($res&&$res!=''){
 			//登陆成功把用户信息写入session
 			session("FEUSER",M('Users')->where('id='.$res['id'])->find());
