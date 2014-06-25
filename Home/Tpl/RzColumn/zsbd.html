@@ -21,24 +21,24 @@
         <div class="Mcaut_tit"><a href="{:U('Index/Rzindex/index')}">首页</a> > <a href="javascript:;">{$current_title_type}</a></div>
         <div class="Minfor_left">
             <table cellpadding="o" cellspacing="0" border="0px none">
-                <form>
+<!--                 <form>
                     <tr>
                         <td><input type="text" name="" value="" id="infor_key" class="infor_inp1" /></td>
                         <td><input type="button" name="" value="查询" class="infor_btn1" /></td>
                     </tr>
-                </form>
+                </form> -->
             </table>
             <div class="infor_left">
                 <div class="wTab">
                     <div class="w_title">
-                        <ul id="my_tab">
+                        <ul id="my_tab1">
                             <foreach name="title" item="t">
                                 <li><a href="{:U('Index/RzColumn/index',array('tid'=>$t['id']),'')}">{$t['tname']}</a></li>
                             </foreach>
                         </ul>
                     </div>
                     <div class="T_Con">
-                        <div id="my_tab_con0">
+                        <div id="my_tab_con10">
                             <div class="sgdt">
                             <foreach name="list" item="l">
                                 <dl>
@@ -60,133 +60,7 @@
             </div>
         </div>
         <div class="Md_right">
-            <div class="vise">
-                <div class="sTab">
-                    <div class="T_title">
-                        <ul id="my_tab">
-                            <li class="zc" onmouseover="sTabs(this,0);"><a href="">办理签证</a></li>
-                            <li class="jg" onmouseover="sTabs(this,1);"><a href="">进度查询</a></li>                  
-                        </ul>
-                    </div>
-                    <div class="T_Con">
-                        <div id="my_tab_con0">
-                            <dl>
-                                <dt>国家或地区：</dt>
-                                <form>
-                                <dd><input type="text" name="" value="" id="country_key" class="country" /></dd>
-                                <dd><input type="button" name="" value="查询" class="inp_cx" /></dd>
-                                </form>
-                            </dl>
-                        </div>
-                        <div id="my_tab_con1" class="none">
-                            <table cellpadding="0" cellspacing="0" border="none">
-                            <form>
-                                <tr>
-                                    <td class="dd_num">订单号</td><td><input type="text" name="" value="" id="dd_key" class="dd_text" /></td>
-                                </tr>
-                                <tr>
-                                    <td class="phone_num">手机号</td><td><input type="text" name="" value="" class="phone_text" /></td>
-                                </tr>
-                                <tr>
-                                    <td class="dd_num">&nbsp;</td><td><input type="button" name="" value="立即查询" class="cx" /><a href="" class="forget">忘记订单号？</a></td>
-                                </tr>
-                            </form>
-                            </table>
-                        </div>
-                    </div>  
-                </div>
-            </div>
-            <div class="vise_yy"></div>
-            <div class="big_a">
-                <ul>
-                    <li class="big_one"><a href="http://video.sina.com.cn/v/b/117304418-2976835390.html?qq-pf-to=pcqq.c2c">认证视频</a></li>
-                    <li class="big_two"><a href="">诚信通在线</a></li>
-                    <li class="big_thr"><a href="">诚信通如何交易</a></li>
-                    <li class="big_four"><a href="http://mike2010000.1688.com/page/creditdetail.htm">实地认证</a></li>
-                </ul>
-            </div>
-            <div class="Md_r1">
-                <div class="Mdr1_tit"><a href="">热门欧洲认证</a></div>
-                <div class="Mdr1_con">
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                </div>
-            </div>
-            <div class="Md_r1">
-                <div class="Mdr1_tit"><a href="">热门亚洲认证</a></div>
-                <div class="Mdr1_con">
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                    <dl>
-                        <dt><a href=""><img src="__PUBLIC__/Home/images/rzimages/usa.jpg" /></a></dt>
-                        <dd>美国</dd>
-                    </dl>
-                </div>
-            </div>
+            <include file="Public:rzright" />
         </div>
         <div class="clear"></div>     <!--  清除M_download里面的左，右部分浮动  -->
     </div>
