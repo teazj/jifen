@@ -1,6 +1,12 @@
 <?php
 //会员中心
 class VipAction extends CommonAction{
+	public function _initialize(){
+		if(!session("FEUSER")){
+			$this->redirect('Com/login',"您还没有登录，请先登录!");
+		}
+		$this->assign("now",date("Y-m-d H:i:s"));
+	}
 	
 	//个人信息
 	public function index(){
