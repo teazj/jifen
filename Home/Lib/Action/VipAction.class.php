@@ -2,12 +2,6 @@
 //会员中心
 class VipAction extends CommonAction{
 	
-	function _initialize(){
-		//友情链接
-		$listflink=M("Flink")->where('isshow=1')->select();
-		$this->assign("listflink",$listflink);
-	} 
-	
 	//个人信息
 	public function index(){
 		$condition['id']=$_SESSION['FEUSER']['id'];
@@ -367,14 +361,12 @@ class VipAction extends CommonAction{
 	
 	//兑换积分
 	public function exchange(){
-		dump($_SESSION);
 		$condition['uid']=$_SESSION['FEUSER']['id'];
 		import('ORG.Util.Page');
 		$count =M('inte.Inte_log',' ')->where($condition)->count();
 		$Page = new Page($count,10);
 		$show = $Page->show();
 		$m=M('inte.Inte_log',' ')->where($condition)->limit($Page->firstRow.','.$Page->listRows)->select();
-		dump($m);
 		$this->display('Vip_exchange');
 	}
 	

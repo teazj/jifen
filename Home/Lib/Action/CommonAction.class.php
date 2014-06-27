@@ -9,6 +9,9 @@ class CommonAction extends Action {
 		if(!session('FEUSER') || session('FEUSER')==''){
 			$this->redirect('Login/login');
 		}
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
 	}
 	
 	
