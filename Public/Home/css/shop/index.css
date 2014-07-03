@@ -131,9 +131,9 @@ input[type=button]{ cursor:pointer;}
 .main-thr-tit span{ float:right; margin-right:11px;}
 .main-thr-tit span a{ padding-right:26px; background:url(../../images/shop/icon_09.jpg) right center no-repeat; color:#000; font-weight:100; font-size:12px;}
 .main-thr-pic{ width:1095px; height:400px;}
-.main-thr-pic dl{ float:left; width:207px; height:376px; color:#525050; padding:2px; border:1px solid #cbc9c9; margin-right:8px;}
+.main-thr-pic dl{ float:left; width:207px; /*height:376px;*/ color:#525050; padding:2px; border:1px solid #cbc9c9; margin-right:8px;}
 .main-thr-pic dt{ width:207px;}
-.main-thr-pic dd{ width:207px; height:37px; line-height:37px;}
+.main-thr-pic dd{ width:207px; /*height:37px;*/ line-height:37px;}
 .main-thr-pic .bb{ text-align:left; line-height:16px; margin-left:16px;}
 .main-thr-pic .aa a{ float:left; color:#FFF; line-height:34px; margin-left:12px; display:block; width:84px; height:37px; background:url(../../images/shop/main_picabg.jpg) no-repeat; margin-top:5px;}
 .main-thr-pic dd a{ color:#757575; font-size:14px;}

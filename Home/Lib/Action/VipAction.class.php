@@ -34,14 +34,9 @@ class VipAction extends CommonAction{
 		
 	//个人信息修改
 	public function userinfo(){
-			$condition['user_id']=$_SESSION['FEUSER']['id'];
+			$condition['users_id']=$_SESSION['FEUSER']['id'];
 			$m=M('Users_info')->where($condition)->find();
-			//dump($m);
-			// $rule=M('InitSystem')->getField('rule');//查询积分规则值
-			// $ms=M('InteLog')->where($con)->field('billInte,money,gInte')->select();//奖励积分、充值数、消费的积分
-			// foreach($ms as $v){
-				// $m['jifen']+=$v['billInte']+$v['money']*$rule-$v['gInte'];//当前总的积分=奖励积分+充值数*积分规则值-消费的积分
-			// }
+			dump($m);
 			$this->assign('v',$m);
 			$this->display('Vip_xperson');
 		}

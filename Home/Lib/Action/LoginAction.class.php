@@ -25,23 +25,27 @@ class LoginAction extends Action{
 			exit();
 		}
 		$m=M('Users');
-		//$_POST['addtime']=time();
+
 		$_POST['logip']=get_client_ip();
 		$_POST['password']=md5($_POST['password']);
 		$_POST['username']=$_POST['username'];
-		$res=$m->add($_POST);
-		if($res&&$res!=''){
-			//查询数据库将该用户的信息存入session中
-			session("FEUSER",$m->where('id='.$res)->find());
-			
-			//往users_info表中插入一条记录
-			$data['user_id']=$res;
-			$data['email']=$_POST['email'];
-			M("Users_info")->save($data);
-			
-			$this->success('注册成功',U('Vip/index'));
+		$username_res=$m->where("username='".$_POST['username']."'")->limit(1)->find();
+		if(!is_array($username_res)){
+			$res=$m->add($_POST);
+			if($res&&$res!=''){
+				//查询数据库将该用户的信息存入session中
+				session("FEUSER",$m->where('id='.$res)->find());
+				
+				//往users_info表中插入一条记录
+				$data['users_id']=$res;
+				$data['email']=$_POST['email'];
+				M("Users_info")->add($data);
+				$this->success('注册成功',U('Vip/index'));
+			}else{
+				$this->error('注册失败请稍后再试',U('Com/register'));
+			}
 		}else{
-			$this->error('注册失败请稍后再试',U('Com/login'));
+			$this->error('用户名不能重复!',U('Com/register'));
 		}
 	}
 
