@@ -1,4 +1,10 @@
-<include file="Public/pagerForm.html" />
+<!-- <include file="Public/pagerForm.html" /> -->
+<form id="pagerForm" action="__URL__/qz_orders" method="post">
+  <input type="hidden" name="pageNum" value="{$currentPage}" />
+  <input type="hidden" name="numPerPage" value="{$numPerPage}" />
+  <input type="hidden" name="_order" value="{$smarty.request._order}"/>
+  <input type="hidden" name="_sort" value="{$smarty.request._sort}"/>
+</form>
 <div class="pageHeader">
 <table class="searchContent" style="dislay:inline;float:left; margin-right: 100px;">
 	<form action="{:U('Admin/Inte/baseImportcls',array('act'=>'insert'),'')}" method="post" enctype="multipart/form-data">
@@ -40,6 +46,17 @@
         </tbody>
 </table>
   <div class="panelBar">
-    <div class="pages"> {$page}</div>
+		<div class="pages">
+			<span>显示</span>
+			<select class="combox" name="numPerPage" onchange="navTabPageBreak({ldelim}numPerPage:this.value{rdelim})">
+				<option value="10" {if $numPerPage==10}selected{/if}>10</option>
+				<option value="15" {if $numPerPage==15}selected{/if}>15</option>
+				<option value="20" {if $numPerPage==20}selected{/if}>20</option>
+				<option value="25" {if $numPerPage==25}selected{/if}>25</option>
+				<option value="30" {if $numPerPage==30}selected{/if}>30</option>
+			</select>
+			<span>共{$totalCount}条</span>
+		</div>
+		<div class="pagination" targetType="navTab" totalCount="{$totalCount}" numPerPage="{$numPerPage}" pageNumShown="10" currentPage="{$currentPage}"></div>
   </div>
 </div>

@@ -7,10 +7,38 @@ class InteAction extends GlobalAction{
 		C('TMPL_ENGINE_TYPE', 'Think');
 	}
 	public function index(){
-		$box = fPage('InteLog', 5);
-		$this->assign('list',$box['list']);
-		$this->assign('page',$box['page']);
-		//print_r($box);
+		// $numPerPage = 1;
+		// import('ORG.Util.Page');	// 导入分页类
+		// $box = fPage('InteLog', $numPerPage);
+		// $this->assign('list',$box['list']);
+		// $this->assign('page',$box['page']);
+
+		// //总数据条数
+		// $this->assign('totalCount',$box['count']);
+		// //页大小
+		// $this->assign('numPerPage',$numPerPage);
+		// //当前页
+		// $_GET['p']=$_REQUEST['pageNum']+0;	//转换参数,实现当前页号的传递
+		// $this->assign("pageNumShown",1);				//封装页码数
+		// $this->assign("currentPage",$_REQUEST['pageNum']);	//封装当前页
+
+		$m=M("InteLog");
+		$where='';
+		//分页处理
+		$_GET['p']=$_REQUEST['pageNum']+0;	//转换参数,实现当前页号的传递
+		$numPerPage=isset($_REQUEST['numPerPage'])?$_REQUEST['numPerPage']:10;// 封装页大小
+		import('ORG.Util.Page');	// 导入分页类
+		$count = $m->count();		// 查询满足要求的总记录数
+		$Page = new Page($count,$numPerPage);	// 实例化分页类 传入总记录数和每页显示的记录数
+		$this->assign("totalCount",$count);				//封装总数据条数
+		$this->assign("numPerPage",$numPerPage);		//封装页大小
+		$this->assign("pageNumShown",10);				//封装页码数
+		$this->assign("currentPage",$_REQUEST['pageNum']);	//封装当前页
+		$list=$m->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
+		$this->assign("list",$list);
+
+		// echo "<pre>";
+		//print_r($list);
 		//exit;
 		$this->display();
 	}
@@ -19,9 +47,25 @@ class InteAction extends GlobalAction{
 	
 	//订单列表  签证
 	public function qz_orders(){
-		 $rows = fPage('qzOrders', 10);
-		 $this->assign('list',$rows['list']);
-		 $this->assign('page',$rows['page']);
+		 // $rows = fPage('qzOrders', 10);
+		 // $this->assign('list',$rows['list']);
+		 // $this->assign('page',$rows['page']);
+
+		$m=M("qzOrders");
+		$where='';
+		//分页处理
+		$_GET['p']=$_REQUEST['pageNum']+0;	//转换参数,实现当前页号的传递
+		$numPerPage=isset($_REQUEST['numPerPage'])?$_REQUEST['numPerPage']:10;// 封装页大小
+		import('ORG.Util.Page');	// 导入分页类
+		$count = $m->count();		// 查询满足要求的总记录数
+		$Page = new Page($count,$numPerPage);	// 实例化分页类 传入总记录数和每页显示的记录数
+		$this->assign("totalCount",$count);				//封装总数据条数
+		$this->assign("numPerPage",$numPerPage);		//封装页大小
+		$this->assign("pageNumShown",10);				//封装页码数
+		$this->assign("currentPage",$_REQUEST['pageNum']);	//封装当前页
+		$list=$m->where($where)->limit($Page->firstRow.','.$Page->listRows)->select();
+		$this->assign("list",$list);
+
 		 $this->display();
 	}
 
