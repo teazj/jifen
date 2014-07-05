@@ -406,4 +406,24 @@ class VipAction extends CommonAction{
 			$this->error("添加失败!");
 		}
 	}
+
+	//站内信
+	public function sysmessage(){
+		import('ORG.Util.Page');
+		$unread_count = M('Sysmessage')->where('user_id='.$_SESSION[FEUSER]['id'].' and status=0')->count();
+		$count = M('Sysmessage')->where('user_id='.$_SESSION[FEUSER]['id'])->count();
+		$unread_Page = new Page($unread_count,10);
+		$Page = new Page($count,10);
+		$unread_show = $unread_Page->show();
+		$show = $Page->show();
+
+		$unread_list = M('Sysmessage')->where('user_id='.$_SESSION[FEUSER]['id'].' and status=0')->limit($unread_Page->firstRow.','.$unread_Page->listRows)->select();
+		$list = M('Sysmessage')->where('user_id='.$_SESSION[FEUSER]['id'])->limit($Page->firstRow.','.$Page->listRows)->select();
+
+		$this->assign('unread_page',$unread_show);
+		$this->assign('page',$show);
+		$this->assign('unread_list',$unread_list);
+		$this->assign('list',$list);
+		$this->display();
+	}
 }
