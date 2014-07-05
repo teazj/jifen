@@ -80,135 +80,59 @@
                         售后服务</a></li>
                 </ul>
                 <div style="clear: both"></div>
-                <div class="Msx_detailed" id="con1" style="display: none;">
-                    {$googoods_detail_info['details']}
+                <div class="Msx_detailed" id="con1" style="display: block;">
+                    {$goods_detail_info['details']}
                 </div>
                 <div style="display: none;" class="Msxr_con" id="con2">
                     <table width="100%" cellspacing="0" cellpadding="0" bgcolor="0px none">
                         <tbody><tr class="Msxr_tabtit">
                             <td>用户名</td><td>兑换积分</td><td>数量</td><td>状态</td><td>送达时间</td>
                         </tr>
+                        <volist name="success_list" id="vo">
                         <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
+                            <td>{$vo.phone}</td>
+                            <td><span class="red">{$vo.price}</span></td>
+                            <td>{$vo.num}</td>
+                            <td>{$vo.status}</td>
+                            <td>{$vo.addtime}</td>
                         </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                        <tr>
-                            <td>1897155****</td><td><span class="red">3528</span></td><td>1</td><td>成交</td><td>7日内送达</td>
-                        </tr>
-                    </tbody></table>
+                        </volist>
+                        </tbody>
+                    </table>
                     <div class="inquiry_down">
                         <ul>
-                            <li><a class="end" href="">第3页总共10页</a></li>
-                            <li><a href="">&lt;&lt;</a></li>
-                            <li><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
-                            <li><a href="">5</a></li>
-                            <li><a href="">...</a></li>
-                            <li><a class="end" href="">尾页</a></li>
+                            {$success_page}
                         </ul>
                     </div>
                 </div>
                 <div style="display: none;" class="Msx_app" id="con3">
                     <ul>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
-                        <li><a class="Msxapp_pj" href="">宝贝很好，谢谢店家送的卸甲斤好用，涂上以后就没有味道了，赞一个！</a><span class="Msxapp_rq">03/29</span><a class="Msxapp_zz" href="">流浪の鱼</a></li>
+                    	<volist name="comment_list" id="vo">
+                        <li>
+                        	<span class="Msxapp_pj" >{$vo.content}</span>
+                        	<span class="Msxapp_rq">{$vo.crdate}</span>
+                        	<span class="Msxapp_zz" >{$vo.username}</span>
+                        </li>
+                    	</volist>
                     </ul>
                     <div class="Maxd_app">
+                    	<form action="{:U('Index/comment')}" method="post" onsubmit="return checkComment(this);">
+                        <input type="hidden" value="{$info[id]}" name="id" />
                         <table cellspacing="0" cellpadding="0" border="0px none">
-                        <form></form>
-                            <tbody><tr><td><textarea class="my_pj"></textarea></td></tr>
-                            <tr><td><input type="button" class="app_inp9" value="我要评价" name=""></td></tr>
-                        
-                        </tbody></table>
+                            <tbody>
+                            	<tr><td><textarea class="my_pj" name="content"></textarea></td></tr>
+                            	<tr><td><input type="submit" class="app_inp9" value="我要评价" name=""></td></tr>
+                        	</tbody>
+                        </table>
+                        </form>
                     </div>
                     <div class="inquiry_down">
                         <ul>
-                            <li><a class="end" href="">第3页总共10页</a></li>
-                            <li><a href="">&lt;&lt;</a></li>
-                            <li><a href="">1</a></li>
-                            <li><a href="">2</a></li>
-                            <li><a href="">3</a></li>
-                            <li><a href="">4</a></li>
-                            <li><a href="">5</a></li>
-                            <li><a href="">...</a></li>
-                            <li><a class="end" href="">尾页</a></li>
+                            {$comment_page}
                         </ul>
                     </div>
                 </div>
-                <div style="" class="Msx_sh" id="con4">
+                <div style="display: none;" class="Msx_sh" id="con4">
                     <p>退订货说明：</p>
                     <p>1，订单一旦生成若无礼品质量问题，不予办理礼品退换货。</p>
                     <p>2，已经支付成功，因收货信息填写错误或配送时间内暂未收到货要求退换货。</p>
@@ -305,6 +229,24 @@
 				document.getElementById("con" + i).style.display = "none";
 			}
 		}
+	}
+</script>
+
+<script type="text/javascript">
+	//评论
+	function checkComment(t){
+		var islogin="{$Think.session.FEUSER.id}";
+		if(!islogin){
+			alert("你还没有登录!");
+			return false;
+		}
+		
+		var content=t.content.value;
+		if(content==""){
+			alert("请填写评论的内容");
+			return false;
+		}
+		return true;
 	}
 </script>
 

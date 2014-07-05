@@ -50,8 +50,14 @@ class IndexAction extends Action {
 	
 	//热门对兑换页面
 	public function lists(){
+		//根据传过来的id做为父id来查询下面的小分类
+		$pid=0;
+		if($this->_get('id')){
+			$pid=$this->_get("id");
+		}
+		
 		//商品分类
-        $tree=$this->getCategoryData(0,'goods_type');
+        $tree=$this->getCategoryData($pid,'goods_type');
 		$this->assign("tree",$tree);
 		
 		//1精品推荐(左边)
@@ -220,12 +226,71 @@ class IndexAction extends Action {
 			$info['jifen']=$rule*intval($info['price']);
 			//商品详情
 			$goods_detail_info=M("Goods_detail")->where('pid='.$_GET['id'])->find();
+			$this->assign('goods_detail_info',$goods_detail_info);
 			
 			// 导航
 			$itme=$this->getPdata($info['tid']);
 			$this->assign("bcn",$itme);
 			
-			$this->assign('goods_detail_info',$goods_detail_info);
+			//成交记录
+			$model= M("");
+			$success_where="d.gid=".$_GET['id']." AND o.status=3";	//成功记录条件
+			import("ORG.Util.Page");// 导入分页类
+			$count = $model->table("ff_orders_detail d")
+				    	   ->join("ff_orders o  on o.id=d.oid")
+						   ->where($success_where)
+						   ->count();	// 查询满足要求的总记录数
+			$Page  = new Page($count,10);		// 实例化分页类 传入总记录数和每页显示的记录数
+			$show  = $Page->show();		// 分页显示输出
+			// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+			$success_list = $model->table("ff_orders_detail d")
+				    	   ->join("ff_orders o  on o.id=d.oid")
+						   ->where($success_where)
+						   ->order('o.addtime')
+						   ->field("o.phone,d.price,d.num,o.status,o.addtime")
+						   ->limit($Page->firstRow.','.$Page->listRows)
+						   ->select();
+ 			
+ 			foreach ($success_list as $key => $value) {
+				 $value['phone'] = substr($value['phone'],0,7).'****';
+				 $value['addtime'] = date("Y-m-d H:i:s",$value['addtime']);
+				 $value['status']="成交";
+				 $value['price']=$value['price'] * $rule;
+				 $success_list[$key]=$value;
+			 }
+			$this->assign('success_page',$show);// 赋值分页输出
+			$this->assign("success_list",$success_list);
+			
+			
+			
+			//评论列表
+			$model= M("");
+			$comment_where="g.gid=".$_GET['id']." AND g.status=2";	//评论条件状态值为2
+			import("ORG.Util.Page");// 导入分页类
+			$count = $model->table("ff_goods_comment g")
+				    	   ->join("ff_users u  on u.id=g.uid")
+						   ->where($comment_where)
+						   ->count();	// 查询满足要求的总记录数
+			$Page  = new Page($count,10);		// 实例化分页类 传入总记录数和每页显示的记录数
+			$show  = $Page->show();		// 分页显示输出
+			// 进行分页数据查询 注意limit方法的参数要使用Page类的属性
+			$comment_list = $model->table("ff_goods_comment g")
+				    	   ->join("ff_users u  on u.id=g.uid")
+						   ->where($comment_where)
+						   ->order('g.crdate')
+						   ->field("u.username,g.content,g.crdate")
+						   ->limit($Page->firstRow.','.$Page->listRows)
+						   ->select();
+ 			
+ 			foreach ($comment_list as $key => $value) {
+				 $value['crdate'] = date("Y-m-d H:i:s",$value['crdate']);
+				 $comment_list[$key]=$value;
+			}
+			
+			$this->assign('comment_page',$show);// 赋值分页输出
+			$this->assign("comment_list",$comment_list);
+			
+			
 			$this->assign("info",$info);
 		}else{
 			$this->redirect("Index/index");
@@ -237,6 +302,29 @@ class IndexAction extends Action {
 
 		$this->display();
 	}
+	
+	
+	//商品添加评论
+	function comment(){
+		$gid=$this->_post('id');
+		if($gid){
+			$data=array();
+			$data['gid']=$gid;
+			$data['uid']=$_SESSION['FEUSER']['id'];
+			$data['content']=$this->_post("content");
+			$data['crdate']=time();
+			$data['status']=0;
+			$res=M("Goods_comment")->add($data);
+			if($res){
+				$this->success("评论成功!","info/id/".$gid);	
+			}else{
+				$this->error("评论失败!");
+			}
+		}else{
+			$this->error("评论失败!");
+		}	
+	}
+	
 	
 	/**
      * 获取分类数据
