@@ -33,6 +33,10 @@ class RzdetailsAction extends Action{
 		$this->display();
 	}
 	
+	public function xq(){
+		$this->display();
+	}
+
 	public function detail(){
 		$detail=D('Message');
 		$condition['id']=$_GET['id'];
