@@ -416,6 +416,7 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .Mnox_lcon{ padding-bottom:18px;}
 .Mnox_lcon dl{ margin:42px auto 0; width:219px; padding-bottom:20px; border-bottom:1px dashed #a9a8a8;}
 .Mnox_lcon dd{ height:24px; line-height:24px; color:#000;}
+.Mnox_lcon dl dt{ width:219px; height:167px; overflow:hidden;}
 
 .Mnox_right{ float:right;}
 .Mnoxr_t{ width:850px; height:146px; border:1px solid #dbdbdb;}
@@ -467,7 +468,7 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .sx_red1{ background:url(../../images/shop/sx_redbg1.png) left center no-repeat;}
 .sx_red2{ background:url(../../images/shop/sx_redbg2.png) left center no-repeat;}
 .sx_pl{ padding-left:20px;}
-.sx_inp1, .sx_inp2{ width:125px; height:36px; line-height:35px; margin-left:28px; margin-top:50px; color:#fff; font-size:16px; font-family:微软雅黑;}
+.sx_inp1, .sx_inp2{ width:125px; height:36px; line-height:35px; margin-left:28px; margin-top:50px; color:#fff; font-size:16px; font-family:微软雅黑;display:block; float:left; text-align: center;}
 .sx_inp1{ background:url(../../images/shop/sx_inp1.png) no-repeat;}
 .sx_inp2{ background:url(../../images/shop/sx_inp2.png) no-repeat;}
 
