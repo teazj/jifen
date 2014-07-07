@@ -6,22 +6,23 @@
   <input type="hidden" name="_sort" value="{$smarty.request._sort}"/>
 </form>
 <div class="pageHeader">
+<form action="{:U('Admin/Inte/baseImportcls',array('act'=>'insert'),'')}" method="post" enctype="multipart/form-data">
 <table class="searchContent" style="dislay:inline;float:left; margin-right: 100px;">
-	<form action="{:U('Admin/Inte/baseImportcls',array('act'=>'insert'),'')}" method="post" enctype="multipart/form-data">
 		<tr>
 			<td>订单导入:</td><td><input type="file" name="upXls"/></td>
 			<td colspan="2"><input type="submit" name="sub" value="上传"/></td>
 		</tr>
-	</form>
 </table>
+</form>
+<form action="{:U('Admin/Inte/followImportcls','','')}" method="post" enctype="multipart/form-data">
 <table class="searchContent" style="dislay:inline;float:left;">
-	<form action="{:U('Admin/Inte/followImportcls','','')}" method="post" enctype="multipart/form-data">
 		<tr>
 			<td>积分导入:</td><td><input type="file" name="upfile"/></td>
 			<td colspan="2"><input type="submit" name="sub" value="上传"/></td>
 		</tr>
 	</form>
 </table>
+</form>
 </div>
 <div class="pageContent">
   <div class="panelBar">
