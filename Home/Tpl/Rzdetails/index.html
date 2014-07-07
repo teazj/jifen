@@ -76,17 +76,16 @@
                     </div>
                     <div class="r1_right">
                     	<ul>
-                        	<li><span class="f_hw">办理时间：</span>预计至少{$vo.workday}个工作日<a href="" class="showdiv">详细</a></li>
+                        	<li><span class="f_hw">办理时间：</span>预计至少{$vo.workday}个工作日<a href="javascript:;" class="showdiv">详细</a></li>
                             <li><span class="rr_f"><span class="f_hw">是否面试：</span><if condition="$vo['isface'] eq 0">不需要<else/>需要</if></span><span class="rr_f"><span class="f_hw">有效时间：</span>{$vo.vday}天</span><span class="rr_f"><span class="f_hw">最多停留：</span>{$vo.staday}</span><span class="rr_f"><span class="f_hw">入境次数：</span>1</li>
-                        	<li><span class="f_hw">受理范围：</span>{$vo.mian}<a href="" class="showdiv">详细</a></li>
+                        	<li><span class="f_hw">受理范围：</span>{$vo.mian}<a href="javascript:;" class="showdiv">详细</a></li>
                             <li><span class="f_hw">产品名称：</span><volist name="b" id="vo2" key="k"><span class="af"><a onclick="price({$k-1})">{$vo2}</a></span></volist></li>
 <div class="showbox" style="width:687px;z-index: 10000;">
     <div class="mainlist">
-        <p><span class="f_14w">受理范围：</span>适用于长期工作地（北京,天津,河北,山西,内蒙古,辽宁,吉林,黑龙江,江西,山东,河南,陕西,甘肃,青海,宁夏,新疆,北京,天津,河北,山西,内蒙古,辽宁,吉林,黑龙江,江西,山东,河南,陕西,甘肃,青海,宁夏,新疆,）的申请人
-</p>
-        <p><span class="f_14w">办理时间：</span>预计至少5个工作日 5个工作日</p>
+        <p><span class="f_14w">受理范围：</span>{$vo.mian}</p>
+        <p><span class="f_14w">办理时间：</span>预计至少{$vo.workday}个工作日</p>
     </div>
-    <h2><a class="close" href="#">返回</a></h2>
+    <h2><a class="close" href="javascript:;">返回</a></h2>
     <div class="clear"></div>
 </div>  
                             <form action="{:U('Index/Rzorder/index')}" method="post">

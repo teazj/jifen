@@ -5,7 +5,7 @@
 							var th= $(window).scrollTop()+$(window).height()/1.6-box;
 							var h =document.body.clientHeight;
 							var rw =$(window).width()/2-box;
-							$(".showbox").animate({top:th,opacity:'show',width:468,height:260,right:rw},500);
+							$(".showbox").animate({top:th,opacity:'show',width:587,height:260,right:rw},500);
 							$("#zhezhao").css({
 								display:"block",height:$(document).height()
 							});
