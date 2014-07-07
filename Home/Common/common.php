@@ -116,4 +116,92 @@ function SendMail($address,$title,$message)
     	echo "发送失败";
     }
 }
+
+
+//发送邮件
+function mysendMail($subject, $message, $recipients, $cc = '', $bcc = '', $replyTo = '', $mail_from = '', $mail_fromname = '', $html = false, $attachment = '') {
+    //import("@.Util.Mail.PHPMailerAutoload");
+	include "/data/Mail/PHPMailerAutoload.class.php";
+    try {
+        $mail = new PHPMailer();
+
+        //check smtp
+        //$Config = C('Config');
+		$Config=array(
+			'mail_mode'=>1,
+			'smtp_host'=>'smtp.qq.com',
+			'smtp_username'=>'suge51@qq.com',
+			'smtp_password'=>'jz999888',
+			'mail_fromname'=>'速格网站',
+			'smtp_secure'=>''
+		);
+        if ($Config['mail_mode'] == 1) {
+            $mail->isSMTP(); // Set mailer to use SMTP
+            $mail->Host = $Config['smtp_host']; // Specify main and backup server
+            $mail->SMTPAuth = true; // Enable SMTP authentication
+            $mail->Username = $Config['smtp_username']; // SMTP username
+            $mail->Password = $Config['smtp_password']; // SMTP password
+            $mail->SMTPSecure = $Config['smtp_secure'] ? $Config['smtp_secure'] : ''; // Enable encryption, 'tls' 'ssl' also accepted
+        }
+
+        $mail->CharSet = 'utf-8';
+        $mail->From = $Config['smtp_username']; //默认为系统发件人邮箱
+        $mail->FromName = $mail_fromname ? $mail_fromname : $Config['mail_fromname']; //默认为系统发件人姓名
+
+        if (is_array($recipients)) {
+            foreach ($recipients as $email => $name) {
+                $mail->addAddress($email, $name); // Add a recipient
+            }
+        } else {
+            $mail->addAddress($recipients);
+        }
+        if ($replyTo) {
+            $mail->addReplyTo($replyTo);
+        }
+        if ($cc) {
+            if (is_array($cc)) {
+                foreach ($cc as $email => $name) {
+                    $mail->addCC($email, $name); // Add CC
+                }
+            } else {
+                $mail->addCC($cc);
+            }
+        }
+        if ($bcc) {
+            if (is_array($bcc)) {
+                foreach ($bcc as $email => $name) {
+                    $mail->addBCC($email, $name); // Add BCC
+                }
+            } else {
+                $mail->addBCC($bcc);
+            }
+        }
+
+        //$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+        //添加附件
+        if ($attachment) {
+            $attachmentArray = explode(",", $attachment);
+            foreach ($attachmentArray as $file) {
+                if (is_file($file)) {
+                    $mail->addAttachment($file); // Add attachments
+                }
+            }
+        }
+
+        // Set email format to HTML
+        if ($html) {
+            $mail->isHTML(true);
+        }
+
+        $mail->Subject = $subject;
+        $mail->Body = $message;
+
+        //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+        return $mail->send();
+    } catch (phpmailerException $e) {
+        return $e->errorMessage();
+    }
+}
+
 ?>

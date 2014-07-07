@@ -7,7 +7,7 @@
                     	<li>用 户 名：<span class="blue2">{$v.username}</span></li>
                         <li>联系电话：<span class="blue2">{$userinfo.phone}</span></li>
                         <li>邮&nbsp;&nbsp;&nbsp;&nbsp;箱：<span class="blue2">{$v.email}</span></li>
-                        <li>会员级别：<span class="blue2"><if condition="$v['lev'] eq 1">青铜会员<elseif condition="$v['lev'] eq 2"/>白银会员<else/>黄金会员</if></span></li>
+                        <li>会员级别：<span class="blue2"><if condition="$v['email_status'] eq 1">贵宾会员<else />普通会员</if><!-- <if condition="$v['lev'] eq 1">青铜会员<elseif condition="$v['lev'] eq 2"/>白银会员<else/>黄金会员</if></span> --></li>
                         <li>积分总是：<span class="blue2">{$v.point}</span></li>
                         <!-- <li>优 惠 券：<span class="blue2">{$v.yhj}</span></li> -->
                     </ul>
