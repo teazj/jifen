@@ -36,7 +36,6 @@ class VipAction extends CommonAction{
 	public function userinfo(){
 			$condition['users_id']=$_SESSION['FEUSER']['id'];
 			$m=M('Users_info')->where($condition)->find();
-			dump($m);
 			$this->assign('v',$m);
 			$this->display('Vip_xperson');
 		}
