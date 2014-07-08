@@ -48,7 +48,7 @@ class LoginAction extends Action{
 					$url=U("/Login/active_email",'code='.base64_encode($param));
 					$subject="邮箱激活";
 					$message="激活邮箱，开始您速格服务网的体验之游！<br/>";
-					$message.="<a href='".$url."' style='height:30px;display:block;width:100px;background:blue;'>激活邮箱</a>";
+					$message.="<a href='".$url."' style='color:white;background:red;'>激活邮箱</a>";
 					$message.="或点击链接<a href='".$url."'>".$url."</a><br/>";
 					$message.="非常感谢您对我们的关心和支持！";
 					
