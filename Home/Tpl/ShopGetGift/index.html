@@ -1,4 +1,49 @@
 <include file="Public:header" />
+<script type="text/javascript" src="__PUBLIC__/Home/js/tanchu.js"></script>
+<style type="text/css">
+
+/*---------------------------  get积分获取页面  ---------------------------*/
+.M_get{ margin:0 auto; width:1081px; padding-bottom:100px;}
+
+.ban_news{ margin-top:10px;}
+#Mget_ban{ float:left; width:852px; height:273px; overflow:hidden;}
+#Mget_img{ width:852px; height:273px; visibility:hidden; overflow:hidden;}
+
+.Mget_news{ float:right; width:223px; height:271px; border:1px solid #adaaaa;}
+.Mget_news dt{ width:223px; height:51px; line-height:51px; background:url(../images/Mget_news_dtbg.jpg) no-repeat;}
+.Mget_news dt a{ font-size:18px; color:#FFFFFF;}
+.Mget_news dd{ height:48px; line-height:48px; color:#656363; text-align:left; padding-left:20px;}
+.Mget_news dd a{ color:#656364;}
+
+.get_jf{ margin:0 auto; width:1079px;}
+.getjf_tit{ width:1079px; height:48px; line-height:48px; margin-bottom:10px; border-bottom:1px solid #0264bf; text-align:left;}
+.getjf_tit a{ font-size:14px; color:#0365be; padding-left:9px;}
+
+.getjf_con{ margin-left:200px;}
+.haoma{ font-size:14px; color:#252525;}
+.ddh{ width:300px; height:36px; margin:31px 0; font-size:16px; line-height:36px; padding:7px 0 5px 12px; border:1px solid #cccacb;}
+.sxjf{ width:200px; height:36px; margin:31px 0; font-size:16px; line-height:36px; padding:7px 0 5px 12px; border:1px solid #cccacb;}
+.inp_jf{ text-align:center;}
+.showdiv{ width:134px; height:45px; font-size:14px; height:45px; background:#e81f18; color:#FFFFFF; margin-bottom:31px;}
+.get_inp2{ width:146px; height:45px; font-size:14px; height:45px; background:#e81f18; color:#FFFFFF; margin-left:15px;}
+
+.showbox{width:468px;height:260px;display:none;position:absolute;right:0;top:0;z-index:100;border:16px #000000 solid;background:#fff;}
+.showbox .mainlist{}
+#zhezhao{background-color:#666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
+.mainlist{ text-align:center; padding-top:30px;}
+.mainlist p{ line-height:30px; color:#848282; font-size:14px;}
+.suge{ width:468px; height:54px; background:#fd0202;}
+.suge img{ float:left; margin-top:28px; margin-left:11px;}
+.close{ float:right; display:block; width:14px; height:14px; background:url(../images/tc_close.png) no-repeat; margin-right:26px; margin-top:28px;}
+.tc_inp1{ margin-top:50px; width:274px; height:54px; line-height:50px; color:#FFFFFF; font-size:16px; background:url(../images/tc_inp1.png) no-repeat;}
+
+/*---------------------------  get积分获取页面  ---------------------------*/
+
+#TB_overlayBG{background-color:#666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter:alpha(opacity=50);-moz-opacity: .5;}
+
+.jf_tcbg{width:500px;height:292px; margin-left:-250px; margin-top:-146px; position:absolute;left:50%;top:60%;z-index:100;border:1px #028fe0 solid;background-color:rgba(255, 255, 255, 0.5);}
+.jf_tc{width:468px;height:260px; margin-left:16px; margin-top:16px; z-index:999; background:#fff;}
+</style>
    			<!-- banner的js -->   
         		<script type="text/javascript">
 				$(function(){
@@ -94,18 +139,24 @@ function checkNum(){
                     <tr>
                         <td>&nbsp;</td>
                         <td colspan="2" class="inp_jf">
-                          <input type="submit" name="sub_1" value="立即获取" class="abc" />
-                            </form>
-                          <!--   <div class="showbox">
-                                <div class="suge"><img src="__PUBLIC__/images/shop/tc_logo.png""><a class="close" href="#"></a></div>
-                                <div class="mainlist">
-                                    <p>恭喜您：成功兑换积分</p>
-                                    <input type="button" name="" value="点击查看我的积分" class="tc_inp1" />
+                          <input type="button" name="sub_1" value="立即获取" class="showbox1 showdiv" />
+                            <!--获取积分弹出层  s-->
+                            <div id="TB_overlayBG"></div>
+                            <div class="box" style="display:none">
+                                <div class="jf_tcbg">
+                                    <div class="jf_tc">
+                                        <div class="suge"><img src="images/tc_logo.png" /><a class="close" href="#"></a></div>
+                                        <div class="mainlist">
+                                            <p>恭喜您：成功兑换积分</p>
+                                            <input type="button" name="" value="点击查看我的积分" class="tc_inp1" />
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>	
-                            <div id="zhezhao"></div>
-                         --></td>
+                            </div>
+                            <!--获取积分弹出层  e-->
+                         </td>
                     </tr>
+                </form>
                 </table>
             </div>
         </div>
