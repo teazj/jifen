@@ -10,7 +10,7 @@
 #Mget_img{ width:852px; height:273px; visibility:hidden; overflow:hidden;}
 
 .Mget_news{ float:right; width:223px; height:271px; border:1px solid #adaaaa;}
-.Mget_news dt{ width:223px; height:51px; line-height:51px; background:url(../images/Mget_news_dtbg.jpg) no-repeat;}
+.Mget_news dt{ width:223px; height:51px; line-height:51px; background:url(__PUBLIC__/Home/images/shop/Mget_news_dtbg.jpg) no-repeat;}
 .Mget_news dt a{ font-size:18px; color:#FFFFFF;}
 .Mget_news dd{ height:48px; line-height:48px; color:#656363; text-align:left; padding-left:20px;}
 .Mget_news dd a{ color:#656364;}
@@ -34,8 +34,8 @@
 .mainlist p{ line-height:30px; color:#848282; font-size:14px;}
 .suge{ width:468px; height:54px; background:#fd0202;}
 .suge img{ float:left; margin-top:28px; margin-left:11px;}
-.close{ float:right; display:block; width:14px; height:14px; background:url(../images/tc_close.png) no-repeat; margin-right:26px; margin-top:28px;}
-.tc_inp1{ margin-top:50px; width:274px; height:54px; line-height:50px; color:#FFFFFF; font-size:16px; background:url(../images/tc_inp1.png) no-repeat;}
+.close{ float:right; display:block; width:14px; height:14px; background:url(__PUBLIC__/Home/images/shop/tc_close.png) no-repeat; margin-right:26px; margin-top:28px;}
+.tc_inp1{ margin-top:50px; width:274px; height:54px; line-height:50px; color:#FFFFFF; font-size:16px; background:url(__PUBLIC__/Home/images/shop/tc_inp1.png) no-repeat;}
 
 /*---------------------------  get积分获取页面  ---------------------------*/
 
@@ -145,10 +145,10 @@ function checkNum(){
                             <div class="box" style="display:none">
                                 <div class="jf_tcbg">
                                     <div class="jf_tc">
-                                        <div class="suge"><img src="images/tc_logo.png" /><a class="close" href="#"></a></div>
+                                        <div class="suge"><img src="__PUBLIC__/Home/images/shop/tc_logo.png" /><a class="close" href="#"></a></div>
                                         <div class="mainlist">
                                             <p>恭喜您：成功兑换积分</p>
-                                            <input type="button" name="" value="点击查看我的积分" class="tc_inp1" />
+                                            <a href="{:U('/Vip/index')}"><input type="button" name="" value="点击查看我的积分" class="tc_inp1" /></a>
                                         </div>
                                     </div>
                                 </div>

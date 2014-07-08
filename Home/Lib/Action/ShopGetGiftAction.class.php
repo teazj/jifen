@@ -9,7 +9,7 @@ class ShopGetGiftAction extends CommonAction{
 	public function getGift(){
 		$orderCode = $_POST['orderCode'];
 		if(!IS_AJAX)halt('非法访问');
-		$Orders = M('qzOrders');
+		$Orders = M('inte.qzOrders',' ');
 		$row = $Orders->where("qz_number='{$orderCode}'")->find();
 		if($row){
 			$data['status'] = 1;

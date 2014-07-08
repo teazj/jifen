@@ -29,5 +29,30 @@ class ComAction extends Action {
 			$this->error('登陆失败，请检查用户名和密码',"__APP__/Public/index");
 		}
 	}
+
+	public function findpwd(){
+		$this->display();
+	}
+
+	public function savepwd(){
+		if(md5($_POST['code'])!=$_SESSION['verify']){
+			$this->error('验证码不正确');
+			exit();
+		}
+		if($_POST['newpwd']!=$_POST['newpwd2']){
+			$this->error('两次密码不一致');
+			exit();
+		}
+		$email = M('Users')->where('`username` = "'.$_POST['username'].'"')->find();
+		if($email['email']==$_POST['email']){
+			if(M('Users')->where('`username` = "'.$_POST['username'].'"')->save(array('password' => md5($_POST['newpwd'])))){
+				$this->success('密码修改成功，请登录',U('Com/login'));
+			}else{
+				$this->error('密码修改失败');
+			}
+		}else{
+			$this->error('用户名与邮箱不匹配');
+		}
+	}
 }
 ?>
