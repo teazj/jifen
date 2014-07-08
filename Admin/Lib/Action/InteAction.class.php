@@ -173,5 +173,13 @@ class InteAction extends GlobalAction{
 			$this->error('删除用户失败!');
 		}
 	}
+	public function group_mod_status(){
+		$return = M('qzOrders')->where('`id` in ('.$_POST['ids'].')')->save(array('qz_status'=>$_POST['status']));
+		if($return){
+			$this->success('提交成功',U('Index/index'));
+		}else{
+			$this->error('提交失败');
+		}
+	}
 }
 ?>
