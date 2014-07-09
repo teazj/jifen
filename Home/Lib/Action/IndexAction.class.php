@@ -290,7 +290,10 @@ class IndexAction extends Action {
 			$this->assign('comment_page',$show);// 赋值分页输出
 			$this->assign("comment_list",$comment_list);
 			
-			
+			//用户登录信息
+			$iflogin = session('FEUSER')?1:0;
+			$this->assign('iflogin',$iflogin);
+
 			$this->assign("info",$info);
 		}else{
 			$this->redirect("Index/index");

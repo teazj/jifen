@@ -87,6 +87,28 @@ class LoginAction extends Action{
 		}
 	}
 
+	//弹窗登录
+	public function tclogin(){
+		$username=$_GET['username'];
+		$password=md5($_GET['password']);
+		$res=M('Users')->where("username='{$username}' and password='{$password}'")->find();
+		if($res&&$res!=''){
+			//登陆成功把用户信息写入session
+			session("FEUSER",M('Users')->where('id='.$res['id'])->find());
+			if($_POST['remberpass']==1){//记住密码  一定要加个'/'网站根 不然取不到
+				cookie('username',$username,3600);
+				cookie('password',$_POST['password'],3600);
+			}else{//取消记住密码
+				cookie('username',null);
+				cookie('password',null);
+			}
+			echo json_encode(array('error'=>0));
+		}else{
+			echo json_encode(array('error'=>1,'message'=>'用户名或密码输入有误，请重新输入'));
+		}
+		exit();
+	}
+
 	public function logout(){
 		session("FEUSER",null);
 		$this->success('退出成功',U('Index/index'));
