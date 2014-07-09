@@ -1,7 +1,12 @@
 <?php
-//签证首页的国家详情页
 class HelpAction extends CommonAction{
 	public function help(){
-			$this->display();
+		$id = $_GET['id']?$_GET['id']:1;
+		$content = M('Help_list')->where('id='.$id.' and status = 2')->find();
+		if(!$content){
+			$this->error('该页已禁用');
 		}
+		$this->assign('content',$content);
+		$this->display();
+	}
 }

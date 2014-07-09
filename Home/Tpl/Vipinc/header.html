@@ -8,7 +8,9 @@
 <script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
 <script type="text/javascript" src="__PUBLIC__/Home/js/ss.js"></script>
 </head>
-
+<style type="text/css">
+    .nav li {width: 127px;}
+</style>
 <body>
 	<div class="header">
     	<div class="header_topbg">
@@ -57,11 +59,13 @@
         	<div class="nav_vip">
             	<div class="nav">
                     <ul>
-                        <li><a href="{:U('Index/Rzindex/index')}">站内首页</a></li>
-                        <li><a href="{:U('Index/About/aboutUs')}">关于我们</a></li>
-                        <li><a href="{:U('Index/QzColumn/index','tid=4')}">知识宝鼎</a></li>
-                        <li><a href="{:U('Index/RzCountry/rzList')}">单证与使馆认证</a></li>
-                        <li><a href="{:U('Index/Index/index')}">积分商城</a></li>
+                        <li><a href="javascript:void(0)">礼品分类</a></li>
+                        <li><a href="{:U('Index/index')}">商城首页</a></li>
+                        <li><a href="{:U('ShopGetGift/index')}">积分获取</a></li>
+                        <li><a href="{:U('Vip/index')}">我的积分</a></li>
+                        <li><a href="{:U('Index/lists')}">热门兑换</a></li>
+                        <li><a href="{:U('Qzindex/index')}">签证服务</a></li>
+                        <li><a href="{:U('Rzindex/index')}">认证服务</a></li>
                     </ul>
                 </div>
                 <div class="vip">
