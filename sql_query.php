@@ -83,3 +83,5 @@ ALTER TABLE `ff_users_info` CHANGE `nickname` `nickname` VARCHAR( 16 ) CHARACTER
 12，ALTER TABLE `ff_rzorder` CHANGE `phone` `phone` BIGINT(20) UNSIGNED NOT NULL;
 
 13，ALTER TABLE `ff_qzorder` CHANGE `phone` `phone` BIGINT(20) UNSIGNED NOT NULL;
+
+14,alter table `ff_flink` add column type tinyint(1) not null default 1 comment "1友情链接 2合作伙伴" after addtime;
