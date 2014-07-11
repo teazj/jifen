@@ -13,6 +13,7 @@ class IndexAction extends Action {
         //商品分类
         $tree=$this->getCategoryData(0,'goods_type');
 		$this->assign("tree",$tree);
+		$this->assign("tree_length",count($tree));
         
 		//礼品一级分类
 		$goods_type=M("Goods_type")->where('pid=0')->field('id,name')->select();
@@ -59,6 +60,7 @@ class IndexAction extends Action {
 		//商品分类
         $tree=$this->getCategoryData($pid,'goods_type');
 		$this->assign("tree",$tree);
+		$this->assign("tree_length",count($tree));
 		
 		//1精品推荐(左边)
 		$bestgoods=$this->getGoods(1);

@@ -1,41 +1,130 @@
 <include file="Public:header" />
+<script type="text/javascript">
+//首页下拉搜索栏 s
+$(function(){
+    $("#xxx").click(
+        function(){
+            $("#xxx").removeClass("xxx1").addClass("xxx2");
+            if($(".zzz").is(":hidden")){                      
+                $(".zzz").css("display","block");}
+            else{$(".zzz").css("display","none");
+                $("#xxx").removeClass("xxx2").addClass("xxx1");}
+                }
+            );
+});
+//首页下拉搜索栏 e
+</script>
+<style type="text/css">
+.zzz{ background:#fff; width:242px; position:relative; z-index:999; border:2px solid #CBCBCB; border-bottom:0px none; margin-left:-2px; border-top:none;}
+.xxx1{ display:block; width:244px; height:53px; background:url(__PUBLIC__/Home/images/shop/imagesx1.png) 117px center no-repeat; position:relative; z-index:99999;}
+.xxx2{ display:block; width:242px; height:53px; border-right:2px solid #CBCBCB; background:url(__PUBLIC__/Home/images/shop/imagesx2.png) 117px center no-repeat; position:relative; z-index:9999;border:2px solid #cbcbcb; border-top:none; margin-left:-2px; width:243px; border-right:1px solid #cbcbcb;}
+.sidelist{ background:#fff;}
+</style>
          <div class="banner">
         	<div class="ban_left">
-        		<div id="sidebar">
+                <div id="sidebar">
                 <!--one start-->
-                <volist name="tree" id="vo" offset="0" length="8">
+                <if condition="$tree_length lt 9">
+                <volist name="tree" id="vo">
                     <div class="sidelist">
-					<span class="type_big">
-						<h3><a href="{$vo[url]}" class="snav">{$vo[name]}</a>
-						<span class="ss">
-							<volist name="vo[hot]" id="vohot" offset="0" length="2">
-							<a href="{:U('Index/lists','id='.$vohot[id])}">{$vohot[name]|substr=0,24}</a> 
-							</volist>
-						</span>
-						</h3
-					</span>
-					<notempty name="vo[sub]">
-					<div class="i-list">
-						<div class="mnav">
-							<volist name="vo[sub]" id="vosub">
-							<ul>
-								<li>
-									<a href="{$vosub[url]}" class="big">{$vosub[name]}</a> 
-										<notempty name="vosub[sub]">
-											<volist name="vosub[sub]" id="vosubsub">
-											| <a href="{$vosubsub[url]}">{$vosubsub[name]}</a> 
-											</volist>
-										</notempty>
-								</li>
-							</ul>
-							</volist>
-						</div>
-					</div>
-					</notempty>
-				</div>
+                        <span class="type_big">
+                            <h3><a href="{$vo[url]}" class="snav">{$vo[name]}</a>
+                            <span class="ss">
+                                <volist name="vo[hot]" id="vohot" offset="0" length="2">
+                                <a href="{:U('Index/lists','id='.$vohot[id])}">{$vohot[name]|substr=0,24}</a> 
+                                </volist>
+                            </span>
+                            </h3>
+                        </span>
+                        <notempty name="vo[sub]">
+                        <div class="i-list">
+                            <div class="mnav">
+                                <volist name="vo[sub]" id="vosub">
+                                <ul>
+                                    <li>
+                                        <a href="{$vosub[url]}" class="big">{$vosub[name]}</a> 
+                                            <notempty name="vosub[sub]">
+                                                <volist name="vosub[sub]" id="vosubsub">
+                                                | <a href="{$vosubsub[url]}">{$vosubsub[name]}</a> 
+                                                </volist>
+                                            </notempty>
+                                    </li>
+                                </ul>
+                                </volist>
+                            </div>
+                        </div>
+                        </notempty>
+                    </div>
                 </volist>
-               </div>
-
+                <else />
+                <volist name="tree" id="vo" key="k">
+                    <if condition="$k gt 7">
+                    <div class="zzz" style="display: none;">
+                        <div class="sidelist">
+                            <span class="type_big">
+                                <h3><a href="{$vo[url]}" class="snav">{$vo[name]}</a>
+                                <span class="ss">
+                                    <volist name="vo[hot]" id="vohot" offset="0" length="2">
+                                    <a href="{:U('Index/lists','id='.$vohot[id])}">{$vohot[name]|substr=0,24}</a> 
+                                    </volist>
+                                </span>
+                                </h3>
+                            </span>
+                            <notempty name="vo[sub]">
+                            <div class="i-list">
+                                <div class="mnav">
+                                    <volist name="vo[sub]" id="vosub">
+                                    <ul>
+                                        <li>
+                                            <a href="{$vosub[url]}" class="big">{$vosub[name]}</a> 
+                                                <notempty name="vosub[sub]">
+                                                    <volist name="vosub[sub]" id="vosubsub">
+                                                    | <a href="{$vosubsub[url]}">{$vosubsub[name]}</a> 
+                                                    </volist>
+                                                </notempty>
+                                        </li>
+                                    </ul>
+                                    </volist>
+                                </div>
+                            </div>
+                            </notempty>
+                        </div>
+                    </div>
+                    <else />
+                        <div class="sidelist">
+                            <span class="type_big">
+                                <h3><a href="{$vo[url]}" class="snav">{$vo[name]}</a>
+                                <span class="ss">
+                                    <volist name="vo[hot]" id="vohot" offset="0" length="2">
+                                    <a href="{:U('Index/lists','id='.$vohot[id])}">{$vohot[name]|substr=0,24}</a> 
+                                    </volist>
+                                </span>
+                                </h3>
+                            </span>
+                            <notempty name="vo[sub]">
+                            <div class="i-list">
+                                <div class="mnav">
+                                    <volist name="vo[sub]" id="vosub">
+                                    <ul>
+                                        <li>
+                                            <a href="{$vosub[url]}" class="big">{$vosub[name]}</a> 
+                                                <notempty name="vosub[sub]">
+                                                    <volist name="vosub[sub]" id="vosubsub">
+                                                    | <a href="{$vosubsub[url]}">{$vosubsub[name]}</a> 
+                                                    </volist>
+                                                </notempty>
+                                        </li>
+                                    </ul>
+                                    </volist>
+                                </div>
+                            </div>
+                            </notempty>
+                        </div>
+                    </if>
+                </volist>                
+                <div class="sidelist"><a href="javascript:;" id="xxx" class="xxx1"></a></div>
+                </if>
+                </div>
         	</div>
         	<div class="ban_right"><a href=""><img src="__PUBLIC__/Home/images/shop/banner.jpg" /></a></div>
     	
