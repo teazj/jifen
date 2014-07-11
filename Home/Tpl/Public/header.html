@@ -46,7 +46,7 @@ $(function(){
                 	<a href="">
                 	<if condition="$Think.session.FEUSER eq null"><a href="{:U('Com/login','','')}">登录
 					</a> | <a href="{:U('Com/register','','')}">注册</a>
-                	<else/>您好：{$Think.session.FEUSER.username}<a href="{:U('Login/logout')}">[退出]</a>
+                	<else/>您好：<a href="{:U('Vip/index')}">{$Think.session.FEUSER.username}</a><a href="{:U('Login/logout')}">[退出]</a>
                 	</if>
                 	| <a href="{:U('Vip/index')}">我的账户</a> | <a href="{:U(Vip/exchange)}">我的积分</a>
                 </div>

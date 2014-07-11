@@ -71,7 +71,7 @@
                 <div class="vip">
                 	<ul>
                     <form>
-                    	<li>Hi {$Think.session.FEUSER.username}<a href="{:U('Index/Login/logout')}" class="out">[退出]</a></li>
+                    	<li>Hi <a href="{:U('Vip/index')}">{$Think.session.FEUSER.username}</a><a href="{:U('Index/Login/logout')}" class="out">[退出]</a></li>
                     </form>
                     </ul>
                 </div>
@@ -102,21 +102,21 @@
             </div>
             <div class="Mvip_3">
             	<dl>
-                	<dt><a href="">我的积分</a></dt>
+                	<dt><a href="javscript:;">我的积分</a></dt>
                     <dd><a href="{:U('ShopGetGift/index')}">积分兑换</a></dd>
                     <dd id="nobor_tom"><a href="{:U('Index/Vip/exchange')}">兑换记录</a></dd>
                 </dl>
             </div>
             <div class="Mvip_4">
             	<dl>
-                	<dt><a href="">我的设置</a></dt>
+                	<dt><a href="javscript:;">我的设置</a></dt>
                     <dd><a href="{:U('Index/Vip/userinfo')}">个人资料</a></dd>
                     <dd><a href="{:U('Index/Vip/pwd')}">修改密码</a></dd>
                 </dl>
             </div>
             <div class="Mvip_5">
             	<dl>
-                	<dt><a href="">配送地址</a></dt>
+                	<dt><a href="javscript:;">配送地址</a></dt>
                     <dd><a href="{:U('Index/Vip/address')}">我的配送地址</a></dd>
                     <dd id="nobor_tom"><a href="{:U('Index/Vip/addaddress')}">新增配送地址</a></dd>
                 </dl>
