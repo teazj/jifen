@@ -3,13 +3,13 @@
         	<div class="ban_left">
         		<div id="sidebar">
                 <!--one start-->
-                <volist name="tree" id="vo">
+                <volist name="tree" id="vo" offset="0" length="8">
                     <div class="sidelist">
 					<span class="type_big">
 						<h3><a href="{$vo[url]}" class="snav">{$vo[name]}</a>
 						<span class="ss">
-							<volist name="vo[hot]" id="vohot">
-							<a href="{:U('Index/lists','id='.$vohot[id])}">{$vohot[name]}</a> 
+							<volist name="vo[hot]" id="vohot" offset="0" length="2">
+							<a href="{:U('Index/lists','id='.$vohot[id])}">{$vohot[name]|substr=0,24}</a> 
 							</volist>
 						</span>
 						</h3
