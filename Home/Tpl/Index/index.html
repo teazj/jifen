@@ -198,7 +198,7 @@ $(function(){
             </div>
            
             <div class="main-two-pic">
-            	<volist name="sellgoods" id="vo">
+            	<volist name="bestgoods" id="vo">
             	<dl>
                 	<dt><a href="{:U('Index/info','id='.$vo[id])}"><img src="__ROOT__{$vo[thumb]}" width="206" height="244" /></a></dt>
                     <dd style=" text-align:left; margin-left:16px;"><a href="{:U('Index/info','id='.$vo[id])}">{$vo[name]|mb_substr=0,24,"utf-8"}</a></dd>
@@ -215,7 +215,7 @@ $(function(){
                 <div class="clear"></div>
             </div>
             <div class="main-thr-pic">
-            	<volist name="bestgoods" id="vo">
+            	<volist name="sellgoods" id="vo">
             	<dl>
                 	<dt><a href="{:U('Index/info','id='.$vo[id])}"><img src="__ROOT__{$vo[thumb]}" width="206" height="244" /></a></dt>
                     <dd style=" text-align:left; margin-left:16px;"><a href="{:U('Index/info','id='.$vo[id])}">{$vo[name]|mb_substr=0,24,"utf-8"}</a></dd>

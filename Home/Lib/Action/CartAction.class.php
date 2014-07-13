@@ -24,8 +24,9 @@ class CartAction extends Action {
 			$map=array();
 			$map['id']=$item_id;
 			$listarr=$Cdty->where($map)->find();
-			$this->assign('p_name',$listarr["title"]);	
-			$this->cart->add_goods($item_id);	//添加到购物车里面
+			$this->assign('p_name',$listarr["title"]);
+			$q=$_GET['q'];	
+			$this->cart->add_goods($item_id,$q);	//添加到购物车里面
 			$this->assign('isshow',"1");
 		}
 		else
