@@ -100,7 +100,7 @@ input[type=button]{ cursor:pointer;}
 .main-one-tit span{ float:right; margin-right:11px;}
 .main-one-tit span a{ padding-right:26px; background:url(../../images/shop/icon_03.jpg) right center no-repeat; color:#000; font-weight:100; font-size:12px; }
 .main-one-pic{ width:1095px; height:400px;}
-.main-one-pic dl{ float:left; width:207px; height:376px; color:#525050; padding:2px; border:1px solid #cbc9c9; margin-right:8px;}
+.main-one-pic dl{ float:left; width:207px; height:376px; color:#525050; padding:2px; border:1px solid #cbc9c9; margin-right:6px;}
 .main-one-pic dt{ width:207px;}
 .main-one-pic dd{ width:207px; height:37px; line-height:37px;}
 .main-one-pic .bb{ text-align:left; line-height:16px; margin-left:16px;}
@@ -109,7 +109,7 @@ input[type=button]{ cursor:pointer;}
 .main-one-pic dd a:hover{ color:#930;}
 .main-one-pic .red{ color:red;}
 
-
+.main-two{clear:both;}
 .main-two-titbg{ float:left; width:61px; height:57px; margin-bottom:10px; background:url(../../images/shop/main_two_titbg.jpg) left center no-repeat;}
 .main-two-tit{ float:left; width:1020px; height:45px; border-top:4px solid #cc2e2b; border-bottom:1px solid #dde1fc; border-right:1px solid #dae5fb; background:#eef2fe; line-height:45px; text-align:left; padding-left:13px;}
 .main-two-tit a{ font-size:14px; color:#cc2e2b; font-weight:bold; font-family:"宋体"；}
@@ -125,6 +125,7 @@ input[type=button]{ cursor:pointer;}
 .main-two-pic dd a:hover{ color:#930;}
 .main-two-pic .red{ color:red;}
 
+.main-thr{clear:both;}
 .main-thr-titbg{ float:left; width:61px; height:57px; margin-bottom:10px; background:url(../../images/shop/main_thr_titbg.jpg) left center no-repeat;}
 .main-thr-tit{ float:left; width:1020px; height:45px; border-top:4px solid #be14cd; border-bottom:1px solid #dde1fc; border-right:1px solid #dae5fb; background:#eef2fe; line-height:45px; text-align:left; padding-left:13px;}
 .main-thr-tit a{ font-size:14px; color:#c41bd6; font-weight:bold; font-family:"宋体"；}
