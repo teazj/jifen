@@ -19,6 +19,12 @@ $(function(){
 .xxx1{ display:block; width:244px; height:53px; background:url(__PUBLIC__/Home/images/shop/imagesx1.png) 117px center no-repeat; position:relative; z-index:99999;}
 .xxx2{ display:block; width:242px; height:53px; border-right:2px solid #CBCBCB; background:url(__PUBLIC__/Home/images/shop/imagesx2.png) 117px center no-repeat; position:relative; z-index:9999;border:2px solid #cbcbcb; border-top:none; margin-left:-2px; width:243px; border-right:1px solid #cbcbcb;}
 .sidelist{ background:#fff;}
+
+.mnav ul li{ width:472px; border-bottom:1px solid #b1aeae;}
+.mnav h1{ float:left; width:86px; line-height:24px; text-align:right; margin-right:8px;}
+.mnav .mnav_a{ float:left; width:326px;}
+.mnav .mnav_a em{ float:left; margin:4px 0; padding:0 8px; height:16px; line-height:16px; border-left:1px solid #4e4c4c;}
+.mnav .mnav_a em a{ font-style:normal;}
 </style>
         <div class="banner">
         	<div class="ban_left">
@@ -42,12 +48,15 @@ $(function(){
     							<volist name="vo[sub]" id="vosub">
     							<ul>
     								<li>
-    									<a href="{$vosub[url]}" class="big">{$vosub[name]}</a> 
+    									<h1><a href="{$vosub[url]}" class="big">{$vosub[name]}</a></h1>
+    									<div class="mnav_a">
     										<notempty name="vosub[sub]">
     											<volist name="vosub[sub]" id="vosubsub">
-    											| <a href="{$vosubsub[url]}">{$vosubsub[name]}</a> 
+    											<em><a href="{$vosubsub[url]}">{$vosubsub[name]}</a></em>
     											</volist>
     										</notempty>
+    									</div>
+    									<div class="clear"></div>
     								</li>
     							</ul>
     							</volist>
@@ -76,12 +85,15 @@ $(function(){
                                     <volist name="vo[sub]" id="vosub">
                                     <ul>
                                         <li>
-                                            <a href="{$vosub[url]}" class="big">{$vosub[name]}</a> 
-                                                <notempty name="vosub[sub]">
-                                                    <volist name="vosub[sub]" id="vosubsub">
-                                                    | <a href="{$vosubsub[url]}">{$vosubsub[name]}</a> 
-                                                    </volist>
-                                                </notempty>
+                                            <h1><a href="{$vosub[url]}" class="big">{$vosub[name]}</a></h1>
+	    									<div class="mnav_a">
+	    										<notempty name="vosub[sub]">
+	    											<volist name="vosub[sub]" id="vosubsub">
+	    											<em><a href="{$vosubsub[url]}">{$vosubsub[name]}</a></em>
+	    											</volist>
+	    										</notempty>
+	    									</div>
+	    									<div class="clear"></div>
                                         </li>
                                     </ul>
                                     </volist>
@@ -107,12 +119,15 @@ $(function(){
                                     <volist name="vo[sub]" id="vosub">
                                     <ul>
                                         <li>
-                                            <a href="{$vosub[url]}" class="big">{$vosub[name]}</a> 
-                                                <notempty name="vosub[sub]">
-                                                    <volist name="vosub[sub]" id="vosubsub">
-                                                    | <a href="{$vosubsub[url]}">{$vosubsub[name]}</a> 
-                                                    </volist>
-                                                </notempty>
+                                            <h1><a href="{$vosub[url]}" class="big">{$vosub[name]}</a></h1>
+	    									<div class="mnav_a">
+	    										<notempty name="vosub[sub]">
+	    											<volist name="vosub[sub]" id="vosubsub">
+	    											<em><a href="{$vosubsub[url]}">{$vosubsub[name]}</a></em>
+	    											</volist>
+	    										</notempty>
+	    									</div>
+	    									<div class="clear"></div>
                                         </li>
                                     </ul>
                                     </volist>
