@@ -65,7 +65,7 @@
 					<input class="jia" type="button" value="+">
 				</dd>
                 <dd>库&nbsp;&nbsp;&nbsp;&nbsp;存：<span class="sx_pl"><if condition="$info[stock] gt 0">有货<else/>无货</if></span></dd>
-                <dd><if condition="$iflogin eq 1"><a class="sx_inp1" href="{:U('Cart/index','item_id='.$info[id])}">立即购买</a><a class="sx_inp2" href="{:U('Cart/index','item_id='.$info[id])}">加入购物车</a><else /><a class="sx_inp1 showbox1" href="javascript:;">立即购买</a><a class="sx_inp2 showbox1" href="javascript:;">加入购物车</a></if></dd>
+                <dd><if condition="$iflogin eq 1"><a class="sx_inp1"  href="javascript: getshuzi();">立即购买</a><a class="sx_inp2" id="addcart" href="javascript: getshuzi();">加入购物车</a><else /><a class="sx_inp1 showbox1" href="javascript:;">立即购买</a><a class="sx_inp2 showbox1" href="javascript:;">加入购物车</a></if></dd>
             </dl>
             <!--登录弹出层  s-->
             <div id="TB_overlayBG"></div>
@@ -312,6 +312,15 @@
 		return true;
 	}
 </script>
+<script type="text/javascript">
+	function getshuzi(){
+		var q=$(".shuzi").val();
+		window.location="__APP__"+"/Cart/index/item_id/"+"{$info['id']}"+"/q/"+q+".html";
+		//return true;
+	}
+	
+</script>
+
 
 <script src="__PUBLIC__/Home/js/163css.lib.js" type=text/javascript></script>
 <script src="__PUBLIC__/Home/js/163css.js" type=text/javascript></script>
