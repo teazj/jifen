@@ -22,6 +22,16 @@
                         <li>详细地址：{$userinfo.address}</li>
                         <!-- <li>邮政编码：{$userinfo.zipCode}</li> -->
                     </ul>
+					<div class="person_btn">
+						
+							<input class="vip_inp2" type="button" value="确认修改" name="" onclick='goxiugai();'>
+							<script type="text/javascript">
+								function goxiugai(){
+									window.location="{:U('Vip/userinfo')}";
+								}
+							</script>
+					</div>
+			
                 </div>
                 <!-- <div class="person_d">
                 	<ul>
