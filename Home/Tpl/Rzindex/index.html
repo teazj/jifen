@@ -24,7 +24,7 @@
                     <div class="sidelist">
                         <span><h3><a href="{:U('RzCountry/rzClass',array('id'=>$t['id']),'')}" class="znav">{$t.name}</a>
                             <span class="ss">
-                                <volist name="t.sub" id="ts">
+                                <volist name="t.sub" id="ts" offset="0" length="2">
                                 <a href="{:U('Rzvista/index',array('id'=>$ts['id']))}">{$ts.name}</a>
                                 </volist>
                             </span></h3></span>
