@@ -4,11 +4,11 @@
             <div class="myorderr_con">
             	<div id="tabbox">
                     <ul class="tabs" id="tabs2">
-                       <li class="now"><a href="{:U('Index/Vip/jforder')}">所有订单</a></li>
-                       <li><a href="{:U('Index/Vip/jforder','status=0')}">待付款的订单</a></li>
-                       <li><a href="{:U('Index/Vip/jforder','status=1')}">已取消的订单</a></li>
-                       <li><a href="{:U('Index/Vip/jforder','status=2')}">已付款的订单</a></li>
-                       <li><a href="{:U('Index/Vip/jforder','status=3')}">已成功的订单</a></li>
+                       <li class='<eq name="Think.get.status" value="">now</eq>'><a href="{:U('Index/Vip/jforder')}">所有订单</a></li>
+                       <li class='<eq name="Think.get.status" value="0">now</eq>'><a href="{:U('Index/Vip/jforder','status=0')}">待付款的订单</a></li>
+                       <li class='<eq name="Think.get.status" value="1">now</eq>'><a href="{:U('Index/Vip/jforder','status=1')}">已取消的订单</a></li>
+                       <li class='<eq name="Think.get.status" value="2">now</eq>'><a href="{:U('Index/Vip/jforder','status=2')}">已付款的订单</a></li>
+                       <li class='<eq name="Think.get.status" value="3">now</eq>'><a href="{:U('Index/Vip/jforder','status=3')}">已成功的订单</a></li>
                     </ul>
                         	<table cellpadding="0" cellspacing="0" border="0px none" width="100%">
                                 <tr class="or_tabtit">

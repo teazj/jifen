@@ -14,18 +14,18 @@ input[type=button]:hover{ color:#F00;}
 
 /*-----------------------会员中心header头部-----------------------*/
 /*-----header_top部分-----*/
-.header_topbg{ width:auto; height:31px; border-top:1px solid #9c9b9b; border-bottom:1px solid #9c9b9b; background:url(../images/header_topbg.jpg) left center repeat-x;}
-.top_yy{ width:auto; height:5px; background:url(../images/topbg_yy.jpg) left center repeat-x;}
+.header_topbg{ width:auto; height:31px; border-top:1px solid #9c9b9b; border-bottom:1px solid #9c9b9b; background:url(../../images/shop/header_topbg.jpg) left center repeat-x;}
+.top_yy{ width:auto; height:5px; background:url(../../images/shop/topbg_yy.jpg) left center repeat-x;}
 .head{ margin:0 auto; width:1072px; height:31px; line-height:31px; }
 .date{ float:left; color:#797878;}
 .tel{ float:left; margin-left:200px; color:#d40001;}
-.tel_bg{ padding-left:25px; background:url(../images/tel_bg.png) left center no-repeat;}
+.tel_bg{ padding-left:25px; background:url(../../images/shop/tel_bg.png) left center no-repeat;}
 .top_nav{ float:right;}
 .top_nav a{ display:block; float:left; margin:0 8px; font-size:12px; color:#969798;}
 .top_nav a:hover{ color:#F00;}
-.fenxiang{ padding-left:26px; background:url(../images/topnav_abg_01.png) left center no-repeat;}
-.weixin{ padding-left:29px; background:url(../images/topnav_abg_02.png) left center no-repeat;}
-.shoucang{ padding-left:26px; background:url(../images/topnav_abg_03.png) left center no-repeat;}
+.fenxiang{ padding-left:26px; background:url(../../images/shop/topnav_abg_01.png) left center no-repeat;}
+.weixin{ padding-left:29px; background:url(../../images/shop/topnav_abg_02.png) left center no-repeat;}
+.shoucang{ padding-left:26px; background:url(../../images/shop/topnav_abg_03.png) left center no-repeat;}
 /*-----header_top部分-----*/
 
 /*-----long_search-----*/
@@ -61,7 +61,7 @@ input[type=button]:hover{ color:#F00;}
 
 /*-----------------------------会员中心footer底部---------------------------*/
 /*-------------------会员中心footer页面底部的top阴影-----------------*/
-.footer_topbg{ width:auto; height:13px; margin-top:20px; margin-bottom:17px; background:url(../images/Vip_footer_topbg.jpg) left center repeat-x;}
+.footer_topbg{ width:auto; height:13px; margin-top:20px; margin-bottom:17px; background:url(../../images/shop/Vip_footer_topbg.jpg) left center repeat-x;}
 
 .footer{ width:auto; height:174px; background:#dad7d7; border-top:1px solid #b1afaf;}
 
