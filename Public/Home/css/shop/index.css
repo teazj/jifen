@@ -38,7 +38,7 @@ input[type=button]{ cursor:pointer;}
 
 
 .banner{ margin:0 auto; width:1095px; height:420px;}
-.ban_left{ width:244px; hiehgt:auto; float:left; border:1px solid #cbcbcb;}
+.ban_left{ width:244px; hiehgt:auto; float:left; border:0px solid #cbcbcb;}
 /*
 .type_once{ height:52px; text-align:left; line-height:22px; background:#f9f8f8;}
 .type_once h3 a{ color:#cf0211; margin-left:10px; padding-left:20px;}
