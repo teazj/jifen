@@ -30,10 +30,11 @@ input[type=button]{ cursor:pointer;}
 .nav{ margin:0 auto; width:1095px; height:50px;}
 .nav ul{ width:1095px; height:50px; padding:0;}
 .nav ul li{ float:left; width:130px; height:50px; text-align:center; line-height:50px;}
-.Mnav{ margin-left:60px; margin-right:100px; width:245px; height:50px;}
+.Mnav{ margin-left:60px; margin-right:100px; width:245px; height:50px;font-size:14px; color:#ffffff; font-family:微软雅黑;}
 .nav .shuxian{ width:2px; height:27px; margin-top:14px; background:url(../../images/shop/shuxian.jpg) no-repeat;}
 .nav a{ display:block; font-size:14px; color:#ffffff; font-family:微软雅黑;}
 .nav ul li a:hover{ background:url(../../images/shop/ahoverbg.jpg) no-repeat;}
+.nav ul li .now{background:url(../../images/shop/ahoverbg.jpg) no-repeat;};
 
 
 

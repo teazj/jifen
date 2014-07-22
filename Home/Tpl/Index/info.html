@@ -108,7 +108,7 @@
             		<volist name="bestgoods" id='vo'>
             	<dl>
                 	<dt><a href="{:U('Index/info','id='.$vo[id])}"><img src="__ROOT__{$vo[thumb]}" width="206" height="244" /></a></dt>
-                    <dd><a href="{:U('Index/info','id='.$vo[id])}">{$name}</a></dd>
+                    <dd><a href="{:U('Index/info','id='.$vo[id])}">{$vo[name]}</a></dd>
                     <dd>积分值：<span class="red">{$vo[jifen]}</span>积分</dd>
                 </dl>
                 	</volist>

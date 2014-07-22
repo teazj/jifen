@@ -69,18 +69,18 @@ $(function(){
         <div class="navbg">
         	<div class="nav">
             	<ul>
-                	<li class="Mnav"><a class="type_lock" href="javascript:void(0)">礼品分类</a></li>
-                    <li><a href="{:U('Index/index')}">商城首页</a></li>
+                	<li class="Mnav"><span class="type_lock" href="javascript:void(0)">礼品分类</span></li>
+                    <li><a href="{:U('Index/index')}" <if condition="($Think.const.MODULE_NAME  eq Index) && ($Think.const.ACTION_NAME  eq index) ">class="now"</if> >商城首页</a></li>
                     <li class="shuxian"></li>
-                    <li><a href="{:U('ShopGetGift/index')}">积分获取</a></li><!--{:U('Index/ShopGetGift/index','','')}-->
+                    <li><a href="{:U('ShopGetGift/index')}" <if condition="($Think.const.MODULE_NAME  eq ShopGetGift) && ($Think.const.ACTION_NAME  eq index) ">class="now"</if> >积分获取</a></li><!--{:U('Index/ShopGetGift/index','','')}-->
                     <li class="shuxian"></li>
-                    <li><a href="{:U('Vip/index')}">我的积分</a></li><!--{:U('Index/Vip/index')}-->
+                    <li><a href="{:U('Vip/index')}" <if condition="($Think.const.MODULE_NAME  eq Vip) && ($Think.const.ACTION_NAME  eq index) ">class="now"</if> >我的积分</a></li><!--{:U('Index/Vip/index')}-->
                     <li class="shuxian"></li>
-                    <li><a href="{:U('Index/lists')}">热门兑换</a></li>
+                    <li><a href="{:U('Index/lists')}" <if condition="($Think.const.MODULE_NAME  eq Index) && ($Think.const.ACTION_NAME  eq lists) ">class="now"</if> >热门兑换</a></li>
                     <li class="shuxian"></li>
-					<li><a href="{:U('Qzindex/index')}">签证服务</a></li>
+					<li><a href="{:U('Qzindex/index')}" <if condition="($Think.const.MODULE_NAME  eq Qzindex) && ($Think.const.ACTION_NAME  eq lists) ">class="now"</if>>签证服务</a></li>
                     <li class="shuxian"></li>
-					<li><a href="{:U('Rzindex/index')}">认证服务</a></li>
+					<li><a href="{:U('Rzindex/index')}" <if condition="($Think.const.MODULE_NAME  eq Rzindex) && ($Think.const.ACTION_NAME  eq lists) ">class="now"</if> >认证服务</a></li>
                 </ul>
             </div>
         </div>
