@@ -3,7 +3,7 @@
                 <div class="date">欢迎访问速格　{$Think.now}</div>
                 <div class="top_nav">
                 <if condition="$iflogin eq 0">
-                    <a href="{:U('Com/login','','')}">登录</a>|<a href="'Com/register','',''">注册</a>
+                    <a href="{:U('Com/login','','')}">登录</a>|<a href="{:U('Com/register','','')}">注册</a>
                 <else />
                         <a href="javascript:;">您好:</a><a href="{:U('Index/Vip/index')}" />{$user_info.username}</a>
                     </if>|<a href="{:U('ShopGetGift/index')}">积分兑换</a>|<a href="">一键分享</a></div>
