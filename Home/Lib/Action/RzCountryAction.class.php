@@ -9,6 +9,9 @@ class RzCountryAction extends Action{
 			$this->assign('user_info',session('FEUSER'));
 		}
 		$this->assign('iflogin',$iflogin);
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
 	}
 	//全部认证;
 	public function rzList(){

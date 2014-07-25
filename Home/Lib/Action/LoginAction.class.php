@@ -1,5 +1,10 @@
 <?php
 class LoginAction extends Action{
+	public function _initialize(){
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
+	}
 	//ajax返回数据检测是否已存在用户名
 	public function check_username(){
 		$username=$_POST['username'];

@@ -10,6 +10,9 @@ class QzColumnAction extends Action {
 			$this->assign('user_info',session('FEUSER'));
 		}
 		$this->assign('iflogin',$iflogin);
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
 	}
 	//知识宝鼎
 	public function index(){

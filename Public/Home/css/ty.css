@@ -72,7 +72,7 @@ input[type=radio]:hover{ cursor:pointer;}
 .footer_sanjiao{ margin:0 auto; width:24px; height:15px; background:url(../images/rzimages/footer_sanjiao.png) no-repeat; position:relative; left:0; top:2px;}
 .footer_bg{ width:auto; height:174px; background:#dad7d7; border-top:1px solid #b1afaf;}
 .link{ margin:0 auto; width:1032px; margin-top:40px;}
-.link a{ color:#595858; font-family:宋体; margin:0 8px; line-height:30px;} 
+.link a{ color:#595858; font-family:微软雅黑; margin:0 8px; line-height:30px;} 
 .link a:hover{ color:#F00;}
 .copyright p{ line-height:22px; margin-top:10px; color:#595858;}
 /*---------------认证首页 footer 底部---------------*/

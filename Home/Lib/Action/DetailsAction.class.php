@@ -1,5 +1,10 @@
 <?php
 class DetailsAction extends Action{
+	public function _initialize(){
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
+	}
 	public function index(){
 		//是否登录的判断
 		if(!session('FEUSER') || session('FEUSER')==''){

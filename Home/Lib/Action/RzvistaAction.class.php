@@ -1,6 +1,11 @@
 <?php
 //签证首页的国家详情页
 class RzvistaAction extends Action{
+    public function _initialize(){
+        //友情链接
+        $listflink=M("Flink")->where('isshow=1')->select();
+        $this->assign("listflink",$listflink);
+    }
 	//分页的每页记录数。
 	public $page_size = 10;
 	public function index(){

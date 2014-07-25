@@ -319,7 +319,7 @@
 
 /*------------------------------- sgdt速格动态页面  -------------------------------*/
 .sgdt{ margin:0 auto; width:708px;}
-.sgdt dl{ width:708px; height:125px; margin-top:5px; border-bottom:1px dotted #5f5e5e; text-align:left;}
+.sgdt dl{ width:708px; min-height:110px; padding-bottom:15px; margin-top:5px; border-bottom:1px dotted #5f5e5e; text-align:left;}
 .sgdt dt{ margin:0 auto; width:636px; height:40px; line-height:40px; text-align:left;}
 .sgdt dt a{ font-family:微软雅黑; font-size:14px; font-weight:bold; color:#000000;}
 .sgdt dd{ margin:0 auto; width:636px;}

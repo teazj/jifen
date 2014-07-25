@@ -1,5 +1,10 @@
 <?php
 class DownDataAction extends Action{
+	public function _initialize(){
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
+	}
 	public function download(){
 		$boxs = fPage('Rzdownfile', 10);
 		// print_r($boxs);

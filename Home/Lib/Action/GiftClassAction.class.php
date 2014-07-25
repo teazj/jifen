@@ -1,5 +1,10 @@
 <?php
 class GiftClassAction extends Action{
+	public function _initialize(){
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
+	}
 	public  function index(){
 		$gift_class = M ( 'giftClass' );
 		

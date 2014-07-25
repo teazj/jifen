@@ -17,13 +17,14 @@
     .nav{float:none;}
     
 /*  2个详细的链接的弹出层  */
+.showbox_con{ width:587px; height:258px; padding-top:25px; margin-top:10px; margin-left:10px; background:#fff;}
 .showdiv{ color:#006cb1; float:right;}
-.showbox{width:587px; height:258px; display:none;position:absolute;right:0;top:0;z-index:100;border:10px solid #eeeeee; padding-top:25px; background:#fff; }
+.showbox{width:607px; height:303px; display:none;position:absolute;right:0;top:0;z-index:100; background-color:rgba(255, 255, 255, 0.5); }
 .showbox h2 a{ margin:0 auto; text-align:center; display:block; width:175px; height:50px; line-height:50px; font-size:18px; letter-spacing:2px; color:#FFFFFF; font-weight:bold; background:#f90304; margin-top:32px;}
 .showbox .mainlist{ width:510px;padding-left:45px;}
 .f_14w{ font-size:14px; font-weight:bold; color:#000000;}
 .showbox .mainlist p{font:normal 14px/2 'microsoft yahei';color:#363636;margin-top:13px; line-height:22px;}
-#zhezhao{background-color:#666;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
+#zhezhao{background-color:#000;position:absolute;z-index:99;left:0;top:0;display:none;width:100%;height:100%;opacity:0.5;filter: alpha(opacity=50);-moz-opacity: 0.5;}
 /*  2个详细的链接的弹出层  */
 </style>
 <body>
@@ -80,14 +81,19 @@
                             <li><span class="rr_f"><span class="f_hw">是否面试：</span><if condition="$vo['isface'] eq 0">不需要<else/>需要</if></span><span class="rr_f"><span class="f_hw">有效时间：</span>{$vo.vday}天</span><span class="rr_f"><span class="f_hw">最多停留：</span>{$vo.staday}</span><span class="rr_f"><span class="f_hw">入境次数：</span>1</li>
                         	<li><span class="f_hw">受理范围：</span>{$vo.mian}<a href="javascript:;" class="showdiv">详细</a></li>
                             <li><span class="f_hw">产品名称：</span><volist name="b" id="vo2" key="k"><span class="af"><a onclick="price({$k-1})">{$vo2}</a></span></volist></li>
+<!--详细弹出层  s-->
 <div class="showbox" style="width:687px;z-index: 10000;">
-    <div class="mainlist">
-        <p><span class="f_14w">受理范围：</span>{$vo.mian}</p>
-        <p><span class="f_14w">办理时间：</span>预计至少{$vo.workday}个工作日</p>
+	<div class="showbox_con">
+        <div class="mainlist">
+            <p><span class="f_14w">受理范围：</span>{$vo.mian}</p>
+            <p><span class="f_14w">办理时间：</span>预计至少{$vo.workday}个工作日</p>
+        </div>
+        <h2><a class="close" href="javascript:;">返回</a></h2>
+        <div class="clear"></div>
     </div>
-    <h2><a class="close" href="javascript:;">返回</a></h2>
-    <div class="clear"></div>
-</div>  
+</div>
+<div id="zhezhao"></div>
+<!--详细弹出层  e-->
                             <form action="{:U('Index/Rzorder/index')}" method="post">
 								<input type="hidden" name="logo" value="{$vo.logo}">
 								<input type="hidden" name="price" id="price" value="{$a[0]}">

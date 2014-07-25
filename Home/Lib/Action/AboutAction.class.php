@@ -62,6 +62,9 @@ class AboutAction extends Action{
 		$contactUs =$alone->where("pageName='{$title}'")->find();
 		if(!$contactUs) exit('数据未找到.!');
 		$this->assign('cxzz',$contactUs);
+		//友情链接
+		$listflink=M("Flink")->where('isshow=1')->select();
+		$this->assign("listflink",$listflink);
 	}
 }
 ?>
