@@ -58,7 +58,7 @@ input[type=button]{ cursor:pointer;}
 
 #sidebar{ width:243px; background:#ffffff; height:409px; border:1px solid #b4b4b4; padding-top:5px;}
 #sidebar h3{padding-left:30px;}
-.sidelist{ position:relative; z-index:1; height:auto; width:243px;}
+.sidelist{ /*position:relative;*/ z-index:1; height:auto; width:243px;}
 .sidelist span h3 .snav{ font-size:14px; color:#cf0211; padding-left:22px; background:url(../../images/shop/type_once_a.png) left center no-repeat;}
 .sidelist span h3{ text-align:left; position:relative; z-index:2; height:51px; line-height:25px; font-size:14px; font-weight:normal;}
 .type_so{ margin-left:97px;}
