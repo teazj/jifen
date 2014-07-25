@@ -221,7 +221,7 @@ class VipAction extends CommonAction{
 		$count =M('Rzorder')->where($condition)->count();
 		$Page = new Page($count,10);
 		$show = $Page->show();
-		$m=M('Qzorder')->where($condition)->limit($Page->firstRow.','.$Page->listRows)->select();
+		$m=M('Rzorder')->where($condition)->limit($Page->firstRow.','.$Page->listRows)->select();
 		// $id=array();//存放订单对应的商品id
 		// foreach($m as $v){
 			// $id[]=$v['sid'];

@@ -15,7 +15,7 @@
                 <div class="person_m">
                 	<ul>
                     	<li>真实姓名：{$userinfo.nickname}</li>
-                        <li>性&nbsp;&nbsp;&nbsp;&nbsp;别：<if condition="$userinfo['sex'] eq m">男<else/>女</if></li>
+                        <li>性&nbsp;&nbsp;&nbsp;&nbsp;别：<if condition="$userinfo['sex'] eq m">男<else if condition="$userinfo['sex'] eq w" />女</if></li>
                         <li>昵&nbsp;&nbsp;&nbsp;&nbsp;称：{$v.username}</li>
                         <li>联系电话：{$userinfo.phone}</li>
                         <!-- <li>所属省份：{$userinfo.address}</li> -->

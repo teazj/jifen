@@ -21,11 +21,12 @@ class IndexAction extends Action {
 		
 		//积分范围数组
 		$jifen_arr=array(
-			array('id'=>1,'name'=>'100~1000'),
-			array('id'=>2,'name'=>'1000~5000'),
-			array('id'=>3,'name'=>'5000~10000'),
-			array('id'=>4,'name'=>"10000~50000"),
-			array('id'=>5,'name'=>"50000以上"),
+			array('id'=>1,'name'=>'0~100'),
+			array('id'=>2,'name'=>'100~1000'),
+			array('id'=>3,'name'=>'1000~5000'),
+			array('id'=>4,'name'=>'5000~10000'),
+			array('id'=>5,'name'=>"10000~50000"),
+			array('id'=>6,'name'=>"50000以上"),
 		);
 		$this->assign("jifen_arr",$jifen_arr);
 		
@@ -81,11 +82,12 @@ class IndexAction extends Action {
 		//积分范围数组
 		$jifen_arr=array(
 			array('id'=>0,'name'=>'全部'),
-			array('id'=>1,'name'=>'100~1000'),
-			array('id'=>2,'name'=>'1000~5000'),
-			array('id'=>3,'name'=>'5000~10000'),
-			array('id'=>4,'name'=>"10000~50000"),
-			array('id'=>5,'name'=>"50000以上"),
+			array('id'=>1,'name'=>'0~100'),
+			array('id'=>2,'name'=>'100~1000'),
+			array('id'=>3,'name'=>'1000~5000'),
+			array('id'=>4,'name'=>'5000~10000'),
+			array('id'=>5,'name'=>"10000~50000"),
+			array('id'=>6,'name'=>"50000以上"),
 		);
         foreach ($jifen_arr as $k => &$v) {//分配积分区间url
             if ($_GET['jf'] == $v['id']) {
@@ -101,16 +103,19 @@ class IndexAction extends Action {
         //封装价格搜索条件
         if (isset($_GET['jf'])) {
             switch ($_GET['jf']) {
-                case 1:$map['price'] = array('between', intval(100/$rule).','.intval(1000/$rule));
+            	case 1:$map['price'] = array('between', '0,'.intval(100/$rule));
                     break;
-                case 2: $map['price'] = array('between', intval(1000/$rule).','.intval(5000/$rule));
+                case 2:$map['price'] = array('between', intval(100/$rule).','.intval(1000/$rule));
                     break;
-                case 3: $map['price'] = array('between', intval(5000/$rule).','.intval(10000/$rule));
+                case 3: $map['price'] = array('between', intval(1000/$rule).','.intval(5000/$rule));
                     break;
-                case 4: $map['price'] = array('between', intval(10000/$rule).','.intval(50000/$rule));
+                case 4: $map['price'] = array('between', intval(5000/$rule).','.intval(10000/$rule));
                     break;
-                case 5:$map['price'] = array('gt', intval(50000/$rule));
+                case 5: $map['price'] = array('between', intval(10000/$rule).','.intval(50000/$rule));
                     break;
+                case 6:$map['price'] = array('gt', intval(50000/$rule));
+                    break;
+
                 default:$map['price'] = array('gt', 0);
             }
         }

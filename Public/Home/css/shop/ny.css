@@ -438,7 +438,7 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .noxd_inp6{ width:59px; height:22px; line-height:22px; margin-top:2px; margin-left:11px; margin-right:54px; color:#FFF; background:url(../../images/shop/noxd_inp6.png) no-repeat;}
 .noxd_inp7, .noxd_inp8{ width:54px; height:21px; line-height:21px; border:1px solid #dfdfdf; margin-left:8px;}
 
-.Mnoxr_dcon dl{ float:left;  /*height:273px;*/ border:1px solid #ecebeb; margin-top:10px; margin-left:4px;}
+.Mnoxr_dcon dl{width:206px; float:left;  /*height:273px;*/ border:1px solid #ecebeb; margin-top:10px; margin-left:4px;}
 .Mnoxr_dcon dt{  padding-top:24px;}
 .Mnoxr_dcon h3 a{ line-height:28px;}
 .Mnoxr_dcon dd{ color:#3b84d6;  line-height:16px;}
