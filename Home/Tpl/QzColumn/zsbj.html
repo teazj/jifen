@@ -37,7 +37,7 @@
                                     <dt><a href="{:U('Index/QzColumn/index',array('tid'=>$l['tid'],'id'=>$l['zid']))}">{$l['title']}</a></dt>
                                     <dd>
                                         <a href="{:U('Index/QzColumn/index',array('tid'=>$l['tid'],'id'=>$l['zid']))}"><img src="__PUBLIC__/Admin/Images/News/NewsPic/{$l['newspic']}" width=81 height=70 /></a>
-                                        <p>{$l['content']}
+                                        <p>{$l['content']|mb_substr=0,100,"utf-8"}
                                         <span class="Dt_more"><a href="{:U('Index/QzColumn/index',array('tid'=>$l['tid'],'id'=>$l['zid']))}">详细>></a></span></p>
                                     </dd>
                                 </dl>

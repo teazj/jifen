@@ -324,7 +324,7 @@
 .sgdt dt a{ font-family:微软雅黑; font-size:14px; font-weight:bold; color:#000000;}
 .sgdt dd{ margin:0 auto; width:636px;}
 .sgdt dd img{ float:left; margin-right:22px;}
-.sgdt dd p{ line-height:22px;}
+.sgdt dd p{ line-height:22px;padding-bottom:10px;}
 .Dt_more{ float:right;}
 .Dt_more a{ color:#006699;}*/
 .wTab{ width:744px; overflow:hidden;}

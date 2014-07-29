@@ -228,10 +228,10 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .M_vipmm{ margin:30px auto 0; width:1072px; position:relative;}
 
 /*------------  Mvip_left密码修改页面左侧菜单部分  ------------*/
-.Mvip_left{ float:left; width:280px; height:881px; color:#000; border:1px solid #d3d1d1;}
+.Mvip_left{ float:left; width:280px; /*height:881px;*/ color:#000; border:1px solid #d3d1d1;}
 .Mvip_left a{ color:#000;}
 .Mvip_left dt{ width:280px; height:52px; line-height:52px; background:#0099cc; text-align:left;}
-.Mvip_left dt a{ font-size:18px; font-family:微软雅黑; color:#FFF; background:url(../../images/shop/Mvip_dt_abg.png) left center no-repeat; padding-left:43px; margin-left:29px;}
+.Mvip_left dt span{ display: inline-block; font-size:18px; font-family:微软雅黑; color:#FFF; background:url(../../images/shop/Mvip_dt_abg.png) left center no-repeat; padding-left:43px; margin-left:29px;}
 .Mvip_1 dd{ line-height:34px; padding-left:28px; text-align:left;}
 .Mvip_1 dd .blue1{ color:#0099cc; float:left;}
 .Mvip_1 dd .huiyuan{ background:url(../../images/shop/inquiry_vipimg.png) left center no-repeat; padding-left:77px; color:#0099cc;}
