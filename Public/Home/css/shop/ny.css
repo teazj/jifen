@@ -438,7 +438,8 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 .noxd_inp6{ width:59px; height:22px; line-height:22px; margin-top:2px; margin-left:11px; margin-right:54px; color:#FFF; background:url(../../images/shop/noxd_inp6.png) no-repeat;}
 .noxd_inp7, .noxd_inp8{ width:54px; height:21px; line-height:21px; border:1px solid #dfdfdf; margin-left:8px;}
 
-.Mnoxr_dcon dl{width:206px; float:left;  /*height:273px;*/ border:1px solid #ecebeb; margin-top:10px; margin-left:4px;}
+.Mnoxr_dcon dl{padding-bottom:10px;width:206px; float:left;  /*height:273px;*/ border:1px solid #ecebeb; margin-top:10px; margin-left:4px;}
+.Mnoxr_dcon dl:hover{ border:1px solid #f00;}
 .Mnoxr_dcon dt{  padding-top:24px;}
 .Mnoxr_dcon h3 a{ line-height:28px;}
 .Mnoxr_dcon dd{ color:#3b84d6;  line-height:16px;}
@@ -644,10 +645,12 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 
 .Msx_right{ float:right; width:829px; border:1px solid #dedede; padding-bottom:70px;}
 .Msxr_tit{ width:825px; height:44px; padding-left:4px; background:#3b84d6;}
+#tabContainer a.on{ background:#fff; color:#3B84D6;}
 .Msxr_tit li{ width:100px; float:left; height:44px; line-height:44px;}
 .Msxr_tit li a{ display:block; height:43px; margin-top:1px; font-size:14px; font-family:微软雅黑; color:#FFF;}
 .Msxr_tit li a:hover{ background:#FFF; color:#3b84d6;}
 .Msxr_con{ padding-left:1px; padding-top:1px;}
+.con1_p{ color:#000;line-height:30px; text-align:left; text-indent:2em; padding:15px 15px 0px 20px;}
 .Msxr_con table{ background:#FFF; padding-bottom:52px;}      /*  为什么背景颜色是蓝色  */
 .Msxr_con table td{ height:40px; color:#706f6f; border-bottom:1px solid #f6f5f5;}		/*  图td的长度短一些  */
 .Msxr_tabtit{ width:828px; height:44px; line-height:44px; background:#f4f5f5; color:#000;}

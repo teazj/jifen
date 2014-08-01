@@ -229,7 +229,7 @@ $(function(){
                 	<volist name="lists" id="vo">
                 	<dl>
                         <dt><a href="{:U('Index/info','id='.$vo[id])}"><img src="__ROOT__{$vo['thumb']}" width="206" height="244" /></a></dt>
-                        <dd><h3><a href="{:U('Index/info','id='.$vo[id])}">{$vo[name]|mb_substr=0,24,"utf-8"}</a></h3></dd>
+                        <dd><h3><a href="{:U('Index/info','id='.$vo[id])}">{$vo[name]|mb_substr=0,12,"utf-8"}</a></h3></dd>
                         <dd>积分值：<span class="red">{$vo.jifen}</span>积分<br />￥：<span class="red">{$vo.price}元</span></dd>
                         <dd><span class="aa"><a href="{:U('Index/info','id='.$vo[id])}">立即兑换</a><a href="{:U('Index/info','id='.$vo[id])}">立即购买</a></span></dd>
                     </dl>

@@ -118,18 +118,18 @@
         <div class="Msx_right">
         	<div id="tabContainer">
                 <ul class="Msxr_tit">
-                    <li id="tab1"><a onclick="switchTab('tab1','con1');this.blur();return false;" class="" href="#">
+                    <li id="tab1"><a onclick="switchTab('tab1','con1');this.blur();return false;" class="on" href="#">
                         商品详情</a></li>
                     <li id="tab2"><a onclick="switchTab('tab2','con2');this.blur();return false;" href="#" class="">
                         成交记录</a></li>
                     <li id="tab3"><a onclick="switchTab('tab3','con3');this.blur();return false;" href="#" class="">
              	商品评价</a></li>
-                    <li id="tab4"><a onclick="switchTab('tab4','con4');this.blur();return false;" href="#" class="on">
+                    <li id="tab4"><a onclick="switchTab('tab4','con4');this.blur();return false;" href="#" class="">
                         售后服务</a></li>
                 </ul>
                 <div style="clear: both"></div>
                 <div class="Msx_detailed" id="con1" style="display: block;">
-                    {$goods_detail_info['details']}
+                    <p class="con1_p">{$goods_detail_info['details']}</p>
                 </div>
                 <div style="display: none;" class="Msxr_con" id="con2">
                     <table width="100%" cellspacing="0" cellpadding="0" bgcolor="0px none">
