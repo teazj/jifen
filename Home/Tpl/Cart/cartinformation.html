@@ -28,7 +28,7 @@
 				<volist id="c_list" name="C_list" key="k">
 			<tr class="Mche_c">
 				<input type="hidden" value="{$c_list['item_id']}" name="item_id[]" />
-				<td><a href="{:U('Index/info','id='.$c_list[item_id])}"><img src="__ROOT__/{$c_list.item_img}" class="Mche_img" /></a></td>
+				<td><a href="{:U('Index/info','id='.$c_list[item_id])}"><img src="__ROOT__{$c_list.item_img}" class="Mche_img" /></a></td>
 				<td class="che_tl"><a href="{:U('Index/info','id='.$c_list[item_id])}">{$c_list.item_name}</a></td>
 				<td>{$c_list.price}</td>
 				<td>
