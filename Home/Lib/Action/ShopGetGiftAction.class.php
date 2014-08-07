@@ -14,7 +14,7 @@ class ShopGetGiftAction extends CommonAction{
 	public function getGift(){
 		$orderCode = $_POST['orderCode'];
 		if(!IS_AJAX)halt('非法访问');
-		$Orders = M('inte.qzOrders',' ');
+		$Orders = M('Qzorders');
 		$row = $Orders->where("qz_number='{$orderCode}'")->find();
 		if($row){
 			$data['status'] = 1;
@@ -38,11 +38,68 @@ class ShopGetGiftAction extends CommonAction{
 	//获取积分;
 	public function gain(){
 		if(!IS_POST) exit('非法访问');
-		$number = I('post.orderNumber');
-		$num = I('post.num');
+
+		$orderCode = $_POST['orderCode'];
+		if(!IS_AJAX)halt('非法访问');
+		$Orders = M('Qzorders');
+		$row = $Orders->where("qz_number='{$orderCode}'")->find();
+		if($row){
+			$data['status'] = 1;
+			if($row['inte']==null){
+				$data['info'] = "积分已兑光";
+				$data['sign']= 'eo';
+			}else if(empty($row['u_num'])){
+				$data['info'] = "兑换人数已上限";	
+			}else{
+//				$data['info'] = "剩余".$row['inte']."积分";
+				$num = $row['inte'];
+		//		$number = I('post.orderNumber');
+				$number = $orderCode;
+		//		$num = I('post.num');
+		//		$num = 500;
+				$order = M('qzOrders');
+		//		$row = $order->where()->find();
+		//		if($num  > $row['inte'])halt('积分兑换数目大于剩余积分数目');
+				
+				//更新订单(签证,认证);
+				$data['u_num'] = $row['u_num']-1;
+				$u_num = $order->where("qz_number='{$number}'")->save($data);
+				if(!$u_num) $data['info'] = '订单人数更新失败';
+				
+				//新增积分记录;
+				$inte_log = M('inteLog');
+				$int['uid'] = session('uid');
+				$int['inteTime'] = time();
+				$int['orderNumber'] = $number;
+				$int['billInte'] = $num;
+				$ini = $inte_log->data($int)->add();
+				if(!$ini) $data['info'] = '新增积分记录失败';
+				
+				//更新用户的积分;
+				$where = "id=2";
+				$in_data = $this->updateUserIntegral($where, $num, 'add');
+				if($in_data){
+					$data['info'] = '兑换成功';
+					$data['status'] = 2;
+				}else{
+					$data['info'] = '兑换失败';
+				}
+			}
+			
+			$this->ajaxReturn($data,'json');
+		}else{
+			$data['msg'] = '查询失败或无此订单号';
+			$this->ajaxReturn($data,'json');
+		}
+		
+		exit();
+//		$number = I('post.orderNumber');
+		$number = $orderCode;
+//		$num = I('post.num');
+//		$num = 500;
 		$order = M('qzOrders');
-		$row = $order->where()->find();
-		if($num  > $row['inte'])halt('积分兑换数目大于剩余积分数目');
+//		$row = $order->where()->find();
+//		if($num  > $row['inte'])halt('积分兑换数目大于剩余积分数目');
 		
 		//更新订单(签证,认证);
 		$data['u_num'] = $row['u_num']-1;

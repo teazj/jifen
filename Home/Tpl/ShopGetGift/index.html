@@ -88,7 +88,7 @@
             <div class="getjf_con">
 <script type="text/javascript">
 $(function(){
-	var url = "{:U('Index/ShopGetGift/getGift','','')}";
+	var url = "{:U('Index/ShopGetGift/gain','','')}";
 	var oIpt_1 = $('#ipt_1');
 	var oIpt_2 = $('#ipt_2');
 	var oSp = $('#sp');
@@ -110,6 +110,8 @@ $(function(){
 				}else{
 					oSub.attr("disabled",false);
 				}
+			}else if(data['status']==2){
+				$("#exchange_success").click();
 			}else{
 				alert(data['msg']);
 			}
@@ -130,16 +132,16 @@ function checkNum(){
                 <form action="{:U('Index/ShopGetGift/gain','','')}" method="post" onsubmit="return checkNum()">
                     <tr>
                         <td class="haoma">输入订单号：</td>
-                        <td><input type="text" class="ddh" id="ipt_1" name="orderNumber"/><input type="button" name="" value="查看剩余积分" class="get_inp2" id="ipt_2"/>&nbsp;<span id="sp" style="font-size:14px;"></span></td>
+                        <td><input type="text" class="ddh" id="ipt_1" name="orderNumber"/><input type="button" name="" value="立即兑换" class="get_inp2" id="ipt_2"/>&nbsp;<span id="sp" style="font-size:14px;"></span></td>
                     </tr>
-                    <tr style="text-align:left;">
+                    <!--<tr style="text-align:left;">
                         <td class="haoma">输入积分数目：</td>
                         <td><input type="text" name="num"  class="sxjf" /> 分 *(最少两位数,例如20)</td>
                     </tr>
-                    <tr>
+                    --><tr>
                         <td>&nbsp;</td>
                         <td colspan="2" class="inp_jf">
-                          <input type="button" name="sub_1" value="立即获取" class="showbox1 showdiv" />
+                          <input type="hidden" name="sub_1" id="exchange_success" value="弹出成功的提示层" class="showbox1 showdiv" />
                             <!--获取积分弹出层  s-->
                             <div id="TB_overlayBG"></div>
                             <div class="box" style="display:none">
