@@ -272,7 +272,8 @@ class IndexAction extends Action {
 			
 			//评论列表
 			$model= M("");
-			$comment_where="g.gid=".$_GET['id']." AND g.status=2";	//评论条件状态值为2
+			//$comment_where="g.gid=".$_GET['id']." AND g.status=2";	//评论条件状态值为2
+			$comment_where="g.gid=".$_GET['id']." ";	//评论条件状态值为2
 			import("ORG.Util.Page");// 导入分页类
 			$count = $model->table("ff_goods_comment g")
 				    	   ->join("ff_users u  on u.id=g.uid")
@@ -284,7 +285,7 @@ class IndexAction extends Action {
 			$comment_list = $model->table("ff_goods_comment g")
 				    	   ->join("ff_users u  on u.id=g.uid")
 						   ->where($comment_where)
-						   ->order('g.crdate')
+						   ->order('g.id DESC')
 						   ->field("u.username,g.content,g.crdate")
 						   ->limit($Page->firstRow.','.$Page->listRows)
 						   ->select();

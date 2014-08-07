@@ -51,32 +51,31 @@ class ShopGetGiftAction extends CommonAction{
 			}else if(empty($row['u_num'])){
 				$data['info'] = "兑换人数已上限";	
 			}else{
-//				$data['info'] = "剩余".$row['inte']."积分";
 				$num = $row['inte'];
-		//		$number = I('post.orderNumber');
 				$number = $orderCode;
-		//		$num = I('post.num');
-		//		$num = 500;
-				$order = M('qzOrders');
-		//		$row = $order->where()->find();
-		//		if($num  > $row['inte'])halt('积分兑换数目大于剩余积分数目');
-				
+		
 				//更新订单(签证,认证);
 				$data['u_num'] = $row['u_num']-1;
-				$u_num = $order->where("qz_number='{$number}'")->save($data);
-				if(!$u_num) $data['info'] = '订单人数更新失败';
+				$u_num = $Orders->where("qz_number='{$number}'")->save($data);
+				if(!$u_num) {
+					$data['info'] = '订单人数更新失败';
+					$this->ajaxReturn($data,'json');
+				}
 				
 				//新增积分记录;
-				$inte_log = M('inteLog');
-				$int['uid'] = session('uid');
+				$inte_log = M('Intelog');
+				$int['uid'] = $_SESSION['FEUSER']['id'];
 				$int['inteTime'] = time();
 				$int['orderNumber'] = $number;
 				$int['billInte'] = $num;
 				$ini = $inte_log->data($int)->add();
-				if(!$ini) $data['info'] = '新增积分记录失败';
+				if(!$ini){
+					$data['info'] = '新增积分记录失败';
+					$this->ajaxReturn($data,'json');
+				} 
 				
 				//更新用户的积分;
-				$where = "id=2";
+				$where = "id=".$_SESSION['FEUSER']['id'];
 				$in_data = $this->updateUserIntegral($where, $num, 'add');
 				if($in_data){
 					$data['info'] = '兑换成功';
@@ -90,40 +89,7 @@ class ShopGetGiftAction extends CommonAction{
 		}else{
 			$data['msg'] = '查询失败或无此订单号';
 			$this->ajaxReturn($data,'json');
-		}
-		
-		exit();
-//		$number = I('post.orderNumber');
-		$number = $orderCode;
-//		$num = I('post.num');
-//		$num = 500;
-		$order = M('qzOrders');
-//		$row = $order->where()->find();
-//		if($num  > $row['inte'])halt('积分兑换数目大于剩余积分数目');
-		
-		//更新订单(签证,认证);
-		$data['u_num'] = $row['u_num']-1;
-		$u_num = $order->where("qz_number='{$number}'")->save($data);
-		if(!$u_num) exit('订单人数更新失败');
-		
-		//新增积分记录;
-		$inte_log = M('inteLog');
-		$int['uid'] = session('uid');
-		$int['inteTime'] = time();
-		$int['orderNumber'] = $number;
-		$int['billInte'] = $num;
-		$ini = $inte_log->data($int)->add();
-		if(!$ini) exit('新增积分记录失败');
-		
-		//更新用户的积分;
-		$where = "id={session('uid')}";
-		$in_data = $this->updateUserIntegral($where, $num, 'add');
-		if($in_data){
-			$this->success('');
-		}else{
-			halt('兑换失败');
-		}
-			
+		}	
 	}
 	/**
 	 * 更新用户的积分数目;
@@ -131,15 +97,15 @@ class ShopGetGiftAction extends CommonAction{
 	 * @param Array $data
 	 */
 	public function updateUserIntegral($where,$num,$status){
-		$User = M('User');
-		$row = $User->where($where)->getField('howInte');
+		$User = M('Users');
+		$row = $User->where($where)->getField('point');
 		if($status=='add'){
-			$data['howInte'] = $row['howInte']+$num;
+			$data['point'] = $row+$num;
 			return $User->where($where)->save($data);
 		}
 		
 		if($status=='del'){
-			$data['howInte'] = $row['howInte']-$num;
+			$data['point'] = $row['point']-$num;
 			return $User->where($where)->save($data);
 		}
 		
