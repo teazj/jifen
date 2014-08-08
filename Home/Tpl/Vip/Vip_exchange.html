@@ -50,11 +50,11 @@
                         </tr>
                         <volist name="m" id="vo">
                         <tr>
-                            <td>{$vo.inteTime|date="Y-m-d",###}</td>
-                            <td>{$vo.orderNumber}<td>
+                            <td>{$vo.inteTime|date="Y-m-d H:i:s",###}</td>
+                            <td>{$vo.orderNumber}</td>
                             <td>{$vo.gInte}</td>
                             <td>{$vo.billInte}</td>
-                            <td>{$money}</td>
+                            <td>{$vo.money}</td>
                             <td>成功</td>
                         </tr>
                         </volist>

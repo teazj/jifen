@@ -363,15 +363,14 @@ class VipAction extends CommonAction{
 	public function exchange(){
 		$condition['uid']=$_SESSION['FEUSER']['id'];
 		import('ORG.Util.Page');
-		$count =M('inte.Inte_log',' ')->where($condition)->count();
+		$count =M('Intelog')->where($condition)->count();
 		$Page = new Page($count,10);
 		$show = $Page->show();
-		$m=M('inte.Inte_log',' ')->where($condition)->limit($Page->firstRow.','.$Page->listRows)->select();
+		$m=M('Intelog')->where($condition)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
+		$this->assign('m',$m);
+		$this->assign('page',$show);
 		$this->display('Vip_exchange');
 	}
-	
-	//
-	
 	
 	//配送地址显示
 	public function address(){
