@@ -28,6 +28,7 @@ class VipAction extends CommonAction{
 		if($m['point']<0){
 			$m['point']=0;
 		}
+		print_r($m);
 		$this->assign('v',$m);
 		$this->display('Vip_persion');
 	}
@@ -369,6 +370,7 @@ class VipAction extends CommonAction{
 		$m=M('Intelog')->where($condition)->order('id desc')->limit($Page->firstRow.','.$Page->listRows)->select();
 		$this->assign('m',$m);
 		$this->assign('page',$show);
+		$this->assign('point',$_SESSION['FEUSER']['point']);
 		$this->display('Vip_exchange');
 	}
 	
