@@ -163,46 +163,20 @@ $(function(){
         </div>
         <div class="Mnox_right">
         	<div class="Mnoxr_t">
-            	<!-- <div class="Mnoxr_tpp">
+            	<div class="Mnoxr_tpp">
                 	<div class="Mnoxr_tt1"><h4>品牌</h4></div>
                 	<ul>
-                    	<li><a href="">全部</a></li>
-                        <li><a href="">其它</a></li>
-                        <li><a href="">九阳</a></li>
-                        <li><a href="">奔腾</a></li>
-                        <li><a href="">飞科</a></li>
-                        <li><a href="">飞利浦</a></li>
-                        <li><a href="">荣世达</a></li>
-                        <li><a href="">小熊</a></li>
-                        <li><a href="">格力</a></li>
-                        <li><a href="">龙的</a></li>
-                        <li><a href="">晋彩</a></li>
-                        <li><a href="">光科</a></li>
-                        <li><a href="">超人</a></li>
-                        <li><a href="">东菱</a></li>
-                        <li><a href="">惠家</a></li>
-                        <li><a href="">美的</a></li>
-                        <li><a href="">苏泊尔</a></li>
-                        <li><a href="">瑞德</a></li>
-                        <li><a href="">三洋</a></li>
-                        <li><a href="">TCL</a></li>
-                        <li><a href="">暖之心</a></li>
-                        <li><a href="">久量</a></li>
-                        <li><a href="">北美电器</a></li>
-                        <li><a href="">I</a></li>
-                        <li><a href="">SHUAI</a></li>
-                        <li><a href="">博朗</a></li>
-                        <li><a href="">康佳</a></li>
-                        <li><a href="">james</a></li>
-                        <li><a href="">东芝</a></li>
+                		<foreach name='brand_arr' item='vo'>
+                    	<li><a href="{$vo[url]}" class="{$vo.class}">{$vo.brand_name}</a></li>
+                    	</foreach>
                     </ul>
                 </div>
-                 -->
+                 
                  <div class="Mnoxr_tjf">
                 	<div class="Mnoxr_tt2"><h4>积分</h4></div>
                     <ul>
                     	<foreach name='jifen_arr' item='vo'>
-                    	<li><a href="{$vo[url]}">{$vo.name}</a></li>
+                    	<li><a href="{$vo[url]}" class="{$vo.class}">{$vo.name}</a></li>
                        </foreach>
                     </ul>
                 </div>

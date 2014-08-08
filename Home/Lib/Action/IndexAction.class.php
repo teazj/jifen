@@ -69,6 +69,7 @@ class IndexAction extends Action {
 		
 		//搜索条件的url状态维持
         $sta_jf = isset($_GET['jf']) ? "&jf={$_GET['jf']}" : ''; //价格区间状态
+        $sta_brand = isset($_GET['brand']) ? "&brand={$_GET['brand']}" : ''; //品牌
        	
        	$sta_bnum = isset($_GET['bnum']) ? "&bnum={$_GET['bnum']}" : ''; //兑换量排序状态
         $sta_sprice = isset($_GET['sprice']) ? "&sprice={$_GET['sprice']}" : ''; //价格排序状态
@@ -94,11 +95,11 @@ class IndexAction extends Action {
                 $v['class'] = 'active';
                 $v['url'] = 'javascript:void(0)';
             } else {
-                $v['url'] = U("{$sta_url}&jf={$v['id']}{$sta_sprice}{$sta_cdate}{$sta_keyword}{$sta_bnum}");
+                $v['url'] = U("{$sta_url}&jf={$v['id']}{$sta_sprice}{$sta_cdate}{$sta_keyword}{$sta_bnum}{$sta_brand}");
             }
         }
         $this->assign("jifen_arr",$jifen_arr);
-        
+		
         $rule=$this->getJifen();	//1元==100积分
         //封装价格搜索条件
         if (isset($_GET['jf'])) {
@@ -127,18 +128,32 @@ class IndexAction extends Action {
             if ($_GET['sprice'] == 'h') {
                 $order['price'] = 'desc';
                 $order_price['b_class'] = 'arrow2';
-                $order_price['url'] = U("{$sta_url}&sprice=nh{$sta_jf}{$sta_cdate}{$sta_keyword}{$sta_bnum}");
+                $order_price['url'] = U("{$sta_url}&sprice=nh{$sta_jf}{$sta_cdate}{$sta_keyword}{$sta_bnum}{$sta_brand}");
             } elseif ($_GET['sprice'] == 'nh') {
                 $order['price'] = 'asc';
                 $order_price['b_class'] = 'arrow';
-                $order_price['url'] = U("{$sta_url}&sprice=h{$sta_jf}{$sta_cdate}{$sta_keyword}{$sta_bnum}");
+                $order_price['url'] = U("{$sta_url}&sprice=h{$sta_jf}{$sta_cdate}{$sta_keyword}{$sta_bnum}{$sta_brand}");
             }
         } else {
             $order_price['class'] = '';
             $order_price['b_class'] = 'arrow';
-            $order_price['url'] = U("{$sta_url}&sprice=nh{$sta_jf}{$sta_cdate}{$sta_keyword}{$sta_bnum}");
+            $order_price['url'] = U("{$sta_url}&sprice=nh{$sta_jf}{$sta_cdate}{$sta_keyword}{$sta_bnum}{$sta_brand}");
         }
         $this->assign('order_price', $order_price); //分配价格排序
+        
+        //封装品牌
+		$brand_arr = array();
+		$brand_arr = M("Brand")->field("id,brand_name")->select();
+		array_unshift($brand_arr, array('brand_name'=>"全部"));
+		foreach ($brand_arr as $k => &$v) {//分配积分区间url
+            if ($_GET['brand'] == $v['id']) {
+                $v['class'] = 'active';
+                $v['url'] = 'javascript:void(0)';
+            } else {
+                $v['url'] = U("{$sta_url}&brand={$v['id']}{$sta_jf}{$sta_sprice}{$sta_cdate}{$sta_keyword}{$sta_bnum}");
+            }
+        }
+		$this->assign("brand_arr",$brand_arr);
         
         //封装上架时间排序
         $order_cdate = array();
@@ -147,16 +162,16 @@ class IndexAction extends Action {
             if ($_GET['cdate'] == 'n') {
                 $order['etime'] = 'desc';
                 $order_cdate['b_class'] = 'arrow2';
-                $order_cdate['url'] = U("{$sta_url}&cdate=nn{$sta_jf}{$sta_sprice}{$sta_keyword}{$sta_bnum}");
+                $order_cdate['url'] = U("{$sta_url}&cdate=nn{$sta_jf}{$sta_sprice}{$sta_keyword}{$sta_bnum}{$sta_brand}");
             } elseif ($_GET['cdate'] == 'nn') {
                 $order['etime'] = 'asc';
                 $order_cdate['b_class'] = 'arrow';
-                $order_cdate['url'] = U("{$sta_url}&cdate=n{$sta_jf}{$sta_sprice}{$sta_keyword}{$sta_bnum}");
+                $order_cdate['url'] = U("{$sta_url}&cdate=n{$sta_jf}{$sta_sprice}{$sta_keyword}{$sta_bnum}{$sta_brand}");
             }
         } else {
             $order_cdate['class'] = '';
             $order_cdate['b_class'] = 'arrow';
-            $order_cdate['url'] = U("{$sta_url}&cdate=nn{$sta_jf}{$sta_sprice}{$sta_keyword}{$sta_bnum}");
+            $order_cdate['url'] = U("{$sta_url}&cdate=nn{$sta_jf}{$sta_sprice}{$sta_keyword}{$sta_bnum}{$sta_brand}");
         }
         $this->assign('order_cdate', $order_cdate); //分配上架时间排序
         
@@ -167,20 +182,18 @@ class IndexAction extends Action {
             if ($_GET['bnum'] == 'bn') {
                 $order['bnum'] = 'desc';
                 $order_bnum['b_class'] = 'arrow2';
-                $order_bnum['url'] = U("{$sta_url}&bnum=bn{$sta_jf}{$sta_cdate}{$sta_sprice}{$sta_keyword}");
+                $order_bnum['url'] = U("{$sta_url}&bnum=bn{$sta_jf}{$sta_cdate}{$sta_sprice}{$sta_keyword}{$sta_brand}");
             } elseif ($_GET['bnum'] == 'pn') {
                 $order['bnum'] = 'asc';
                 $order_bnum['b_class'] = 'arrow';
-                $order_bnum['url'] = U("{$sta_url}&bnum=pn{$sta_jf}{$sta_cdate}{$sta_sprice}{$sta_keyword}");
+                $order_bnum['url'] = U("{$sta_url}&bnum=pn{$sta_jf}{$sta_cdate}{$sta_sprice}{$sta_keyword}{$sta_brand}");
             }
         } else {
             $order_bnum['class'] = '';
             $order_bnum['b_class'] = 'arrow';
-            $order_bnum['url'] = U("{$sta_url}&bnum=pn{$sta_jf}{$sta_cdate}{$sta_sprice}{$sta_keyword}");
+            $order_bnum['url'] = U("{$sta_url}&bnum=pn{$sta_jf}{$sta_cdate}{$sta_sprice}{$sta_keyword}{$sta_brand}");
         }
         $this->assign('order_bnum', $order_bnum); //分配上架时间排序
-		
-		
 		
 		$map['status']=array('eq',1);	//上架的商品
 		if (!is_array($order)) {//默认搜索条件为添加时间倒序
@@ -199,6 +212,11 @@ class IndexAction extends Action {
 		//t 商品类型
 		if($this->_get('t')){
 			$map['location']=array('eq',$this->_get('t'));
+		}
+		
+		//品牌
+		if($this->_get("brand")){
+			$map['bid'] = array("eq", $this->_get("brand"));
 		}
 		
 		$goods = M('Goods'); //实例化一个model

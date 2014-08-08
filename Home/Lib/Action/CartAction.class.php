@@ -70,20 +70,16 @@ class CartAction extends Action {
 		$map['ismr']=1;
 		$mrid=$Address->where($map)->getField('id');
 		$this->assign("mrid",$mrid);
-		//dump($map);
-		// $Delivery = M('delivery');
-		// $map = array();
-		// $map['show'] = 1;
-		// $listarr=$Delivery->where($map)->select();
-		// $this->assign('d_list',$listarr);
 		
 		$this->assign('OrderCount',$_SESSION['cart']['total_price']);
 		$rule=$this->getJifen();
 		$this->assign("totaljifen",intval($rule*$_SESSION['cart']['total_price']));
-		//$this->assign('OrderCount',$_SESSION['cart']['total_price']);
-		//echo $_SESSION['cart']['goods_list'][4]['item_name'];
-		//$this->assign('cartCount', $_SESSION['cart']['total_num']);	
-		$this->assign('C_list',$_SESSION['cart']['goods_list']);		
+		
+		$this->assign('C_list',$_SESSION['cart']['goods_list']);	
+		
+		//将自己的积分弄过去
+		$point=M("Users")->where("id=".$_SESSION['FEUSER']['id'])->getField("point");	
+		$this->assign("point",$point);
 		$this->display();
 	}
 	

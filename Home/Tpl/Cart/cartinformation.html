@@ -17,7 +17,7 @@
         <div class="js_two">
         	<p>确定订单信息</p>
             <table cellpadding="0" cellspacing="0" width="100%" border="0">
-            <form action="{:U('Cart/SaveOrder')}" method="post">
+            <form action="{:U('Cart/SaveOrder')}" method="post" onsubmit="return checkFrom();">
             	<input type="hidden" name="address" id="mrid" value="{$mrid}" />
                 <tr class="Mche_top">
 					<td>商品图片</td>
@@ -52,6 +52,29 @@
     		$("#mrid").val($(this).attr("rel"));
     		$(this).addClass("dlhover").siblings().removeClass("dlhover");
     	});
+    	
+    	function  checkFrom(){
+    		//没有选择地址的话弹出框提示
+    		if($(".js_one dl").length <=0){
+    			alert("请去会员中心填写地址!");
+    			return false;
+    		}
+    		
+    		if($(".js_one .dlhover").length <=0){
+    			alert("请选择收货地址!");
+    			return false;
+    		}
+    		
+    		//算一下自己的积分够不顾支付
+    		var point="{$point}";
+    		var total="{$totaljifen}";
+    		if(parseInt(point)<parseInt(total)){
+    			alert("你的积分不足!");	
+    			return false;
+    		}
+    		return true;
+    	}
+    	
     	
     </script>
     

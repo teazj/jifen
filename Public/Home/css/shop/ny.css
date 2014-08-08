@@ -420,12 +420,14 @@ table{ cellpadding:0; cellspacing:0; border:0px none;}
 
 .Mnox_right{ float:right;}
 .Mnoxr_t{ width:850px; height:146px; border:1px solid #dbdbdb;}
-.Mnoxr_tpp{ height:84px; border-bottom:1px solid #dbdbdb;}
+.Mnoxr_tpp{ height:84px; border-bottom:1px solid #dbdbdb;padding:5px;}
 .Mnoxr_tpp li{ float:left; line-height:22px;}
-.Mnoxr_tpp li a, .Mnoxr_tjf li a{ color:#3b84d6;}
+.Mnoxr_tpp li a, .Mnoxr_tjf li a{ color:#3b84d6;padding:5px 10px;}
+.Mnoxr_tpp li .active{background:#3b84d6;color:#fff;font-weight:bold; }
+.Mnoxr_tjf li .active{background:#3b84d6;color:#fff;font-weight:bold;}
 .Mnoxr_tt1, .Mnoxr_tt2{ float:left; width:90px; height:84px; line-height:52px; padding-left:20px; text-align:left; color:#000;}
 .Mnoxr_tt2{ height:61px;}
-.Mnoxr_tjf li{ float:left; margin-top:17px;width:80px;}
+.Mnoxr_tjf li{ float:left; margin-top:17px;/*width:80px;*/}
 
 .Mnoxr_d{ width:850px; margin-top:6px; border:1px solid #e0e0e0; padding-bottom:20px;}
 .Mnoxr_dtit{ height:44px; border-bottom:1px solid #c8c8c8; background:url(../../images/shop/Mnoxr_dtitbg.jpg) left center repeat-x;}
