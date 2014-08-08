@@ -1,10 +1,6 @@
 <?php
 class ShopGetGiftAction extends CommonAction{
-    public function _initialize(){
-        //友情链接
-        $listflink=M("Flink")->where('isshow=1')->select();
-        $this->assign("listflink",$listflink);
-    }
+
 	public function index(){
 		$this->display();
 	}
